@@ -117,8 +117,9 @@ table {
   color: lightcyan;
 }
 
+/* ####################################splashpage buttons */
 
- .splashpage-button {
+ .splashpage-button1, .splashpage-button2 {
   border-radius: 3px;
   border: none;
   background-color: #FE5000;
@@ -126,6 +127,11 @@ table {
   margin-right: 10px;
   padding: 5px 15px;
   /* bottom:0; */
+ }
+
+ .splashpage-button1{
+   background-color: transparent;
+   border: 1px solid white;
  }
 .splashpage-buttons {
     /* background: black; */
@@ -135,9 +141,10 @@ table {
     /* bottom: 0; */
     margin-right: 20px;
   }
+  
   .logo{
     /* padding: 10px; */
-      background-color: blanchedalmond;
+      color: white;
       margin-left: 30px;
       font-size: 25px;
       font-weight: bold;
@@ -149,7 +156,7 @@ table {
    justify-content: space-around;  */
    /* margin: 0 17.5%; */
    /* min-width: 900px; */
-   /* background-color: lawngreen; */
+   background-color: #f2f2f2;
    /* max-width: 700px; */
    width: 100%;
  }
@@ -164,14 +171,28 @@ table {
 
 .splash-page {
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
   height: 1000px;
 }
 
 .loggedin-nav{
-  background-color: grey;
+  background-color: #333333;
   width:100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  height: 40px;
 }
+
+.loggedin-nav .logo {
+  margin: 0;
+}
+
+.loggedin-user button{
+    background-color: transparent;
+    border: none;
+}
+
 .nav-bar {
   width: 100%;
   position: absolute;
@@ -211,4 +232,82 @@ table {
 .discoverpage {
   height: 300px;
   background-color: red;
+}
+
+.searchbar-container {
+    /* margin: 0 10px; */
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.search-bar {
+  width: 90%;
+  height: 30px;
+  padding: 10px 15px;
+  font-size: 13px;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.splashpage-bottom {
+  /* background-color: teal; */
+  height:325px;
+}
+
+.first-row {
+  background-color: #f2f2f2;
+  /* background-color: red; */
+  padding-top: 50px;
+  /* height: inherit; */
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.firstrow-img {
+  width: 95%;
+  margin-left: 50px;
+}
+
+.firstrow-img img {
+  width: inherit;
+}
+.firstrow-text {
+  /* background-color: khaki; */
+  padding: 20px 0 0 10px;
+  width: 50%
+}
+
+.firstrow-text h1 {
+  font-size: 32px;
+  /* background-color: red; */
+}
+
+.firstrow-text h1::after {
+  content: "";
+  display:block;
+  width: 70px;
+  height: 3px;
+  background-image: linear-gradient(90deg,#7d01a1,#f30 50%,#f50);
+  margin-top: 15px;
+
+}
+
+.firstrow-text p {
+  font-size: 24px;
+  padding: 10px 0;
+  /* background-color: blue; */
+  width: 80%;
+}
+
+.second-row {
+  height: 350px;
+  background-image: url(https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg);
+}
+
+.last-row {
+  height: 500px;
+  background-color: blue;
 }
