@@ -36,8 +36,8 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-  font: inherit;
-  font-family: sans-serif;
+  font: ;
+  font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -96,7 +96,7 @@ table {
   width: 90%;
   
 }
-.form-container input {
+.form-inputs {
   outline: none;
   padding: 10px 10px;
   box-sizing: border-box;
