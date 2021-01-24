@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       }
 
       handleSubmitSignUp(e) {
-        e.preventDefault();
+        // e.preventDefault();
         // const user = Object.assign({}, this.state);
         this.props.processForm({
           username: this.state.username,
@@ -65,19 +65,22 @@ class SessionForm extends React.Component {
       checkField() {
         debugger
         if (this.state.page === 0 && this.state.email === "") {
-          debugger
+          // debugger
           console.log("email warning")
           this.setState({ warnings: " EMAIL WARNING"})
 
           // this.printWarning
         } else if (this.state.page === 1 && this.state.password === "") {
-          debugger
+          // debugger
           console.log("password warning")
           this.setState({ warnings: " PASSWORD WARNING"})
 
           // this.printWarning
         } else if (this.state.page === 1 && this.props.formType === 'login' ){
           this.handleSubmitSignIn()
+        } else if (this.state.page === 2 && this.state.age < 18 && this.state.gender === ""){
+
+          this.setState({ warnings: " AGE and Gender WARNING"})
         } else if (this.state.page === 2 && this.state.age < 18 ){
           console.log("age warning")
           this.setState({ warnings: " AGE WARNING"})
@@ -89,8 +92,7 @@ class SessionForm extends React.Component {
           this.setState({ warnings: " username WARNING"})
         } else if (this.state.page === 3 && this.props.formType === 'signup'){
           this.handleSubmitSignUp()
-        }
-        else {
+        } else {
           debugger
           this.changePage()
         }
