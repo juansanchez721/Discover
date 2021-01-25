@@ -383,8 +383,29 @@ table {
 }
 
 .last-row {
-  height: 500px;
-  background-color: blue;
+  height: 550px;
+  width: 100%;
+  /* text-align: center; */
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.bottom-info {
+  width: 700px;
+  height: 300px;
+  /* background-color: red; */
+  /* display:table-cell;
+  vertical-align:middle; */
+  text-align: center;
+  /* display: flex;
+  justify-content: space-around;  */
+}
+.bottom-info h1{
+    font-size: 36px;
+}
+.bottom-info h2{
+  font-size: 24px;
 }
 
 .orangebutton {

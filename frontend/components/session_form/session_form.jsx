@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
       this.handleSubmitSignIn = this.handleSubmitSignIn.bind(this)
       this.handleSubmitSignUp = this.handleSubmitSignUp.bind(this)
       this.checkField = this.checkField.bind(this)
-      this.printWarning = this.printWarning.bind(this)
+      // this.printWarning = this.printWarning.bind(this)
       this.warnings = null;
     }
 
@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
 
 
     handleSubmitSignIn(e) {
-        // e.preventDefault();
+        e.preventDefault();
         // const user = Object.assign({}, this.state);
         this.props.processForm({
           email: this.state.email,
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       }
 
       handleSubmitSignUp(e) {
-        // e.preventDefault();
+        e.preventDefault();
         // const user = Object.assign({}, this.state);
         this.props.processForm({
           username: this.state.username,
@@ -97,13 +97,6 @@ class SessionForm extends React.Component {
           this.changePage()
         }
       }
-
-      printWarning(){
-        return (
-           <h1>WARNING</h1> 
-        )
-      }
-
       
   renderErrors() {
     debugger
@@ -130,10 +123,11 @@ class SessionForm extends React.Component {
         return (
             <div className="form-container">
               {/* {formHeader} */}
-            <form onSubmit={this.checkField} className="login-form-box">
+            <form onSubmit={this.handleSubmitSignIn} className="login-form-box">
               {/* <br/> */}
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {this.state.warnings}
+                                          {/* {this.renderErrors()} */}
               <div className="login-form">
            
                 {/* <label className="label-names-input"> Email:</label> */}
@@ -145,7 +139,7 @@ class SessionForm extends React.Component {
                     />
                 
                 {/* <br/> */}
-                  <button onClick={ ()=>this.handleSubmitSignIn} >Continue</button>
+                  <button onClick={this.checkField} >Continue</button>
                 {/* <input className="session-submit" type="submit" value={this.props.formType} /> */}
               </div>
             </form>
@@ -156,8 +150,10 @@ class SessionForm extends React.Component {
         
         return (
           <div className="form-container">
-            <form onSubmit={this.checkField} className="login-form-box">
+            <form onSubmit={this.handleSubmitSignIn} className="login-form-box">
               {/* <br/> */}
+                            {/* {this.renderErrors()} */}
+
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {this.state.warnings}
               <div className="login-form">
@@ -185,7 +181,7 @@ class SessionForm extends React.Component {
                 </label>
                 
                 <br/>
-                <button onClick={ ()=>this.checkField} >{this.props.formType}</button>
+                <button onClick={() =>this.checkField} >{this.props.formType}</button>
 
                   {/* <button onClick={this.changePage} >continue</button> */}
                 {/* <input className="form-inputs" type="submit" value={this.props.formType} /> */}
@@ -197,7 +193,7 @@ class SessionForm extends React.Component {
       } else if (this.state.page === 1 && this.props.formType === 'signup' ) { // end of page 1 for sign in
           return (
             <div className="form-container">
-            <form onSubmit={this.checkField} className="login-form-box">
+            <form onSubmit={this.handleSubmitSignUp} className="login-form-box">
             {this.state.warnings}
 
               <br/>
@@ -229,7 +225,7 @@ class SessionForm extends React.Component {
                 </label>
                 
                 <br/>
-                  <button onClick={() => this.checkField} >Continue</button>
+                  <button onClick={this.checkField} >Continue</button>
                 {/* <input className="session-submit" type="submit" value={this.props.formType} /> */}
               </div>
             </form>
@@ -238,7 +234,7 @@ class SessionForm extends React.Component {
       } else if (this.state.page === 2){
         return (
           <div className="form-container">
-            <form onSubmit={this.checkField} className="login-form-box">
+            <form onSubmit={this.handleSubmitSignUp} className="login-form-box">
             {this.state.warnings}
 
               <br/>
@@ -277,7 +273,7 @@ class SessionForm extends React.Component {
                 
                 
                 <br/>
-                  <button onClick={() =>this.checkField} >Continue</button>
+                  <button onClick={this.checkField} >Continue</button>
               </div>
             </form>
             </div>
@@ -285,10 +281,10 @@ class SessionForm extends React.Component {
       } else if (this.state.page === 3){
           return(
             <div className="form-container">
-            <form onSubmit={this.checkField} className="login-form-box">
+            <form onSubmit={this.handleSubmitSignUp} className="login-form-box">
             {this.state.warnings}
 
-            {/* {this.renderErrors()} */}
+            {this.props.errors[0]}
 
                    <input type="text"
                    className="form-inputs"
@@ -296,8 +292,9 @@ class SessionForm extends React.Component {
                      value={this.state.username}
                      onChange={this.update('username')}
                    />
+                <button onClick={() =>this.checkField} >{this.props.formType}</button>
 
-            <input className="form-inputs" type="submit" value={this.props.formType} />
+            {/* <input className="form-inputs" type="submit" value={this.props.formType} /> */}
 
             </form>
             </div>

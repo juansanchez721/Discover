@@ -21,7 +21,13 @@ const SplashPageBottom = () => {
 
             </div>
             <div className="last-row">
-                
+                <div className="bottom-info">
+                    <h1>Thanks for listening. Now Join in.</h1>
+                    <br/>
+                    <h2>Save tracks, follow artists and build playlists. All for free.</h2>
+                    <br/>
+                    <button className="orangebutton">Create Account</button>
+                </div>
             </div>
         </div>
     )
