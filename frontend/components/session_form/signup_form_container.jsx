@@ -2,7 +2,7 @@ import React from 'react'
 import SessionForm from './session_form'
 import  { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import { signUp, receiveSessionErrorss } from '../../actions/session_actions' ///////////
+import { signUp, login } from '../../actions/session_actions' ///////////
 import { closeModal } from '../../actions/modal_actions'
 
 
@@ -17,6 +17,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch, ownProps) => {
     return {
         processForm: user => dispatch(signUp(user)),
+        demoUserForm: user => dispatch(login(user)),
         otherForm: (
             <button onClick={() => dispatch(openModal('login'))}>
               Login

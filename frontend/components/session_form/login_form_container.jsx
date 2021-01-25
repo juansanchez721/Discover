@@ -15,6 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     return {
         processForm: user => dispatch(login(user)),
+        demoUserForm: user => dispatch(login(user)),
         otherForm: (
             <button onClick={() => dispatch(openModal('signup'))}>
               Signup
