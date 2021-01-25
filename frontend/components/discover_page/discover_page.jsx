@@ -5,7 +5,7 @@ const DiscoverPage = () => {
 
 
     return (
-        <h1 className="discoverpage">discover page</h1>
+        <h1 className="discoverpage"></h1>
     )
 }
 

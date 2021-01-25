@@ -1,17 +1,28 @@
 import React from 'react'
-
-
+import SearchBar from '../search/searchbar'
+import SearchBarContainer from '../search/search-container'
 const Header = (props) => {
 
     const userLoggedIn = () => (
+    
         <nav className="loggedin-nav">
-            <div>
-            <h1 className="logo" >Discover</h1>
+            {/* <div>
 
-            </div>
+            </div> */}
       <div className="loggedin-user">
-          <button className="splashpage-button2" onClick={props.logout}>Hi, {props.currentUser.username}!</button>
-          <button className="splashpage-button1" onClick={props.logout}>Log Out</button>
+            <h1 className="logo" >DO</h1>
+            <h1 >Home</h1>
+            <h1 >Stream</h1>
+          <h1>Library</h1>
+          <SearchBarContainer/>
+          <h1 className="fixedh1">Upgrade</h1>
+          <h1 className="fixedh1">Upgrade</h1>
+          <h1 className="fixedh1">Upload</h1>
+          <h1 className="fixedh1">{props.currentUser.username}!</h1>
+          {/* <h1>Placeholder</h1> */}
+
+          {/* </div> */}
+          <h1 className="fixedh1" onClick={props.logout}>***</h1>
           <br/>
       </div>
     </nav>

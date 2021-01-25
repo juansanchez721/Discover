@@ -2,11 +2,23 @@ import React from 'react'
 
 
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 
-    return (
-        
-        <div className="searchbar-container">
+        if (props.currentUser) {
+
+            return (
+            <div className="nav-search">
+            {/* <div className="innersearchcontainer"> */}
+
+            {/* <div className="search-first"> */}
+                <input className="minisearch" placeholder= "search artist or song"/>
+            {/* </div> */}
+            {/* </div> */}
+            </div>
+        )
+        } else {
+            return (
+                <div className="searchbar-container">
             <div className="innersearchcontainer">
 
             <div className="search-first">
@@ -18,7 +30,10 @@ const SearchBar = () => {
             </div>
             </div>
         </div>
-    )
+
+
+            )
+            }
 }
 
 
