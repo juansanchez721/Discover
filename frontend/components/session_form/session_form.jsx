@@ -20,7 +20,16 @@ class SessionForm extends React.Component {
       this.checkField = this.checkField.bind(this)
       // this.printWarning = this.printWarning.bind(this)
       this.warnings = null;
+      this.demoUserLogin = this.demoUserLogin.bind(this)
     }
+
+    demoUserLogin(){
+      this.props.processForm({
+        email: "demouser@test.com",
+        password: "demopassword"
+      }).then(this.props.closeModal)
+    }
+    
 
     changePage(){
       debugger
@@ -123,7 +132,7 @@ class SessionForm extends React.Component {
         return (
             <div className="form-container">
               {/* {formHeader} */}
-            <button onClick={this.checkField} >Demo User Login</button>
+            <button onClick={this.demoUserLogin} >Demo User Login</button>
             <br/>
             <br/>
             <h2>---------------------or--------------------</h2>
