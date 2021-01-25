@@ -123,7 +123,13 @@ class SessionForm extends React.Component {
         return (
             <div className="form-container">
               {/* {formHeader} */}
+            <button onClick={this.checkField} >Demo User Login</button>
+            <br/>
+            <br/>
+            <h2>---------------------or--------------------</h2>
+            <br/>
             <form onSubmit={this.handleSubmitSignIn} className="login-form-box">
+
               {/* <br/> */}
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {this.state.warnings}

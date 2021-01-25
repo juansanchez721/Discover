@@ -3,16 +3,28 @@ import Header from '../greeting/greeting_container'
 import SplashPageBottom from '../restofsplashpage'
 import SearchBar from '../search/searchbar'
 import ImageCarousel from './image_carousel'
-const SplashPage = () => {
 
-    return (
-        <div className="splash-page">
+class SplashPage extends React.Component {
+
+    constructor(props){
+        super(props)
+    }
+
+    componentWillUnmount(){
+        this.props.fetchTracks()
+    }
+
+    render() {
+
+        return (
+            <div className="splash-page">
             {/* <Header/> */}
             <ImageCarousel/>
             <SearchBar/>
             <SplashPageBottom/>
         </div>
     )
+}
 
 }
 

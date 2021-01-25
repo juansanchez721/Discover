@@ -1,12 +1,24 @@
 import React from 'react'
 
 
-const DiscoverPage = () => {
+class DiscoverPage extends React.Component {
 
+    constructor(props) {
+        debugger
+        super(props)
+    }
 
-    return (
-        <h1 className="discoverpage"></h1>
-    )
+    
+    render(){
+        let tracks = this.props.tracks
+
+        return (
+            <div  className="discoverpage" >
+            <h1>Discover here</h1>
+                {tracks}
+            </div>
+            )
+        }
 }
 
 
