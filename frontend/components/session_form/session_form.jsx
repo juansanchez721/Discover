@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
           console.log("age warning")
           this.setState({ warnings: " AGE WARNING"})
         } else if (this.state.page === 2 && this.state.gender === ""){
-          console.log("age warning")
+          console.log("gender warning")
           this.setState({ warnings: " Gender WARNING"})
         } else if (this.state.page === 3 && this.state.username === ""){
           console.log("username warning")
@@ -196,7 +196,7 @@ class SessionForm extends React.Component {
                 </label>
                 
                 <br/>
-                <button onClick={() =>this.checkField} >{this.props.formType}</button>
+                <button onClick={this.checkField} >{this.props.formType}</button>
 
                   {/* <button onClick={this.changePage} >continue</button> */}
                 {/* <input className="form-inputs" type="submit" value={this.props.formType} /> */}
@@ -307,7 +307,7 @@ class SessionForm extends React.Component {
                      value={this.state.username}
                      onChange={this.update('username')}
                    />
-                <button onClick={() =>this.checkField} >{this.props.formType}</button>
+                <button onClick={this.checkField} >{this.props.formType}</button>
 
             {/* <input className="form-inputs" type="submit" value={this.props.formType} /> */}
 

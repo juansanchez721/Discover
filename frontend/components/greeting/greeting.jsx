@@ -18,7 +18,7 @@ const Header = (props) => {
           <h1 className="fixedh1">Upgrade</h1>
           <h1 className="fixedh1">Upgrade</h1>
           <h1 className="fixedh1">Upload</h1>
-          <h1 className="fixedh1">{props.currentUser.username}!</h1> 
+          <h1 className="username">{props.currentUser.username}</h1> 
           {/* <h1>Placeholder</h1> */}
 
           {/* </div> */}

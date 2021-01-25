@@ -15,10 +15,21 @@ const SplashPageBottom = () => {
                 <h1>Never Stop Listening</h1>
                 <br/>
                 <p>SoundCloud is available on Web, iOS, Android, Sonos, Chromecast, and Xbox One.</p>
+                    <br/>
+                <p>We don't have a mobile app yet - hopefully soon!</p>
                 </div>
             </div>
             <div className="second-row">
+                    <div>
 
+                    <img  src="https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg" className="callingcreators" />
+
+                    </div>
+                    {/* <div className="absdiv"> */}
+
+                    {/* <h1>Calling all Creators</h1> */}
+
+                    {/* </div> */}
             </div>
             <div className="last-row">
                 <div className="bottom-info">
@@ -26,6 +37,7 @@ const SplashPageBottom = () => {
                     <br/>
                     <h2>Save tracks, follow artists and build playlists. All for free.</h2>
                     <br/>
+                  
                     <button className="orangebutton">Create Account</button>
                 </div>
             </div>
