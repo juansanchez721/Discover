@@ -284,7 +284,7 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmitSignUp} className="login-form-box">
             {this.state.warnings}
 
-            {this.props.errors[0]}
+            {/* {this.props.errors[0]} */}
 
                    <input type="text"
                    className="form-inputs"
