@@ -10,9 +10,9 @@ class SplashPage extends React.Component {
         super(props)
     }
 
-    componentWillUnmount(){
-        this.props.fetchTracks()
-    }
+    // componentWillUnmount(){
+    //     this.props.fetchTracks()
+    // }
 
     render() {
 

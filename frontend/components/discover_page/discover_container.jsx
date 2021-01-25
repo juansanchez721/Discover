@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 import DiscoverPage from './discover_page'
 import {fetchTracks} from '../../actions/track_actions'
-
+import {asArray} from '../../reducers/selector'
 const mstp = (state) => {
     debugger
     return {
-        tracks: state.tracks
+        tracks: asArray(state.entities)
     }
 }
 
-const mdtp = () => {
+const mdtp = dispatch => {
     return {
         fetchTracks: () => dispatch(fetchTracks())
     }
