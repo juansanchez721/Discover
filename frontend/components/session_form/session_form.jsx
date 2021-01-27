@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
 
 
       checkField() {
-        this.props.clearErrors();
+        // this.props.clearErrors();
         debugger
         this.setState({warnings: ""})
         if (this.state.page === 0 && this.state.email < 3) {

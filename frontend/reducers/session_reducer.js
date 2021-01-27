@@ -14,7 +14,7 @@ const sessionReducer = (oldstate = defaultArg, action) => {
         case LOGOUT_CURRENT_USER:
             return defaultArg
         case RECEIVE_EMAIL_RESPONSE:
-            return []
+            return defaultArg
         default:
             return oldstate
     }

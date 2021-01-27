@@ -15,6 +15,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch, ownProps) => {
+    debugger
     return {
         clearErrors: () => dispatch(clearErrors()),
         processForm: user => dispatch(signUp(user)),
