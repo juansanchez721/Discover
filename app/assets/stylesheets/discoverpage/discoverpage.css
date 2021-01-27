@@ -1,0 +1,15 @@
+.discoverpage {
+    height: 1000px;
+    width: auto;
+    padding-top: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+  }
+  .discover-page-item {
+    width: 400px;
+}
+
+.discover-page-item img {
+    width: 75%;
+}

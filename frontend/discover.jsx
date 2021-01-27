@@ -2,8 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import configureStore from "./store/store"
 import Root from './components/root'
-import {signUp, login, logout} from './actions/session_actions'
-
+import {signUp, login, logout, searchEmail} from './actions/session_actions'
+// import { searchEmail } from './util/session_api_util'
 import {fetchTracks} from './actions/track_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     // const store = configureStore();
+    window.searchEmail = searchEmail;
     
     window.getState = store.getState
     window.dispatch = store.dispatch

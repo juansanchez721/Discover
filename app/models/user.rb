@@ -36,4 +36,8 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    def self.search(word)
+            User.exists?(email: word)
+    end
+
 end

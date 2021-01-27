@@ -2,7 +2,7 @@
 
 export const signUp = (user) => {
     return $.ajax({
-            type: 'POST',
+            method: 'POST',
             url: '/api/users',
             data: { user }
     })
@@ -19,7 +19,14 @@ export const login = (user) => {
 
 export const logout = () => {
     return $.ajax({
-        type: 'DELETE',
+        method: 'DELETE',
         url: '/api/session'
+    })
+}
+
+export const searchEmail = (word) => {
+    return $.ajax({
+        method:'GET',
+        url: `/api/email/search?word=${word}`
     })
 }

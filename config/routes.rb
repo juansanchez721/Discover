@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       resources :tracks, only: [:show, :index]
       resource :session, only: [:create, :destroy]
+      
+      get '/email/search', to: 'sessions#search'
+
   end
 
 

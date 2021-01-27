@@ -1,5 +1,5 @@
 import React from 'react'
-
+import DiscoverPageItem from './discover_page_item'
 
 class DiscoverPage extends React.Component {
 
@@ -17,12 +17,8 @@ class DiscoverPage extends React.Component {
     
     render(){
         let tracks = this.props.tracks.map(track => (
-            <div>
-                <h1> {track.title} </h1>  
-                <h1> {track.owner_id} </h1> 
-                <img src={track.image_url} /> 
+                    <DiscoverPageItem key={track.id} track={track}/> 
 
-            </div>
         ))
         debugger
         return (
