@@ -136,8 +136,9 @@ table {
  }
 
  .splashpage-button1{
+   color: black;
    background-color: transparent;
-   border: 1px solid white;
+   border: 1px solid black;
  }
 .splashpage-buttons {
     /* background: black; */
@@ -335,10 +336,10 @@ table {
 }
 
 .first-row {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   /* background-color: red; */
   padding-top: 50px;
-  /* height: inherit; */
+  max-height: 400px;
   display: flex;
   justify-content: space-around;
   /* position: relative; */
@@ -348,7 +349,7 @@ table {
   /* padding-top: 30px; */
   width: 80%;
   margin-left: 50px;
-  /* background-color: red; */
+  /* background-color: blue; */
 }
 
 .firstrow-img img {
@@ -432,11 +433,11 @@ table {
 }
 
 .orangebutton {
-  padding: 5px 17px;
+  padding: 22px 17px;
   /* margin:0em; */
   font-size:15px;
   font-weight: 100;
-  line-height: 18px;
+  line-height: 2px;
   /* width: 100%; */
   border-radius: 3px;
   border: none;

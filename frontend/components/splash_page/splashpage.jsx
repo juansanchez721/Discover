@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../greeting/greeting_container'
-import SplashPageBottom from '../restofsplashpage'
+import SplashPageBottom from './restofsplashpage'
 import SearchBar from '../search/searchbar'
 import ImageCarousel from './image_carousel'
 
@@ -8,6 +8,7 @@ class SplashPage extends React.Component {
 
     constructor(props){
         super(props)
+        debugger
     }
 
     // componentWillUnmount(){
@@ -20,8 +21,8 @@ class SplashPage extends React.Component {
             <div className="splash-page">
             {/* <Header/> */}
             <ImageCarousel/>
-            <SearchBar/>
-            <SplashPageBottom/>
+            <SearchBar props={this.props}/>
+            <SplashPageBottom props={this.props} />
         </div>
     )
 }

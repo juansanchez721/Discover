@@ -2,8 +2,8 @@ import React from 'react'
 
 
 
-const SplashPageBottom = () => {
-
+const SplashPageBottom = (props) => {
+    debugger
     return (
         <div className="splashpage-bottom">
             {/* <h1>Rest of splash page</h1> */}
@@ -38,7 +38,7 @@ const SplashPageBottom = () => {
                     <h2>Save tracks, follow artists and build playlists. All for free.</h2>
                     <br/>
                   
-                    <button className="orangebutton">Create Account</button>
+                    <button className="orangebutton" onClick={() => props.props.openModal('signup')} >Create Account</button>
                 </div>
             </div>
         </div>

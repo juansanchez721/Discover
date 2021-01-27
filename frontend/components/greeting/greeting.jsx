@@ -22,7 +22,7 @@ const Header = (props) => {
           {/* <h1>Placeholder</h1> */}
 
           {/* </div> */}
-          <h1 className="fixedh1" onClick={props.logout}>***</h1>
+          <h1 className="fixedh1" onClick={props.logout}>Log Out</h1>
           <br/>
       </div>
     </nav>

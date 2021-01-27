@@ -3,7 +3,7 @@ import React from 'react'
 
 
 const SearchBar = (props) => {
-
+        debugger
         if (props.currentUser) {
 
             return (
@@ -26,7 +26,7 @@ const SearchBar = (props) => {
             </div>
             <div className="or-upload" >
                 <p>or</p>
-                <button className="orangebutton"> Upload your own</button>
+                <button className="orangebutton"onClick={() => props.props.openModal('signup')}> Upload your own</button>
             </div>
             </div>
         </div>

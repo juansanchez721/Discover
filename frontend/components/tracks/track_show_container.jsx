@@ -1,4 +1,4 @@
-
+import { connect } from 'react-redux'
 
 
 
@@ -17,4 +17,4 @@ const mDTP = (dispatch) => {
 }
 
 
-export const connect(mSTP, mDTP)(TrackShow)
+export default connect(mSTP, mDTP)(TrackShow)
