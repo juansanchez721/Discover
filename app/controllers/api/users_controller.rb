@@ -6,11 +6,16 @@ class Api::UsersController < ApplicationController
             if @user.save
                 # debugger 
                 login(@user)
-                render "api/users/show"
+                # render "api/users/show"
             else
                 # debugger
                 render json: @user.errors.full_messages, status: 422
             end
+        end
+
+        def show 
+            @user = User.find(params[:id])
+            render :show
         end
         
 
