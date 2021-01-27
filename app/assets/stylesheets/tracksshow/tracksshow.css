@@ -1,0 +1,55 @@
+.show-full-page{
+    padding-top: 55px;
+    background-color: lawngreen;
+    height: 600px;
+}
+.track-show {
+    background-color: blue;
+    /* height:600px; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info-playbar{
+    width: 90%;
+    min-width: 550px;
+    max-width: 650px;
+    background-color: purple;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-text {
+    background-color: royalblue;
+    width: 400px;
+}
+
+.audio-player-holder {
+    background-color: rosybrown;
+}
+
+.track-show {
+    /* background-color: red; */
+    /* height: 300px; */
+    width: 100%
+}
+
+.show-image{
+    height: 400px;
+    width: 400px;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.show-image img {
+    /* opacity: .1; */
+    height: 350px;
+    width: 350px; 
+
+}

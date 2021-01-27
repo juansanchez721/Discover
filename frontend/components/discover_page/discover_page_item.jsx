@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from 'react-router-dom'
 
 const DiscoverPageItem = (props) => {
 
@@ -14,6 +14,7 @@ const DiscoverPageItem = (props) => {
                         Your browser does not support the
                             {/* <code>audio</code> element. */}
                         </audio>
+                        <Link to={`/tracks/${props.track.id}`}>Track show page</Link>
             </div>
     )
 }

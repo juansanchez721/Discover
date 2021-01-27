@@ -1,3 +1,3 @@
-json.bench do
-json.partial! "api/tracks/track", track: @track
-end
+json.set! @track.id do
+    json.partial! "api/tracks/track", track: @track
+  end

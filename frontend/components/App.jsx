@@ -7,7 +7,7 @@ import Modal from './modal/modal'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashPageContainer from './splash_page/splashpage_container'
 import DiscoverContainer from "./discover_page/discover_container";
-
+import TrackShowContainer from './tracks/track_show_container'
 const App = () => (
   <div className="app">
     <div className="innerapp">
@@ -19,9 +19,10 @@ const App = () => (
         <AuthRoute exact path="/" component={SplashPageContainer}/>
         {/* <AuthRoute exact path="/signup" component={SignUpFormContainer}/> 
         <AuthRoute exact path="/login" component={LogInFormContainer}/>  */}
-        {/* <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/> */}
+        <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/>
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
     </Switch>
+    
     </div>
   </div>
 );
