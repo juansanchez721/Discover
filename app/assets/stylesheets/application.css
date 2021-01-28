@@ -174,9 +174,11 @@ table {
 }
 
 .loggedin-nav{
-  position: absolute;
+  position: fixed;
   background-color: #333333;
   width:100%;
+  display: flex;
+  justify-content: center;
   
   /* padding-top: 15px; */
   /* height: 40px; */
@@ -227,20 +229,29 @@ table {
 }
 .loggedin-user .logo {
   width: 60px;
+  background-color: #FE5000;
   /* padding-top: 10px; */
   /* font-size: 25px; */
 }
 
+.text-link {
+  color:white;
+  text-decoration: none;
+}
+
 .loggedin-user{
-  width: 100%;
-  /* background-color: chartreuse; */
+  width: 80%;
+  min-width: 950px;
+  max-width: 1250px;
     display:flex;
     justify-content: space-between;
     /* display: inline; */
 }
 
 .nav-bar {
-  width: 100%;
+  width: 80%;
+  min-width: 950px;
+  max-width: 1250px;
   position: absolute;
   height: 30px;
   padding-top: 20px;
@@ -274,7 +285,7 @@ table {
   width: 80%;
   min-width: 950px;
   max-width: 1250px;
-  position: relative;
+  /* position: relative; */
 }
 
 

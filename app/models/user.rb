@@ -7,6 +7,13 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
+    has_many :tracks,
+    foreign_key: :owner_id,
+    class_name: :Track,
+    dependent: :destroy
+
+    has_one_attached :photo
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)

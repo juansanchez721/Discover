@@ -8,18 +8,21 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashPageContainer from './splash_page/splashpage_container'
 import DiscoverContainer from "./discover_page/discover_container";
 import TrackShowContainer from './tracks/track_show_container'
+import ProfileContainer from '../components/users/profile_container'
+
 const App = () => (
   <div className="app">
+        <Header/>
     <div className="innerapp">
 
       <Modal/>
-        <Header/>
     {/* <SplashPage /> */}
     <Switch>
         <AuthRoute exact path="/" component={SplashPageContainer}/>
         {/* <AuthRoute exact path="/signup" component={SignUpFormContainer}/> 
         <AuthRoute exact path="/login" component={LogInFormContainer}/>  */}
         <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/>
+        <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
     </Switch>
     

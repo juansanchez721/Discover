@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from '../search/searchbar'
 import SearchBarContainer from '../search/search-container'
+import {Link} from 'react-router-dom'
 const Header = (props) => {
 
     const userLoggedIn = () => (
@@ -10,20 +11,20 @@ const Header = (props) => {
 
             </div> */}
       <div className="loggedin-user">
-            <h1 className="logo" >DO</h1>
+                 <h1 className="logo" >
+            <Link to="/discover" className='text-link'>
+                     DO 
+            </Link> 
+                     </h1>
             <h1 >Home</h1>
             <h1 >Stream</h1>
           <h1>Library</h1>
           <SearchBarContainer/>
           <h1 className="fixedh1">Upgrade</h1>
-          <h1 className="fixedh1">Upgrade</h1>
           <h1 className="fixedh1">Upload</h1>
           <h1 className="username">{props.currentUser.username}</h1> 
-          {/* <h1>Placeholder</h1> */}
 
-          {/* </div> */}
           <h1 className="fixedh1" onClick={props.logout}>Log Out</h1>
-          <br/>
       </div>
     </nav>
     )
