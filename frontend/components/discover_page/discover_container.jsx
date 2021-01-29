@@ -8,7 +8,7 @@ const mstp = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
         tracks: asArray(state.entities),
-        users: asArrayUsers(state.entities)
+        users: asArrayUsers(state.entities).slice(0,6)
     }
 }
 

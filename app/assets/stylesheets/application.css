@@ -45,6 +45,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+button{
+  cursor: pointer;
+}
 body {
   line-height: 1;
   background-color: #f2f2f2;
