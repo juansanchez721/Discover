@@ -1,10 +1,11 @@
 .discoverpage {
-    height: 1000px;
+    /* height: 1000px; */
     width: auto;
     padding-top: 100px;
     background-color: white;
     display: flex;
-    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 10%;
   }
   .discover-page-item {
     width: 250px;
@@ -14,6 +15,13 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    text-overflow: ellipsis;
+
+}
+
+.discover-page-headers {
+  font-size: 32px;
+  margin-bottom: 35px;
 }
 
 .discover-page-item img {
@@ -57,11 +65,13 @@
 }
 
 .rows-of-music {
-  display: flex;
-  width: 80%;
-  flex-direction: column;
+  /* background-color: red; */
+  /* display: flex; */
+  padding-top: 100px;
+  width: 70%;
+  /* flex-direction: column; */
   outline: none;
-  
+  float: left;
 }
 
 audio:focus {
@@ -91,4 +101,67 @@ audio:focus {
   /* height: 5px; */
 
   background: #555; 
+}
+
+
+.user-links{
+
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  right: 400px;
+  top:45px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: black;
+  border-left: black;
+
+
+}
+
+.links-header {
+  padding: 60px 0 10px 0;
+}
+
+
+.user-link {
+  /* height: 30px; */
+  /* width:75%; */
+  /* display: flex;
+  justify-content: space-around; */
+  /* background-color:blue; */
+  padding: 3px;
+  border-bottom: 1px solid lightgray;
+
+}
+
+
+.circle-maker {
+  /* background-color: purple; */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-container {
+  /* width: 30px; */
+  margin-left: 5px;
+  /* background-color: pink; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  overflow: hidden;
+}
+
+.icon-container h1 {
+  margin-left: 10px;
+}
+
+.link {
+  color:black;
+  text-decoration: none;
 }

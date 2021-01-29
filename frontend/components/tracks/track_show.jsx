@@ -6,6 +6,7 @@ class TrackShow extends React.Component {
         super(props)
     }
     componentDidMount(){
+        this.props.fetchUser(this.props.song.owner_id)
         this.props.fetchTrack(this.props.songId)
     }
 

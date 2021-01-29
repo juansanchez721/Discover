@@ -1,55 +1,104 @@
 .uploadform-page {
     padding-top: 100px;
-    height: 700px;
-    background-color: blueviolet;
+    height: 800px;
+    background-color: white;
     display: flex;
     justify-content: center;
 }
 
-.actual-form {
-    background-color: brown;
+.actual-form{
+    
     width:500px;
-    height: 400px
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* border-radius: 20px; */
+    border: .01px solid lightgray;
+
 }
 
 .file-input {
     background-color: burlywood;
-    height: 300px;
-    width: 100%;
+    opacity: 0.001;
+     height: 100%;
+     cursor: pointer;
+    /*width: 100%;
+    display: flex;
+    justify-content: center; */
 }
 
+
+
 .additional-info {
-    background-color: red;
-    width: 50%;
+    /* background-color: red; */
+    width: 60%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 }
 
 .additional-info input {
-    width: 100px;
-    margin: 10px;
+    width: 90%;
+    margin: 10px 0;
+    border-radius: 3px;
+    border: .5px solid lightgray;
+    padding: 5px;
 }
 
 .additional-info textarea{
-    width: 200px;
+    width: 90%;
     height:100px;
+    margin: 10px 0;
+    border: .5px solid lightgray;
+    border-radius: 3px;
+
+}
+
+.additional-info button{
+    width: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #FE5000;
+    color: white;
+    padding: 6px 5px;
+    float: right;
 }
 
 .image-half{
-    width: 50%;
-    height: 100%;
-    background-color: royalblue;
+    width: 40%;
+    /* height: 100%; */
+    /* background-color: royalblue; */
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+}
+
+.image-half img {
+    width: 300px;
+    height: 300px;
 }
 
 .second-page-form {
-    background-color: springgreen;
-    width: 400px;
-    height: 400px;
+    /* background-color: springgreen; */
+    width: 800px;
+    height: 700px;
     display: flex;
     justify-content: center;
+    border: .01px solid lightgray;
+
 }
 
 .form-header {
-    background-color: red;
+    /* background-color: red; */
+    padding-top: 10px;
     width: 100%
+}
+
+
+.success-page {
+    background-color: red;
+    width: 100%;
+    height: 600px;
 }

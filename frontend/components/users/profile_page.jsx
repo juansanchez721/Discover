@@ -12,8 +12,8 @@ class ProfilePage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.userId);
         this.props.fetchSingleUserTracks(this.userId)
+        this.props.fetchUser(this.userId);
         debugger
     }
 
@@ -26,7 +26,7 @@ class ProfilePage extends React.Component {
 
 
         let tracks = Object.values(this.props.tracks).map(track => (
-            <ProfileTrackItem key={track.id}track={track}/>
+            <ProfileTrackItem key={track.id} user={this.props.user} track={track}/>
         ))
 
         return(

@@ -181,7 +181,7 @@ table {
   justify-content: center;
   
   /* padding-top: 15px; */
-  /* height: 40px; */
+  height: 45px;
 }
 
 .nav-search {
@@ -219,7 +219,9 @@ table {
 .loggedin-user .fixedh1, .username{
   background-color: transparent;
   width: 60px;
-  bordeR: none;
+  border: none;
+  text-overflow: ellipsis;
+
 }
 
 .username {
@@ -459,4 +461,10 @@ table {
   /* text-indent: 0px; */
   /* font: 400 13.3333px Arial; */
   /* font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;; */
+}
+
+.logopic {
+  height: 99%;
+  background-color: #FE5000;
+  padding: 0 15px;
 }

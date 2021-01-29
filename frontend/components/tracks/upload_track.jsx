@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 class UploadForm extends React.Component {
 
@@ -94,7 +94,7 @@ class UploadForm extends React.Component {
             return(
                 <div className="uploadform-page">
                 <div className="actual-form">
-                <h1 className="form-header" >UPLOAD FORM</h1>
+                <h1 className="form-header" >Click here, or drag your file here to upload.</h1>
 
                     <input type="file" 
                     className="file-input" 
@@ -107,6 +107,18 @@ class UploadForm extends React.Component {
             </div>
         )
     }     else if (this.state.page === 1){
+        let preview;
+        let inp;
+        {if(this.state.imageUrl){
+            preview = <img src={this.state.imageUrl} height="200" alt="Image preview..."/>
+            inp=null;
+        } else {
+            preview = null;
+            inp = <input type="file" onChange={this.previewFile}/>
+
+        } 
+    }     
+
           return (
 
             <div className="uploadform-page">
@@ -114,24 +126,24 @@ class UploadForm extends React.Component {
             <div className="second-page-form">
                 {/* <h1 className="form-header">enter additional info</h1> */}
                 <div className="image-half">
-
-                    <input type="file" onChange={this.previewFile}/>
+                    {preview}
+                    {inp}
                         <br/>
-                    <img src={this.state.imageUrl} height="200" alt="Image preview..."/>
+                   
                 
                 </div>
                 <div className="additional-info">
 
                 <label>Title:</label>
-                <input type= "text" value={this.state.title} onChange={this.update('title')}/>
-                
+                <input type= "text" value={this.state.title} onChange={this.update('title')} required/>
+                    <br/>
                 <label>Genre</label>
                 <input type= "text" value={this.state.genre} onChange={this.update('genre')}/>
-                
+                <br/>
                 <label>Description</label>
                 <textarea value={this.state.description} onChange={this.update('description')}/>
             
-                <button onClick={this.handleSubmit} >submit song</button>
+                <button onClick={this.handleSubmit} >Save</button>
             </div>
 
             </div>
@@ -142,7 +154,12 @@ class UploadForm extends React.Component {
     }   else if (this.state.page === 2){
 
         return (
-            <h1>yes you submitted</h1>
+            <div className="uploadform-page" >
+                <div className="success-page" >
+                        <h1>Thank you for sharing your sounds.</h1>
+                        <h1>You can view your song <Link to={`/users/${this.props.currentUser.id}`} >here.</Link></h1>
+                </div>
+            </div>
         )
     }
 

@@ -1,20 +1,27 @@
 .show-full-page{
     padding-top: 55px;
-    background-color: lawngreen;
+    /* background-color: lawngreen; */
     height: 600px;
 }
 .track-show {
-    background-color: blue;
+    background-color: #f2f2f2;
     /* height:600px; */
     display: flex;
     justify-content: space-evenly;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+
+    
+    
+
 }
 
 .info-playbar{
     width: 90%;
     min-width: 550px;
     max-width: 650px;
-    background-color: purple;
+    /* background-color: purple; */
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -22,12 +29,25 @@
 }
 
 .info-text {
-    background-color: royalblue;
-    width: 400px;
+    /* background-color: royalblue; */
+    height: 50%;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 25px;
 }
 
 .audio-player-holder {
-    background-color: rosybrown;
+    background-color: #f2f2f2;
+    /* height: 50%; */
+    width: 100%;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    margin-top: 200px;
+}
+
+audio{
+    width: 75%;
 }
 
 .track-show {

@@ -11,11 +11,11 @@ const Header = (props) => {
 
             </div> */}
       <div className="loggedin-user">
-                 <h1 className="logo" >
+                 {/* <h1 className="logo" > */}
             <Link to="/discover" className='text-link'>
-                     DO 
+            <img className="logopic" src="https://img.icons8.com/ios/50/ffffff/cloud.png"/>
             </Link> 
-                     </h1>
+                     {/* </h1> */}
             <h1 >Home</h1>
             <h1 >Stream</h1>
           <h1>Library</h1>

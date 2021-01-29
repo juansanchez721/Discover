@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import  TrackShow from './track_show'
 import { selectTrack } from '../../reducers/selector';
 import { fetchTrack } from '../../actions/track_actions'
+import { fetchUser } from '../../actions/user_actions'
 
 
 
@@ -19,6 +20,7 @@ const mSTP = (state, { match }) => {
 
 const mDTP = (dispatch) => {
     return {
+        fetchUser: userId => dispatch(fetchUser(userId)),
         fetchTrack: trackId => dispatch(fetchTrack(trackId))
     }
 }
