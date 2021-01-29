@@ -1,11 +1,11 @@
 .discoverpage {
     /* height: 1000px; */
     width: auto;
-    padding-top: 100px;
+    /* padding-top: 100px; */
     background-color: white;
     display: flex;
     align-items: flex-start;
-    padding: 0 10%;
+    padding: 0 10% 200px 10%;
   }
   .discover-page-item {
     width: 250px;

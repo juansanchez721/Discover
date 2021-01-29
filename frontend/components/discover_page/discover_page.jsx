@@ -86,7 +86,7 @@ class DiscoverPage extends React.Component {
                 <h1 className="discover-page-headers">Try something new</h1>
                 <div className="showing-songs">
                         <div className="inner-showing">
-                             {tracksthird}
+                             {tracksfourth}
                         </div>
                 </div>
                 </div>

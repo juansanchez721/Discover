@@ -41,7 +41,7 @@ rara.track.attach(io: rara_song, filename: "RaRa+ft.+Lil+Uzi+Vert.mp3")
 
 stargazing = Track.create!(title: "STARGAZING", owner_id: travis.id, description: "ASTROWORLD")
 stargazing_photo = open('https://discover-aa-seeds.s3.amazonaws.com/astro.jpg')
-stargazing.photo.attach(io: stargazing_photo, filename: 'rara.jpg')
+stargazing.photo.attach(io: stargazing_photo, filename: 'astro.jpg')
 stargazing_song = open("https://discover-aa-seeds.s3.amazonaws.com/STARGAZING.mp3")
 stargazing.track.attach(io: stargazing_song, filename: "STARGAZING.mp3")
 
