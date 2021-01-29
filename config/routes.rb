@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api, defaults: {format: :json} do 
-      resources :users, only: [:create, :show]
-      resources :tracks, only: [:show, :index]
+      resources :users, only: [:create, :show] do 
+          resources :tracks, only: [:index]
+      end
+
+      resources :tracks, only: [:show, :index, :create]
       resource :session, only: [:create, :destroy]
       
       get '/email/search', to: 'sessions#search'

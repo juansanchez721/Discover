@@ -11,12 +11,24 @@ const receiveTrack = (track) => ({
     type: RECEIVE_TRACK,
     track
 })
+
 export const fetchTracks = () => dispatch => (
     TrackUtil.fetchTracks().then(tracks => dispatch(receiveTracks(tracks))
     ))
+
+export const fetchSingleUserTracks = (userId) => dispatch => (
+      TrackUtil.fetchSingleUserTracks(userId)
+      .then(tracks => dispatch(receiveTracks(tracks))
+  ))
+
 
     export const fetchTrack = id => dispatch => (
         TrackUtil.fetchTrack(id).then(track => (
           dispatch(receiveTrack(track))
         ))
       );
+
+      export const createTrack = track => dispatch => {
+        return TrackUtil.createTrack(track)
+        .then(track => dispatch(receiveTrack(track)))
+      }

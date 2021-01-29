@@ -21,8 +21,19 @@ const Header = (props) => {
           <h1>Library</h1>
           <SearchBarContainer/>
           <h1 className="fixedh1">Upgrade</h1>
-          <h1 className="fixedh1">Upload</h1>
-          <h1 className="username">{props.currentUser.username}</h1> 
+            
+          <h1 className="fixedh1">
+            <Link to="/tracks/upload" className='text-link'>
+              Upload
+            </Link> 
+          </h1> 
+          
+            <h1 className="username">
+            <Link to={`/users/${props.currentUser.id}`} className='text-link'>
+              {props.currentUser.username} 
+            </Link> 
+              
+            </h1> 
 
           <h1 className="fixedh1" onClick={props.logout}>Log Out</h1>
       </div>

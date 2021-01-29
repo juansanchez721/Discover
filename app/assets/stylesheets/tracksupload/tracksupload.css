@@ -1,0 +1,55 @@
+.uploadform-page {
+    padding-top: 100px;
+    height: 700px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+}
+
+.actual-form {
+    background-color: brown;
+    width:500px;
+    height: 400px
+}
+
+.file-input {
+    background-color: burlywood;
+    height: 300px;
+    width: 100%;
+}
+
+.additional-info {
+    background-color: red;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info input {
+    width: 100px;
+    margin: 10px;
+}
+
+.additional-info textarea{
+    width: 200px;
+    height:100px;
+}
+
+.image-half{
+    width: 50%;
+    height: 100%;
+    background-color: royalblue;
+}
+
+.second-page-form {
+    background-color: springgreen;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-header {
+    background-color: red;
+    width: 100%
+}

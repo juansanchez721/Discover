@@ -23,12 +23,31 @@ class DiscoverPage extends React.Component {
         debugger
         return (
             <div  className="discoverpage" >
-            <h1>Discover here</h1>
-            <h1>Here:
-                
-                </h1>
-                {tracks}
-            </div>
+            {/* <h1>Discover here</h1>
+            <h1>Here:</h1> */}
+            <div className="rows-of-music">
+
+                <div className="showing-songs">
+                        <div className="inner-showing">
+                             {tracks}
+                        </div>
+                </div>
+                <br/>
+                <br/>
+                <div className="showing-songs">
+                        <div className="inner-showing">
+                             {tracks}
+                        </div>
+                </div>
+                <br/>
+                <br/>
+                <div className="showing-songs">
+                        <div className="inner-showing">
+                             {tracks}
+                        </div>
+                </div>
+                </div>
+             </div>
             )
         }
 }

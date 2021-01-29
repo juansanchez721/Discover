@@ -9,7 +9,8 @@ import SplashPageContainer from './splash_page/splashpage_container'
 import DiscoverContainer from "./discover_page/discover_container";
 import TrackShowContainer from './tracks/track_show_container'
 import ProfileContainer from '../components/users/profile_container'
-
+import UploadTrackContainer from '../components/tracks/upload_track_container'
+import Playbar from './playbar/play_bar'
 const App = () => (
   <div className="app">
         <Header/>
@@ -21,12 +22,16 @@ const App = () => (
         <AuthRoute exact path="/" component={SplashPageContainer}/>
         {/* <AuthRoute exact path="/signup" component={SignUpFormContainer}/> 
         <AuthRoute exact path="/login" component={LogInFormContainer}/>  */}
+        <ProtectedRoute exact path="/tracks/upload" component={UploadTrackContainer}/>
+
         <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/>
         <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
+        {/* <ProtectedRoute exact path="/users/:userId/tracks" component={ProfileContainer}/> */}
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
     </Switch>
     
     </div>
+    <Playbar/>
   </div>
 );
 

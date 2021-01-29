@@ -7,9 +7,52 @@
     justify-content: space-around;
   }
   .discover-page-item {
-    width: 400px;
+    width: 300px;
+    margin-left: 10px;
+    /* display: inline-block; */
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .discover-page-item img {
     width: 75%;
+}
+
+.showing-songs {
+  width: 100%;
+  height: 350px;
+  /* background-color: blue; */
+  overflow: hidden;
+}
+
+.inner-showing {
+  /* width: 1500px; */
+  height: inherit;
+  background-color: yellow;
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.inner-showing span {
+  /* width: 200px;
+  height: 200px; */
+  /* background-color: red; */
+  /* margin-top: 40px; */
+  /* margin-left: 10px;
+  display: inline-block; */
+  /* text-align: center; */
+}
+
+.playbutton{
+  background-color:brown;
+}
+
+.rows-of-music {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
 }
