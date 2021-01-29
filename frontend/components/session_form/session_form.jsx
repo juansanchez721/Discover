@@ -134,12 +134,12 @@ class SessionForm extends React.Component {
         //   this.handleSubmitSignIn()
          else if (this.state.page === 2 && this.state.age < 18 && this.state.gender === ""){
 
-          this.setState({ warnings: " AGE and Gender WARNING"})
+          this.setState({ warnings: " Please enter a valid age and gender."})
         } else if (this.state.page === 2 && this.state.age < 18 ){
-          console.log("age warning")
-          this.setState({ warnings: " AGE WARNING"})
+          console.log("You must be 18 years or older.")
+          this.setState({ warnings: " You must be 18 years or older."})
         } else if (this.state.page === 2 && this.state.gender === ""){
-          console.log("gender warning")
+          console.log("Please choose a gender.")
           this.setState({ warnings: " Please choose a gender."})
         } else if (this.state.page === 3 && this.state.username === ""){
           console.log("username warning")

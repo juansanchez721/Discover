@@ -36,7 +36,7 @@ class ProfilePage extends React.Component {
                     <div className="image-container">
                         
                         <div className="circle-holder">
-                        <img className="profile-default" src={this.props.user.image_url}/>
+                        <img className="profile-default" src={this.props.user.image_url ? this.props.user.image_url : "https://lh3.googleusercontent.com/proxy/5YdGFyIdcsJgjT6EL0qIO2ftEVZWyZ12YxZAypqv5itH4_BDsbyjRNeeRs4FsV2GGzFmxjgJxeK0Eb5fdQ1P29WG4H4S4dowJjPkBwNzFZXb5mzRhuevdGhFqWNhSNq0PHi4JApgrOt1F0LPTG6MQudkFQ"}/>
                         </div>
                     
                     </div>
