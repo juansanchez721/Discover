@@ -8,16 +8,19 @@ const DiscoverPageItem = (props) => {
             <div className="discover-page-item" >
 
              
-                <img src={props.track.image_url} /> 
+                        <Link to={`/tracks/${props.track.id}`}>
+
+                        <img src={props.track.image_url} /> 
+
+                        </Link>
                 <audio className="playbutton"
                     controls
                     src={props.track.track_url}>
                         Your browser does not support the
                             {/* <code>audio</code> element. */}
                         </audio>
-                        <Link to={`/tracks/${props.track.id}`}>Track show page</Link>
                         <h1> {props.track.title} </h1>  
-                        <h1> {props.track.owner_id} </h1>
+                        {/* <h1> {props.track.owner_id} </h1> */}
                         
                         </div>
             
