@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
         password: "",
         gender: "",
         age: 18,
+        warnings: "",
         page: 0
       };
       this.changePage = this.changePage.bind(this)
@@ -39,40 +40,14 @@ class SessionForm extends React.Component {
 
     handleEmail(){
       debugger
-      this.props.clearErrors();
-
-      // if (this.state.email < 0) {
-
-        this.props.validateEmail(this.state.email)
-        if(this.props.errors[0] !== "email available"){
-          this.props.clearErrors()
-          this.setState({ warnings: "please enter a valid email"})
-          this.setState({ page: this.state.page})
-        } else {
-          // this.setState({ page: this.state.page+1})
-          this.checkField()
-        }
-      // } else {
-      //   this.setState({warnings: "Please enter a valid email."})
-      // }
-      
-      debugger
-      }
-
-      // handleSignInEmail(){
-      //   this.props.clearErrors()
-      //   this.props.validateEmail(this.state.email)
-      //   if(this.props.errors[0] === "email available"){
-      //     this.setState({ page: this.state.page+1})
-      //     // this.setState({ warnings: this.props.errors})
-      //   } else {
-      //     this.setState({ page: this.state.page})
-  
-      //   }
-
-      // }
-
-
+      console.log(this.state.warnings)
+      this.props.validateEmail(this.state.email)
+     
+      setTimeout(() =>  this.setState({ warnings: this.props.errors[0]}), 50);
+      setTimeout(()=> console.log(this.state.warnings), 100);
+      setTimeout(()=> this.checkField(), 150);
+    }
+    
     handleSubmitSignIn(e) {
         e.preventDefault();
         // const user = Object.assign({}, this.state);
@@ -107,48 +82,51 @@ class SessionForm extends React.Component {
         });
       }
 
-      componentWillMount(){
-        this.props.clearErrors();
-      }
-
-
       checkField() {
         // this.props.clearErrors();
-        debugger
-        this.setState({warnings: ""})
+        // debugger
+        // this.setState({warnings: ""})
+
+        if(this.state.warnings === "Email Available") {
+          this.changePage();
+        }
+
         if (this.state.page === 0 && this.state.email < 3) {
           
           console.log("change")
-          // this.changePage()
           this.setState({ warnings: "Please enter a valid email."})
 
-          // this.printWarning
         } 
         else if (this.state.page === 1 && this.state.password.length < 6) {
           // debugger
-          console.log("password warning")
-          this.setState({ warnings: "Please enter a password (minimum 6 characters)"})
+              console.log("password warning")
+              this.setState({ warnings: "Please enter a password (minimum 6 characters)"})
         }
-        //   // this.printWarning
-        // } else if (this.state.page === 1 && this.props.formType === 'login' ){
-        //   this.handleSubmitSignIn()
          else if (this.state.page === 2 && this.state.age < 18 && this.state.gender === ""){
 
-          this.setState({ warnings: " Please enter a valid age and gender."})
+              this.setState({ warnings: " Please enter a valid age and gender."})
         } else if (this.state.page === 2 && this.state.age < 18 ){
-          console.log("You must be 18 years or older.")
-          this.setState({ warnings: " You must be 18 years or older."})
-        } else if (this.state.page === 2 && this.state.gender === ""){
-          console.log("Please choose a gender.")
-          this.setState({ warnings: " Please choose a gender."})
+
+              console.log("You must be 18 years or older.")
+              this.setState({ warnings: " You must be 18 years or older."})
+        
+       } else if (this.state.page === 2 && this.state.gender === ""){
+          
+              console.log("Please choose a gender.")
+              this.setState({ warnings: " Please choose a gender."})
+        
         } else if (this.state.page === 3 && this.state.username === ""){
-          console.log("username warning")
-          this.setState({ warnings: "Please enter a valid Username."})
+          
+              console.log("username warning")
+              this.setState({ warnings: "Please enter a valid Username."})
+        
         } else if (this.state.page === 3 && this.props.formType === 'signup'){
+        
           this.handleSubmitSignUp()
+        
         } else {
-          debugger
-          this.changePage()
+              debugger
+              this.changePage()
         }
       }
       
@@ -164,6 +142,26 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+
+       // componentWillMount(){
+      //   this.props.clearErrors();
+      // }
+
+      
+      // handleSignInEmail(){
+      //   this.props.clearErrors()
+      //   this.props.validateEmail(this.state.email)
+      //   if(this.props.errors[0] === "email available"){
+      //     this.setState({ page: this.state.page+1})
+      //     // this.setState({ warnings: this.props.errors})
+      //   } else {
+      //     this.setState({ page: this.state.page})
+  
+      //   }
+
+      // }
+
+
     
     render() {
       // let formHeader
@@ -172,7 +170,6 @@ class SessionForm extends React.Component {
       // } else{
       //   formHeader = "Log in to Discover"
       // }
-      let warning=null;
       if (this.state.page === 0 && this.props.formType === 'signup' ) {
         return (
             <div className="form-container">
@@ -183,7 +180,8 @@ class SessionForm extends React.Component {
             <h2>---------------------or--------------------</h2>
             <br/>
             <div className="login-form-box">
-        {this.renderErrors()}
+            {/* {this.state.warnings} */}
+            {this.renderErrors()}
               <div className="login-form">
            
                 {/* <label className="label-names-input"> Email:</label> */}
@@ -303,7 +301,7 @@ class SessionForm extends React.Component {
                 <br/>
                 <br/>
                 
-                      {this.renderErrors()}
+                      {/* {this.renderErrors()} */}
                       {this.state.warnings}
                 <label>
                     <input type="password"
@@ -365,7 +363,7 @@ class SessionForm extends React.Component {
             <div className="form-container">
             <div className="login-form-box">
             {this.state.warnings}
-              {this.renderErrors()}
+              {/* {this.renderErrors()} */}
                    <input type="text"
                    className="form-inputs"
                    placeholder="Username"
