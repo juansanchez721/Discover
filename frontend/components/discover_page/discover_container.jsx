@@ -6,7 +6,7 @@ import {asArray, asArrayUsers} from '../../reducers/selector'
 const mstp = (state) => {
     debugger
     return {
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.session,
         tracks: asArray(state.entities),
         users: asArrayUsers(state.entities).slice(0,6)
     }

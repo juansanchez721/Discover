@@ -15,10 +15,10 @@ debugger
                 return action.users
 
             case RECEIVE_USER:
-                return Object.assign({}, state, { [action.user.id]: action.user });
+                return { [action.user.id]: action.user };
 
-            case RECEIVE_CURRENT_USER:
-                return Object.assign({}, state, { [action.currentUser.id]: action.currentUser })
+            // case RECEIVE_CURRENT_USER:
+            //     return Object.assign({}, state, { [action.currentUser.id]: action.currentUser })
         
             default:
                 return state;

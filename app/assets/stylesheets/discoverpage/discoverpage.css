@@ -3,12 +3,23 @@
     width: auto;
     /* padding-top: 100px; */
     background-color: white;
+    /* display: flex;
+    align-items: flex-start; */
+    padding: 0 0 200px 0;
+  }
+
+  .discover-page-holder {
+    /* background-color: #555; */
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+
     display: flex;
-    align-items: flex-start;
-    padding: 0 10% 200px 10%;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .discover-page-item {
-    width: 250px;
+    width: 175px;
     margin-left: 10px;
     /* display: inline-block; */
     /* background-color: blue; */
@@ -25,13 +36,13 @@
 }
 
 .discover-page-item img {
-    width: 90%;
+    width: 95%;
 }
 
 .showing-songs {
-  width: 100%;
-  height: 300px;
-  /* background-color: blue; */
+  width: 95%;
+  height: 250px;
+  background-color: blue;
   /* overflow: hidden; */
 }
 
@@ -67,11 +78,16 @@
 .rows-of-music {
   /* background-color: red; */
   /* display: flex; */
-  padding-top: 100px;
   width: 70%;
+  min-width: 200px;
+  /* max-width: 900px; */
   /* flex-direction: column; */
   outline: none;
-  float: left;
+  /* float: left; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 audio:focus {
@@ -100,28 +116,41 @@ audio:focus {
 ::-webkit-scrollbar-thumb:hover {
   /* height: 5px; */
 
-  background: #555; 
+  /* background: #555;  */
 }
 
+.right-side-bar {
+  /* background-color: #888; */
+  display: flex;
+  justify-content: flex-end;
+  width: 375px;
+  /* position: fixed; */
+  /* right: 0; */
+  /* top: 0 */
+}
 
 .user-links{
-
-  width: 250px;
+  border-left: .5px solid #f2f2f2;
+  width: 350px;
   height: 100%;
-  background-color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  /* background-color: pink; */
   position: fixed;
-  right: 400px;
-  top:45px;
-  display: flex;
-  flex-direction: column;
-  border-bottom: black;
-  border-left: black;
+  margin-top: -55px;
+  /* left: 0; */
+  /* right: 0;
+  top:0;
+  display: flex; */
+  /* flex-direction: column; */
+  /* border-bottom: black;
+  border-left: black; */
 
 
 }
 
 .links-header {
-  padding: 60px 0 10px 0;
+  /* padding: 60px 0 10px 0; */
 }
 
 
@@ -150,7 +179,7 @@ audio:focus {
 .icon-container {
   /* width: 30px; */
   margin-left: 5px;
-  /* background-color: pink; */
+  background-color: pink;
   display: flex;
   /* justify-content: center; */
   align-items: center;

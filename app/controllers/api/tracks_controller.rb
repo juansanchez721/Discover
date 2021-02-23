@@ -32,7 +32,7 @@ class Api::TracksController < ApplicationController
         # debugger
         # @user = track.user
         # debugger
-        # render :show
+        render :show
     end
 
 

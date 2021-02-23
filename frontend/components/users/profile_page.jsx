@@ -12,40 +12,56 @@ class ProfilePage extends React.Component {
         this.state = {
             userId: null
         }
-
+        this.yoo = null;
         // this.userId = this.props.match.params.userId
     }
 
     componentDidMount() {
-        this.setState({ userId: this.props.match.params.userId})
+        // this.setState({ userId: this.props.match.params.userId})
+        
         this.props.fetchUser(this.props.match.params.userId)
         .then(this.props.fetchSingleUserTracks(this.props.match.params.userId))
-        // .then()
+        debugger
+    
+    }
+
+    componentDidUpdate(prevProps){
+        debugger
+        if(this.props.match.params.userId !== prevProps.match.params.userId ){
+            this.props.fetchUser(this.props.match.params.userId)
+            .then(this.props.fetchSingleUserTracks(this.props.match.params.userId))
+        }
         debugger
     }
+
+    // componentWillUnmount(){
+    //     console.log("end")
+    // }
     
     
     render() {
         debugger
+        // this.yoo 
+        // if(this.state.userIdid !== parseInt(this.props.match.params.userId)){
+        //     debugger
+        //     // this.setState({ userId: this.props.match.params.userId})
 
-        if(this.state.userId !== this.props.match.params.userId){
-            this.setState({ userId: this.props.match.params.userId })
+        //     this.props.fetchSingleUserTracks( this.props.match.params.userId)
+        // }
+
+        // console.log(this.state.userId)
+        // console.log(this.props.match.params.userId)
+        // console.log(this.props.user.id) //use id for a container for the profile track items
+
+        if(this.props.user === undefined){
+            return null
         }
-        
-                if(this.props.user === undefined){
-                    return null
-                }
 
-        console.log(this.state.userId)
-        console.log(this.props.match.params.userId)
-        console.log(this.props.user.id) //use id for a container for the profile track items
+        console.log(this.props.tracks)
+        let tracks = Object.values(this.props.tracks).map(track => (
+            <ProfileTrackItem key={track.id} user={this.props.user} track={track}/>
+        ))
 
-        // console.log(this.props.history)
-        debugger
-        // let tracks = Object.values(this.props.tracks).map(track => (
-            <ProfileTrackItem  user={this.props.user} fetchTracks={this.props.fetchSingleUserTracks}/>
-        // ))
-            debugger
         return(
 
             <div className="profile-page">
@@ -69,10 +85,8 @@ class ProfilePage extends React.Component {
                         </div>
                 
                 </div>
-                { <ProfileTrackItem  user={this.props.user} tracks={this.props.tracks}/>}
 
-
-                            {/* {tracks} */}
+                            {tracks}
                 {/* <ProfileTracksContainer /> */}
 
             </div>

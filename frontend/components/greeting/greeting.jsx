@@ -4,8 +4,9 @@ import SearchBarContainer from '../search/search-container'
 import {Link} from 'react-router-dom'
 const Header = (props) => {
 
+  debugger
     const userLoggedIn = () => (
-    
+      
         <nav className="loggedin-nav">
             {/* <div>
 
