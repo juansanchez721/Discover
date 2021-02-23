@@ -53,7 +53,7 @@ const Header = (props) => {
     </nav>
     )
 
-    return props.currentUser ? userLoggedIn() : notLoggedIn()
+    return props.currentUser.id ? userLoggedIn() : notLoggedIn()
 }
 
 

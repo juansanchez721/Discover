@@ -6,7 +6,7 @@ import SplashPageInfo from './greeting'
 const mSTP = (state, ownProps) => {
     debugger
     return {
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.session
     }
 }
 

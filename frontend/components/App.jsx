@@ -17,16 +17,12 @@ const App = () => (
     <div className="innerapp">
 
       <Modal/>
-    {/* <SplashPage /> */}
     <Switch>
         <AuthRoute exact path="/" component={SplashPageContainer}/>
-        {/* <AuthRoute exact path="/signup" component={SignUpFormContainer}/> 
-        <AuthRoute exact path="/login" component={LogInFormContainer}/>  */}
         <ProtectedRoute exact path="/tracks/upload" component={UploadTrackContainer}/>
 
         <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/>
         <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
-        {/* <ProtectedRoute exact path="/users/:userId/tracks" component={ProfileContainer}/> */}
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
     </Switch>
     

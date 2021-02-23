@@ -1,17 +1,17 @@
-import React from 'react'
-import TrackShowContainer from './track_show_container'
+// import React from 'react'
+// import TrackShowContainer from './track_show_container'
 
-const TracksShowPage = () => {
+// const TracksShowPage = () => {
 
 
-    return (
-        <div className="track-show-page">
-            <TrackShowContainer/>
+//     return (
+//         <div className="track-show-page">
+//             <TrackShowContainer/>
             
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
 
 
-export default TracksShowPage
+// export default TracksShowPage

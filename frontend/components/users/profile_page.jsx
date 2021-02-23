@@ -1,34 +1,51 @@
 
 
 import React from 'react'
-import ProfileTracksContainer from './profile_tracks_container'
+// import ProfileTracksContainer from './profile_tracks_container'
 import ProfileTrackItem from './profile_track_item'
 class ProfilePage extends React.Component {
 
     constructor(props){
         super(props)
         debugger
-        this.userId = this.props.match.params.userId
+
+        this.state = {
+            userId: null
+        }
+
+        // this.userId = this.props.match.params.userId
     }
 
     componentDidMount() {
-        this.props.fetchSingleUserTracks(this.userId)
-        this.props.fetchUser(this.userId);
+        this.setState({ userId: this.props.match.params.userId})
+        this.props.fetchUser(this.props.match.params.userId)
+        .then(this.props.fetchSingleUserTracks(this.props.match.params.userId))
+        // .then()
         debugger
     }
-
+    
+    
     render() {
         debugger
 
-        if(this.props.user === undefined){
-            return null
+        if(this.state.userId !== this.props.match.params.userId){
+            this.setState({ userId: this.props.match.params.userId })
         }
+        
+                if(this.props.user === undefined){
+                    return null
+                }
 
+        console.log(this.state.userId)
+        console.log(this.props.match.params.userId)
+        console.log(this.props.user.id) //use id for a container for the profile track items
 
-        let tracks = Object.values(this.props.tracks).map(track => (
-            <ProfileTrackItem key={track.id} user={this.props.user} track={track}/>
-        ))
-
+        // console.log(this.props.history)
+        debugger
+        // let tracks = Object.values(this.props.tracks).map(track => (
+            <ProfileTrackItem  user={this.props.user} fetchTracks={this.props.fetchSingleUserTracks}/>
+        // ))
+            debugger
         return(
 
             <div className="profile-page">
@@ -36,7 +53,7 @@ class ProfilePage extends React.Component {
                     <div className="image-container">
                         
                         <div className="circle-holder">
-                        <img className="profile-default" src={this.props.user.image_url ? this.props.user.image_url : "https://lh3.googleusercontent.com/proxy/5YdGFyIdcsJgjT6EL0qIO2ftEVZWyZ12YxZAypqv5itH4_BDsbyjRNeeRs4FsV2GGzFmxjgJxeK0Eb5fdQ1P29WG4H4S4dowJjPkBwNzFZXb5mzRhuevdGhFqWNhSNq0PHi4JApgrOt1F0LPTG6MQudkFQ"}/>
+                        <img className="profile-default" src={this.props.user.image_url ? this.props.user.image_url : "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}/>
                         </div>
                     
                     </div>
@@ -52,8 +69,10 @@ class ProfilePage extends React.Component {
                         </div>
                 
                 </div>
+                { <ProfileTrackItem  user={this.props.user} tracks={this.props.tracks}/>}
 
-                            {tracks}
+
+                            {/* {tracks} */}
                 {/* <ProfileTracksContainer /> */}
 
             </div>
