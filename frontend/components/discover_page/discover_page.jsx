@@ -42,13 +42,8 @@ class DiscoverPage extends React.Component {
 
 
 
-        let users = this.props.users.map(user => {
-            {if (user.id !== this.props.currentUser.id){
-                debugger
+        let users = this.props.users.map((user, i) => {
               return <UserItem key={user.id} user={user}/> 
-                
-            }
-        }
     })
 
         debugger
@@ -59,44 +54,46 @@ class DiscoverPage extends React.Component {
             <div className="discover-page-holder">
 
             <div className="rows-of-music"> 
+                <div className="inner-rom">
                 <h2 className="discover-page-headers" >Most Popular</h2>
                 <div className="showing-songs">
-                        <div className="inner-showing">
-                             {tracksfirst}
-                        </div>
+                <div className="inner-showing">
+                {tracksfirst}
+                </div>
                 </div>
                 <br/>
                 <br/>
-
+                
                 <h1 className="discover-page-headers" >Your History</h1>
                 <div className="showing-songs">
-                        <div className="inner-showing">
-                             {trackssecond}
-                        </div>
+                <div className="inner-showing">
+                {trackssecond}
+                </div>
                 </div>
                 <br/>
                 <br/>
-{/* 
+                
                 <h1 className="discover-page-headers" >Recommended</h1>
                 <div className="showing-songs">
-                        <div className="inner-showing">
-                             {tracksthird}
-                        </div>
+                <div className="inner-showing">
+                {tracksthird}
+                </div>
                 </div>
                 <br/>
                 <br/>
-
+                
                 <h1 className="discover-page-headers">Try something new</h1>
                 <div className="showing-songs">
-                        <div className="inner-showing">
-                             {tracksfourth}
-                        </div>
-                </div> */}
+                <div className="inner-showing">
+                {tracksfourth}
+                </div>
+            </div>
+            </div>
                 </div>
 
                 <div className="right-side-bar" >
                 <div className="user-links" >
-                    <h1 className="links-header"> Most Streamed artists:</h1>
+                    <h1 className="links-header"> Who to follow</h1>
                     {users}
                 </div>
                 </div>
