@@ -19,33 +19,33 @@ class DiscoverPage extends React.Component {
     render(){
         debugger
         let tracksfirst = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
 
         ))
 
         this.props.tracks.sort(() => Math.random() - 0.5)
 
         let trackssecond = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
         ))
 
         this.props.tracks.sort(() => Math.random() - 0.5)
 
         let tracksthird = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
         ))
 
         this.props.tracks.sort(() => Math.random() - 0.5)
 
         let tracksfourth = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
         ))
 
 
 
-        let users = this.props.users.map((user, i) => {
-              return <UserItem key={user.id} user={user}/> 
-    })
+    //     let users = this.props.users.map((user, i) => {
+    //           return <UserItem key={user.id} user={user}/> 
+    // })
 
         debugger
         return (
@@ -93,10 +93,10 @@ class DiscoverPage extends React.Component {
                 </div>
 
                 <div className="right-side-bar" >
-                <div className="user-links" >
+                {/* <div className="user-links" >
                     <h1 className="links-header"> Who to follow</h1>
                     {users}
-                </div>
+                </div> */}
                 </div>
              </div>
             </div>
