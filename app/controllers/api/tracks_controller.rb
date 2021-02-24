@@ -27,11 +27,6 @@ class Api::TracksController < ApplicationController
 
     def show 
         @track = Track.find(params[:id])
-        # debugger
-        # track = @track
-        # debugger
-        # @user = track.user
-        # debugger
         render :show
     end
 
