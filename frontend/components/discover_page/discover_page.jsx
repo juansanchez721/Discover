@@ -9,35 +9,36 @@ class DiscoverPage extends React.Component {
         // this.tracks = null;
     }
 
-    componentWillMount(){
-        this.props.fetchTracks();
-        this.props.fetchUsers();
+    componentDidMount(){
+        this.props.fetchUsers()
+        .then(this.props.fetchTracks());
         debugger
     }
 
     
     render(){
+        debugger
         let tracksfirst = this.props.tracks.map(track => (
-                    <DiscoverPageItem key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
 
         ))
 
         this.props.tracks.sort(() => Math.random() - 0.5)
 
         let trackssecond = this.props.tracks.map(track => (
-            <DiscoverPageItem key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
         ))
 
         this.props.tracks.sort(() => Math.random() - 0.5)
 
         let tracksthird = this.props.tracks.map(track => (
-            <DiscoverPageItem key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
         ))
 
         this.props.tracks.sort(() => Math.random() - 0.5)
 
         let tracksfourth = this.props.tracks.map(track => (
-            <DiscoverPageItem key={track.id} track={track}/> 
+            <DiscoverPageItem owner={this.props.users.owner_id} key={track.id} track={track}/> 
         ))
 
 

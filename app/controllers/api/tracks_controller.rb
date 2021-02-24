@@ -14,9 +14,9 @@ class Api::TracksController < ApplicationController
     end
 
     def create
-        debugger
+        # debugger
         @track = Track.new(track_params)
-        debugger
+        # debugger
         if (@track.save)
             # render :show
         else

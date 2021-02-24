@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 const DiscoverPageItem = (props) => {
-
+    debugger
     return(
             <div className="discover-page-item" >
 
@@ -15,7 +15,7 @@ const DiscoverPageItem = (props) => {
                         </Link>
             
                         <h1> {props.track.title} </h1>  
-                        {/* <h1> {props.track.owner_id} </h1> */}
+                        <h1> {props.owner} </h1>
                         
                         </div>
             
