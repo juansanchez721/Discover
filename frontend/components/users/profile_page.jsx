@@ -59,7 +59,7 @@ class ProfilePage extends React.Component {
 
         console.log(this.props.tracks)
         let tracks = Object.values(this.props.tracks).map(track => (
-            <ProfileTrackItem key={track.id} user={this.props.user} track={track}/>
+            <ProfileTrackItem key={track.id} user={this.props.user} track={track} deleteTrack={this.props.deleteTrack} />
         ))
 
         return(
@@ -87,7 +87,7 @@ class ProfilePage extends React.Component {
                 
                 </div>
 
-                            {tracks}
+                            {tracks.reverse()}
                 {/* <ProfileTracksContainer /> */}
 
             </div>

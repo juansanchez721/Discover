@@ -33,3 +33,12 @@ export const createTrack = (track) => {
         processData: false
     })
 }
+
+
+export const deleteTrack = (trackId) => {
+
+    return $.ajax({
+        type: "DELETE",
+        url: `/api/tracks/${trackId}`
+    })
+}

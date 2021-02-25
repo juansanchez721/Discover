@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ProfileTrackItem = ( { track, user }) => {
+const ProfileTrackItem = ( { track, user, deleteTrack }) => {
 
 
     return (
@@ -21,6 +21,7 @@ const ProfileTrackItem = ( { track, user }) => {
                             {/* <code>audio</code> element. */}
                 </audio>
             </div>
+            <button onClick={() => deleteTrack(track.id)} >Delete song</button>
         </div>
     )
 }

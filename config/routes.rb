@@ -8,7 +8,7 @@ Rails.application.routes.draw do
           resources :tracks, only: [:index]
       end
 
-      resources :tracks, only: [:show, :index, :create]
+      resources :tracks, only: [:show, :index, :create, :destroy]
       resource :session, only: [:create, :destroy]
       
       get '/email/search', to: 'sessions#search'

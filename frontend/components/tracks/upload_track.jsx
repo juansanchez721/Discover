@@ -14,7 +14,7 @@ class UploadForm extends React.Component {
             description: "",
             genre: "",
             owner_id: this.props.currentUser.id,
-            page: 0
+            page: 1
         }
         debugger
         this.changePage = this.changePage.bind(this)
@@ -28,6 +28,7 @@ class UploadForm extends React.Component {
     }
 
     update(field) {
+        debugger
         return e => this.setState({
           [field]: e.currentTarget.value
         });
@@ -93,8 +94,12 @@ class UploadForm extends React.Component {
 
             return(
                 <div className="uploadform-page">
+                                    <img src="https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg"/>
+
                 <div className="actual-form">
-                <h1 className="form-header" >Click here, or drag your file here to upload.</h1>
+                    <div className="inner-form">
+                        
+                <h1 className="form-header" >Choose or drag file to upload</h1>
 
                     <input type="file" 
                     className="file-input" 
@@ -102,6 +107,7 @@ class UploadForm extends React.Component {
                     onChange={this.updateFile}/>
 
                     {/* <button onClick={this.checkFile} >next</button> */}
+                    </div>
                 </div>
 
             </div>
@@ -110,45 +116,71 @@ class UploadForm extends React.Component {
         let preview;
         let inp;
         {if(this.state.imageUrl){
-            preview = <img src={this.state.imageUrl} height="200" alt="Image preview..."/>
-            inp=null;
+            preview = <img src={this.state.imageUrl} alt="Image preview..."/>
+            inp = <input className="replace-img" type="file" onChange={this.previewFile}/>
+
         } else {
-            preview = null;
+            preview = <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} alt="Image preview..."/>;
             inp = <input type="file" onChange={this.previewFile}/>
 
         } 
     }     
 
           return (
-
             <div className="uploadform-page">
-
-            <div className="second-page-form">
+              <img src="https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg" />
+              <div className="second-page-form">
                 {/* <h1 className="form-header">enter additional info</h1> */}
-                <div className="image-half">
+                <div className="second-inner-form">
+                  <div className="image-half">
                     {preview}
-                    {inp}
-                        <br/>
-                   
-                
-                </div>
-                <div className="additional-info">
+                    {/* <br/> */}
+                    <div className="img-upload-holder">
+                      <h1>Upload image</h1>
+                      {inp}
+                    </div>
+                  </div>
+                  <div className="additional-info">
+                    <label>Title:</label>
+                    <input
+                      type="text"
+                      value={this.state.title}
+                      onChange={this.update("title")}
+                      required
+                    />
+                    <br />
 
-                <label>Title:</label>
-                <input type= "text" value={this.state.title} onChange={this.update('title')} required/>
-                    <br/>
-                <label>Genre</label>
-                <input type= "text" value={this.state.genre} onChange={this.update('genre')}/>
-                <br/>
-                <label>Description</label>
-                <textarea value={this.state.description} onChange={this.update('description')}/>
-            
-                <button onClick={this.handleSubmit} >Save</button>
-            </div>
+                    <label>Genre</label>
 
-            </div>
+                    <select name="genre" onChange={this.update("genre")}>
+                      <option value="Hip-Hop">Hip-Hop</option>
+                      <option value="Metal">Metal</option>
+                      <option value="RandB">RB</option>
+                      <option value="Spanish">Spanish</option>
+                    </select>
+
+                    {/* <input
+                      type="text"
+                      value={this.state.genre}
+                      onChange={this.update("genre")}
+                    /> */}
+                    <br />
+
+                    <label>Description</label>
+                    <textarea
+                      value={this.state.description}
+                      onChange={this.update("description")}
+                    />
+
+                    <div className="upload-track-button">
+                    <button onClick={this.handleSubmit}>Save</button>
+
+                    </div>
+                  </div>
                 </div>
-                )  
+              </div>
+            </div>
+          );  
     
     
     }   else if (this.state.page === 2){

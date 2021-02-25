@@ -19,19 +19,15 @@
     justify-content: space-between;
   }
   .discover-page-item {
-    width: 175px;
-    /* height: 200px; */
+    /* width: 175px; */
     margin-right: 20px;
     color: #333;
     font-weight: 100;
-    /* display: inline-block; */
-    background-color: red;
+    /* background-color: red; */
     display: flex;
-    flex-direction: column;
-    /* text-align: center; */
-    
+    flex-direction: column; 
     position: relative;
-    
+    font-size: 14px;
   }
   
   .song-truncate {
@@ -39,13 +35,14 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    color: #333
     /* background-color: blue; */
   }
   
-  .discover-page-item h1 {
+  /* .discover-page-item h1 {
         text-overflow: ellipsis;
 
-  }
+  } */
 
 .album-shadow {
   /* display: none; */

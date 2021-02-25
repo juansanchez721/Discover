@@ -25,6 +25,16 @@ class Api::TracksController < ApplicationController
 
     end
 
+    def destroy 
+
+        @track = Track.find(params[:id])
+        # debugger
+        if @track
+            @track.destroy
+        end
+
+    end
+
     def show 
         @track = Track.find(params[:id])
         render :show
