@@ -10,7 +10,9 @@ const UserItem = (props) => {
             <div className="icon-container">
                         
                         <div className="circle-maker">
-                        <img className="profile-default" src={props.user.image_url}/>
+                        <img className="profile-default" src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"/>
+
+                        {/* <img className="profile-default" src={props.user.image_url}/> */}
                         </div>
                     
             <span>{props.user.username}</span>

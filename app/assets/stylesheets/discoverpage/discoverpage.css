@@ -19,22 +19,34 @@
     justify-content: space-between;
   }
   .discover-page-item {
-    width: 250px;
+    width: 175px;
     /* height: 200px; */
     margin-right: 20px;
     color: #333;
     font-weight: 100;
     /* display: inline-block; */
-    /* background-color: red; */
+    background-color: red;
     display: flex;
     flex-direction: column;
     /* text-align: center; */
-    /* text-overflow: ellipsis; */
     
     position: relative;
     
   }
   
+  .song-truncate {
+    width: 175px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /* background-color: blue; */
+  }
+  
+  .discover-page-item h1 {
+        text-overflow: ellipsis;
+
+  }
+
 .album-shadow {
   /* display: none; */
   height: 175px;

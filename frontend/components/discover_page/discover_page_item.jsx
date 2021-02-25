@@ -15,15 +15,19 @@ const DiscoverPageItem = (props) => {
 
              
                         <Link to={`/tracks/${props.track.id}`}>
-                        <img src={props.track.image_url} /> 
+                        {/* <img src={props.track.image_url} />  */}
+                        <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
                         <div className="album-shadow" >
 
                         </div>
 
                         </Link>
             
-                        <h1> {props.track.title} </h1>  
+                        {/* <div className="song-info"> */}
+                        <h1 className="song-truncate"> {props.track.title} </h1>  
                         <h1 className="small-light-words"> {props.owner.username || 'artist here' } </h1>
+
+                        {/* </div> */}
                         
                         </div>
             

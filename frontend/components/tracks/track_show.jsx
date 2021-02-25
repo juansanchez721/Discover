@@ -9,25 +9,25 @@ class TrackShow extends React.Component {
         debugger
         this.props.fetchTrack(this.props.match.params.trackId)
         // console.log(this.props.song)
-        // .then(
+        .then(
         //     // if(this.props.song !== undefined){
 
-                this.props.fetchUser(this.props.song.owner_id)
+                // this.props.fetchUser(this.props.song.owner_id)
         //     // }
-            // )
+            )
             debugger
         }
         
-        componentDidUpdate(prevProps){
-            debugger
-            console.log(prevProps)
-            if(parseInt(Object.keys(this.props.user)[0]) !== this.props.song.owner_id ){
-                // this.props.fetchTrack(this.props.match.params.trackId)
-                debugger 
-                    this.props.fetchUser(this.props.song.owner_id)
-            } 
-            debugger
-        }
+        // componentDidUpdate(prevProps){
+        //     debugger
+        //     console.log(prevProps)
+        //     if( parseInt(Object.keys(this.props.user)[0]) !== this.props.song.owner_id ){
+        //         this.props.fetchTrack(this.props.match.params.trackId)
+        //         debugger 
+        //             this.props.fetchUser(this.props.song.owner_id)
+        //     } 
+        //     debugger
+        // }
         
         render() {
         // console.log(this.props.song)
@@ -51,14 +51,16 @@ class TrackShow extends React.Component {
 
                                 <audio
                                 controls
-                                src={this.props.song.track_url}>
+                                // src={this.props.song.track_url}
+                                >
                                     Your browser does not support the
                                 </audio>
                         </div>
                     </div>
                     <div className="show-image">
+                    <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
 
-                            <img src={this.props.song.image_url} /> 
+                            {/* <img src={this.props.song.image_url} />  */}
                     </div>
                 
                 </div>
