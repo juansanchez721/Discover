@@ -6,13 +6,36 @@ class TrackShow extends React.Component {
         super(props)
     }
     componentDidMount(){
-        this.props.fetchUser(this.props.song.owner_id)
-        this.props.fetchTrack(this.props.songId)
-    }
+        debugger
+        this.props.fetchTrack(this.props.match.params.trackId)
+        // console.log(this.props.song)
+        // .then(
+        //     // if(this.props.song !== undefined){
 
+                this.props.fetchUser(this.props.song.owner_id)
+        //     // }
+            // )
+            debugger
+        }
+        
+        componentDidUpdate(prevProps){
+            debugger
+            console.log(prevProps)
+            if(parseInt(Object.keys(this.props.user)[0]) !== this.props.song.owner_id ){
+                // this.props.fetchTrack(this.props.match.params.trackId)
+                debugger 
+                    this.props.fetchUser(this.props.song.owner_id)
+            } 
+            debugger
+        }
+        
+        render() {
+        // console.log(this.props.song)
+        // console.log(this.props.user)
 
-    render() {
-
+        if (this.props.song === undefined || this.props.user[this.props.song.owner_id] === undefined) {
+            return null;
+        }
         return (
             <div className="show-full-page">
 
@@ -22,7 +45,7 @@ class TrackShow extends React.Component {
 
                         <div className="info-text">
                             <h1> {this.props.song.title } </h1>
-                            <h1> {this.props.song.owner_id } </h1>
+                            <h1> {this.props.user[this.props.song.owner_id].username } </h1>
                         </div>
                         <div className="audio-player-holder" >
 

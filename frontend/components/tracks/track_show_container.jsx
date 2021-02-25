@@ -9,11 +9,12 @@ import { fetchUser } from '../../actions/user_actions'
 const mSTP = (state, { match }) => {
 
     const songId = parseInt(match.params.trackId);
-    const song = selectTrack(state.entities, match.params.trackId);
+    // const song = selectTrack(state.entities, match.params.trackId);
     debugger
     return {
         songId,
-        song
+        song: state.entities.tracks[match.params.trackId],
+        user: state.entities.users
     }
 }
 
