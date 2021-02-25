@@ -1,8 +1,16 @@
 import React from 'react'
 
 
-const ProfileTrackItem = ( { track, user, deleteTrack }) => {
-
+const ProfileTrackItem = ( { track, user, deleteTrack, currentUser, openModal }) => {
+    debugger
+        let userbuttons = null
+        if(user.id === currentUser.id ) {
+            debugger
+            userbuttons = 
+                <div>
+                    <button onClick={() => openModal('deleteTrack')} >Delete song</button>
+                </div>
+        }
 
     return (
         <div className = "profile-track-item">
@@ -21,7 +29,7 @@ const ProfileTrackItem = ( { track, user, deleteTrack }) => {
                             {/* <code>audio</code> element. */}
                 </audio>
             </div>
-            <button onClick={() => deleteTrack(track.id)} >Delete song</button>
+            {userbuttons}
         </div>
     )
 }

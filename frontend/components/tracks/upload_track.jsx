@@ -14,7 +14,7 @@ class UploadForm extends React.Component {
             description: "",
             genre: "",
             owner_id: this.props.currentUser.id,
-            page: 1
+            page: 0
         }
         debugger
         this.changePage = this.changePage.bind(this)

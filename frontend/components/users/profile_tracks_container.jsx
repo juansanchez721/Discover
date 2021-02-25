@@ -1,5 +1,4 @@
 import { connect } from "react-redux"
-import { deleteTrack } from '../../actions/track_actions'
 import ProfileTrackItem from './profile_track_item'
 
 const mSTP = (state, ownProps) => {

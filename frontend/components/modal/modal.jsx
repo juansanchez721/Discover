@@ -15,6 +15,9 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case 'deleteTrack':
+      component = <h1>Delete track {modal}</h1>;
+      break;
     default:
       return null;
   }
@@ -29,7 +32,7 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal   //here
   };
 };
 
