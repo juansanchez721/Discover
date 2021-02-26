@@ -27,19 +27,21 @@ export const fetchTracks = () => dispatch => (
     TrackUtil.fetchTracks().then(tracks => dispatch(receiveTracks(tracks))
     ))
 
-export const fetchSingleUserTracks = (userId) => dispatch => (
-      TrackUtil.fetchSingleUserTracks(userId)
-      .then(tracks => dispatch(receiveTracks(tracks))
-  ))
+export const fetchSingleUserTracks = (userId) => (dispatch) =>
+  TrackUtil.fetchSingleUserTracks(userId).then((tracks) =>
+    dispatch(receiveTracks(tracks))
+  );
 
+export const fetchTrack = (id) => (dispatch) =>
+  TrackUtil.fetchTrack(id).then((track) => dispatch(receiveTrack(track)));
 
-    export const fetchTrack = id => dispatch => (
-        TrackUtil.fetchTrack(id).then(track => (
-          dispatch(receiveTrack(track))
-        ))
-      );
+export const createTrack = (track) => (dispatch) => {
+  return TrackUtil.createTrack(track).then((track) =>
+    dispatch(receiveTrack(track))
+  );
+};
 
-      export const createTrack = track => dispatch => {
-        return TrackUtil.createTrack(track)
-        .then(track => dispatch(receiveTrack(track)))
-      }
+export const updateTrack = track => dispatch => {
+  return TrackUtil.updateTrack(track)
+  .then(track => dispatch(receiveTrack(track)))
+}

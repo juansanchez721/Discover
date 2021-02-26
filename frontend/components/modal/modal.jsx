@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignupFormContainer from "../session_form/signup_form_container";
 import LoginFormContainer from "../session_form/login_form_container";
+import DeleteTrackContainer from '../tracks/delete_track_container'
 function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
@@ -16,7 +17,7 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case 'deleteTrack':
-      component = <h1>Delete track {modal}</h1>;
+      component = <DeleteTrackContainer/>
       break;
     default:
       return null;
@@ -32,7 +33,7 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal   //here
+    modal: state.ui.modal
   };
 };
 
