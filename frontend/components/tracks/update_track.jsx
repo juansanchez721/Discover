@@ -9,11 +9,11 @@ class UpdateTrack extends React.Component {
         super(props)
         debugger
         this.state = {
-            imageUrl: this.props.track.imageUrl,
+            imageUrl: null,
             imageFile: null,
-            title: this.props.track.title,
-            description: this.props.track.description,
-            genre: this.props.track.genre,
+            title: "",
+            description: "",
+            genre: "",
         }
         debugger
         // this.changePage = this.changePage.bind(this)
@@ -24,6 +24,20 @@ class UpdateTrack extends React.Component {
 
     componentDidMount(){
         this.props.fetchTrack(this.props.trackId)
+    }
+
+    componentDidUpdate(prevProps, prevState){
+      if(prevState.title === ""){
+        // this.props.fetchTrack(this.props.trackId)
+        this.setState({
+          imageUrl: this.props.track.imageUrl,
+            imageFile: null,
+            title: this.props.track.title,
+            description: this.props.track.description,
+            genre: this.props.track.genre,
+        })
+      }
+      debugger
     }
 
     handleSubmit(e) {

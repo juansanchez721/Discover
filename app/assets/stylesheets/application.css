@@ -82,7 +82,7 @@ table {
 
 
   .modal-child {
-      background-color: white;
+      /* background-color: white; */
       text-align: center;
       width: 450px;
       height: 500px;

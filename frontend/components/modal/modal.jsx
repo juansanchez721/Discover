@@ -5,11 +5,13 @@ import SignupFormContainer from "../session_form/signup_form_container";
 import LoginFormContainer from "../session_form/login_form_container";
 import DeleteTrackContainer from '../tracks/delete_track_container'
 function Modal({modal, closeModal}) {
+  debugger
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal) {
+  debugger
+  switch (modal.modal) {
     case 'login':
       component = <LoginFormContainer />;
       break;
@@ -17,7 +19,7 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case 'deleteTrack':
-      component = <DeleteTrackContainer/>
+      component = <DeleteTrackContainer track={modal.track} />
       break;
     default:
       return null;
@@ -33,7 +35,8 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    trackId: state.ui.trackId
   };
 };
 

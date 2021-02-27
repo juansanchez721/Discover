@@ -6,7 +6,9 @@ class ProfileTrackItem extends React.Component {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
-
+            this.state = {
+                showModal: false
+            }
     }
 
     handleClick(e) {
@@ -17,14 +19,14 @@ class ProfileTrackItem extends React.Component {
     render() {
 
     
-    const { track, user, deleteTrack, currentUser, openModal } = this.props;
+    const { track, user, deleteTrack, currentUser, deleteTrackModal } = this.props;
     //     debugger
         let userbuttons = null
         if(user.id === currentUser.id ) {
             debugger
             userbuttons = 
             <div>
-                    {/* <button onClick={() => deleteTrack(track.id)} >Delete song</button> */}
+                    <button onClick={() => deleteTrackModal('deleteTrack', track)} >Delete song</button>
                     <Link to={`/tracks/${track.id}/edit`} >
                     <h1>Edit</h1>
                     </Link>

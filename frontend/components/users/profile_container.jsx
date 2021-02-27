@@ -1,7 +1,7 @@
 import ProfilePage from './profile_page'
 import {connect} from 'react-redux'
 import { deleteTrack, fetchTrack, updateTrack} from '../../actions/track_actions'
-import { openModal, closeModal } from '../../actions/modal_actions'
+import { openModal, closeModal, deleteTrackModal } from '../../actions/modal_actions'
 import { fetchUser } from '../../actions/user_actions'
 
 import {fetchSingleUserTracks} from '../../actions/track_actions'
@@ -19,10 +19,10 @@ const mDTP = dispatch => {
     return {
         fetchUser: userId => dispatch(fetchUser(userId)),
         fetchSingleUserTracks: userId => dispatch(fetchSingleUserTracks(userId)),
-        deleteTrack: trackId => dispatch(deleteTrack(trackId)),
-        updateTrack: track => dispatch(updateTrack(track)),
+        // deleteTrack: trackId => dispatch(deleteTrack(trackId)),
+        // updateTrack: track => dispatch(updateTrack(track)),
         // fetchTrack: trackId => dispatch(fetchTrack(trackId)),
-        openModal: (modal) => dispatch(openModal(modal))
+        deleteTrackModal: (modal, track) => dispatch(deleteTrackModal(modal, track))
     }
 }
 

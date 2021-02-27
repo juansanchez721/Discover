@@ -1,11 +1,14 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, DELETE_MODAL } from '../actions/modal_actions';
 
 const modalReducer = (state = null, action) => {
+  debugger
   switch (action.type) {
     case OPEN_MODAL:
-      return action.modal;
+      return action;
     case CLOSE_MODAL:
       return null;
+      case DELETE_MODAL:
+      return action;
     default:
       return state;
   }

@@ -1,0 +1,72 @@
+.delete-track-container {
+    /* background-color: pink; */
+    height: 100%;
+    width: 550px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.top-delete img {
+    width: 150px;
+    height: 150px;
+}
+.top-delete{
+    background-color: white;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.top-delete-info {
+    /* background-color: blueviolet; */
+    width: 100%;
+    padding: 0px 0px 0px 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-delete-text {
+    /* background-color: cadetblue; */
+    padding-top: 5px;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.orange-circle-container {
+    height: 50px;
+    width: 50px;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orange-circle {
+    height: 35px;
+    width: 35px;
+    background-color: #FE5000;
+    border-radius: 50%;
+}
+
+
+.bottom-delete {
+    background-color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 47%;    
+}
+
+.center-div {
+    /* background-color: cyan; */
+    width: 100%;
+    height: 1%;
+}

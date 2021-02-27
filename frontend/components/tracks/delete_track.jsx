@@ -7,19 +7,48 @@ class DeleteTrack extends React.Component {
     constructor(props) {
         debugger
         super(props)
+        
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(){
+        // this.props.deleteTrack(this.props.track.id)
+        // .then(this.props.closeModal())
     }
 
 
     render(){
         debugger
+
+        const { track, user } = this.props
+        
         return (
-            <div>
-                <h1> Delete track:</h1> 
-                {Object.values(this.props.tracks).map(track => {
-                             return <p> {track.title} </p>
-                })} 
+          <div className="delete-track-container">
+            <div className="top-delete">
+              <img
+                src={
+                  "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
+                }
+              />
+            <div className="top-delete-info">
+              <div className="orange-circle-container">
+                <div className="orange-circle" >
+
+                </div>
+              </div>
+                <div className="top-delete-text">
+                  <h2 className="small-light-words"> {user.username} </h2>
+                  <h1 className=""> {track.title} </h1>
+                </div>
+              </div>
             </div>
-        )
+        <div className="center-div" ></div>
+            <div className="bottom-delete">
+              <h1> Permanently delete this track? </h1>
+              <button onClick={() => this.handleClick()}>Delete song</button>
+            </div>
+          </div>
+        );
     }
 
 

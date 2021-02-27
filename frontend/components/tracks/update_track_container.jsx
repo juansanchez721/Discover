@@ -6,16 +6,16 @@ const mSTP = (state, ownProps) => {
     const trackId = parseInt(ownProps.match.params.trackId)
     debugger
     return {
-        trackId,
-        track: state.entities.tracks[trackId]
+        // trackId,
+        // track: state.entities.tracks[trackId]
     }
 }
 
 const mDTP = dispatch => {
     return {
         updateTrack: track => dispatch(updateTrack(track)),
-        fetchTrack: trackId => dispatch(fetchTrack(trackId))
-    }
+        closeModal: ()=> dispatch(closeModal())   
+     }
 }
 
 export default connect(mSTP, mDTP)(UpdateTrack)
