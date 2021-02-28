@@ -9,36 +9,49 @@ class UpdateTrack extends React.Component {
         super(props)
         debugger
         this.state = {
-            imageUrl: null,
+            track: this.props.track.track_url,
+            imageUrl: this.props.track.imageUrl,
             imageFile: null,
-            title: "",
-            description: "",
-            genre: "",
+            title: this.props.track.title,
+            description: this.props.track.description,
+            genre: this.props.track.genre,
         }
         debugger
         // this.changePage = this.changePage.bind(this)
         // this.updateFile = this.updateFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        // this.previewFile = this.previewFile.bind(this)
+        this.previewFile = this.previewFile.bind(this)
     }
 
-    componentDidMount(){
-        this.props.fetchTrack(this.props.trackId)
-    }
+    // componentDidMount(){
+    //     this.props.fetchTrack(this.props.trackId)
+    // }
 
-    componentDidUpdate(prevProps, prevState){
-      if(prevState.title === ""){
-        // this.props.fetchTrack(this.props.trackId)
-        this.setState({
-          imageUrl: this.props.track.imageUrl,
-            imageFile: null,
-            title: this.props.track.title,
-            description: this.props.track.description,
-            genre: this.props.track.genre,
-        })
+    // componentDidUpdate(prevProps, prevState){
+    //   if(prevState.title === ""){
+    //     // this.props.fetchTrack(this.props.trackId)
+    //     this.setState({
+    //       imageUrl: this.props.track.imageUrl,
+    //         imageFile: null,
+    //         title: this.props.track.title,
+    //         description: this.props.track.description,
+    //         genre: this.props.track.genre,
+    //     })
+    //   }
+    //   debugger
+    // }
+
+    previewFile(e){
+      e.preventDefault();
+      const file = e.target.files[0]
+      if(file){
+          const fileReader = new FileReader();
+          fileReader.readAsDataURL(file)
+          fileReader.onloadend = () => {
+              this.setState({ imageFile: file, imageUrl: fileReader.result })
+          }
       }
-      debugger
-    }
+  }
 
     handleSubmit(e) {
         e.preventDefault()
@@ -47,13 +60,15 @@ class UpdateTrack extends React.Component {
         formData.append('track[title]', this.state.title)
         formData.append('track[genre]', this.state.genre)
         formData.append('track[description]', this.state.description)
-        formData.append('track[owner_id]', this.state.owner_id)
-        formData.append('track[track]', this.state.songFile)
+        // formData.append('track[owner_id]', this.state.owner_id)
+        // formData.append('track[track]', this.state.track)
         if (this.state.imageFile){
             formData.append('track[photo]', this.state.imageFile)
         }
+        debugger
+        this.props.updateTrack( formData, this.props.track.id)
+        .then(this.props.closeModal())
 
-        this.props.updateTrack(formData)
         debugger
     }
 
@@ -125,7 +140,7 @@ class UpdateTrack extends React.Component {
                     />
 
                     <div className="upload-track-button">
-                    <button onClick={this.handleSubmit}>Save</button>
+                    <button onClick={this.handleSubmit}>Save changes</button>
 
                     </div>
                   </div>

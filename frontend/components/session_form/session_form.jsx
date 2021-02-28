@@ -295,13 +295,15 @@ class SessionForm extends React.Component {
           <div className="form-container">
             <form onSubmit={this.handleSubmitSignIn} className="login-form-box">
               {/* <br/> */}
-                            {this.renderErrors()}
+
 
               {/* Please {this.props.formType} or {this.props.navLink} */}
-              {this.state.warnings}
               <div className="form">
+              {formHeader}
                 {/* <br/> */}
                                           
+              {this.state.warnings}
+                            {this.renderErrors()}
                 <label>
                     <input type="text"
                       className="form-inputs"
@@ -337,7 +339,7 @@ class SessionForm extends React.Component {
             <div className="form-container">
             <div className="login-form-box">
               <h1>Create your Discover Account</h1>
-              <br/>
+              {/* <br/> */}
               {/* Please {this.props.formType} or {this.props.navLink} */}
               <div className="form">
 
@@ -376,7 +378,7 @@ class SessionForm extends React.Component {
             <div className="login-form-box">
             <h1>Create your Discover Account</h1>
 
-              <br />
+              {/* <br /> */}
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {/* {this.renderErrors()} */}
               <div className="form">

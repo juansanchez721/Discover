@@ -43,10 +43,11 @@ export const deleteTrack = (trackId) => {
     })
 }
 
-export const updateTrack = (track) => {
+export const updateTrack = (track, trackId) => {
+    debugger
     return $.ajax({
         type: "PATCH",
-        url: `api/tracks/${track.id}`,
+        url: `api/tracks/${trackId}`,
         data:  track ,
         contentType: false,
         processData: false

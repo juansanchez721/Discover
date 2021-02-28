@@ -19,7 +19,7 @@ class ProfileTrackItem extends React.Component {
     render() {
 
     
-    const { track, user, deleteTrack, currentUser, deleteTrackModal } = this.props;
+    const { track, user, deleteTrack, currentUser, deleteTrackModal, updateTrackModal } = this.props;
     //     debugger
         let userbuttons = null
         if(user.id === currentUser.id ) {
@@ -27,9 +27,8 @@ class ProfileTrackItem extends React.Component {
             userbuttons = 
             <div>
                     <button onClick={() => deleteTrackModal('deleteTrack', track)} >Delete song</button>
-                    <Link to={`/tracks/${track.id}/edit`} >
-                    <h1>Edit</h1>
-                    </Link>
+                    <button onClick={() => updateTrackModal('updateTrack', track)} >Update song</button>
+            
                 </div>
         }
 

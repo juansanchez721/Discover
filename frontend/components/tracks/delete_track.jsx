@@ -12,8 +12,8 @@ class DeleteTrack extends React.Component {
     }
 
     handleClick(){
-        // this.props.deleteTrack(this.props.track.id)
-        // .then(this.props.closeModal())
+        this.props.deleteTrack(this.props.track.id)
+        .then(this.props.closeModal())
     }
 
 

@@ -41,7 +41,7 @@ export const createTrack = (track) => (dispatch) => {
   );
 };
 
-export const updateTrack = track => dispatch => {
-  return TrackUtil.updateTrack(track)
+export const updateTrack = (track, trackId) => dispatch => {
+  return TrackUtil.updateTrack(track, trackId)
   .then(track => dispatch(receiveTrack(track)))
 }

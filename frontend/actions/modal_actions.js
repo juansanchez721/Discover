@@ -27,11 +27,11 @@ export const deleteTrackModal = (modal, track) => {
   };
 };
 
-export const updateTrackModal = (modal, trackId) => {
+export const updateTrackModal = (modal, track) => {
   debugger
   return {
     type: UPDATE_MODAL,
-    trackId,
+    track,
     modal
   };
 };

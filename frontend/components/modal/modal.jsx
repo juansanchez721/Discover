@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import SignupFormContainer from "../session_form/signup_form_container";
 import LoginFormContainer from "../session_form/login_form_container";
 import DeleteTrackContainer from '../tracks/delete_track_container'
+import UpdateTrackContainer from '../tracks/update_track_container'
+
 function Modal({modal, closeModal}) {
   debugger
   if (!modal) {
@@ -21,6 +23,9 @@ function Modal({modal, closeModal}) {
     case 'deleteTrack':
       component = <DeleteTrackContainer track={modal.track} />
       break;
+    case 'updateTrack':
+        component = <UpdateTrackContainer track={modal.track} />
+        break;
     default:
       return null;
   }

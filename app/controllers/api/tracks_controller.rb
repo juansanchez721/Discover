@@ -26,8 +26,17 @@ class Api::TracksController < ApplicationController
     end
 
     def update
+        # debugger
         @track = Track.find(params[:id])
-        render :show
+        # debugger
+
+        if @track.update(track_params)
+            # render json: ["Update was successful"], status: 200
+            render :show
+        else
+            render json: song.errors.full_messages, status: 422
+        end
+
     end
 
     def destroy 
@@ -47,6 +56,7 @@ class Api::TracksController < ApplicationController
 
 
     def track_params
+        # debugger
         params.require(:track).permit(:title, :description, :genre, :owner_id, :track, :photo)
     end
 

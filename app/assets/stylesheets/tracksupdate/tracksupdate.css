@@ -1,4 +1,7 @@
 .track-update-container {
     background-color: lawngreen;
-    height: 500px;
+    height: 400px;
+    width: 850px;
+    position: absolute;
+    text-align: left;
 }

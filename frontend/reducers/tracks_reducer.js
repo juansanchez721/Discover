@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 
 const tracksReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
+    debugger
     let newState = Object.assign({}, oldState)
     switch (action.type) {
 
