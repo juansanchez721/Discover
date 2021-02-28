@@ -196,7 +196,7 @@ class SessionForm extends React.Component {
       let formHeader
       if (this.props.formType === 'signup'){
         formHeader = 
-        <div className="form-header">
+        <div className="session-form-header">
           
           <h1>
             Sign up to Discover
@@ -205,7 +205,7 @@ class SessionForm extends React.Component {
         </div>
       } else{
         formHeader = 
-        <div className="form-header">
+        <div className="session-form-header">
           
         <h1>
           Log in to Discover
@@ -238,6 +238,10 @@ class SessionForm extends React.Component {
                 
                   <button onClick={this.handleEmail} >Continue</button>
               </div>
+              <p className="small-light-words">We may use your email and devices for updates and tips on Discover's 
+              products and services, and for activities notifications. 
+              You can unsubscribe for free at any time in your notification settings.
+              </p>
             </div>
             </div>
           </div>
@@ -297,9 +301,7 @@ class SessionForm extends React.Component {
               {this.state.warnings}
               <div className="form">
                 {/* <br/> */}
-                          
-                <br/>
-                
+                                          
                 <label>
                     <input type="text"
                       className="form-inputs"
@@ -320,7 +322,7 @@ class SessionForm extends React.Component {
                 </label>
                 
                 <br/>
-                <button onClick={()=>this.checkField} >{this.props.formType}</button>
+                <button onClick={()=>this.checkField} >Sign in</button>
 
                   {/* <button onClick={this.changePage} >continue</button> */}
                 {/* <input className="form-inputs" type="submit" value={this.props.formType} /> */}
@@ -334,13 +336,10 @@ class SessionForm extends React.Component {
             // <div>second modal for password sign up</div>
             <div className="form-container">
             <div className="login-form-box">
-
+              <h1>Create your Discover Account</h1>
               <br/>
               {/* Please {this.props.formType} or {this.props.navLink} */}
               <div className="form">
-                <br/>
-                          
-                <br/>
 
                 <label>
                     <input type="text"
@@ -355,18 +354,18 @@ class SessionForm extends React.Component {
                 <br/>
                 
                       {/* {this.renderErrors()} */}
-                      {this.state.warnings}
-                <label>
+                <label> Choose a password
                     <input type="password"
                       placeholder="password"
                       className="form-inputs"
                       value={this.state.password}
                       onChange={this.update('password')}
-                    />
+                      />
                 </label>
+                      {this.state.warnings}
                 
                 <br/>
-                  <button onClick={this.checkField} >Continue</button>
+                  <button onClick={this.checkField} >Accept & continue</button>
               </div>
             </div>
           </div>
@@ -375,6 +374,8 @@ class SessionForm extends React.Component {
         return (
           <div className="form-container">
             <div className="login-form-box">
+            <h1>Create your Discover Account</h1>
+
               <br />
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {/* {this.renderErrors()} */}
@@ -382,7 +383,7 @@ class SessionForm extends React.Component {
                 <br />
 
                 <label className="label-names-input">Tell us your age</label>
-                <br />
+                {/* <br /> */}
                 <input
                   type="number "
                   className="form-inputs"
@@ -392,7 +393,7 @@ class SessionForm extends React.Component {
                 <br />
                 {this.state.warnings[0]}
 
-                <br />
+                {/* <br /> */}
                 <br />
                 <label className="label-names-input">Gender</label>
                 <select
@@ -415,16 +416,23 @@ class SessionForm extends React.Component {
       } else if (this.state.page === 3){
           return (
             <div className="form-container">
+              <div className="login-form-box" >
+              <h1>Tell us a bit about yourself</h1>
               <div className="form">
                 {this.state.warnings}
+                <label className="label-names-input" >Choose your display name</label>
                 <input
                   type="text"
                   className="form-inputs"
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.update("username")}
-                />
-                <button onClick={this.checkField}>{this.props.formType}</button>
+                  />
+              <span className="small-light-words">Your display name can be anything you like. 
+              Your name or artist name are good choices.
+              </span>
+                <button onClick={this.checkField}>Get started</button>
+              </div>
               </div>
             </div>
           );
