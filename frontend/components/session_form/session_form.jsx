@@ -195,33 +195,50 @@ class SessionForm extends React.Component {
     render() {
       let formHeader
       if (this.props.formType === 'signup'){
-        formHeader = 'Sign up to Discover'
+        formHeader = 
+        <div className="form-header">
+          
+          <h1>
+            Sign up to Discover
+          </h1>
+
+        </div>
       } else{
-        formHeader = "Log in to Discover"
+        formHeader = 
+        <div className="form-header">
+          
+        <h1>
+          Log in to Discover
+        </h1>
+
+      </div>
       }
       if (this.state.page === 0 && this.props.formType === 'signup' ) {
         return (
             <div className="form-container">
-              {/* {formHeader} */}
+              <div className="form" >
+              {formHeader}
+
             <button onClick={this.demoUserLogin} >Demo User Login</button>
             <br/>
             <br/>
-            <h2>---------------------or--------------------</h2>
+            <h2>--------------------or--------------------</h2>
             <br/>
             <div className="login-form-box">
             {this.state.warnings || this.renderErrors()}
-              <div className="login-form">
+              <div className="form">
            
                 {/* <label className="label-names-input"> Email:</label> */}
                     <input type="text"
                     placeholder="Your email address"
                     className="form-inputs"
-                      value={this.state.email}
-                      onChange={this.update('email')}
+                    value={this.state.email}
+                    onChange={this.update('email')}
                     />
                 
                   <button onClick={this.handleEmail} >Continue</button>
               </div>
+            </div>
             </div>
           </div>
         )
@@ -229,33 +246,40 @@ class SessionForm extends React.Component {
       } else if (this.state.page === 0 && this.props.formType === 'login' ) {
         return (
             <div className="form-container">
-              {formHeader}
               {/* <h1>Log in to Discover</h1> */}
+              <div className="form" >
+              {formHeader}
+
               <br/>
               <br/>
             <button onClick={this.demoUserLogin} >Demo User Login</button>
             <br/>
             <br/>
-            <h2>---------------------or--------------------</h2>
+            <h2>--------------------or--------------------</h2>
             <br/>
             <div className="login-form-box">
           {this.state.warnings}
               {/* <br/> */}  
           {this.renderErrors()}
-              <div className="login-form">
+              <div className="form">
            
                 {/* <label className="label-names-input"> Email:</label> */}
                     <input type="text"
                     placeholder="Your email address"
                     className="form-inputs"
-                      value={this.state.email}
-                      onChange={this.update('email')}
+                    value={this.state.email}
+                    onChange={this.update('email')}
                     />
                 
                 {/* <br/> */}
                   <button onClick={this.checkField} >Continue</button>
               </div>
             </div>
+            <p className="small-light-words">We may use your email and devices for updates and tips on Discover's 
+              products and services, and for activities notifications. 
+              You can unsubscribe for free at any time in your notification settings.
+              </p>
+          </div>
           </div>
         )
       
@@ -271,7 +295,7 @@ class SessionForm extends React.Component {
 
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {this.state.warnings}
-              <div className="login-form">
+              <div className="form">
                 {/* <br/> */}
                           
                 <br/>
@@ -313,7 +337,7 @@ class SessionForm extends React.Component {
 
               <br/>
               {/* Please {this.props.formType} or {this.props.navLink} */}
-              <div className="login-form">
+              <div className="form">
                 <br/>
                           
                 <br/>
@@ -354,7 +378,7 @@ class SessionForm extends React.Component {
               <br />
               {/* Please {this.props.formType} or {this.props.navLink} */}
               {/* {this.renderErrors()} */}
-              <div className="login-form">
+              <div className="form">
                 <br />
 
                 <label className="label-names-input">Tell us your age</label>
@@ -391,7 +415,7 @@ class SessionForm extends React.Component {
       } else if (this.state.page === 3){
           return (
             <div className="form-container">
-              <div className="login-form-box">
+              <div className="form">
                 {this.state.warnings}
                 <input
                   type="text"
