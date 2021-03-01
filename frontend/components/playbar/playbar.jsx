@@ -3,22 +3,33 @@ import React from 'react'
 
 class PlayBar extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            title: null
+        }
+    }
+
+    componentDidUpdate(){
+        this.setState({ title: this.props.currentSong.title})
+    }
 
 
 
     render(){
 
-        return(
-            <div className ="playbar-div">
-                <audio
-                    controls
-                    src="">
-                        Your browser does not support the
-                            {/* <code>audio</code> element. */}
-                        </audio>
+        if(this.props.currentSong === undefined) {
+            return null
+        } else {
+
+            return(
+                <div className ="playbar-div">
+                    cdv
+                <h1>{this.state.title}</h1>
 
             </div>
         )
+    }
     }
 }
 

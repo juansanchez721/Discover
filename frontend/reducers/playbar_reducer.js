@@ -5,13 +5,13 @@
 
 import { PLAY_SONG } from "../actions/playbar_actions"
 
-const playbarReducer = (state, action) => {
-    
-    switch (action) {
+const playbarReducer = (state = null, action) => {
+    debugger
+    switch (action.type) {
         case PLAY_SONG:
             return { [action.song.id]: action.song }
         default:
-            return null
+            return state
     }
 
 }

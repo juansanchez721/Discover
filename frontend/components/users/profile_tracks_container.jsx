@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { playSong } from '../../actions/playbar_actions'
 import ProfileTrackItem from './profile_track_item'
 
 const mSTP = (state, ownProps) => {
@@ -10,8 +11,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-        deleteTrack: trackId => dispatch(deleteTrack(trackId))
-        // fetchSingleUserTracks: userId => dispatch(fetchSingleUserTracks(userId))
+        playSong: track => dispatch(playSong(track))
     }
 
 }

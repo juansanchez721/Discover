@@ -10,7 +10,8 @@ class ProfileTrackItem extends React.Component {
     }
 
     handlePlay() {
-      alert(this.props.track.title)
+      debugger
+      this.props.playSong(this.props.track)
     }
 
 
