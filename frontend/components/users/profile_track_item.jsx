@@ -6,13 +6,30 @@ class ProfileTrackItem extends React.Component {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
-            this.state = {
-                showModal: false
-            }
     }
 
     handleClick(e) {
         this.props.openModal('deleteTrack')
+    }
+
+    handleTime() {
+        var _initial = this.props.track.created_at;
+var fromTime = new Date(_initial);
+var toTime = new Date();
+
+var differenceTravel = toTime.getTime() - fromTime.getTime();
+var seconds = Math.floor((differenceTravel) / (1000));
+        // return ((seconds/60)/60)/24
+        let minutes = seconds/60;
+        let hours = minutes/60; 
+        let days = hours/24;
+
+        if (days <= 31){
+            return Math.floor(days) + " days ago"
+        } else {
+            return days/12 + " manths ago"
+        }
+
     }
 
 
@@ -25,33 +42,42 @@ class ProfileTrackItem extends React.Component {
         if(user.id === currentUser.id ) {
             debugger
             userbuttons = 
-            <div>
+            <div className="profile-track-buttons" >
+                    <button onClick={() => updateTrackModal('updateTrack', track)} > Edit </button>
                     <button onClick={() => deleteTrackModal('deleteTrack', track)} >Delete song</button>
-                    <button onClick={() => updateTrackModal('updateTrack', track)} >Update song</button>
-            
+                    
                 </div>
         }
 
         return (
-            <div className = "profile-track-item">
+          <div className="profile-track-item">
             {/* <img src={track.image_url}/> */}
-            <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
+            <img
+              src={
+                "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
+              }
+            />
 
             <div className="track-info">
-
-                <h1> {track.title} </h1>    
-                <h2> {user.username} </h2>   
-                <audio className="profile-audio"
-                    controls
-                    // src={track.track_url}
-                    >
-                        Your browser does not support the
-                            {/* <code>audio</code> element. */}
-                </audio>
+              <div className="track-info-text">
+                <div>
+                    <h2 className="small-light-words"> {user.username} </h2>
+                    <h1> {track.title} </h1>
+                </div>
+                    <p className="small-light-words">{this.handleTime()}</p>
+              </div>
+              <audio
+                className="profile-audio"
+                controls
+                // src={track.track_url}
+              >
+                Your browser does not support the
+                {/* <code>audio</code> element. */}
+              </audio>
+              {userbuttons}
             </div>
-            {userbuttons}
-        </div>
-    )
+          </div>
+        );
     }     
 
 } 
