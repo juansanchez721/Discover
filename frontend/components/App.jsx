@@ -11,7 +11,7 @@ import TrackShowContainer from './tracks/track_show_container'
 import ProfileContainer from '../components/users/profile_container'
 import UploadTrackContainer from '../components/tracks/upload_track_container'
 import UpdateTrackContainer from '../components/tracks/update_track_container'
-import Playbar from './playbar/play_bar'
+import Playbar from './playbar/playbar'
 const App = () => (
   <div className="app">
         <Header/>

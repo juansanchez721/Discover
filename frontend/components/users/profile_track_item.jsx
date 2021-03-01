@@ -6,23 +6,29 @@ class ProfileTrackItem extends React.Component {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
+        this.handlePlay = this.handlePlay.bind(this)
     }
+
+    handlePlay() {
+      alert(this.props.track.title)
+    }
+
 
     handleClick(e) {
         this.props.openModal('deleteTrack')
     }
 
     handleTime() {
-        var _initial = this.props.track.created_at;
-var fromTime = new Date(_initial);
-var toTime = new Date();
+        let _initial = this.props.track.created_at;
+        let fromTime = new Date(_initial);
+        let toTime = new Date();
 
-var differenceTravel = toTime.getTime() - fromTime.getTime();
-var seconds = Math.floor((differenceTravel) / (1000));
+        let differenceTravel = toTime.getTime() - fromTime.getTime();
+        let seconds = Math.floor(differenceTravel / 1000);
         // return ((seconds/60)/60)/24
-        let minutes = seconds/60;
-        let hours = minutes/60; 
-        let days = hours/24;
+        let minutes = seconds / 60;
+        let hours = minutes / 60;
+        let days = hours / 24;
 
         if (days <= 31){
             return Math.floor(days) + " days ago"
@@ -60,20 +66,25 @@ var seconds = Math.floor((differenceTravel) / (1000));
 
             <div className="track-info">
               <div className="track-info-text">
-                <div>
+                <div className="orange-circle-container">
+                  <div className="orange-circle" onClick={() => this.handlePlay()} ></div>
+                </div>
+                <div className="texttext">
+                  <div className="name-title">
                     <h2 className="small-light-words"> {user.username} </h2>
                     <h1> {track.title} </h1>
+                  </div>
+                  <p className="small-light-words">{this.handleTime()}</p>
                 </div>
-                    <p className="small-light-words">{this.handleTime()}</p>
               </div>
-              <audio
+              {/* <audio
                 className="profile-audio"
-                controls
-                // src={track.track_url}
-              >
-                Your browser does not support the
-                {/* <code>audio</code> element. */}
-              </audio>
+                controls */}
+              {/* src={track.track_url} */}
+              {/* > */}
+              {/* Your browser does not support the */}
+              {/* <code>audio</code> element. */}
+              {/* </audio> */}
               {userbuttons}
             </div>
           </div>

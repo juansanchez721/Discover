@@ -75,7 +75,7 @@
 }
 
 .track-info {
-    background-color: pink;
+    /* background-color: pink; */
     font-size: 15px;
     width: 100%;
     padding: 10px;
@@ -88,6 +88,7 @@
 .track-info-text {
     display: flex;
     justify-content: space-between;
+    /* background-color: greenyellow; */
 }
 
 .profile-audio {
@@ -98,4 +99,19 @@
 .profile-track-buttons {
     background-color: red;
     /* margin-bottom: 0; */
+}
+
+.texttext {
+    /* background-color: blue; */
+    height: 45px;
+    width: 100%;
+    padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.name-title{ 
+    /* background-color: blue; */
+    padding-top: 7px;
 }

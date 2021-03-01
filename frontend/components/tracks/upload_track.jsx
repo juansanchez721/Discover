@@ -188,10 +188,31 @@ class UploadForm extends React.Component {
         return (
             <div className="uploadform-page" >
                 <div className="success-page" >
-                        <h1>Thank you for sharing your sounds.</h1>
-                        <h1>You can view your song <Link to={`/users/${this.props.currentUser.id}`} >here.</Link></h1>
+                  <div className="success-track" >
+                    
+                  <img
+              src={
+                "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
+              }
+            />
+
+            <div className="success-info">
+              <div className="success-text">
+                <div>
+                    <h2 className="small-light-words"> {this.props.currentUser.username}</h2>
+                    <h1> {this.state.title || 'track title here' } </h1>
+                </div>
+                    {/* <p className="small-light-words">{this.handleTime()}</p> */}
+              </div>
+              
+              <div className="upload-complete" >
+                  <p>Upload complete.</p>
+                 <p><Link to={`/users/${this.props.currentUser.id}`} >Go to your track.</Link></p>
+              </div>
+                  </div>
                 </div>
             </div>
+          </div>
         )
     }
 
