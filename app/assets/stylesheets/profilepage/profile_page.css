@@ -74,6 +74,10 @@
     box-sizing: border-box;
 }
 
+.profile-track-item img{
+    width: 260px;
+}
+
 .track-info {
     /* background-color: pink; */
     font-size: 15px;
@@ -97,7 +101,7 @@
 }
 
 .profile-track-buttons {
-    background-color: red;
+    /* background-color: red; */
     /* margin-bottom: 0; */
 }
 

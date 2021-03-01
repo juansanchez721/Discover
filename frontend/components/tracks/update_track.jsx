@@ -10,7 +10,7 @@ class UpdateTrack extends React.Component {
         debugger
         this.state = {
             track: this.props.track.track_url,
-            imageUrl: this.props.track.imageUrl,
+            imageUrl: this.props.track.image_url,
             imageFile: null,
             title: this.props.track.title,
             description: this.props.track.description,
@@ -90,7 +90,7 @@ class UpdateTrack extends React.Component {
             inp = <input className="replace-img" type="file" onChange={this.previewFile}/>
 
         } else {
-            preview = <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} alt="Image preview..."/>;
+            preview = <img src={this.state.imageUrl} alt="Image preview..."/>;
             inp = <input type="file" onChange={this.previewFile}/>
 
         } 

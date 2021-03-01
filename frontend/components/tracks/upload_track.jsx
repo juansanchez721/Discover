@@ -191,9 +191,7 @@ class UploadForm extends React.Component {
                   <div className="success-track" >
                     
                   <img
-              src={
-                "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
-              }
+              src={ this.state.imageUrl || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}
             />
 
             <div className="success-info">

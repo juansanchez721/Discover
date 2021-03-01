@@ -15,8 +15,8 @@ const DiscoverPageItem = (props) => {
 
              
                         <Link  className="text-link" to={`/tracks/${props.track.id}`}>
-                        {/* <img src={props.track.image_url} />  */}
-                        <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
+                        <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} /> 
+                        {/* <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} /> */}
                         <div className="album-shadow" >
 
                         </div>

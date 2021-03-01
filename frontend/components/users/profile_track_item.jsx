@@ -31,10 +31,17 @@ class ProfileTrackItem extends React.Component {
         let hours = minutes / 60;
         let days = hours / 24;
 
+        if(hours < 24 ){
+          return Math.floor(minutes) + " minutes ago"
+        }
+
+        if (days < 1){
+          return Math.floor(hours) + " hours ago"
+        }
         if (days <= 31){
             return Math.floor(days) + " days ago"
         } else {
-            return days/12 + " manths ago"
+            return Math.floor(days/12) + " months ago"
         }
 
     }
@@ -58,12 +65,8 @@ class ProfileTrackItem extends React.Component {
 
         return (
           <div className="profile-track-item">
-            {/* <img src={track.image_url}/> */}
-            <img
-              src={
-                "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
-              }
-            />
+            <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
+            {/* <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
 
             <div className="track-info">
               <div className="track-info-text">
