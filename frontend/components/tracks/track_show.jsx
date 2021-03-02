@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PlayButton from '../play_button/play_button'
 class TrackShow extends React.Component {
 
     constructor(props) {
@@ -9,25 +9,29 @@ class TrackShow extends React.Component {
         debugger
         this.props.fetchTrack(this.props.match.params.trackId)
         // console.log(this.props.song)
-        .then(
-        //     // if(this.props.song !== undefined){
+        // .then(
+            if(this.props.song !== undefined){
 
-                // this.props.fetchUser(this.props.song.owner_id)
-        //     // }
-            )
+                this.props.fetchUser(this.props.song.owner_id)
+            }
+
+            this.props.fetchTrackComments(this.props.match.params.trackId)
+            // )
             debugger
         }
         
-        // componentDidUpdate(prevProps){
-        //     debugger
-        //     console.log(prevProps)
-        //     if( parseInt(Object.keys(this.props.user)[0]) !== this.props.song.owner_id ){
-        //         this.props.fetchTrack(this.props.match.params.trackId)
-        //         debugger 
-        //             this.props.fetchUser(this.props.song.owner_id)
-        //     } 
-        //     debugger
-        // }
+        componentDidUpdate(prevProps){
+            debugger
+            console.log(prevProps)
+            if( prevProps.songId !== this.props.songId ){
+                this.props.fetchTrack(this.props.songId)
+                if(this.props.song !== undefined){
+
+                    this.props.fetchUser(this.props.song.owner_id)
+                }
+            } 
+            debugger
+        }
         
         render() {
         // console.log(this.props.song)
@@ -44,10 +48,16 @@ class TrackShow extends React.Component {
                     <div className="info-playbar" >
 
                         <div className="info-text">
-                            <h1> {this.props.song.title } </h1>
+                            <div className="track-show-circle-container">
+                                <PlayButton />
+                            </div>
+                            <div className="song-info">
+
                             <h1> {this.props.user[this.props.song.owner_id].username } </h1>
+                            <h1> {this.props.song.title } </h1>
+                            </div>
                         </div>
-                        <div className="audio-player-holder" >
+                        {/* <div className="audio-player-holder" >
 
                                 <audio
                                 controls
@@ -55,7 +65,7 @@ class TrackShow extends React.Component {
                                 >
                                     Your browser does not support the
                                 </audio>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="show-image">
                     <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />

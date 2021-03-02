@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
 import  TrackShow from './track_show'
-import { selectTrack } from '../../reducers/selector';
 import { fetchTrack } from '../../actions/track_actions'
 import { fetchUser } from '../../actions/user_actions'
-
+import { fetchTrackComments } from '../../actions/comment_actions'
 
 
 const mSTP = (state, { match }) => {
@@ -13,7 +12,7 @@ const mSTP = (state, { match }) => {
     debugger
     return {
         songId,
-        song: state.entities.tracks[match.params.trackId],
+        song: state.entities.tracks[songId],
         user: state.entities.users
     }
 }
@@ -22,7 +21,8 @@ const mSTP = (state, { match }) => {
 const mDTP = (dispatch) => {
     return {
         fetchUser: userId => dispatch(fetchUser(userId)),
-        fetchTrack: trackId => dispatch(fetchTrack(trackId))
+        fetchTrack: trackId => dispatch(fetchTrack(trackId)),
+        fetchTrackComments: trackId => dispatch(fetchTrackComments(trackId))
     }
 }
 

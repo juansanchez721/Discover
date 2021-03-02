@@ -1,20 +1,16 @@
 .show-full-page{
-    padding-top: 55px;
+    padding-top: 45px;
     /* background-color: lawngreen; */
     height: 600px;
 }
 .track-show {
     background-color: #f2f2f2;
-    /* height:600px; */
+    height:380px;
     display: flex;
-    justify-content: space-evenly;
-    border-right: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-
-    
-    
-
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .info-playbar{
@@ -23,25 +19,46 @@
     max-width: 650px;
     /* background-color: purple; */
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .info-text {
-    /* background-color: royalblue; */
-    height: 50%;
+    background-color: royalblue;
+    /* height: 50%; */
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
     font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info-text .song-info {
+    background-color: red;
+    padding-left: 10px;
+    height: 50px;
+}
+
+.song-info > *:first-child{
+    color: #999;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    font-size: 16px;
+}
+
+.track-show-circle-container {
+    background-color: purple;
+    width: 60px;
+    height: 60px;
 }
 
 .audio-player-holder {
     background-color: #f2f2f2;
     /* height: 50%; */
     width: 100%;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     box-sizing: border-box;
     margin-top: 200px;
 }
@@ -50,15 +67,10 @@ audio{
     width: 75%;
 }
 
-.track-show {
-    /* background-color: red; */
-    /* height: 300px; */
-    width: 100%
-}
 
 .show-image{
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
     /* background-color: pink; */
     display: flex;
     justify-content: center;
@@ -70,6 +82,6 @@ audio{
 .show-image img {
     /* opacity: .1; */
     height: 350px;
-    width: 350px; 
+    width: inherit; 
 
 }
