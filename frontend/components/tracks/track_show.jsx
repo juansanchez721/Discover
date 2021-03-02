@@ -1,36 +1,24 @@
 import React from 'react'
 import PlayButton from '../play_button/play_button'
+import CommentsContainer from '../comments/comments_container'
 class TrackShow extends React.Component {
 
     constructor(props) {
         super(props)
     }
     componentDidMount(){
-        debugger
         this.props.fetchTrack(this.props.match.params.trackId)
-        // console.log(this.props.song)
-        // .then(
-            if(this.props.song !== undefined){
-
-                this.props.fetchUser(this.props.song.owner_id)
-            }
-
-            this.props.fetchTrackComments(this.props.match.params.trackId)
-            // )
-            debugger
+        .then(() => this.props.fetchTrackComments(this.props.match.params.trackId))
+        .then(() => this.props.fetchUser(this.props.song.owner_id))
         }
         
         componentDidUpdate(prevProps){
-            debugger
-            console.log(prevProps)
+            // console.log(prevProps)
             if( prevProps.songId !== this.props.songId ){
                 this.props.fetchTrack(this.props.songId)
-                if(this.props.song !== undefined){
-
-                    this.props.fetchUser(this.props.song.owner_id)
-                }
+                .then(() => this.props.fetchUser(this.props.song.owner_id))
+                .then(() => this.props.fetchTrackComments(this.props.song.id))
             } 
-            debugger
         }
         
         render() {
@@ -74,7 +62,7 @@ class TrackShow extends React.Component {
                     </div>
                 
                 </div>
-
+                        <CommentsContainer artist={this.props.user[this.props.song.owner_id]} />
            
 
             </div>

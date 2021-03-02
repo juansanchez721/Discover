@@ -10,19 +10,18 @@ class ProfilePage extends React.Component {
         debugger
 
         this.state = {
-            userId: null
+            loaded: true
         }
-        this.yoo = null;
+        // this.yoo = null;
         // this.userId = this.props.match.params.userId
     }
 
     componentDidMount() {
         // this.setState({ userId: this.props.match.params.userId})
         
-        this.props.fetchSingleUserTracks(this.props.match.params.userId)
-        .then(this.props.fetchUser(this.props.match.params.userId))
-        debugger
-    
+        this.props.fetchUser(this.props.match.params.userId)
+        .then(() => this.props.fetchSingleUserTracks(this.props.match.params.userId))
+        .then(() => this.setState({ loaded: false }) ) 
     }
 
     componentDidUpdate(prevProps){
@@ -53,12 +52,20 @@ class ProfilePage extends React.Component {
         // console.log(this.props.match.params.userId)
         // console.log(this.props.user.id) //use id for a container for the profile track items
 
+        if(this.state.loaded) {
+            return (
+                <div className="profile-page">
+                    <h1>Loading . . .</h1>
+                </div>
+            )
+        }
+
         if(this.props.user === undefined){
             return null
         }
 
         console.log(this.props.tracks)
-        let tracks = Object.values(this.props.tracks).map(track => (
+        let tracks = this.props.tracks.map(track => (
             <ProfileTrackItem key={track.id} 
             user={this.props.user} 
             track={track} 

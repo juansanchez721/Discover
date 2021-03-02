@@ -1,0 +1,77 @@
+.comments-container {
+    background-color: brown;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+}
+
+.comments-left{
+    background-color: cadetblue;
+    width: 200px;
+    /* height: 100%; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.artist-info p {
+    padding: 5px;
+    margin-left: 0px;
+}
+
+.artist-info {
+    background-color: lawngreen;
+    width: 100%;
+}
+
+.comments-mid{
+    width: 65%; 
+    height: 100%;
+    background-color: chartreuse;
+}
+
+.comments-right {
+    height: 100%;
+    width: 500px;
+    background-color: burlywood;
+}
+
+.comment-item {
+    /* background-color: chocolate; */
+    padding: 10px 10px 10px 0px;
+    height: 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comment-item-info {
+    /* background-color: pink; */
+    height: 30px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.comment-circle-maker {
+    background-color: ivory;
+    height: 40px;
+    width: 40px;
+}
+
+.username-date-posted {
+    /* background-color: khaki; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.username-date-posted p {
+    color: #999;
+}

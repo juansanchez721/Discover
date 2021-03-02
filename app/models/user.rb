@@ -12,6 +12,10 @@ class User < ApplicationRecord
     class_name: :Track,
     dependent: :destroy
 
+    has_many :comments,
+    foreign_key: :commenter_id,
+    class_name: :Comment
+
     has_one_attached :photo
 
     def password=(password)

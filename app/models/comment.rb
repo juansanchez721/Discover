@@ -6,6 +6,8 @@ class Comment < ApplicationRecord
     foreign_key: :track_id,
     class_name: :Track
 
-
+    belongs_to :user,
+    foreign_key: :commenter_id,
+    class_name: :User
 
 end
