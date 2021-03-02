@@ -24,40 +24,28 @@
 }
 
 .top-delete-info {
-    /* background-color: blueviolet; */
+    background-color: blueviolet;
     width: 100%;
+    height: 50px;
     padding: 0px 0px 0px 15px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-delete-circle {
+    width: 35px;
+    height: 35px;
 }
 
 .top-delete-text {
     /* background-color: cadetblue; */
-    padding-top: 5px;
-    height: 50px;
+    padding-left: 5px;
+    /* height: 50px; */
     width: 100%;
-    align-items: center;
-}
-
-.orange-circle-container {
-    height: 50px;
-    width: 50px;
-    /* background-color: brown; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.orange-circle {
-    height: 35px;
-    width: 35px;
-    background-color: #FE5000;
-    border-radius: 50%;
-}
-
-.orange-circle:hover {
-    cursor: pointer;
+    /* align-items: center; */
 }
 
 .bottom-delete {

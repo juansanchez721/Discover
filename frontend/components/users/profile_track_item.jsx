@@ -1,19 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import PlayButton from '../play_button/play_button'
 class ProfileTrackItem extends React.Component {
 
     constructor(props) {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
-        this.handlePlay = this.handlePlay.bind(this)
+        // this.handlePlay = this.handlePlay.bind(this)
     }
 
-    handlePlay() {
-      debugger
-      this.props.playSong(this.props.track)
-    }
-
+    
 
     handleClick(e) {
         this.props.openModal('deleteTrack')
@@ -31,11 +28,10 @@ class ProfileTrackItem extends React.Component {
         let hours = minutes / 60;
         let days = hours / 24;
 
-        if(hours < 24 ){
+        if (minutes < 60){
           return Math.floor(minutes) + " minutes ago"
         }
-
-        if (days < 1){
+        if( hours >= 1 && hours < 24 ){
           return Math.floor(hours) + " hours ago"
         }
         if (days <= 31){
@@ -65,13 +61,13 @@ class ProfileTrackItem extends React.Component {
 
         return (
           <div className="profile-track-item">
-            <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
-            {/* <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
+            {/* <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
+            <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
 
             <div className="track-info">
               <div className="track-info-text">
-                <div className="orange-circle-container">
-                  <div className="orange-circle" onClick={() => this.handlePlay()} ></div>
+                <div className="track-info-circle">
+                    <PlayButton track={track} user={user}/>
                 </div>
                 <div className="texttext">
                   <div className="name-title">

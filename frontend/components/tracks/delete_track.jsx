@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PlayButton from '../play_button/play_button'
 
 class DeleteTrack extends React.Component {
 
@@ -30,19 +30,19 @@ class DeleteTrack extends React.Component {
                   "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
                 }
               />
-            <div className="top-delete-info">
-              <div className="orange-circle-container">
-                <div className="orange-circle" >
-
-                </div>
-              </div>
-                <div className="top-delete-text">
-                  <h2 className="small-light-words"> {user.username} </h2>
-                  <h1 className=""> {track.title} </h1>
-                </div>
+              <div className="top-delete-info">
+                  {/* <div className="top-delete-top"> */}
+                    <div className="top-delete-circle">
+                      <PlayButton track={track} artist={user} />
+                    </div>
+                    <div className="top-delete-text">
+                      <h2 className="small-light-words"> {user.username} </h2>
+                      <h1 className=""> {track.title} </h1>
+                    </div>
+                  {/* </div> */}
               </div>
             </div>
-        <div className="center-div" ></div>
+            <div className="center-div"></div>
             <div className="bottom-delete">
               <h1> Permanently delete this track? </h1>
               <button onClick={() => this.handleClick()}>Delete song</button>

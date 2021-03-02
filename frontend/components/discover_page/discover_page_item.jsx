@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-
+import PlayButton from '../play_button/play_button'
 
 const DiscoverPageItem = (props) => {
     debugger
@@ -15,14 +15,16 @@ const DiscoverPageItem = (props) => {
 
              
                         <Link  className="text-link" to={`/tracks/${props.track.id}`}>
-                        <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} /> 
-                        {/* <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} /> */}
+                        {/* <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />  */}
+                        <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
                         <div className="album-shadow" >
-
                         </div>
 
                         <h1 className="song-truncate"> {props.track.title} </h1>  
                         </Link>
+                            <div className="album-shadow-circle">
+                                <PlayButton track={props.track} user={props.owner} />
+                            </div>
             
                         {/* <div className="song-info"> */}
                         <h1 className="small-light-words"> {props.owner.username || 'artist here' } </h1>

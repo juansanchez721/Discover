@@ -4,7 +4,7 @@ import PlayBar from './playbar'
 const mSTP = state => {
     debugger
     return {
-        currentSong: state.ui.playbar
+        currentTrack: state.ui.playbar
     }
 }
 

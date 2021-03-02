@@ -1,5 +1,6 @@
 .playbar-div{
     background-color: #f2f2f2;
+    color: black;
     height: 50px;
     width: 100%;
     position: fixed;
@@ -11,4 +12,8 @@
 .playbar-div audio {
     width: 700px;
     color: white;
+}
+
+#audio{
+    width: 500px;
 }

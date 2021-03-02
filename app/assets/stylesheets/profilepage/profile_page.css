@@ -59,12 +59,6 @@
     /* width: inherit; */
 }
 
-/* .track-info h2 {
-    padding-top: 5px;
-    font-size: 16px;
-    color: grey;
-} */
-
 .profile-track-item {
     height: 300px;
     padding: 20px;
@@ -92,9 +86,15 @@
 .track-info-text {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     /* background-color: greenyellow; */
 }
 
+.track-info-circle{
+    /* background-color: red; */
+    height: 40px;
+    width: 40px;
+}
 .profile-audio {
     width: 50%;
     /* margin-top: 120px; */

@@ -9,7 +9,9 @@ const playbarReducer = (state = null, action) => {
     debugger
     switch (action.type) {
         case PLAY_SONG:
-            return { [action.song.id]: action.song }
+            return { ["currentTrack"]: action.song,
+                    ["artist"]: action.user
+            }
         default:
             return state
     }
