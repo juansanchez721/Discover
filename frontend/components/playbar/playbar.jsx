@@ -36,29 +36,32 @@ class PlayBar extends React.Component {
         } else {
             let { currentTrack, artist } = this.props.currentTrack
             console.log(currentTrack, artist)
-            return(
-                <div className="playbar-div">
-                    
-                <h1>{currentTrack.title || 'song here'}</h1>
-                <br/>
-                <br/>
-                <h1>{artist.username || 'artist here'}</h1>
+            return (
+              <div className="playbar-div">
 
-                <input type="button" value="PLAY" onClick={() => this.play()}/>
-                <input type="button" value="STOP" onClick={()=>this.stop()}/>
+                <input type="button" value="PLAY" onClick={() => this.play()} />
+                <input type="button" value="STOP" onClick={() => this.stop()} />
 
                 <audio
-                id="audio"
-                controls
-                src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
-            // src={track.track_url}
-              >
-              {/* Your browser does not support the */}
-              {/* <code>audio</code> element. */}
-            </audio>
+                  id="audio"
+                  controls
+                  src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
+                  // src={track.track_url}
+                >
+                  {/* Your browser does not support the */}
+                  {/* <code>audio</code> element. */}
+                </audio>
+                <div className="play-bar-song-info">
 
-            </div>
-        )
+                <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
+
+                <div className="artist-song-links">
+                    <h1 >{artist.username || "artist here"}</h1>
+                    <h1 >{currentTrack.title || "song here"}</h1>
+                </div>
+                </div>
+              </div>
+            );
     }
     }
 }

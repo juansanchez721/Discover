@@ -33,7 +33,7 @@ class DeleteTrack extends React.Component {
               <div className="top-delete-info">
                   {/* <div className="top-delete-top"> */}
                     <div className="top-delete-circle">
-                      <PlayButton track={track} artist={user} />
+                      <PlayButton track={track} user={user} />
                     </div>
                     <div className="top-delete-text">
                       <h2 className="small-light-words"> {user.username} </h2>
