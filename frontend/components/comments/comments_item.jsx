@@ -1,7 +1,18 @@
 import React from 'react'
 import Time from '../time/time'
 
-const CommentItem = ({ comment }) => {
+const CommentItem = ({ comment, currentUserId, deleteComment }) => {
+
+      const displayName =  (
+        comment.commenter_id === currentUserId ? "You" : comment.username
+      )
+
+      const deleteButton =  (
+        comment.commenter_id === currentUserId ? <button className="delete-comment-btn" onClick={() => deleteComment(comment.id)} >delete</button> : null
+      )
+
+
+
     return (
       <div className="comment-item">
         <div className="comment-circle-maker">
@@ -14,10 +25,14 @@ const CommentItem = ({ comment }) => {
         </div>
         <div className="comment-item-info">
             <div className="username-date-posted">
-            <p>{comment.username}</p>
+            <p>{displayName}</p>
             <Time time={comment.created_at}/>
             </div>
+            <div className="body-delete">
+
           <p> {comment.body} </p>
+            {deleteButton}
+            </div>
         </div>
       </div>
     );

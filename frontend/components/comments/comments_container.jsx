@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { createComment } from '../../actions/comment_actions'
+import { createComment, deleteComment } from '../../actions/comment_actions'
 import Comments from "./comments"
 
 
@@ -16,7 +16,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        createComment: track => dispatch(createComment(track))
+        createComment: comment => dispatch(createComment(comment)),
+        deleteComment: commentId => dispatch(deleteComment(commentId))
     }
 }
 

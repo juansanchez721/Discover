@@ -1,4 +1,5 @@
 import React from "react";
+import { deleteComment } from "../../actions/comment_actions";
 import { createComment } from "../../util/comment_api_util";
 import CommentItem from "./comments_item";
 
@@ -40,8 +41,12 @@ class Comments extends React.Component{
         const { comments, artist } = this.props
         console.log(artist);
         let songComments = Object.values(comments).map((comment) => {
-            return <CommentItem key={comment.id} comment={comment} />;
-        });
+            return <CommentItem key={comment.id}
+            comment={comment} 
+            currentUserId ={this.state.commenter_id} 
+            deleteComment = {this.props.deleteComment}
+            />;
+          });
         
         return (
           <div className="comments-container">

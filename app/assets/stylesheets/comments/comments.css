@@ -82,7 +82,7 @@
 
 .comment-count {
     /* width: 100%; */
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #e5e5e5;
     padding: 10px;
     /* background-color: blue; */
 }
@@ -144,4 +144,23 @@
 
 .username-date-posted p {
     color: #999;
+}
+
+.body-delete {
+    /* background-color: blue; */
+    /* height: 50px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.delete-comment-btn {
+    display: none;
+    position: absolute;
+    right: 0
+}
+
+.comment-item:hover .delete-comment-btn {
+    display: block;
 }

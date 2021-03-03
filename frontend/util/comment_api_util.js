@@ -17,3 +17,10 @@ export const createComment = comment => {
         processData: false
     })
 }
+
+export const deleteComment = commentId => {
+    return $.ajax({
+        type: 'DELETE',
+        url: `/api/comments/${commentId}`
+    })
+}
