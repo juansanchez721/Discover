@@ -26,23 +26,23 @@ class DiscoverPage extends React.Component {
 
         ))
 
-        this.props.tracks.sort(() => Math.random() - 0.5)
+        // this.props.tracks.sort(() => Math.random() - 0.5)
 
-        let trackssecond = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
-        ))
+        // let trackssecond = this.props.tracks.map(track => (
+        //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
+        // ))
 
-        this.props.tracks.sort(() => Math.random() - 0.5)
+        // this.props.tracks.sort(() => Math.random() - 0.5)
 
-        let tracksthird = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
-        ))
+        // let tracksthird = this.props.tracks.map(track => (
+        //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
+        // ))
 
-        this.props.tracks.sort(() => Math.random() - 0.5)
+        // this.props.tracks.sort(() => Math.random() - 0.5)
 
-        let tracksfourth = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
-        ))
+        // let tracksfourth = this.props.tracks.map(track => (
+        //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
+        // ))
 
 
 
@@ -77,7 +77,7 @@ class DiscoverPage extends React.Component {
                             <p className="small-light-words"> Some holder words that go here </p>
                     </div>
                   <div className="showing-songs">
-                    <div className="inner-showing">{trackssecond}</div>
+                    {/* <div className="inner-showing">{trackssecond}</div> */}
                   </div>
                   <br />
                   <br />
@@ -88,7 +88,7 @@ class DiscoverPage extends React.Component {
 
                     </div>
                   <div className="showing-songs">
-                    <div className="inner-showing">{tracksthird}</div>
+                    {/* <div className="inner-showing">{tracksthird}</div> */}
                   </div>
                   <br />
                   <br />
@@ -99,7 +99,7 @@ class DiscoverPage extends React.Component {
 
                     </div>
                   <div className="showing-songs">
-                    <div className="inner-showing">{tracksfourth}</div>
+                    {/* <div className="inner-showing">{tracksfourth}</div> */}
                   </div>
                 </div>
               </div>

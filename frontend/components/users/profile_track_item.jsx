@@ -34,6 +34,12 @@ class ProfileTrackItem extends React.Component {
                     <button onClick={() => deleteTrackModal('deleteTrack', track)} >Delete song</button>
                     
                 </div>
+        } else {
+          userbuttons = 
+            <div className="profile-track-buttons" >
+                    <button onClick={() => alert('Liked')} > Like </button>
+                    
+                </div>
         }
 
         return (

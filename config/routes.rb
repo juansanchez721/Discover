@@ -6,15 +6,17 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do 
       resources :users, only: [:create, :show, :index] do 
           resources :tracks, only: [:index]
+          resources :likes, only: [:index]
       end
 
       resources :tracks, only: [:show, :index, :create, :destroy, :update] do 
         resources :comments, only: [:index]
+        resources :likes, only: [:index]
       end
       
       resources :comments, only: [:show, :create, :destroy]
+      resources :likes, only: [:index, :create, :destroy]
       resource :session, only: [:create, :destroy]
-      
       get '/email/search', to: 'sessions#search'
 
   end

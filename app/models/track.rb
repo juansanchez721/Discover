@@ -10,6 +10,8 @@ class Track < ApplicationRecord
     foreign_key: :track_id,
     class_name: :Comment
 
+    has_many :likes, as: :likeable
+
     has_one_attached :photo
     has_one_attached :track
 end
