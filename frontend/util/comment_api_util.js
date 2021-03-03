@@ -6,3 +6,14 @@ export const fetchTrackComments = trackId => {
         url:`/api/tracks/${trackId}/comments`
     })
 }
+
+export const createComment = comment => {
+    debugger
+    return $.ajax({
+        type: 'POST',
+        url: `/api/comments`,
+        data: comment,
+        contentType: false,
+        processData: false
+    })
+}

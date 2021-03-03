@@ -1,36 +1,101 @@
 .comments-container {
-    background-color: brown;
+    background-color: white;
     height: 500px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .comments-left{
-    background-color: cadetblue;
-    width: 200px;
-    /* height: 100%; */
+    /* background-color: cadetblue; */
+
+    width: 65%;
+    height: 100%;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
+    /* align-items: center; */
+    font-size: 14px;
+    margin: 0px 30px;
+}
+
+.comment-input-holder {
+    /* padding: 5px; */
+    height:100px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
     align-items: center;
+}
+
+.comment-input-holder img {
+    height: 40px;
+    width: 40px;
+}
+
+.input-box {
+    padding: 7px;
+    width: 100%;
+    background-color: #f2f2f2;
+    /* border: 1px solid #e5e5e5; */
+}
+
+.write-a-comment{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    height: 27px;
     font-size: 14px;
 }
 
+.write-a-comment:focus {
+    outline: none !important;
+    border-color: #999;
+    /* border: 5px solid #e5e5e5; */
+}
+
+.comment-input-holder:focus-within .input-box{
+    background-color: #e5e5e5;
+    border-color: #ccc;
+}
+
+
+.comments-other {
+    border-top: 1px solid #f2f2f2;
+
+    display: flex;
+    flex-direction: row;
+    /* background-color: blanchedalmond; */
+    padding-top:25px;
+}
+.avatar-user-info {
+    background-color: red;
+}
+
+.comments-section{
+    width: 100%;
+    margin-top: 25px;
+    margin-left: 25px;
+    /* background-color: lawngreen; */
+    border-top: 1px solid #f2f2f2;
+
+}
+
 .artist-info p {
-    padding: 5px;
-    margin-left: 0px;
+    padding-top: 7px;
+    /* margin-left: 0px; */
 }
 
 .artist-info {
-    background-color: lawngreen;
+    /* background-color: pink; */
     width: 100%;
 }
-
+/* 
 .comments-mid{
     width: 65%; 
     height: 100%;
     background-color: chartreuse;
-}
+} */
 
 .comments-right {
     height: 100%;
@@ -60,7 +125,7 @@
 }
 
 .comment-circle-maker {
-    background-color: ivory;
+    /* background-color: ivory; */
     height: 40px;
     width: 40px;
 }

@@ -15,10 +15,33 @@ class Api::CommentsController < ApplicationController
     
     end
 
+
+    def create 
+
+        @comment = Comment.new(comment_params)
+        # debugger
+        if @comment.save
+        # debugger
+            render :show 
+        else
+            # debugger
+            render json: @comment.errors.full_messages, status: 422
+        end
+
+        # debugger
+    end
+
+
+
     def show 
         @comment = Comment.find(params[:id])
         render :show
     end
 
+    def comment_params
+        # debugger
+        params.require(:comment).permit(:commenter_id, :track_id, :body)
+
+    end
 
 end

@@ -62,7 +62,7 @@ class TrackShow extends React.Component {
                     </div>
                 
                 </div>
-                        <CommentsContainer artist={this.props.user[this.props.song.owner_id]} />
+                        <CommentsContainer trackId={this.props.songId} artist={this.props.user[this.props.song.owner_id]} />
            
 
             </div>
