@@ -1,5 +1,6 @@
 import React from 'react'
 import PlayButton from '../play_button/play_button'
+import Time from '../time/time'
 
 class DeleteTrack extends React.Component {
 
@@ -36,7 +37,10 @@ class DeleteTrack extends React.Component {
                       <PlayButton track={track} user={user} />
                     </div>
                     <div className="top-delete-text">
+                      <div className="song-info-time">
                       <h2 className="small-light-words"> {user.username} </h2>
+                      <Time time={track.created_at} />
+                      </div>
                       <h1 className=""> {track.title} </h1>
                     </div>
                   {/* </div> */}

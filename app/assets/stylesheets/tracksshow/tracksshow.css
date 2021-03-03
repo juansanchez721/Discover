@@ -1,6 +1,6 @@
 .show-full-page{
-    padding-top: 45px;
-    /* background-color: lawngreen; */
+    padding: 45px 0px;
+    background-color: white;
     /* height: 600px; */
 }
 .track-show {
@@ -9,12 +9,12 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgray;
-    padding: 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
 .track-show-circle-maker {
-    background-color: red;
+    /* background-color: red; */
     width: 120px;
     height: 120px;
     /* border-radius: 50%; */
@@ -32,7 +32,7 @@
 }
 
 .info-text {
-    background-color: royalblue;
+    /* background-color: royalblue; */
     /* height: 50%; */
     width: 100%;
     padding: 10px;
@@ -44,7 +44,8 @@
 }
 
 .info-text .song-info {
-    background-color: red;
+    /* background-color: red; */
+    width: 100%;
     padding-left: 10px;
     height: 50px;
 }
@@ -55,8 +56,14 @@
     font-size: 16px;
 }
 
+.song-info-time {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 .track-show-circle-container {
-    background-color: purple;
+    /* background-color: purple; */
     width: 60px;
     height: 60px;
 }
@@ -76,8 +83,8 @@ audio{
 
 
 .show-image{
-    height: 350px;
-    width: 350px;
+    height: 100%;
+    /* width: 350px; */
     /* background-color: pink; */
     display: flex;
     justify-content: center;
@@ -88,7 +95,7 @@ audio{
 
 .show-image img {
     /* opacity: .1; */
-    height: 350px;
+    height: 100%;
     width: inherit; 
 
 }

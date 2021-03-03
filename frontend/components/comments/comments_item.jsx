@@ -1,4 +1,5 @@
 import React from 'react'
+import Time from '../time/time'
 
 const CommentItem = ({ comment }) => {
     return (
@@ -14,7 +15,7 @@ const CommentItem = ({ comment }) => {
         <div className="comment-item-info">
             <div className="username-date-posted">
             <p>{comment.username}</p>
-            <p>{comment.created_at}</p>
+            <Time time={comment.created_at}/>
             </div>
           <p> {comment.body} </p>
         </div>

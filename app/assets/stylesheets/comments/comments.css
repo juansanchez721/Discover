@@ -1,6 +1,6 @@
 .comments-container {
-    background-color: white;
-    height: 500px;
+    /* background-color: white; */
+    /* height: 500px; */
     display: flex;
     flex-direction: column;
 }
@@ -66,21 +66,26 @@
     display: flex;
     flex-direction: row;
     /* background-color: blanchedalmond; */
-    padding-top:25px;
+    padding-top:20px;
 }
 .avatar-user-info {
-    background-color: red;
+    /* background-color: red; */
 }
 
 .comments-section{
     width: 100%;
-    margin-top: 25px;
+    /* margin-top: 5px; */
     margin-left: 25px;
     /* background-color: lawngreen; */
-    border-top: 1px solid #f2f2f2;
-
+    
 }
 
+.comment-count {
+    /* width: 100%; */
+    border-bottom: 1px solid #f2f2f2;
+    padding: 10px;
+    /* background-color: blue; */
+}
 .artist-info p {
     padding-top: 7px;
     /* margin-left: 0px; */

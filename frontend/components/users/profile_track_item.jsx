@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import PlayButton from '../play_button/play_button'
+import Time from '../time/time'
+
+
 class ProfileTrackItem extends React.Component {
 
     constructor(props) {
@@ -14,32 +17,6 @@ class ProfileTrackItem extends React.Component {
 
     handleClick(e) {
         this.props.openModal('deleteTrack')
-    }
-
-    handleTime() {
-        let _initial = this.props.track.created_at;
-        let fromTime = new Date(_initial);
-        let toTime = new Date();
-
-        let differenceTravel = toTime.getTime() - fromTime.getTime();
-        let seconds = Math.floor(differenceTravel / 1000);
-        // return ((seconds/60)/60)/24
-        let minutes = seconds / 60;
-        let hours = minutes / 60;
-        let days = hours / 24;
-
-        if (minutes < 60){
-          return Math.floor(minutes) + " minutes ago"
-        }
-        if( hours >= 1 && hours < 24 ){
-          return Math.floor(hours) + " hours ago"
-        }
-        if (days <= 31){
-            return Math.floor(days) + " days ago"
-        } else {
-            return Math.floor(days/12) + " months ago"
-        }
-
     }
 
 
@@ -74,7 +51,7 @@ class ProfileTrackItem extends React.Component {
                     <h2 className="small-light-words"> {user.username} </h2>
                     <h1> {track.title} </h1>
                   </div>
-                  <p className="small-light-words">{this.handleTime()}</p>
+                  <Time time={track.created_at} />
                 </div>
               </div>
               {/* <audio

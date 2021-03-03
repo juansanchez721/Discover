@@ -4,7 +4,7 @@ import {createTrack} from '../../actions/track_actions'
 const mSTP = state => {
 
     return {
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.session
     }
 }
 
