@@ -26,14 +26,32 @@ class Api::LikesController < ApplicationController
 
         if @like.save
             # debugger
-            @track = Track.where(id: @like.likeable_id)
+            @track = Track.find_by(id: @like.likeable_id)
             # debugger
-            redirect_to api_track_url(@track[0].id), status: 303
+            redirect_to api_track_url(@track.id), status: 303
         else
             render json: @like.errors.full_messages, status: 422
         end
 
     end
+
+    def destroy 
+
+        create_like_params = like_params
+        create_like_params[:liker_id] = current_user.id
+
+        @like = Like.find_by(create_like_params)
+
+        if @like
+            @like.destroy!
+            # debugger
+            @track = Track.find_by(id: @like.likeable_id)
+            # debugger
+            redirect_to api_track_url(@track.id), status: 303
+        else
+            render json: ["Couldn't find like"]
+        end
+    end 
 
     
     

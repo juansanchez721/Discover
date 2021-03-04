@@ -24,14 +24,14 @@ class ProfilePage extends React.Component {
         .then(() => this.setState({ loaded: false }) ) 
     }
 
-    componentDidUpdate(prevProps){
-        debugger
-        if(this.props.match.params.userId !== prevProps.match.params.userId ){
-            this.props.fetchSingleUserTracks(this.props.match.params.userId)
-        .then(this.props.fetchUser(this.props.match.params.userId))
-        }
-        debugger
-    }
+    // componentDidUpdate(prevProps){
+    //     debugger
+    //     if(this.props.match.params.userId !== prevProps.match.params.userId ){
+    //         this.props.fetchSingleUserTracks(this.props.match.params.userId)
+    //     .then(this.props.fetchUser(this.props.match.params.userId))
+    //     }
+    //     debugger
+    // }
 
     // componentWillUnmount(){
     //     console.log("end")
@@ -65,15 +65,18 @@ class ProfilePage extends React.Component {
         }
 
         console.log(this.props.tracks)
+        debugger
         let tracks = this.props.tracks.map(track => (
             <ProfileTrackItem key={track.id} 
             user={this.props.user} 
             track={track} 
+            liked={track.likers.includes(this.props.currentUser.id)}
             currentUser={this.props.currentUser}
             playSong={this.props.playSong}
             updateTrackModal ={this.props.updateTrackModal}
             deleteTrackModal={this.props.deleteTrackModal}
-            createLike={this.props.createLike} />
+            createLike={this.props.createLike}
+            deleteLike={this.props.deleteLike} />
         ))
 
         return(

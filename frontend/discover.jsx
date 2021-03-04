@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 users: { [window.currentUser.id]: window.currentUser }
             },
             session: { id: window.currentUser.id,
-                    username: window.currentUser.username 
+                    username: window.currentUser.username,
+                    trackLikes: window.currentUser.trackLikes
                 },
         };
         store = configureStore(preloadedState);

@@ -1,4 +1,3 @@
-import { $CombinedState } from "redux"
 
 
 export const createLike = trackId => {
@@ -12,5 +11,18 @@ export const createLike = trackId => {
         }}
         // contentType: false,
         // processData: false
+    })
+}
+
+export const deleteLike = trackId => {
+    debugger
+    return $.ajax({
+        type: "DELETE",
+        url: "api/likes/-1",
+        data: { like: {
+            likeable_id: trackId,
+            likeable_type: "Track"
+        }}
+
     })
 }
