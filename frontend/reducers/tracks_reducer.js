@@ -15,8 +15,8 @@ const tracksReducer = (oldState = {}, action) => {
             debugger
             // const newTrack = Object.values(action.track)[0];
             //     return newTrack
-            return action.track
-            // return merge({}, oldState, action.track);
+            // return action.track
+            return merge({}, oldState, action.track);
         case REMOVE_TRACK:
             delete newState[action.trackId]
             return newState;
