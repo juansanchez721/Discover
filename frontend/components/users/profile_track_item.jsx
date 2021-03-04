@@ -10,7 +10,19 @@ class ProfileTrackItem extends React.Component {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
+        this.likeTrack = this.likeTrack.bind(this)
+
         // this.handlePlay = this.handlePlay.bind(this)
+    }
+
+    likeTrack(){
+      // const formData = new FormData()
+
+      // formData.append('like[liker_id]', this.props.currentUser.id)
+      // formData.append('like[likeable_id]', this.props.track.id)
+      // formData.append('like[likeable_type]', "Track")
+
+      this.props.createLike(this.props.track.id)
     }
 
     
@@ -21,9 +33,8 @@ class ProfileTrackItem extends React.Component {
 
 
     render() {
-
     
-    const { track, user, deleteTrack, currentUser, deleteTrackModal, updateTrackModal } = this.props;
+    const { track, user, currentUser, deleteTrackModal, updateTrackModal } = this.props;
     //     debugger
         let userbuttons = null
         if(user.id === currentUser.id ) {
@@ -37,7 +48,7 @@ class ProfileTrackItem extends React.Component {
         } else {
           userbuttons = 
             <div className="profile-track-buttons" >
-                    <button onClick={() => alert('Liked')} > Like </button>
+                    <button onClick={() => this.likeTrack()} > {'<3'} {track.like_count} </button>
                     
                 </div>
         }

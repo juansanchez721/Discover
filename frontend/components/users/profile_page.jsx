@@ -73,7 +73,7 @@ class ProfilePage extends React.Component {
             playSong={this.props.playSong}
             updateTrackModal ={this.props.updateTrackModal}
             deleteTrackModal={this.props.deleteTrackModal}
-            openModal={this.props.openModal} />
+            createLike={this.props.createLike} />
         ))
 
         return(

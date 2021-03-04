@@ -12,6 +12,7 @@ const tracksReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_TRACKS:
             return action.tracks
         case RECEIVE_TRACK:
+            debugger
             // const newTrack = Object.values(action.track)[0];
             //     return newTrack
             return action.track

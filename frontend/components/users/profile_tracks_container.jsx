@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { playSong } from '../../actions/playbar_actions'
+import { createLike } from "../../actions/like_actions"
 import ProfileTrackItem from './profile_track_item'
 
 const mSTP = (state, ownProps) => {
@@ -11,6 +11,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
+        createLike: (like) => dispatch(createLike(like))
         // playSong: track => dispatch(playSong(track))
     }
 

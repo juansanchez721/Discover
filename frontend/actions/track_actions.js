@@ -9,7 +9,7 @@ const receiveTracks = (tracks) => ({
     type: RECEIVE_ALL_TRACKS,
     tracks
 })
-const receiveTrack = (track) => ({
+export const receiveTrack = (track) => ({
     type: RECEIVE_TRACK,
     track
 })
