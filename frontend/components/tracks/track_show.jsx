@@ -46,13 +46,13 @@ class TrackShow extends React.Component {
               </div>
               <div className="song-info">
                 <div className="song-info-time">
-                  <h1>
+                  <h1 className="track-title">
                     {/* {" "} */}
                     {this.props.user[this.props.song.owner_id].username}
                   </h1>
                   <Time time={this.props.song.created_at} />
                 </div>
-                <h1> {this.props.song.title} </h1>
+                <h1 className="track-title"> {this.props.song.title} </h1>
               </div>
             </div>
             {/* <div className="audio-player-holder" >
