@@ -46,14 +46,18 @@ class ProfileTrackItem extends React.Component {
             debugger
             userbuttons = 
             <div className="profile-track-buttons" >
-                    <button onClick={() => updateTrackModal('updateTrack', track)} > Edit </button>
-                    <button onClick={() => deleteTrackModal('deleteTrack', track)} >Delete song</button>
+                    <button className="track-buttons" onClick={() => updateTrackModal('updateTrack', track)} ><i className="fas fa-pencil-alt"></i> Edit </button>
+                    <button className="track-buttons" onClick={() => deleteTrackModal('deleteTrack', track)} >Delete song</button>
                     
                 </div>
         } else {
           userbuttons = 
             <div className="profile-track-buttons" >
-            <button onClick={this.handleLike} > {'<3'} {liked ? "Liked" : "not liked"} {track.likers.length} </button>
+            <button className= {liked ? "liked-button" : "track-buttons"} 
+            onClick={this.handleLike}> 
+            <i class="fas fa-heart"></i> {liked ? track.likers.length : "Like"}
+            </button>
+                
                 </div>
         }
 
@@ -69,10 +73,13 @@ class ProfileTrackItem extends React.Component {
                 </div>
                 <div className="texttext">
                   <div className="name-title">
+                    <div className="username-date-posted">
+
                     <h2 className="small-light-words"> {user.username} </h2>
+                    <Time time={track.created_at} />
+                    </div>
                     <h1> {track.title} </h1>
                   </div>
-                  <Time time={track.created_at} />
                 </div>
               </div>
               {/* <audio

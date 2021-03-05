@@ -6,11 +6,11 @@
 
 .info-holder {
     width: 100%;
-    height: 300px;
-    background-color: rosybrown;
+    height: 260px;
+    background-image: linear-gradient(to right, rgb(255, 230, 0), #fe5000c7);
     display: flex;
-    justify-content: space-between;
-    overflow:hidden;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 .profile-default {
     /* width: 400px; */
@@ -22,16 +22,18 @@
 
 .circle-holder {
     /* background-color: purple; */
+    /* margin-left: 1%; */
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
 .image-container {
-    width: 300px;
+    /* width: 250px; */
+    padding: 0px 2% 0px 2.5%;
     /* background-color: pink; */
     display: flex;
     justify-content: center;
@@ -41,14 +43,16 @@
 
 .user-info{
     /* background-color: purple; */
-    width: 77%;
+    padding: 10px;
+    /* width: 100%; */
+    box-sizing: border-box;
 }
 .text{
     /* background-color: blue; */
     /* width: 500px; */
     height: 100%;
-    float: left;
-    text-align: center;
+    /* float: left; */
+    /* text-align: center; */
 }
 
 .text h1 {
@@ -56,14 +60,36 @@
     font-size: 24px;
     background-color: black;
     margin-top: 20px;
-    padding: 10px 5px;
+    padding: 10px 6px;
     /* position: absolute; */
     /* width: inherit; */
+    box-sizing: border-box;
+}
+
+.recent-tracks {
+    padding: 0px 23px;
+    /* background-color: blue; */
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.recent-tracks h3 {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    /* background-color: red; */
+    font-size: 24px;
+}
+
+.actual-tracks {
+    /* background-color: green; */
 }
 
 .profile-track-item {
-    height: 300px;
-    padding: 20px;
+    /* height: 300px; */
+    padding-bottom: 20px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -71,18 +97,19 @@
 }
 
 .profile-track-item img{
-    width: 260px;
+    width: 160px;
 }
 
 .track-info {
     /* background-color: pink; */
     font-size: 15px;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px 0px 10px;
     /* font-size: 30px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .track-info-text {
@@ -115,9 +142,31 @@
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
+    flex-direction: column;
 }
 
 .name-title{ 
     /* background-color: blue; */
     padding-top: 7px;
+}
+
+.profile-page-bottom {
+    width: 100%;
+    height: 100%;
+    /* padding-top: 75px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-links {
+    /* border-left: .5px solid #f2f2f2; */
+    width: 355px;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    /* background-color: pink; */
+    /* position: fixed; */
+    margin-top: -50px;
 }

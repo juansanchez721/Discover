@@ -103,10 +103,26 @@ class ProfilePage extends React.Component {
                         </div>
                 
                 </div>
+                <div className="profile-page-bottom">
 
+                <div className="recent-tracks">
+
+                {/* <div className="actual-tracks"> */}
+
+                <h3>Recent</h3>
                             {tracks.reverse()}
+                {/* </div> */}
                 {/* <ProfileTracksContainer /> */}
 
+                </div>
+                <div className="right-side-bar">
+                <div className="profile-links">
+                  <h1 className="links-header"> Who to follow</h1>
+                  {/* {userLinks} */}
+                  yoooooo
+                </div>
+              </div>
+                </div>
             </div>
         )
     }

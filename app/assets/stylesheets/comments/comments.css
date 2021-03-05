@@ -84,7 +84,16 @@
     /* width: 100%; */
     border-bottom: 1px solid #e5e5e5;
     padding: 10px;
+    color: #999999;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
     /* background-color: blue; */
+}
+
+.comment-count p {
+    font-size: 14px;
+    margin-left: 5px;
 }
 .artist-info p {
     padding-top: 7px;

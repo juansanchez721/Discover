@@ -87,8 +87,9 @@ class Comments extends React.Component{
                 </div>
                 <div className="comments-section">
                   <div className="comment-count">
+                  <i className="fas fa-comment-alt"></i> 
                     <p>
-                      {songComments.length === 1? "1 comment" : songComments.length + " comments"}
+                    {songComments.length === 1? "1 comment" : songComments.length + " comments"}
                     </p>
                   </div>
                   {songComments}

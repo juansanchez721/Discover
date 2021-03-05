@@ -38,7 +38,7 @@ time, mark, audio, video {
 	font-size: 100%;
   font: inherit;
   font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
-	vertical-align: baseline;
+  	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -514,3 +514,30 @@ table {
   background-color: #FE5000;
   padding: 0 15px;
 }
+
+.track-buttons {
+  color: #333333;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 11px;
+    padding: 3px 8px;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.liked-button {
+  color: #FE5000;
+  border: 1px solid #FE5000;
+  background-color: #fff;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 11px;
+    padding: 3px 8px;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+button{
+  outline: none;
+}
+
