@@ -324,22 +324,36 @@ table {
 }
 
 .app {
+  width: 100%;
+  background-color: greenyellow;
   display: flex;
   justify-content: center;
+  /* align-items: flex-start; */
+  /* overflow: auto; */
+
 }
 
 .innerapp {
   width: 80%;
+  background-color: hotpink;
   min-width: 950px;
   max-width: 1250px;
+  /* height: 100vh; */
+  /* display: flex; */
+  /* flex-direction: row; */
   /* padding: 45px; */
-  /* position: relative; */
+  /* width: 100%; */
+  background-color: white;
+  /* text-align: center; */
+  /* padding: 50px 0; */
 }
+  /* display: flex; */
+  /* justify-content: space-around;
 
 
 
+/* margin: 0 10px; */
 .searchbar-container {
-    /* margin: 0 10px; */
     width: 100%;
     background-color: white;
     /* text-align: center; */

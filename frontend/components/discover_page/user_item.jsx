@@ -14,8 +14,10 @@ const UserItem = (props) => {
 
                         {/* <img className="profile-default" src={props.user.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
                         </div>
-                    
-            <span>{props.user.username}</span>
+                    <div className="icon-info">
+                        <span>{props.user.username}</span>
+
+                    </div>
                     </div>
 
             </Link>

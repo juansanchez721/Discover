@@ -61,7 +61,7 @@ class DiscoverPage extends React.Component {
                 <div className="inner-rom">
                     <div className="discover-titles">
                             <h2 className="discover-page-headers">More of what you like</h2>
-                            <p className="small-light-words"> Some holder words that go here </p>
+                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
 
                     </div>
                   <div className="showing-songs">
@@ -71,6 +71,30 @@ class DiscoverPage extends React.Component {
                   <br />
                   <br />
 
+                  <div className="discover-titles">
+                            <h2 className="discover-page-headers">More of what you like</h2>
+                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
+
+                    </div>
+                  <div className="showing-songs">
+                    <div className="inner-showing">{tracksfirst}</div>
+                  </div>
+                  <div className="discover-titles">
+                            <h2 className="discover-page-headers">More of what you like</h2>
+                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
+
+                    </div>
+                  <div className="showing-songs">
+                    <div className="inner-showing">{tracksfirst}</div>
+                  </div>
+                  <div className="discover-titles">
+                            <h2 className="discover-page-headers">More of what you like</h2>
+                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
+
+                    </div>
+                  <div className="showing-songs">
+                    <div className="inner-showing">{tracksfirst}</div>
+                  </div>
 
                   <div className="discover-titles">
                             <h2 className="discover-page-headers">Your History</h2>
@@ -106,8 +130,11 @@ class DiscoverPage extends React.Component {
 
               <div className="right-side-bar">
                 <div className="user-links">
-                  <h1 className="links-header"> Who to follow</h1>
+                  <div className="inside" >
+
+                  <h1 className="links-header"> <i className="fas fa-user-friends"></i> Who to follow</h1>
                   {userLinks}
+                  </div>
                 </div>
               </div>
             </div>
