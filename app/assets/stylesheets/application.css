@@ -203,23 +203,27 @@ table {
   
   }
 
-
- /* .loggedin-user {
-   background-color: red;
-   height: 20px;
-   display: flex;
-   justify-content: space-between;
-   width: 50%;
- } */
-
 .splash-page {
   width: 100%;
-  /* background-color: red; */
   height: 1000px;
+}
+
+
+.logopic-div{
+  height: 100%;
+  background-color: #FE5000;
+  width: 69px;
+  text-align: center;
+}
+
+.logopic-div img {
+  /* background-color: blue; */
+  height: 100%;
 }
 
 .loggedin-nav{
   position: fixed;
+  color: lightgrey;
   background-color: #333333;
   width:100%;
   display: flex;
@@ -229,75 +233,134 @@ table {
   height: 46px;
 }
 
+
+.loggedin-user{
+/* background-color: black; */
+  width: 80%;
+  min-width: 960px;
+  max-width: 1240px;
+    display:flex;
+    flex-direction: row;
+    /* display: inline; */
+}
+
+.logged-in-left-side {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+}
+
+.logged-in-right-side {
+  min-width: 355px;
+  /* margin-left: -10px; */
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+}
+
+.logged-in-right-side > h2 {
+  /* background-color: pink; */
+  width: 60px;
+}
+
 .nav-search {
-  display: inline-block;
-  padding: 7px 7px 0 7px;
+  /* display: inline-block; */
+  padding: 0px 7px;
   /* min-width: 100px; */
   width: 40%;
   /* background-color: purple; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .minisearch {
-  width: 97%;
+  outline: none;
+
+  width: 86.5%;
+  margin-left: 3px;
   /* height: 10px;
   padding: 7px 15px; */
-  padding: 7px 5px;
+  padding: 6.5px 6px;
   font-size: 13px;
   background-color: #f2f2f2;
   border-radius: 4px;
   border: none;
+  
 }
+
+.search-icon {
+  /* width: 50px; */
+  padding: 6.5px 10.5px;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-left: -5px;
+  color: black;
+  border:none;
+}
+
 .loggedin-user h1 {
-  /* margin-top: -50px; */
-  /* height: 15px; */
-  display: inline-block;
   color: lightgray;
   font-size: 14px;
   width: 90px;
-  /* background-color: red; */
   text-align: center;
   margin: 0px;
-  padding: 15px 10px;
+  padding: 15px 6.5px;
   border-right: 1px solid black;
 }
 
-.loggedin-user .fixedh1, .username{
+/* .loggedin-user .fixedh1, .username{
   background-color: transparent;
   width: 60px;
   border: none;
   text-overflow: ellipsis;
 
+} */
+
+.navbar-buttons {
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  height: 100%;
 }
 
 .username {
+  width: 95px;
+  height: 46px;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.loggedin-user .logo {
-  width: 60px;
-  background-color: #FE5000;
-  /* padding-top: 10px; */
-  /* font-size: 25px; */
+
+.username-circle-maker {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
+
 
 .text-link {
   color:white;
   text-decoration: none;
-}
-
-.loggedin-user{
-  width: 80%;
-  min-width: 950px;
-  max-width: 1240px;
-    display:flex;
-    justify-content: space-between;
-    /* display: inline; */
+  width: fit-content;
 }
 
 .nav-bar {
   width: 80%;
-  min-width: 950px;
+  min-width: 960px;
   max-width: 1240px;
   position: absolute;
   height: 30px;
@@ -336,7 +399,7 @@ table {
 .innerapp {
   width: 80%;
   /* background-color: hotpink; */
-  min-width: 950px;
+  min-width: 960px;
   max-width: 1240px;
   /* height: 100vh; */
   /* display: flex; */
@@ -409,7 +472,7 @@ table {
 }
 
 .first-row {
-  /* background-color: #f2f2f2; */
+  background-color: #f2f2f2;
   /* background-color: red; */
   padding-top: 50px;
   max-height: 400px;
@@ -467,11 +530,11 @@ table {
   /* background-image: url(https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg); */
 }
 
-/* .image-carousel {
+.image-carousel {
   background-color: lemonchiffon;
   height: 450px;
   width: 100%;
-} */
+}
 
 .callingcreators {
   width: 100%; 
@@ -523,11 +586,6 @@ table {
   /* font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;; */
 }
 
-.logopic {
-  height: 99%;
-  background-color: #FE5000;
-  padding: 0 15px;
-}
 
 .track-buttons {
   color: #333333;
