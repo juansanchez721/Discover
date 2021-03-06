@@ -24,19 +24,14 @@ class ProfilePage extends React.Component {
         .then(() => this.setState({ loaded: false }) ) 
     }
 
-    // componentDidUpdate(prevProps){
-    //     debugger
-    //     if(this.props.match.params.userId !== prevProps.match.params.userId ){
-    //         this.props.fetchSingleUserTracks(this.props.match.params.userId)
-    //     .then(this.props.fetchUser(this.props.match.params.userId))
-    //     }
-    //     debugger
-    // }
-
-    // componentWillUnmount(){
-    //     console.log("end")
-    // }
-    
+    componentDidUpdate(prevProps){
+        debugger
+        if(this.props.match.params.userId !== prevProps.match.params.userId ){
+            this.props.fetchSingleUserTracks(this.props.match.params.userId)
+        .then(this.props.fetchUser(this.props.match.params.userId))
+        }
+        debugger
+    }
     
     render() {
         debugger
@@ -115,13 +110,12 @@ class ProfilePage extends React.Component {
                 {/* <ProfileTracksContainer /> */}
 
                 </div>
-                <div className="right-side-bar">
+                {/* <div className="right-side-bar">
                 <div className="profile-links">
                   <h1 className="links-header"> Who to follow</h1>
-                  {/* {userLinks} */}
                   yoooooo
                 </div>
-              </div>
+              </div> */}
                 </div>
             </div>
         )

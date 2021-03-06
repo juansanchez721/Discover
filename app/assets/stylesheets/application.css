@@ -226,7 +226,7 @@ table {
   justify-content: center;
   z-index: 1;
   /* padding-top: 15px; */
-  height: 45px;
+  height: 46px;
 }
 
 .nav-search {
@@ -289,7 +289,7 @@ table {
 .loggedin-user{
   width: 80%;
   min-width: 950px;
-  max-width: 1250px;
+  max-width: 1240px;
     display:flex;
     justify-content: space-between;
     /* display: inline; */
@@ -298,7 +298,7 @@ table {
 .nav-bar {
   width: 80%;
   min-width: 950px;
-  max-width: 1250px;
+  max-width: 1240px;
   position: absolute;
   height: 30px;
   padding-top: 20px;
@@ -325,7 +325,7 @@ table {
 
 .app {
   width: 100%;
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   display: flex;
   justify-content: center;
   /* align-items: flex-start; */
@@ -335,9 +335,9 @@ table {
 
 .innerapp {
   width: 80%;
-  background-color: hotpink;
+  /* background-color: hotpink; */
   min-width: 950px;
-  max-width: 1250px;
+  max-width: 1240px;
   /* height: 100vh; */
   /* display: flex; */
   /* flex-direction: row; */
@@ -536,7 +536,7 @@ table {
   margin-right: 5px;
   border-radius: 3px;
   font-size: 11px;
-    padding: 3px 8px;
+    padding: 1px 10px;
     font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 }
 

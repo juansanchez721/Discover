@@ -72,31 +72,6 @@ class DiscoverPage extends React.Component {
                   <br />
 
                   <div className="discover-titles">
-                            <h2 className="discover-page-headers">More of what you like</h2>
-                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
-
-                    </div>
-                  <div className="showing-songs">
-                    <div className="inner-showing">{tracksfirst}</div>
-                  </div>
-                  <div className="discover-titles">
-                            <h2 className="discover-page-headers">More of what you like</h2>
-                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
-
-                    </div>
-                  <div className="showing-songs">
-                    <div className="inner-showing">{tracksfirst}</div>
-                  </div>
-                  <div className="discover-titles">
-                            <h2 className="discover-page-headers">More of what you like</h2>
-                            <p className="small-light-words"> Suggestions based on what you've liked or played</p>
-
-                    </div>
-                  <div className="showing-songs">
-                    <div className="inner-showing">{tracksfirst}</div>
-                  </div>
-
-                  <div className="discover-titles">
                             <h2 className="discover-page-headers">Your History</h2>
                             <p className="small-light-words"> Some holder words that go here </p>
                     </div>

@@ -55,7 +55,7 @@ class ProfileTrackItem extends React.Component {
             <div className="profile-track-buttons" >
             <button className= {liked ? "liked-button" : "track-buttons"} 
             onClick={this.handleLike}> 
-            <i class="fas fa-heart"></i> {liked ? track.likers.length : "Like"}
+            <i className="fas fa-heart"></i> {liked ? track.likers.length : "Like"}
             </button>
                 
                 </div>

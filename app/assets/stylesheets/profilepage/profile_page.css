@@ -67,7 +67,7 @@
 }
 
 .recent-tracks {
-    padding: 0px 23px;
+    padding: 0px 30px;
     /* background-color: blue; */
     display: flex;
     width: 100%;
@@ -78,7 +78,7 @@
 
 .recent-tracks h3 {
     padding-top: 25px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
     /* background-color: red; */
     font-size: 24px;
 }
@@ -89,7 +89,7 @@
 
 .profile-track-item {
     /* height: 300px; */
-    padding-bottom: 20px;
+    padding-bottom: 45px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -104,7 +104,7 @@
     /* background-color: pink; */
     font-size: 15px;
     width: 100%;
-    padding: 10px 0px 0px 10px;
+    padding: 5px 0px 0px 15px;
     /* font-size: 30px; */
     display: flex;
     flex-direction: column;
@@ -121,8 +121,8 @@
 
 .track-info-circle{
     /* background-color: red; */
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
 }
 .profile-audio {
     width: 50%;
