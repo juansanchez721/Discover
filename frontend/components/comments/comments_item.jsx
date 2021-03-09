@@ -36,12 +36,12 @@ const CommentItem = ({ comment, currentUserId, deleteComment, createComment, tra
             </div>
         </div>
         </div>
-        {comment.subcomments ? <SubComments currentUserId={currentUserId} 
+        {<SubComments currentUserId={currentUserId} 
         parentId={comment.id} 
-        comments={comment.subcomments}
+        comments={comment.subcomments || null}
         createComment={createComment}
         trackId={trackId}
-        /> : null }
+        />}
       </div>
     );
 }

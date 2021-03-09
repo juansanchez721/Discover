@@ -38,19 +38,7 @@ class Api::CommentsController < ApplicationController
                 render :show
             end
         end
-        
-        # @comment = Comment.new(comment_params)
-        
-        # debugger
-        # if @comment.save
-        # # debugger
-        #     render :show 
-        # else
-        #     # debugger
-        #     render json: @comment.errors.full_messages, status: 422
-        # end
 
-        # debugger
     end
 
     def destroy 

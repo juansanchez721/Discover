@@ -39,8 +39,30 @@ class SubComments extends React.Component {
 
     render() {
 
+        const newSubComment =  
+        <div className="sub-comment-input-holder">
+        <img
+          // className="profile-default"
+          src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
+        />
+        <div className="input-box">
+          <form onSubmit={this.handleSubmit}>
+            <input
+              tabIndex="1"
+              className="write-a-comment"
+              type="text"
+              placeholder="Write a comment"
+              value={this.state.body}
+              onChange={this.update("body")}
+            />
+          </form>
+        </div>
+      </div>
+
         const { comments } = this.props
         
+        if(comments === null) return newSubComment
+
  
      let subcomments = Object.values(comments).map(subcomment => {
           return <SubCommentItem key={subcomment.id} comment={subcomment} />
@@ -50,24 +72,8 @@ class SubComments extends React.Component {
         return (
             <div className="subcomments">
                     {subcomments}
-                <div className="sub-comment-input-holder">
-                <img
-                  // className="profile-default"
-                  src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
-                />
-                <div className="input-box">
-                  <form onSubmit={this.handleSubmit}>
-                    <input
-                      tabIndex="1"
-                      className="write-a-comment"
-                      type="text"
-                      placeholder="Write a comment"
-                      value={this.state.body}
-                      onChange={this.update("body")}
-                    />
-                  </form>
-                </div>
-              </div>
+                    {newSubComment}
+               
             </div>
 
         )
