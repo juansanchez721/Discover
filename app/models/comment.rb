@@ -13,7 +13,8 @@ class Comment < ApplicationRecord
 
     belongs_to :parent_comment,
     foreign_key: :parent_comment_id,
-    class_name: :Comment
+    class_name: :Comment,
+    optional: true
 
     has_many :subcomments,
     foreign_key: :parent_comment_id,
