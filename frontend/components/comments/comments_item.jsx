@@ -1,8 +1,7 @@
 import React from 'react'
 import Time from '../time/time'
-import SubCommentItem from './sub_comments'
-
-const CommentItem = ({ comment, currentUserId, deleteComment }) => {
+import SubComments from './subcomments-holder'
+const CommentItem = ({ comment, currentUserId, deleteComment, createComment, trackId }) => {
 
       const displayName =  (
         comment.commenter_id === currentUserId ? "You" : comment.username
@@ -11,14 +10,6 @@ const CommentItem = ({ comment, currentUserId, deleteComment }) => {
       const deleteButton =  (
         comment.commenter_id === currentUserId ? <button className="track-buttons delete-comment-btn" onClick={() => deleteComment(comment.id)} ><i className="fas fa-trash"></i></button> : null
       )
-
-      let subcomments = null
-
-        if(comment.subcomments) {
-        subcomments = Object.values(comment.subcomments).map(subcomment => {
-            return <SubCommentItem key={subcomment.id} comment={subcomment} />
-          })
-        }
 
 
     return (
@@ -45,9 +36,12 @@ const CommentItem = ({ comment, currentUserId, deleteComment }) => {
             </div>
         </div>
         </div>
-        <div className="subcomments">
-      {subcomments}
-        </div>
+        {comment.subcomments ? <SubComments currentUserId={currentUserId} 
+        parentId={comment.id} 
+        comments={comment.subcomments}
+        createComment={createComment}
+        trackId={trackId}
+        /> : null }
       </div>
     );
 }

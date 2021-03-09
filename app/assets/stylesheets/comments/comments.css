@@ -27,7 +27,20 @@
     align-items: center;
 }
 
+.sub-comment-input-holder {
+    height:50px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .comment-input-holder img {
+    height: 40px;
+    width: 40px;
+}
+
+.sub-comment-input-holder img {
     height: 40px;
     width: 40px;
 }

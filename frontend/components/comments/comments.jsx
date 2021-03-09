@@ -27,7 +27,7 @@ class Comments extends React.Component{
     handleSubmit(){
 
         const formData = new FormData();
-        formData.append('comment[parent_comment_id]', 42)
+        // formData.append('comment[parent_comment_id]', 42)
         formData.append('comment[track_id]', this.state.track_id)
         formData.append('comment[commenter_id]', this.state.commenter_id)
         formData.append('comment[body]', this.state.body)
@@ -46,6 +46,8 @@ class Comments extends React.Component{
             comment={comment} 
             currentUserId ={this.state.commenter_id} 
             deleteComment = {this.props.deleteComment}
+            createComment = {this.props.createComment}
+            trackId={this.state.track_id}
             />;
           });
         

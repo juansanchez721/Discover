@@ -19,15 +19,36 @@ class Api::CommentsController < ApplicationController
 
     def create 
 
-        @comment = Comment.new(comment_params)
-        # debugger
-        if @comment.save
-        # debugger
-            render :show 
+        comment = Comment.new(comment_params)
+
+        if (comment_params[:parent_comment_id] === nil)
+            # debugger
+            if comment.save
+                # debugger
+                @comment = comment
+                # debugger
+                render :show
+            end
         else
             # debugger
-            render json: @comment.errors.full_messages, status: 422
+            if comment.save
+                # debugger
+                @comment = Comment.find(comment_params[:parent_comment_id])
+                # debugger
+                render :show
+            end
         end
+        
+        # @comment = Comment.new(comment_params)
+        
+        # debugger
+        # if @comment.save
+        # # debugger
+        #     render :show 
+        # else
+        #     # debugger
+        #     render json: @comment.errors.full_messages, status: 422
+        # end
 
         # debugger
     end
