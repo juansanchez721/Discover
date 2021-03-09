@@ -10,4 +10,13 @@ class Comment < ApplicationRecord
     foreign_key: :commenter_id,
     class_name: :User
 
+
+    belongs_to :parent_comment,
+    foreign_key: :parent_comment_id,
+    class_name: :Comment
+
+    has_many :subcomments,
+    foreign_key: :parent_comment_id,
+    class_name: :Comment
+
 end

@@ -4,7 +4,8 @@ class Api::CommentsController < ApplicationController
         # debugger
         if params.has_key?(:track_id)
             # debugger
-            @comments = Comment.where(track_id: params[:track_id])
+            @comments = Comment.where(track_id: params[:track_id],
+                                        parent_comment_id: nil)
             # debugger
         else
             # debugger

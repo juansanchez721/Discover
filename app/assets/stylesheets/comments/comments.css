@@ -117,14 +117,30 @@
     background-color: burlywood;
 }
 
-.comment-item {
+.comment-item{
     /* background-color: chocolate; */
     padding: 10px 10px 10px 0px;
+    /* height: 60px; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.sub-comment-item  {
+    padding: 10px 10px 10px 40px;
     height: 60px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.main-comment-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 .comment-item-info {
@@ -138,7 +154,7 @@
     flex-direction: column;
 }
 
-.comment-circle-maker {
+.comment-circle-maker, .sub-comment-circle-maker {
     /* background-color: ivory; */
     height: 40px;
     width: 40px;
@@ -173,4 +189,10 @@
 
 .comment-item:hover .delete-comment-btn {
     display: block;
+}
+
+.subcomments {
+    background-color: pink;
+    /* height: 100px; */
+    width: 100%;
 }
