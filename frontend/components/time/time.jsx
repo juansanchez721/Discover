@@ -19,10 +19,17 @@ class Time extends React.Component {
         let hours = minutes / 60;
         let days = hours / 24;
 
+        if (seconds < 60){
+            return "Just now"
+        }
+
         if (minutes < 60){
           return Math.floor(minutes) + " minutes ago"
         }
-        if( hours >= 1 && hours < 24 ){
+        if (hours < 2 && hours > 1){
+            return "1 hour ago"
+        }
+        if( hours > 1 && hours < 24 ){
           return Math.floor(hours) + " hours ago"
         }
         if (days <= 31){
