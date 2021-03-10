@@ -40,10 +40,10 @@ class Comments extends React.Component{
     render(){
         
         const { comments, artist } = this.props
-        console.log(artist);
+        // console.log(artist);
         let pComments = Object.values(comments).filter(comment => !comment['parent_comment_id'])
         // let cComments = Object.values(comments).filter(comment => comment['parent_comment_id']) 
- 
+        let commentCount = Object.keys(comments).length
         // console.log(pComments)
         // console.log(cComments)
         let parentComments = pComments.map((comment) => {
@@ -98,10 +98,10 @@ class Comments extends React.Component{
                   <div className="comment-count">
                   <i className="fas fa-comment-alt"></i> 
                     <p>
-                    {/* {songComments.length === 1? "1 comment" : songComments.length + " comments"} */}
+                    {commentCount === 1? "1 comment" : commentCount + " comments"}
                     </p>
                   </div>
-                  {parentComments}
+                  {parentComments.reverse()}
                 </div>
               </div>
             </div>

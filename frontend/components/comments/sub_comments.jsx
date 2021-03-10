@@ -8,7 +8,7 @@ const SubCommentItem = ({ comment, currentUserId, deleteComment }) => {
     )
 
     const deleteButton =  (
-      comment.commenter_id === currentUserId ? <button className="" onClick={() => deleteComment(comment.id)} ><i className="fas fa-trash"></i></button> : null
+      comment.commenter_id === currentUserId ? <button className="track-buttons delete-comment-btn" onClick={() => deleteComment(comment.id)} ><i className="fas fa-trash"></i></button> : null
     )
     // console.log(comment.body, comment.user)
 

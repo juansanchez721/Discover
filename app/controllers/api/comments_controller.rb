@@ -47,24 +47,9 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy 
-        debugger
-        subcomment = Comment.find(params[:id])
-        parentCommentId = subcomment[:parent_comment_id]
-        debugger
-        debugger
-        if parentCommentId
-            debugger
-            subcomment.destroy
-            @comment = Comment.find(parentCommentId)
-            debugger
-            render "api/comments/show"
-        else
-            debugger
-            @comment = subcomment
-            debugger
-            @comment.destroy
-            debugger
-        end
+        # debugger
+        @comment = Comment.find(params[:id])
+        @comment.destroy
     end
 
 

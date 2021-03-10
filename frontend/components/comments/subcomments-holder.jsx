@@ -63,7 +63,7 @@ class SubComments extends React.Component {
         
         if(comments === null) return newSubComment
 
-        console.log(comments)
+        // console.log(comments)
  
      let subcomments = Object.values(comments).map(subcomment => {
           return <SubCommentItem key={subcomment.id} 
@@ -75,7 +75,7 @@ class SubComments extends React.Component {
 
         return (
             <div className="subcomments">
-                    {subcomments}
+                    {subcomments.reverse()}
                     {newSubComment}
                
             </div>

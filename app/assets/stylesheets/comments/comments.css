@@ -177,7 +177,7 @@ form{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 
@@ -193,7 +193,7 @@ form{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: red;
+    /* background-color: red; */
     padding: 5px 0px;
 }
 
@@ -242,5 +242,9 @@ form{
 }
 
 .main-comment-content:hover .delete-comment-btn {
+    display: block;
+}
+
+.sub-comment-item:hover .delete-comment-btn {
     display: block;
 }
