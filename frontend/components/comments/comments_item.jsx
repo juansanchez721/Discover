@@ -1,8 +1,9 @@
 import React from 'react'
 import Time from '../time/time'
 import SubComments from './subcomments-holder'
-const CommentItem = ({ comment, currentUserId, deleteComment, createComment, trackId }) => {
+const CommentItem = ({ comment, currentUserId, deleteComment, createComment, trackId, subcomments }) => {
 
+      // console.log(subcomments)
       const displayName =  (
         comment.commenter_id === currentUserId ? "You" : comment.username
       )
@@ -38,9 +39,10 @@ const CommentItem = ({ comment, currentUserId, deleteComment, createComment, tra
         </div>
         {<SubComments currentUserId={currentUserId} 
         parentId={comment.id} 
-        comments={comment.subcomments || null}
+        comments={subcomments || null}
         createComment={createComment}
         trackId={trackId}
+        deleteComment={deleteComment}
         />}
       </div>
     );

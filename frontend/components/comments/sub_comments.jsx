@@ -1,15 +1,15 @@
 import React from 'react'
 import Time from '../time/time'
 
-const SubCommentItem = ({ comment }) => {
+const SubCommentItem = ({ comment, currentUserId, deleteComment }) => {
 
-    // const displayName =  (
-    //   comment.commenter_id === currentUserId ? "You" : comment.username
-    // )
+    const displayName =  (
+      comment.commenter_id === currentUserId ? "You" : comment.user
+    )
 
-    // const deleteButton =  (
-    //   comment.commenter_id === currentUserId ? <button className="track-buttons delete-comment-btn" onClick={() => deleteComment(comment.id)} ><i className="fas fa-trash"></i></button> : null
-    // )
+    const deleteButton =  (
+      comment.commenter_id === currentUserId ? <button className="" onClick={() => deleteComment(comment.id)} ><i className="fas fa-trash"></i></button> : null
+    )
     // console.log(comment.body, comment.user)
 
 
@@ -26,13 +26,13 @@ const SubCommentItem = ({ comment }) => {
       </div>
       <div className="comment-item-info">
           <div className="username-date-posted">
-          <p>{comment.user}</p>
+          <p>{displayName}</p>
           <Time time={comment.created_at}/>
           </div>
           <div className="body-delete">
 
         <p> {comment.body} </p>
-          {/* {deleteButton} */}
+          {deleteButton}
           </div>
       </div>
     </div>

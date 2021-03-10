@@ -4,9 +4,12 @@ class Api::CommentsController < ApplicationController
         # debugger
         if params.has_key?(:track_id)
             # debugger
-            @comments = Comment.where(track_id: params[:track_id],
-                                        parent_comment_id: nil)
+            @comments = Comment.where(track_id: params[:track_id])
             # debugger
+        elsif params.has_key?(:user_id)
+
+            @comments = Comment.where(commenter_id: params[:user_id])
+
         else
             # debugger
             @comments = Comment.all
@@ -19,35 +22,48 @@ class Api::CommentsController < ApplicationController
 
     def create 
 
-        comment = Comment.new(comment_params)
-
-        if (comment_params[:parent_comment_id] === nil)
-            # debugger
-            if comment.save
-                # debugger
-                @comment = comment
-                # debugger
-                render :show
-            end
-        else
-            # debugger
-            if comment.save
-                # debugger
-                @comment = Comment.find(comment_params[:parent_comment_id])
-                # debugger
-                render :show
-            end
+        @comment = Comment.new(comment_params)
+        if @comment.save
+            render :show
         end
+        # if (comment_params[:parent_comment_id] === nil)
+        #     # debugger
+        #     if comment.save
+        #         # debugger
+        #         @comment = comment
+        #         # debugger
+        #         render :show
+        #     end
+        # else
+        #     # debugger
+        #     if comment.save
+        #         # debugger
+        #         @comment = Comment.find(comment_params[:parent_comment_id])
+        #         # debugger
+        #         render :show
+        #     end
+        # end
 
     end
 
     def destroy 
-
-        @comment = Comment.find(params[:id])
-        # debugger
-        if @comment
-            # debugger
+        debugger
+        subcomment = Comment.find(params[:id])
+        parentCommentId = subcomment[:parent_comment_id]
+        debugger
+        debugger
+        if parentCommentId
+            debugger
+            subcomment.destroy
+            @comment = Comment.find(parentCommentId)
+            debugger
+            render "api/comments/show"
+        else
+            debugger
+            @comment = subcomment
+            debugger
             @comment.destroy
+            debugger
         end
     end
 

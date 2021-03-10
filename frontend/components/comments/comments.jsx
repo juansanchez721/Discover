@@ -41,9 +41,15 @@ class Comments extends React.Component{
         
         const { comments, artist } = this.props
         console.log(artist);
-        let songComments = Object.values(comments).map((comment) => {
+        let pComments = Object.values(comments).filter(comment => !comment['parent_comment_id'])
+        // let cComments = Object.values(comments).filter(comment => comment['parent_comment_id']) 
+ 
+        // console.log(pComments)
+        // console.log(cComments)
+        let parentComments = pComments.map((comment) => {
             return <CommentItem key={comment.id}
             comment={comment} 
+            subcomments={Object.values(comments).filter(subcomment => subcomment[`parent_comment_id`] === comment.id )}
             currentUserId ={this.state.commenter_id} 
             deleteComment = {this.props.deleteComment}
             createComment = {this.props.createComment}
@@ -92,10 +98,10 @@ class Comments extends React.Component{
                   <div className="comment-count">
                   <i className="fas fa-comment-alt"></i> 
                     <p>
-                    {songComments.length === 1? "1 comment" : songComments.length + " comments"}
+                    {/* {songComments.length === 1? "1 comment" : songComments.length + " comments"} */}
                     </p>
                   </div>
-                  {songComments}
+                  {parentComments}
                 </div>
               </div>
             </div>

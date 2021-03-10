@@ -45,13 +45,13 @@ class SubComments extends React.Component {
           // className="profile-default"
           src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
         />
-        <div className="input-box">
+        <div className="sub-comment-input-box">
           <form onSubmit={this.handleSubmit}>
             <input
               tabIndex="1"
               className="write-a-comment"
               type="text"
-              placeholder="Write a comment"
+              placeholder="reply to this comment"
               value={this.state.body}
               onChange={this.update("body")}
             />
@@ -59,13 +59,17 @@ class SubComments extends React.Component {
         </div>
       </div>
 
-        const { comments } = this.props
+        const { comments, deleteComment, currentUserId } = this.props
         
         if(comments === null) return newSubComment
 
+        console.log(comments)
  
      let subcomments = Object.values(comments).map(subcomment => {
-          return <SubCommentItem key={subcomment.id} comment={subcomment} />
+          return <SubCommentItem key={subcomment.id} 
+          comment={subcomment} 
+          deleteComment={deleteComment}
+          currentUserId={currentUserId} />
         })
 
 
