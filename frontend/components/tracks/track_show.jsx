@@ -42,7 +42,7 @@ class TrackShow extends React.Component {
           <div className="info-playbar">
             <div className="info-text">
               <div className="track-show-circle-container">
-                <PlayButton />
+                <PlayButton track={this.props.song} user={Object.values(this.props.user)[0]} />
               </div>
               <div className="song-info">
                 <div className="song-info-time">

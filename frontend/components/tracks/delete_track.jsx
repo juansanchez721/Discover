@@ -21,7 +21,7 @@ class DeleteTrack extends React.Component {
     render(){
         debugger
 
-        const { track, user } = this.props
+        const { track } = this.props
         
         return (
           <div className="delete-track-container">
@@ -34,11 +34,11 @@ class DeleteTrack extends React.Component {
               <div className="top-delete-info">
                   {/* <div className="top-delete-top"> */}
                     <div className="top-delete-circle">
-                      <PlayButton track={track} user={user} />
+                      <PlayButton track={track}/>
                     </div>
                     <div className="top-delete-text">
                       <div className="song-info-time">
-                      <h2 className="small-light-words"> {user.username} </h2>
+                      <h2 className="small-light-words"> {track.artist} </h2>
                       <Time time={track.created_at} />
                       </div>
                       <h1 className=""> {track.title} </h1>

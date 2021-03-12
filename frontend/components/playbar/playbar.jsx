@@ -46,7 +46,7 @@ class PlayBar extends React.Component {
                   id="audio"
                   controls
                   src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
-                  // src={track.track_url}
+                  // src={currentTrack.track_url}
                 >
                   {/* Your browser does not support the */}
                   {/* <code>audio</code> element. */}
@@ -56,7 +56,7 @@ class PlayBar extends React.Component {
                 <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
 
                 <div className="artist-song-links">
-                    <h1 >{artist.username || "artist here"}</h1>
+                    <h1 >{currentTrack.artist || "artist here"}</h1>
                     <h1 >{currentTrack.title || "song here"}</h1>
                 </div>
                 </div>

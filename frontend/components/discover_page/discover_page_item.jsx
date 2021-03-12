@@ -23,11 +23,11 @@ const DiscoverPageItem = (props) => {
                         <h1 className="song-truncate"> {props.track.title} </h1>  
                         </Link>
                             <div className="album-shadow-circle">
-                                <PlayButton track={props.track} user={props.owner} />
+                                <PlayButton track={props.track}/>
                             </div>
             
                         {/* <div className="song-info"> */}
-                        <h1 className="small-light-words"> {props.owner.username || 'artist here' } </h1>
+                        <h1 className="small-light-words"> {props.track.artist || 'artist here' } </h1>
 
                         {/* </div> */}
                         

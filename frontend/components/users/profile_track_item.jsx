@@ -69,13 +69,13 @@ class ProfileTrackItem extends React.Component {
             <div className="track-info">
               <div className="track-info-text">
                 <div className="track-info-circle">
-                    <PlayButton track={track} user={user}/>
+                    <PlayButton track={track}/>
                 </div>
                 <div className="texttext">
                   <div className="name-title">
                     <div className="username-date-posted">
 
-                    <h2 className="small-light-words"> {user.username} </h2>
+                    <h2 className="small-light-words"> {track.artist} </h2>
                     <Time time={track.created_at} />
                     </div>
                     <h1> {track.title} </h1>

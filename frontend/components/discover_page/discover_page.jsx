@@ -1,6 +1,7 @@
 import React from 'react'
 import DiscoverPageItem from './discover_page_item'
 import UserItem from './user_item'
+import SongList from './song_list'
 class DiscoverPage extends React.Component {
 
     constructor(props) {
@@ -72,11 +73,17 @@ class DiscoverPage extends React.Component {
                   <br />
 
                   <div className="discover-titles">
-                            <h2 className="discover-page-headers">Your History</h2>
+                            <h2 className="discover-page-headers">The Upload</h2>
                             <p className="small-light-words"> Some holder words that go here </p>
                     </div>
                   <div className="showing-songs">
-                    {/* <div className="inner-showing">{trackssecond}</div> */}
+                    {/* <div className="inner-showing"> */}
+                      <SongList 
+                      createLike={this.props.createLike}
+                      deleteLike={this.props.deleteLike}
+                      currentUser={this.props.currentUser} 
+                      tracks={this.props.tracks}/>
+                      {/* </div> */}
                   </div>
                   <br />
                   <br />

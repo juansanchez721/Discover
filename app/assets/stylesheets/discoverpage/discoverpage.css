@@ -93,7 +93,7 @@
 
 .discover-titles {
     width: 95%;
-    margin-bottom: 20px;;
+    margin-bottom: 21.5px;;
     /* background-color: pink; */
     height: 50px;
     display: flex;
@@ -118,7 +118,8 @@
   height: 225px;
   /* background-color: blue; */
   overflow: hidden;
-  padding-bottom: 30px;
+  margin-bottom: 8px;
+  padding-bottom: 27px;
   border-bottom: .5px solid #f2f2f2;
 
 }
@@ -154,7 +155,7 @@
   align-items: center;
 }
 .inner-rom {
-     padding: 0px 5px; 
+     padding: 0px 10px; 
 
     display: flex;
     flex-direction: column;
@@ -293,4 +294,96 @@ audio:focus {
 
 .icon-info span {
   font-size: 11px;
+}
+
+.song-list-container {
+  background: linear-gradient(135deg, rgb(126, 103, 106) 0%, rgb(56, 52, 46) 100%);
+        height: 220px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+}
+
+.song-list-container img {
+  /* width: 200px; */
+  height: 180px;
+}
+
+.song-list {
+  /* background-color: brown; */
+  padding-left: 10px;
+  width: 100%;
+  height: 180px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.song-list-item {
+  cursor: pointer;
+  /* background-color: pink; */
+  font-size: 14px;
+  color:whitesmoke;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.song-list-item span {
+  color: hsla(0,0%,100%,.7);
+}
+.song-list-item:hover {
+
+  background: hsla(0,0%,100%,.1);
+}
+
+.song-list-item:hover .song-list-item-btn{
+
+    visibility: visible;
+}
+
+.play-button-holder {
+  /* background-color: teal; */
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 85px;
+}
+
+.song-list-item-btn {
+  visibility: hidden;
+  /* background-color: teal; */
+  float: inline-end;
+  z-index: 0;
+}
+
+.song-list-unliked {
+  color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  /* margin-right: 5px; */
+  border-radius: 3px;
+  font-size: 11px;
+    padding: 2px 5px;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.song-list-liked {
+  color: #FE5000;
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  /* margin-right: 5px; */
+  border-radius: 3px;
+  font-size: 11px;
+    padding: 2px 5px;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 }

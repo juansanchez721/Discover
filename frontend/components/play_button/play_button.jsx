@@ -11,7 +11,7 @@ class PlayButton extends React.Component {
     }
     handlePlay() {
         debugger
-        this.props.playSong(this.props.track, this.props.user)
+        this.props.playSong(this.props.track)
       }
   
 
@@ -30,14 +30,14 @@ class PlayButton extends React.Component {
 
 const mSTP = state => {
     return {
-        tracks: state.entities.tracks
+        // tracks: state.entities.tracks
 
     }
 }
 
 const mDTP = dispatch => {
     return {
-        playSong: (track, user) => dispatch(playSong(track, user))
+        playSong: (track) => dispatch(playSong(track))
 
     }
 }
