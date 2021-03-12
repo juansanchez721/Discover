@@ -9,16 +9,59 @@ class Header extends React.Component {
     constructor(props) {
       super(props)
 
-      this.displayDropDown = this.displayDropDown.bind(this)
+      this.state = {
+        usernameDropDown: false,
+        optionsDropDown: false
+      }
+
+      this.handleDropDown = this.handleDropDown.bind(this)
+      this.handleBlur = this.handleBlur.bind(this)
     }
   
-  // debugger;
 
-  displayDropDown() {
-     let yo = document.getElementById("username-circle-maker").style.display = "flex"
-  }
+    handleDropDown(field) {
+
+      this.state[field] ?
+      this.setState({ [field] : false }) :
+      this.setState({ [field] : true })
+    }
+
+    handleBlur(field) {
+      if(this.state[field]){
+        this.setState({ [field]: false})
+      }
+    }
 
   render() {
+
+    const userDropDown =  this.state.usernameDropDown ? (
+      <div className="username-drop-down" id="username-circle-maker">
+
+      <h2>yoyoyo</h2>
+      <h2>yoyoyo</h2>
+      <h2>yoyoyo</h2>
+      {/* <button onClick={e => e.stopPropagation()} > */}
+      <Link onMouseDown={e => e.preventDefault()} to={`/users/${this.props.currentUser.id}`} className="text-link">Profile</Link>
+
+      {/* </button> */}
+      <h2>yoyoyo</h2>
+      <h2>yoyoyo</h2>
+
+    </div>
+    ) :
+    null
+
+    const opDropDown =  this.state.optionsDropDown ? (
+      <div className="username-drop-down">
+
+      <h2>yoyoyo</h2>
+      <h2>yoyoyo</h2>
+      <h2>yoyoyo</h2>
+      <h2>yoyoyo</h2>
+
+    </div>
+    ) :
+    null
 
     const userLoggedIn = () => (
       <nav className="loggedin-nav">
@@ -49,8 +92,11 @@ class Header extends React.Component {
             </Link>
           </h2>
 
-          {/* <Link to={`/users/${props.currentUser.id}`} className="text-link"> */}
-            <div className="username" tabIndex="0" onClick={() => this.displayDropDown()} >
+            <div 
+            className="username" 
+            tabIndex="0" 
+            onClick={() => this.handleDropDown('usernameDropDown')}  
+            onBlur={() => this.handleBlur('usernameDropDown')}>
               <div className="username-circle-maker">
                 <img
                   className="profile-default"
@@ -64,20 +110,20 @@ class Header extends React.Component {
               <span>
                 <i className="fas fa-chevron-down"></i>
               </span>
-            <div className="username-drop-down" id="username-circle-maker" >
-
-              <h2>yoyoyo</h2>
-              <h2>yoyoyo</h2>
-              <h2>yoyoyo</h2>
-              <h2>yoyoyo</h2>
-              <h2>yoyoyo</h2>
-
-            </div>
+           {userDropDown}
             </div>
           {/* </Link> */}
 
           <div className="navbar-buttons">
-            <h2 onClick={this.props.logout}><i className="fas fa-ellipsis-h"></i></h2>
+            <h2 
+            onClick={() => this.handleDropDown('optionsDropDown')}  
+            onBlur={() => this.handleBlur('optionsDropDown')}
+            tabIndex="0" 
+            className="options-drop-down"
+            >
+              <i className="fas fa-ellipsis-h"></i>
+            </h2>
+            {opDropDown}
           </div>
           
         </div>

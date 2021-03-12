@@ -331,6 +331,17 @@ table {
   /* width: 100%; */
   height: 100%;
   font-size: 22px;
+  position: relative;
+}
+
+.options-drop-down {
+  padding: 11px 15px;
+  /* background-color: brown; */
+}
+
+.options-drop-down:focus {
+  background-color: black;
+  outline: none;
 }
 
 .username {
@@ -370,9 +381,8 @@ table {
   left: 0;
   top:0;
   margin-top: 46px;
-  display: none;
-  /* bottom: -100; */
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .text-link {
