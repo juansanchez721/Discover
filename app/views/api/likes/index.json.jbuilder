@@ -1,6 +1,5 @@
 @likes.each do |like|
-  json.set! like.id do
-    json.partial! "api/likes/like", like: like
-    json.track like.likeable
+  json.set! like.likeable.id do
+    json.partial! "api/tracks/track", track: like.likeable
   end
 end

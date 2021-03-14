@@ -26,3 +26,11 @@ export const deleteLike = trackId => {
 
     })
 }
+
+export const fetchTrackLikes = userId => {
+    debugger
+    return $.ajax({
+        type: 'GET',
+        url: `/api/users/${userId}/likes`
+    })
+}

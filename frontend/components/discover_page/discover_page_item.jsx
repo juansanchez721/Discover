@@ -6,9 +6,10 @@ const DiscoverPageItem = (props) => {
     debugger
     // console.log(props.owner.username)
 
-    if(props.owner === undefined){
-        return null;
-    }
+    // if(props.owner === undefined){
+    //     return null;
+    // }   
+    // console.log(props)
 
     return(
             <div className="discover-page-item" >

@@ -32,26 +32,33 @@ class Header extends React.Component {
     const userDropDown = this.state.usernameDropDown ? (
       <div className="username-drop-down" id="username-circle-maker">
         {/* <button onClick={e => e.stopPropagation()} > */}
-        <div className="drop-down-option">
           <Link
+          className="text-link"
             onMouseDown={(e) => e.preventDefault()}
             to={`/users/${this.props.currentUser.id}`}
             >
+        <div className="drop-down-option">
             <i className="fas fa-user"></i> 
             <span>
               Profile
             </span>
-          </Link>
         </div>
+          </Link>
+          <Link
+          className="text-link"
+            onMouseDown={(e) => e.preventDefault()}
+            to={`/users/${this.props.currentUser.id}/likes`}
+            >
         <div className="drop-down-option">
         <i className="fas fa-heart"></i>
           <span>Likes</span>
         </div>
+            </Link>
       </div>
     ) : null;
 
     const opDropDown = this.state.optionsDropDown ? (
-      <div className="username-drop-down">
+      <div className="op-drop-down">
                 <div
                 onMouseDown={(e) => e.preventDefault()} 
                 onClick={this.props.logout} 
@@ -114,6 +121,16 @@ class Header extends React.Component {
             {/* </Link> */}
 
             <div className="navbar-buttons">
+                <h2               
+                  tabIndex="0"
+                  className="options-drop-down">
+                    <i className="fas fa-bell"></i>
+                </h2>
+              <h2                         
+              tabIndex="0"
+              className="options-drop-down">
+                  <i className="fas fa-envelope"></i>
+              </h2>
               <h2
                 onClick={() => this.handleDropDown("optionsDropDown")}
                 onBlur={() => this.handleBlur("optionsDropDown")}

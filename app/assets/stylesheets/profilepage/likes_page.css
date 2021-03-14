@@ -1,0 +1,26 @@
+.likes-container {
+    margin-top: 46px;
+    /* background-color: orange; */
+    /* height: 500px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+}
+
+.likes-inner {
+    /* background-color: red; */
+    /* position: relative; */
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.likes-header {
+    background-color: red;
+/* margin-top: 100px; */
+    height: 150px;
+    width: 100%;
+}

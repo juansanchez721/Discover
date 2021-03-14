@@ -131,7 +131,31 @@
 
 .profile-track-buttons {
     /* background-color: red; */
+    position: relative;
     /* margin-bottom: 0; */
+}
+
+.track-options {
+    cursor: pointer;
+    /* height: 200px; */
+    /* width: 100px; */
+    font-size: 12px;
+    background-color: #fff;
+  border: 1px solid #ccc;
+    position: absolute;
+    top:5px;
+    left: 75px;
+}
+
+.orange-track-btn {
+    color: #333333;
+  border: 1px solid #FE5000;
+  color: #FE5000;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 11px;
+    padding: 1px 10px;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 }
 
 .texttext {

@@ -8,8 +8,8 @@ const tracksReducer = (oldState = {}, action) => {
     debugger
     let newState = Object.assign({}, oldState)
     switch (action.type) {
-
         case RECEIVE_ALL_TRACKS:
+            debugger
             return action.tracks
         case RECEIVE_TRACK:
             debugger

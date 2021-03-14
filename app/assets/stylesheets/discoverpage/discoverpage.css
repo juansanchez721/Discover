@@ -19,14 +19,14 @@
   justify-content: flex-end;
   }
   .discover-page-item {
-    /* width: 140px; */
+    width: 140px;
     /* padding: 10px; */
     /* height: 140px; */
-    margin-right: 20px;
+    margin-right: 50px;
     color: #333;
     font-weight: 100;
     /* background-color: red; */
-    float: right;
+    /* float: right; */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -72,7 +72,7 @@
   display: flex;
   visibility: hidden;
   position: absolute;
-  left: 37%;
+  left: 47%;
   top: 30%;
   border-radius: 50%;
   justify-content: center;
