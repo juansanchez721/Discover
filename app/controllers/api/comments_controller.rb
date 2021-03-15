@@ -26,23 +26,6 @@ class Api::CommentsController < ApplicationController
         if @comment.save
             render :show
         end
-        # if (comment_params[:parent_comment_id] === nil)
-        #     # debugger
-        #     if comment.save
-        #         # debugger
-        #         @comment = comment
-        #         # debugger
-        #         render :show
-        #     end
-        # else
-        #     # debugger
-        #     if comment.save
-        #         # debugger
-        #         @comment = Comment.find(comment_params[:parent_comment_id])
-        #         # debugger
-        #         render :show
-        #     end
-        # end
 
     end
 

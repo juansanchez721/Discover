@@ -7,7 +7,7 @@ import {asArray, asArrayUsers} from '../../reducers/selector'
 
 const mSTP = (state, ownProps) => {
     return {
-        tracks: asArray(state.entities),
+        likedTracks: state.entities.likes,
         currentUser: state.session,
     }
 }

@@ -21,10 +21,10 @@ class LikesPage extends React.Component {
 
     render() {
 
-        const {tracks} = this.props 
+        const {likedTracks} = this.props 
         if(this.state.loaded) return null;
         
-        let likedTracks = tracks.map(track => (
+        let likeTracks = Object.values(likedTracks).map(track => (
             <DiscoverPageItem
              key={track.id} 
              track={track}
@@ -44,7 +44,7 @@ class LikesPage extends React.Component {
                     </h1>
                     </div>
             <div className="likes-inner" >
-            {likedTracks}
+            {likeTracks}
             </div>
         </div>
     )
