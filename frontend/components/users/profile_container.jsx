@@ -5,6 +5,7 @@ import { createLike, deleteLike } from "../../actions/like_actions"
 import {deleteTrackModal, updateTrackModal } from '../../actions/modal_actions'
 import { fetchTrackLikes } from '../../actions/like_actions'
 import { fetchUser } from '../../actions/user_actions'
+import { fetchUserComments } from '../../actions/comment_actions'
 
 import {fetchSingleUserTracks} from '../../actions/track_actions'
 
@@ -16,6 +17,7 @@ const mSTP = (state, ownProps) => {
         // tracks: state.entities.tracks,
         tracks: Object.values(state.entities.tracks).filter(track => track['owner_id'] === userId ),
         likes: Object.values(state.entities.likes).slice(-3),
+        comments: Object.values(state.entities.comments).slice(-3),
         currentUser: state.session
     }
 }
@@ -30,7 +32,8 @@ const mDTP = dispatch => {
         deleteTrackModal: (modal, track) => dispatch(deleteTrackModal(modal, track)),
         updateTrackModal: (modal, track) => dispatch(updateTrackModal(modal, track)),
         createLike: (trackId) => dispatch(createLike(trackId)),
-        deleteLike: (trackId) => dispatch(deleteLike(trackId))
+        deleteLike: (trackId) => dispatch(deleteLike(trackId)),
+        fetchUserComments: userId => dispatch(fetchUserComments(userId))
 
     }
 }

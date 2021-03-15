@@ -23,7 +23,10 @@ class ProfileComments extends React.Component {
 
         return (
             <div className="profile-comments-page" >
-            <h1>here commente shere</h1>
+                <div  className="profile-comments-top">
+                    <h1>here commente shere</h1>
+
+                </div>
             {comments}
         </div>
     )

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LikesItem from './likes_item'
 import ProfileTrackItem from "./profile_track_item";
+import ProfileCommentItem from './profile_comments_item'
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,8 @@ class ProfilePage extends React.Component {
         this.props.fetchSingleUserTracks(this.props.match.params.userId)
       )
       .then(()=> this.props.fetchTrackLikes(this.props.match.params.userId) )
+      .then(()=> this.props.fetchUserComments(this.props.match.params.userId) )
+
       .then(() => this.setState({ loaded: false }));
   }
 
@@ -33,23 +36,14 @@ class ProfilePage extends React.Component {
         .fetchSingleUserTracks(this.props.match.params.userId)
         .then(this.props.fetchUser(this.props.match.params.userId))
         .then(()=> this.props.fetchTrackLikes(this.props.match.params.userId) )
+        .then(()=> this.props.fetchUserComments(this.props.match.params.userId) )
+
     }
     debugger;
   }
 
   render() {
     debugger;
-    // this.yoo
-    // if(this.state.userIdid !== parseInt(this.props.match.params.userId)){
-    //     debugger
-    //     // this.setState({ userId: this.props.match.params.userId})
-
-    //     this.props.fetchSingleUserTracks( this.props.match.params.userId)
-    // }
-
-    // console.log(this.state.userId)
-    // console.log(this.props.match.params.userId)
-    // console.log(this.props.user.id) //use id for a container for the profile track items
 
     if (this.state.loaded) {
       return (
@@ -58,8 +52,6 @@ class ProfilePage extends React.Component {
         </div>
       );
     }
-
-    
 
 
     if (this.props.user === undefined) {
@@ -86,6 +78,14 @@ class ProfilePage extends React.Component {
     let likeitems = this.props.likes.map(like => {
         return <LikesItem key={like.id} track={like} />
     })
+
+    let commentItems = this.props.comments.map(comment => {
+        return <ProfileCommentItem  comment={comment} />
+    })
+
+    let emptyMessage = <div>
+        <h1>Nothing to show yet.</h1>
+    </div>
 
     return (
       <div className="profile-page">
@@ -120,7 +120,6 @@ class ProfilePage extends React.Component {
 
             <Link
           className="text-link"
-            // onMouseDown={(e) => e.preventDefault()}
             to={`/users/${this.props.user.id}/likes`}
             >
 
@@ -135,24 +134,26 @@ class ProfilePage extends React.Component {
             </Link>
 
                 <div className="profile-likes" >
-              {likeitems}
+                {this.props.user.track_likes.length ? likeitems.reverse() : emptyMessage}
                 </div>
 
                 <Link
           className="text-link"
-            // onMouseDown={(e) => e.preventDefault()}
-            // to={`/users/${this.props.user.id}/likes`}
+            to={`/users/${this.props.user.id}/comments`}
             >
 
             <div  className="links-header" >
 
               <h1>
               <i className="fas fa-comment-alt"></i>
-                {" " + this.props.user.comment_count + " comments" || null}
+                {" " + this.props.user.comment_count + " comments"}
               </h1>
               <p>View all</p>
             </div>
             </Link>
+            <div className="profile-likes" >
+              {this.props.user.comment_count ? commentItems.reverse() : emptyMessage}
+                </div>
 
             </div>
           </div>
