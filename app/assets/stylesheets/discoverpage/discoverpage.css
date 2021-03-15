@@ -19,10 +19,9 @@
   justify-content: flex-end;
   }
   .discover-page-item {
-    width: 140px;
-    /* padding: 10px; */
-    /* height: 140px; */
-    margin-right: 50px;
+    width: 175px;
+    height: 235px;
+    margin-right: 20px;
     color: #333;
     font-weight: 100;
     /* background-color: red; */
@@ -60,7 +59,7 @@
 
 .discover-page-item:hover .album-shadow {
   box-shadow: inset 0 -15px 40px -10px #000000;
-  display: block;
+  /* display: block; */
 }
 
 .album-shadow-circle {
@@ -70,21 +69,34 @@
   height:45px;
   width: 45px;
   display: flex;
+  flex-direction: column;
   visibility: hidden;
   position: absolute;
-  left: 47%;
-  top: 30%;
+  left: 38%;
+  top: 28.5%;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
 }
 
-.discover-page-item:hover .album-shadow-circle {
+
+.index-options {
+  visibility: hidden;
+  z-index: 0;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  bottom: 31%;
+}
+
+.discover-page-item:hover .album-shadow-circle,
+.discover-page-item:hover .index-options {
   visibility: visible;
   /* background-color: red; */
 }
+
 .discover-page-item img {
-  width: 175px;
+  width: 100%;
   margin-bottom: 5px;
   border: 1px solid #f2f2f2; 
   /* box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%); */
@@ -125,7 +137,6 @@
 }
 
 .inner-showing {
-  height: inherit;
   overflow: auto;
   white-space: nowrap;
   display: flex;

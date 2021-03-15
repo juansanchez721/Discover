@@ -25,7 +25,13 @@ class LikesPage extends React.Component {
         if(this.state.loaded) return null;
         
         let likedTracks = tracks.map(track => (
-            <DiscoverPageItem key={track.id} track={track}/> 
+            <DiscoverPageItem
+             key={track.id} 
+             track={track}
+             liked={track.likers.includes(this.props.currentUser.id)}
+             createLike={this.props.createLike}
+            deleteLike={this.props.deleteLike}
+             /> 
             
             ))
             

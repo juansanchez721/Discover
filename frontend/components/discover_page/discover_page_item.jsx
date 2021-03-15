@@ -2,39 +2,74 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import PlayButton from '../play_button/play_button'
 
-const DiscoverPageItem = (props) => {
-    debugger
+class DiscoverPageItem extends React.Component{
+
+
+// const DiscoverPageItem = (props) => {
+        constructor(props){
+            super(props)
+
+            this.handleLike = this.handleLike.bind(this)
+        }
     // console.log(props.owner.username)
 
     // if(props.owner === undefined){
     //     return null;
     // }   
     // console.log(props)
+    handleLike() {
+        // .then(() => this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> }))
+        if (this.props.liked) {
+          // alert('delete like')
+          this.props.deleteLike(this.props.track.id);
+    
+          //  this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> })
+        } else {
+          // alert('add like')
+          this.props.createLike(this.props.track.id);
+          //  this.setState({ button: <button onClick={() => this.likeTrack()} > {'<3'} {this.props.track.like_count} </button> })
+        }
+      }
 
-    return(
-            <div className="discover-page-item" >
+    render(){
 
-             
-                        <Link  className="text-link" to={`/tracks/${props.track.id}`}>
-                        {/* <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />  */}
-                        <img src={"https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />
-                        <div className="album-shadow" >
-                        </div>
+        const { track, liked } = this.props
+        return (
+          <div className="discover-page-item">
+            <Link className="text-link" to={`/tracks/${track.id}`}>
+              {/* <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />  */}
+              <img
+                src={
+                  "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
+                }
+              />
+              <div className="album-shadow"></div>
 
-                        <h1 className="song-truncate"> {props.track.title} </h1>  
-                        </Link>
-                            <div className="album-shadow-circle">
-                                <PlayButton track={props.track}/>
-                            </div>
-            
-                        {/* <div className="song-info"> */}
-                        <h1 className="small-light-words"> {props.track.artist || 'artist here' } </h1>
+              <h1 className="song-truncate"> {track.title} </h1>
+            </Link>
+            <div className="album-shadow-circle">
+              <PlayButton track={track} />
+            </div>
+            <div className="index-options" >
+              <span
+                className={liked ? "liked-heart" : ""}
+                
+              >
+                <i onClick={this.handleLike} className="fas fa-heart"></i>
+              </span>
 
-                        {/* </div> */}
-                        
-                        </div>
-            
-    )
-}
+            </div>
 
-export default DiscoverPageItem
+            {/* <div className="song-info"> */}
+            <h1 className="small-light-words">
+              {" "}
+              {track.artist || "artist here"}{" "}
+            </h1>
+
+            {/* </div> */}
+          </div>
+        );
+        }
+        }
+        
+        export default DiscoverPageItem

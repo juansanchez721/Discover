@@ -23,7 +23,15 @@ class DiscoverPage extends React.Component {
 
         debugger
         let tracksfirst = this.props.tracks.map(track => (
-            <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/> 
+            <DiscoverPageItem 
+            owner={this.props.users[track.owner_id]} 
+            key={track.id} 
+            liked={track.likers.includes(this.props.currentUser.id)}
+            track={track}
+            createLike={this.props.createLike}
+            deleteLike={this.props.deleteLike}
+
+            /> 
 
         ))
 
