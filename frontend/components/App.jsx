@@ -12,7 +12,7 @@ import ProfileContainer from '../components/users/profile_container'
 import UploadTrackContainer from '../components/tracks/upload_track_container'
 import UpdateTrackContainer from '../components/tracks/update_track_container'
 import LikesContainer from '../components/users/likes_container'
-
+import ProfileCommentsContainer from '../components/users/profile_comments_container'
 import Playbar from './playbar/playbar_container'
 const App = () => (
   <div className="app">
@@ -27,6 +27,8 @@ const App = () => (
         <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/>
         <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
         <ProtectedRoute exact path="/users/:userId/likes" component={LikesContainer}/>
+        <ProtectedRoute exact path="/users/:userId/comments" component={ProfileCommentsContainer}/>
+
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
     </Switch>
     

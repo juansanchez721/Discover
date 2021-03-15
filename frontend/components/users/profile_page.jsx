@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LikesItem from './likes_item'
 import ProfileTrackItem from "./profile_track_item";
 class ProfilePage extends React.Component {
@@ -117,13 +118,42 @@ class ProfilePage extends React.Component {
           <div className="text-right-side">
             <div className="text-right-inner">
 
+            <Link
+          className="text-link"
+            // onMouseDown={(e) => e.preventDefault()}
+            to={`/users/${this.props.user.id}/likes`}
+            >
+
+            <div  className="links-header" >
+
               <h1>
                 <i className="fas fa-heart"></i>
-                {this.props.user.track_likes.length + " likes" || null}
+                {" " + this.props.user.track_likes.length + " likes" || null}
               </h1>
+              <p>View all</p>
+            </div>
+            </Link>
+
                 <div className="profile-likes" >
               {likeitems}
                 </div>
+
+                <Link
+          className="text-link"
+            // onMouseDown={(e) => e.preventDefault()}
+            // to={`/users/${this.props.user.id}/likes`}
+            >
+
+            <div  className="links-header" >
+
+              <h1>
+              <i className="fas fa-comment-alt"></i>
+                {" " + this.props.user.comment_count + " comments" || null}
+              </h1>
+              <p>View all</p>
+            </div>
+            </Link>
+
             </div>
           </div>
         </div>

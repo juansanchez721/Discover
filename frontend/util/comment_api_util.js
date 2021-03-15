@@ -7,6 +7,14 @@ export const fetchTrackComments = trackId => {
     })
 }
 
+export const fetchUserComments = userId => {
+    return $.ajax ({
+        type: 'GET',
+        url:`/api/users/${userId}/comments`
+    })
+}
+
+
 export const createComment = comment => {
     debugger
     return $.ajax({

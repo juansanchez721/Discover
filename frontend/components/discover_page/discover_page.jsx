@@ -121,8 +121,10 @@ class DiscoverPage extends React.Component {
               <div className="right-side-bar">
                 <div className="user-links">
                   <div className="inside" >
+                    <span className="links-header">
+                    <h1 > <i className="fas fa-user-friends"></i> Who to follow</h1>
 
-                  <h1 className="links-header"> <i className="fas fa-user-friends"></i> Who to follow</h1>
+                    </span>
                   {userLinks}
                   </div>
                 </div>

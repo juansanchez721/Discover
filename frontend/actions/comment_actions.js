@@ -23,6 +23,10 @@ export const fetchTrackComments = trackId => dispatch => {
     return CommentUtil.fetchTrackComments(trackId)
     .then(comments => dispatch(receiveComments(comments)))
 }
+export const fetchUserComments = userId => dispatch => {
+    return CommentUtil.fetchUserComments(userId)
+    .then(comments => dispatch(receiveComments(comments)))
+}
 
 export const createComment = comment => dispatch => {
     debugger
