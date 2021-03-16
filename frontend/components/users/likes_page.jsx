@@ -24,15 +24,29 @@ class LikesPage extends React.Component {
     const { likedTracks } = this.props;
     if (this.state.loaded) return null;
 
-    let likeTracks = Object.values(likedTracks).map((track) => (
-      <DiscoverPageItem
+    let likeTracks = null;
+    if(parseInt(this.props.match.params.userId) === this.props.currentUser.id){
+
+      likeTracks = Object.values(likedTracks).sort((a,b) => new Date(b.like_created_at) - new Date(a.like_created_at)).map((track) => (
+        <DiscoverPageItem
         key={track.id}
         track={track}
         liked={track.likers.includes(this.props.currentUser.id)}
         createLike={this.props.createLike}
-        deleteLike={this.props.deleteLike}
-      />
-    ));
+        deleteLike={this.props.currentUser.id === parseInt(this.props.match.params.userId)? this.props.deleteLike : this.props.deleteTestLike }
+        />
+        ));
+      } else {
+        likeTracks = Object.values(likedTracks).map((track) => (
+          <DiscoverPageItem
+          key={track.id}
+          track={track}
+          liked={track.likers.includes(this.props.currentUser.id)}
+          createLike={this.props.createLike}
+          deleteLike={this.props.currentUser.id === parseInt(this.props.match.params.userId)? this.props.deleteLike : this.props.deleteTestLike }
+          />
+        ))
+      }
 
     return (
       <div className="likes-container">

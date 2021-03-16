@@ -25,11 +25,34 @@ const removeLikedTrack = track => ({
 export const createLike = trackId => dispatch => {
     return LikeUtil.createLike(trackId)
     .then((track) => dispatch(receiveTrack(track)))
+    // .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentUser
 }
 
 export const deleteLike = trackId => dispatch => {
     return LikeUtil.deleteLike(trackId)
-    .then((track) => dispatch(removeLikedTrack(track)))
+    .then((track) => dispatch(receiveTrack(track)))
+    // .then((track) => dispatch(removeLikedTrack(track))) // needed for currentuserlikespage
+
+}
+
+export const createCurrentUserLike = trackId => dispatch => {
+    return LikeUtil.createLike(trackId)
+    .then((track) => dispatch(receiveLikedTrack(track)))
+    // .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentUser
+}
+
+export const deleteCurrentUserLike = trackId => dispatch => {
+    return LikeUtil.deleteLike(trackId)
+    // .then((track) => dispatch(receiveTrack(track)))
+    .then((track) => dispatch(removeLikedTrack(track))) // needed for currentuserlikespage
+
+}
+
+export const deleteTestUserLike = trackId => dispatch => {
+    return LikeUtil.deleteLike(trackId)
+    // .then((track) => dispatch(receiveTrack(track)))
+    .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentuserlikespage
+
 }
 
 export const fetchTrackLikes = userId => dispatch => {

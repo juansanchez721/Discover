@@ -9,8 +9,8 @@ const tracksReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_TRACKS:
             debugger
             return action.tracks
-        case ADD_LIKE:
-        case REMOVE_LIKE:
+        // case ADD_LIKE:
+        // case REMOVE_LIKE:
         case RECEIVE_TRACK:
             debugger
             // const newTrack = Object.values(action.track)[0];

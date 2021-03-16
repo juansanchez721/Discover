@@ -80,7 +80,7 @@ class ProfilePage extends React.Component {
     })
 
     let commentItems = this.props.comments.map(comment => {
-        return <ProfileCommentItem  comment={comment} />
+        return <ProfileCommentItem key={comment.id}  comment={comment} />
     })
 
     let emptyMessage = <div>
