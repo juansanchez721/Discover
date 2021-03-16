@@ -248,6 +248,9 @@
     height: 175px;
     background-color: powderblue;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .profile-comments-item {
@@ -268,4 +271,10 @@
 .comment-body {
     font-size: 14px;
     margin-top: 5px;
+}
+
+.profile-navlinks {
+    background-color: rebeccapurple;
+    /* height: 25px; */
+    padding: 10px 0px
 }
