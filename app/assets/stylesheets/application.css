@@ -609,12 +609,43 @@ table {
 }
 
 .second-row {
+  position: relative;
   color: white;
   /* height: 350px; */
   width: 100%;
-  /* background-image: url(https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg); */
+  background-image: url("https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg");
 }
 
+.second-row-text {
+  /* background-color: pink; */
+  position: absolute;
+  width: 550px;
+  height: 150px;
+  top: 20%;
+  left:5%;
+  font-size: 36px;
+}
+
+.second-row-text p {
+  margin: 20px 0px 35px 0px;
+  font-size: 24px;
+}
+
+.second-row-text button {
+
+  font-size:18px;
+
+  border-radius: 3px;
+  border: none;
+  /* background-color: #FE5000; */
+  border: 1px solid lightcyan;
+  color: lightcyan;
+  margin-right: 10px;
+  padding: 10px 20px;
+  /* bottom:0; */
+  font-family:Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+
+}
 .image-carousel {
   background-color: lemonchiffon;
   height: 450px;

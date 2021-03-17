@@ -14,7 +14,7 @@ const SplashPageBottom = (props) => {
                 <div className="firstrow-text">
                 <h1>Never Stop Listening</h1>
                 <br/>
-                <p>SoundCloud is available on Web, iOS, Android, Sonos, Chromecast, and Xbox One.</p>
+                <p>Discover is available on Web, iOS, Android, Sonos, Chromecast, and Xbox One.</p>
                     <br/>
                 <p>We don't have a mobile app yet - hopefully soon!</p>
                 </div>
@@ -25,11 +25,15 @@ const SplashPageBottom = (props) => {
                     <img  src="https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg" className="callingcreators" />
 
                     </div>
-                    {/* <div className="absdiv"> */}
+                    <div className="second-row-text">
 
-                    {/* <h1>Calling all Creators</h1> */}
+                    <h1>Calling all Creators</h1>
+                    <p>Get on SoundCloud to connect with fans, 
+                        share your sounds, and grow your audience. 
+                        What are you waiting for?</p>
 
-                    {/* </div> */}
+                        <button className="splashpage-button1"> Find out more </button>
+                    </div>
             </div>
             <div className="last-row">
                 <div className="bottom-info">

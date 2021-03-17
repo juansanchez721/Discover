@@ -11,10 +11,6 @@ class SplashPage extends React.Component {
         debugger
     }
 
-    // componentWillUnmount(){
-    //     this.props.fetchTracks()
-    // }
-
     render() {
 
         return (
