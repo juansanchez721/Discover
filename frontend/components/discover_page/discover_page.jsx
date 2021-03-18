@@ -155,6 +155,8 @@ class DiscoverPage extends React.Component {
                 {/* {this.props.user.track_likes.length ? likeitems.reverse() : emptyMessage} */}
                 </div>
                   </div>
+
+                  
                   <div className="footer">
           <span>
               <a href="https://github.com/juansanchez721" target="_blank">

@@ -154,6 +154,25 @@ class ProfilePage extends React.Component {
             <div className="profile-likes" >
               {this.props.user.comment_count ? commentItems.reverse() : emptyMessage}
                 </div>
+                <div className="footer">
+          <span>
+              <a href="https://github.com/juansanchez721" target="_blank">
+                Github
+              </a>
+            ⁃
+              <a href="https://www.linkedin.com/in/juan-sanchez-24a68b113/" target="_blank">
+                LinkedIn
+              </a>
+            ⁃
+              <a href="https://angel.co/u/juan-sanchez-41" target="_blank">
+                AngelList
+              </a>
+          </span>
+
+            <a href="" target="_blank" className="last-footer-link" >
+              Portfolio
+            </a>
+        </div>
 
             </div>
           </div>

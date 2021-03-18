@@ -26,7 +26,7 @@ const App = () => (
         <ProtectedRoute exact path="/tracks/upload" component={UploadTrackContainer}/>
         <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer}/>
         <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
-        <ProtectedRoute exact path="/users/:userId/likes" component={LikesContainer}/>
+        <ProtectedRoute exact path="/users/:userId/likes" component={ProfileCommentsContainer}/>
         <ProtectedRoute exact path="/users/:userId/comments" component={ProfileCommentsContainer}/>
 
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />

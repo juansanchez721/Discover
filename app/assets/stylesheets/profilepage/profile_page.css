@@ -256,11 +256,39 @@
 
 .profile-comments-top {
     height: 175px;
-    background-color: powderblue;
+    /* background-color: powderblue; */
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.user-items-link {
+    /* background-color: blueviolet; */
+    /* height: 50px; */
+    margin-bottom: -1px;
+    width: 170px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 18px;
+}
+
+.user-items-link * {
+        padding-bottom: 15px;
+    /* border-bottom: 1px solid blue; */
+}
+
+.hover-user-item{
+    border-bottom: 1px solid transparent;
+
+}
+
+.hover-user-item:hover {
+    color:#333333;
+    border-bottom: 1px solid #333333;
+
 }
 
 .profile-comments-item {

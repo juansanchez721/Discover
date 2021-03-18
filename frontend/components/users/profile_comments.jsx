@@ -19,23 +19,50 @@ class ProfileComments extends React.Component {
     
     render(){
 
+        let userId = this.props.match.params.userId
+
+        let page = this.props.match.path.split("/")[3]
         const comments = Object.values(this.props.comments).map(comment => {
-            return <ProfileCommentItem comment={comment} />
+            return <ProfileCommentItem key={comment.id} comment={comment} />
         })
 
+
+        let content = null;
+        switch (page) {
+            case "likes":
+                content = <LikesContainer userId={userId} />
+                break;
+        
+            case "comments":
+                content = comments
+                break;
+
+            default:
+                break;
+        }
+        let navlinkSelected = { 
+            fontWeight: "bold",
+            color: "#FE5000",
+             borderBottom: "1px solid #FE5000"
+        }
 
         return (
             <div className="profile-comments-page" >
                 <div  className="profile-comments-top">
-                    <h1>here commente shere</h1>
-                <NavLink exact to={`/users/${this.props.match.params.userId}/comments`}  activeStyle={{
-                      fontWeight: "bold",
-                      color: "#FE5000"
-                    }}>Comments</NavLink>
-                    <NavLink exact to={`/users/${this.props.match.params.userId}/likes`}  activeStyle={{
-                      fontWeight: "bold",
-                      color: "#FE5000"
-                    }}>likes</NavLink>
+                    <div className="user-items-link" >
+                        
+                    <NavLink exact to={`/users/${this.props.match.params.userId}/likes`}  
+                    className="hover-user-item"
+                    activeStyle={navlinkSelected}>
+                        Likes
+                        </NavLink>
+                    
+                    <NavLink exact to={`/users/${this.props.match.params.userId}/comments`}  
+                    className="hover-user-item"
+                    activeStyle={navlinkSelected}>
+                        Comments
+                        </NavLink>
+                    </div>
                 </div>
                 {/* <Switch>
                     
@@ -43,7 +70,7 @@ class ProfileComments extends React.Component {
                 <ProtectedRoute exact path="/users/:userId/comments" component={ProfileCommentsContainer}/>
                 </Switch> */}
 
-            {comments}
+            {content}
         </div>
     )
 }
