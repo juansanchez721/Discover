@@ -92,7 +92,7 @@ class SessionForm extends React.Component {
           this.setState({ warnings: "Please enter a valid email."})
           
         } else {
-          this.setState({ warnings: ""})
+          this.setState({ warnings: null})
           this.changePage();
         }
       }
@@ -225,13 +225,15 @@ class SessionForm extends React.Component {
             <h2>--------------------or--------------------</h2>
             <br/>
             <div className="login-form-box">
-            {this.state.warnings || this.renderErrors()}
+            <span>
+            {this.state.warnings}
+            </span>
               <div className="form">
            
                 {/* <label className="label-names-input"> Email:</label> */}
                     <input type="text"
                     placeholder="Your email address"
-                    className="form-inputs"
+                    className={ this.state.warnings ? "red-form-inputs" : "form-inputs"}
                     value={this.state.email}
                     onChange={this.update('email')}
                     />
@@ -256,15 +258,18 @@ class SessionForm extends React.Component {
 
               <br/>
               <br/>
-            <button onClick={this.demoUserLogin} >Demo User Login</button>
+            <button  className="demo-user-login" onClick={this.demoUserLogin} >Demo User Login</button>
             <br/>
             <br/>
             <h2>--------------------or--------------------</h2>
             <br/>
             <div className="login-form-box">
+              <span>
+
           {this.state.warnings}
               {/* <br/> */}  
           {this.renderErrors()}
+              </span>
               <div className="form">
            
                 {/* <label className="label-names-input"> Email:</label> */}
@@ -283,6 +288,10 @@ class SessionForm extends React.Component {
               products and services, and for activities notifications. 
               You can unsubscribe for free at any time in your notification settings.
               </p>
+
+              <p className="small-light-words" >
+              We may use information you provide us in order to show you targeted ads as described in our Privacy Policy.
+              </p>
           </div>
           </div>
         )
@@ -298,12 +307,13 @@ class SessionForm extends React.Component {
 
 
               {/* Please {this.props.formType} or {this.props.navLink} */}
-              <div className="form">
               {formHeader}
+              <div className="form">
                 {/* <br/> */}
-                                          
+              <span>
               {this.state.warnings}
-                            {this.renderErrors()}
+              {this.renderErrors()}
+                </span>                            
                 <label>
                     <input type="text"
                       className="form-inputs"
@@ -359,12 +369,14 @@ class SessionForm extends React.Component {
                 <label> Choose a password
                     <input type="password"
                       placeholder="password"
-                      className="form-inputs"
+                    className={ this.state.warnings ? "red-form-inputs" : "form-inputs"}
                       value={this.state.password}
                       onChange={this.update('password')}
                       />
                 </label>
+                <span>
                       {this.state.warnings}
+                </span>
                 
                 <br/>
                   <button onClick={this.checkField} >Accept & continue</button>
@@ -388,26 +400,30 @@ class SessionForm extends React.Component {
                 {/* <br /> */}
                 <input
                   type="number "
-                  className="form-inputs"
+                  className={ this.state.warnings[0] ? "red-form-inputs" : "form-inputs"}
                   value={this.state.age}
                   onChange={this.update("age")}
                 />
                 <br />
+                <span>
                 {this.state.warnings[0]}
+                </span>
 
                 {/* <br /> */}
                 <br />
                 <label className="label-names-input">Gender</label>
                 <select
-                  className="form-inputs"
-                  onChange={this.update("gender")}
+                    className={ this.state.warnings[1] ? "red-form-inputs" : "form-inputs"}
+                    onChange={this.update("gender")}
                 >
                   <option value="">Indicate your gender</option>
                   <option value="Female">Female</option>
                   <option value="Male">Male</option>
                   <option value="NA">Prefer not to say</option>
                 </select>
+                <span>
                 {this.state.warnings[1]}
+                </span>
 
                 <br />
                 <button onClick={this.checkField}>Continue</button>
@@ -421,18 +437,20 @@ class SessionForm extends React.Component {
               <div className="login-form-box" >
               <h1>Tell us a bit about yourself</h1>
               <div className="form">
-                {this.state.warnings}
                 <label className="label-names-input" >Choose your display name</label>
                 <input
                   type="text"
-                  className="form-inputs"
+                  className={ this.state.warnings ? "red-form-inputs" : "form-inputs"}
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.update("username")}
                   />
-              <span className="small-light-words">Your display name can be anything you like. 
+                  <span>
+                  {this.state.warnings}
+                  </span>
+              <p className="small-light-words">Your display name can be anything you like. 
               Your name or artist name are good choices.
-              </span>
+              </p>
                 <button onClick={this.checkField}>Get started</button>
               </div>
               </div>

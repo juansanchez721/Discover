@@ -94,6 +94,9 @@ table {
     transform: translate(-50%, -50%);
   }
 
+  .demo-user-login {
+    background-color: cornflowerblue;
+  }
 
   .form-container {
     height: 100%;
@@ -117,16 +120,29 @@ table {
   border: 1px solid lightgrey;
   font-size: 18px;
 }
-.form {
-  /* background-color: peru; */
-  /* width: 390px;
-  height: 80%; */
+.red-form-inputs {
+  outline: none;
+  padding: 0px 7px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  border: 1px solid red;
+  font-size: 18px;
 }
 
 .form p {
   /* background-color: pink; */
-  padding-top: 20px;
-  /* font-size: 10px; */
+  padding: 10px 0px;
+  font-size: 12px;
+}
+
+.form-container span {
+  color: red;
+  font-size: 12px;
+  margin: 5px 0px;
+  /* border: 1px solid red; */
 }
 
 .session-form-header {
@@ -136,7 +152,7 @@ table {
 }
 
 .session-form-header h1 {
-  font-size: 20px;
+  font-size: 32px;
 }
 .form-container button{
   font-size: 16px;
@@ -147,6 +163,10 @@ table {
   border: none;
   background-color: #FE5000;
   color: lightcyan;
+}
+
+.form-container label {
+  font-size: 14px;
 }
 
 .login-form-box {
