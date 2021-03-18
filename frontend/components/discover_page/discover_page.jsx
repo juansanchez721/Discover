@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import LikesItem from '../users/likes_item'
 import DiscoverPageItem from './discover_page_item'
 import UserItem from './user_item'
 import SongList from './song_list'
@@ -12,7 +14,8 @@ class DiscoverPage extends React.Component {
 
     componentDidMount(){
         this.props.fetchUsers()
-        .then(this.props.fetchTracks());
+        .then(this.props.fetchTracks())
+        .then(this.props.fetchTrackLikes(this.props.currentUser.id))
         debugger
     }
 
@@ -54,10 +57,13 @@ class DiscoverPage extends React.Component {
         // ))
 
 
+        let likeitems = this.props.likes.sort((a,b) => new Date(b.like_created_at) - new Date(a.like_created_at)).map(like => {
+          return <LikesItem key={like.id} track={like} />
+      })
 
         // console.log(Object.values(this.props.users))
         let userLinks = Object.values(this.props.users).map((user, i) => {
-            if( i < 6 ) return <UserItem key={user.id} user={user}/> 
+            if( i < 3 ) return <UserItem key={user.id} user={user}/> 
     })
 
         debugger
@@ -120,14 +126,56 @@ class DiscoverPage extends React.Component {
 
               <div className="right-side-bar">
                 <div className="user-links">
-                  <div className="inside" >
+                  <div className="right-bar-tile" >
                     <span className="links-header">
                     <h1 > <i className="fas fa-user-friends"></i> Who to follow</h1>
 
                     </span>
                   {userLinks}
                   </div>
+                  <div className="right-bar-tile">
+                <Link
+          className="text-link"
+          to={`/users/${this.props.currentUser.id}/likes`}
+          >
+
+            <div  className="links-header" >
+
+              <h1>
+                <i className="fas fa-heart"></i>
+                {}
+                {" " + likeitems.length + " likes" || null}
+              </h1>
+              <p>View all</p>
+            </div>
+            </Link>
+
+                <div className="profile-likes" >
+                  {likeitems}
+                {/* {this.props.user.track_likes.length ? likeitems.reverse() : emptyMessage} */}
                 </div>
+                  </div>
+                  <div className="footer">
+          <span>
+              <a href="https://github.com/juansanchez721" target="_blank">
+                Github
+              </a>
+            ⁃
+              <a href="https://www.linkedin.com/in/juan-sanchez-24a68b113/" target="_blank">
+                LinkedIn
+              </a>
+            ⁃
+              <a href="https://angel.co/u/juan-sanchez-41" target="_blank">
+                AngelList
+              </a>
+          </span>
+
+            <a href="" target="_blank" className="last-footer-link" >
+              Portfolio
+            </a>
+        </div>
+              </div>
+              
               </div>
             </div>
           </div>

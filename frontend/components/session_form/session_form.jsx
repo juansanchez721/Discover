@@ -275,7 +275,7 @@ class SessionForm extends React.Component {
                 {/* <label className="label-names-input"> Email:</label> */}
                     <input type="text"
                     placeholder="Your email address"
-                    className="form-inputs"
+                    className={ this.state.warnings ? "red-form-inputs" : "form-inputs"}
                     value={this.state.email}
                     onChange={this.update('email')}
                     />
@@ -316,8 +316,8 @@ class SessionForm extends React.Component {
                 </span>                            
                 <label>
                     <input type="text"
-                      className="form-inputs"
-                      value={this.state.email}
+                    className={ this.state.warnings ? "red-form-inputs" : "form-inputs"}
+                    value={this.state.email}
                       onChange={this.update('email')}
                     />
                 </label>
@@ -327,7 +327,7 @@ class SessionForm extends React.Component {
                 <label>
                     <input type="password"
                       placeholder="Your Password"
-                      className="form-inputs"
+                      className={ this.state.warnings ? "red-form-inputs" : "form-inputs"}
                       value={this.state.password}
                       onChange={this.update('password')}
                     />

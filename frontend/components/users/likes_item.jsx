@@ -12,13 +12,13 @@ const LikesItem = ({ track }) => {
         <div className="like-item-info" >
 
             <h1>{track.artist}</h1>
-            <h1>
+            <h2>
                 {track.title}
-            </h1>
-            <span>
+            </h2>
+            <span className="like-item-info-span" >
 
-            <p><i className="fas fa-heart"></i>{track.likers.length}</p>
-            <p><i className="fas fa-comment-alt"></i> {track.comment_count}</p>
+            <p><i className="fas fa-heart"></i>{ " " + track.likers.length + " "}</p>
+            <p><i className="fas fa-comment-alt"></i> { " " + track.comment_count + " "}</p>
             </span>
         </div>
         </div>
