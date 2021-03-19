@@ -41,7 +41,6 @@ class ProfileComments extends React.Component {
                 break;
         }
         let navlinkSelected = { 
-            fontWeight: "bold",
             color: "#FE5000",
              borderBottom: "1px solid #FE5000"
         }

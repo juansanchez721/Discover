@@ -37,6 +37,7 @@ class DiscoverPageItem extends React.Component{
         return (
           <div className="discover-page-item">
             <Link className="text-link" to={`/tracks/${track.id}`}>
+              
               {/* <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />  */}
               <img
                 src={
@@ -45,7 +46,6 @@ class DiscoverPageItem extends React.Component{
               />
               <div className="album-shadow"></div>
 
-              <h1 className="song-truncate"> {track.title} </h1>
             </Link>
             <div className="album-shadow-circle">
               <PlayButton track={track} />
@@ -54,19 +54,24 @@ class DiscoverPageItem extends React.Component{
               <span
                 className={liked ? "liked-heart" : ""}
                 
-              >
+                >
                 <i onClick={this.handleLike} className="fas fa-heart"></i>
               </span>
 
             </div>
 
-            {/* <div className="song-info"> */}
+            <div className="song-info">
+              <div className="yoyo">
+                <h1 className="song-truncate" >
+                {track.title}
+
+                </h1>
+              </div>
             <h1 className="small-light-words">
-              {" "}
-              {track.artist || "artist here"}{" "}
+              {track.artist || "artist here"}
             </h1>
 
-            {/* </div> */}
+            </div>
           </div>
         );
         }
