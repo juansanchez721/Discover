@@ -30,7 +30,7 @@
     /* float: right; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     position: relative;
     box-sizing: border-box;
   }
@@ -55,7 +55,6 @@
 
   .yoyo {
     height: 1vw;
-    /* background-color: blueviolet; */
     margin: 5px 0px;
     width: 100%;
     overflow: hidden;
@@ -63,12 +62,8 @@
   }
   .song-truncate {
     font-size: 1vw;
-    
-    /* white-space: nowrap; */
-    /* width: 175px; */
-    
+    /* white-space: nowrap; */    
     color: #333
-    /* background-color: blue; */
   }
  
   .discover-image-holder{
@@ -165,8 +160,15 @@
 .inner-showing {
   overflow: auto;
   white-space: nowrap;
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  height: 100%;
+  /* grid-auto-flow: column; */
+  /* grid-template-rows: 175px; */
+
+  grid-gap: 15px;
+  grid-template-columns: repeat(12, 175px);
 }
 
 .playbutton{
