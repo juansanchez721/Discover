@@ -20,6 +20,14 @@ class User < ApplicationRecord
     foreign_key: :liker_id,
     class_name: :Like
 
+    has_many :followers,
+    foreign_key: :followee_id,
+    class_name: :Follow
+
+    has_many :follows,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
     has_one_attached :photo
 
     def password=(password)
