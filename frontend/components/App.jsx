@@ -28,6 +28,8 @@ const App = () => (
         <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
         <ProtectedRoute exact path="/users/:userId/likes" component={ProfileCommentsContainer}/>
         <ProtectedRoute exact path="/users/:userId/comments" component={ProfileCommentsContainer}/>
+        <ProtectedRoute exact path="/users/:userId/followers" component={ProfileCommentsContainer}/>
+        <ProtectedRoute exact path="/users/:userId/following" component={ProfileCommentsContainer}/>
 
         <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
     </Switch>

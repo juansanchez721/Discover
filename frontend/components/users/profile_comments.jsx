@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink, Switch } from 'react-router-dom'
 import ProfileCommentItem from './profile_comments_item'
 import LikesContainer from '../../components/users/likes_container'
+import FollowersContainer from '../../components/users/followers_container'
 import ProfileCommentsContainer from '../../components/users/profile_comments_container'
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
@@ -36,7 +37,12 @@ class ProfileComments extends React.Component {
             case "comments":
                 content = comments
                 break;
-
+            case "followers":
+                content = <FollowersContainer page={page} userId={userId} />
+                break;
+            case "following":
+                    content = <FollowersContainer page={page} userId={userId} />
+                    break;
             default:
                 break;
         }
@@ -56,7 +62,20 @@ class ProfileComments extends React.Component {
                         Likes
                         </NavLink>
                     
-                    <NavLink exact to={`/users/${this.props.match.params.userId}/comments`}  
+                    
+                        <NavLink exact to={`/users/${this.props.match.params.userId}/following`}  
+                    className="hover-user-item"
+                    activeStyle={navlinkSelected}>
+                        Following
+                        </NavLink>
+                        
+                        <NavLink exact to={`/users/${this.props.match.params.userId}/followers`}  
+                    className="hover-user-item"
+                    activeStyle={navlinkSelected}>
+                        Followers
+                        </NavLink>
+
+                        <NavLink exact to={`/users/${this.props.match.params.userId}/comments`}  
                     className="hover-user-item"
                     activeStyle={navlinkSelected}>
                         Comments

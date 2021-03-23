@@ -1,0 +1,65 @@
+.followers-page {
+    /* background-color: brown; */
+    /* height: 500px; */
+    width: 100%;
+    /* display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 15px; */
+    /* justify-content: end; */
+}
+
+.followers-inner {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    row-gap: 35px;
+    column-gap: 25px;
+    /* grid-gap: 20px; */
+}
+
+
+.followers-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-followers-item {
+    background-color: blanchedalmond;
+    width: 100%;
+    padding-top: 3%;
+    /* height: 50px; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* text-align: center; */
+}
+
+.follow-button {
+        color: #333333;
+        border: 1px solid #e5e5e5;
+        background-color: #fff;
+        margin-right: 5px;
+        border-radius: 3px;
+        font-size: 11px;
+          padding: 1px 10px;
+          font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+      
+}
+
+.following-button{
+    color:#FE5000;
+    border: 1px solid #FE5000;
+    background-color: #fff;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 11px;
+      padding: 1px 10px;
+      font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}

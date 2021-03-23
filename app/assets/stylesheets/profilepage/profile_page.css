@@ -267,16 +267,18 @@
 .user-items-link {
     /* background-color: blueviolet; */
     /* height: 50px; */
+    margin-left: 0;
     margin-bottom: -1px;
-    width: 170px;
+    /* width: 425px; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     font-size: 18px;
 }
 
 .user-items-link * {
         padding-bottom: 10px;
+        margin-right: 20px;
         color: #333;
         font-weight: bold;
     /* border-bottom: 1px solid blue; */

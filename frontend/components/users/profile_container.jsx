@@ -6,6 +6,7 @@ import {deleteTrackModal, updateTrackModal } from '../../actions/modal_actions'
 import { fetchTrackLikes } from '../../actions/like_actions'
 import { fetchUser } from '../../actions/user_actions'
 import { fetchUserComments } from '../../actions/comment_actions'
+import {fetchUserFollows} from '../../actions/follows_action'
 
 import {fetchSingleUserTracks} from '../../actions/track_actions'
 
@@ -33,8 +34,8 @@ const mDTP = dispatch => {
         updateTrackModal: (modal, track) => dispatch(updateTrackModal(modal, track)),
         createLike: (trackId) => dispatch(createLike(trackId)),
         deleteLike: (trackId) => dispatch(deleteLike(trackId)),
-        fetchUserComments: userId => dispatch(fetchUserComments(userId))
-
+        fetchUserComments: userId => dispatch(fetchUserComments(userId)),
+        fetchUserFollows: userId => dispatch(fetchUserFollows(userId))
     }
 }
 
