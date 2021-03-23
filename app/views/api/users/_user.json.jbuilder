@@ -1,7 +1,7 @@
 json.extract! user, :id, :username
 json.track_likes user.likes.where(likeable_type: "Track").pluck(:likeable_id)
 
-json.followers user.followers.pluck(:id, :follower_id)
+json.follows user.follows.pluck(:followee_id)
 
 
 json.track_count user.tracks.count

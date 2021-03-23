@@ -7,10 +7,14 @@ export const fetchUserFollows = userId => {
     })
 }
 
-export const deleteFollow = followId => {
+export const deleteFollow = userId => {
     return $.ajax({
         type: 'DELETE',
-        url: `/api/follows/${followId}`
+        url: `/api/follows/-1`,
+        data: { follow: {
+            followee_id: userId
+        }
+    }
     })
 }
 

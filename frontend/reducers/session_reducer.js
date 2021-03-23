@@ -13,7 +13,8 @@ const sessionReducer = (oldstate = defaultArg, action) => {
         case RECEIVE_CURRENT_USER:
             return { id: action.currentUser.id,
                     username: action.currentUser.username,
-                    trackLikes: action.currentUser.trackLikes
+                    trackLikes: action.currentUser.trackLikes,
+                    follows: action.currentUser.follows
                 }
         case LOGOUT_CURRENT_USER:
             return defaultArg

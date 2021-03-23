@@ -6,7 +6,7 @@ const followsReducer = (oldstate={}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_FOLLOWS:
             debugger
-            return action.follows    
+            return action.follows 
         default:
             return oldstate
     }

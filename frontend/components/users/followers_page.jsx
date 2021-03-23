@@ -25,7 +25,7 @@ class FollowersPage extends React.Component {
                     return <FollowersItem 
                     key={user.id}  
                     follower={user} 
-                    followed = {user.entity_followers.includes(this.props.currentUser.id)}
+                    followed = {this.props.currentUser.follows.includes(user.entity_id)}
                     followUser={this.props.follow}
                     unfollowUser={this.props.unfollow}
                     />
@@ -39,7 +39,7 @@ class FollowersPage extends React.Component {
                     return <FollowersItem 
                     key={user.id}  
                     follower={user} 
-                    followed = {user.entity_followers.includes(this.props.currentUser.id)}
+                    followed = {this.props.currentUser.follows.includes(user.entity_id)}
                     followUser={this.props.follow}
                     unfollowUser={this.props.unfollow}
                     />

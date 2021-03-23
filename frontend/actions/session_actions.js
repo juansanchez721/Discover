@@ -14,7 +14,7 @@ export const clearErrors = () => {
     }
   }
 
-const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = (currentUser) => ({
         type: RECEIVE_CURRENT_USER,
         currentUser
 })

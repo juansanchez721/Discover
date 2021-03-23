@@ -5,7 +5,7 @@ const FollowersItem = ({ follower, followed, followUser, unfollowUser }) => {
     let followButton = ( followed ?
     <button 
     className="following-button" 
-    onClick={()=>unfollowUser(follower.id)}
+    onClick={()=>unfollowUser(follower.entity_id)}
     >
         <i className="fas fa-user-check"></i> Following
         </button>
