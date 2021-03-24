@@ -27,8 +27,10 @@ export const createFollow = userId => dispatch => {
     // .then((iD) => dispatch(receiveFollows(iD)))
 }
 
-export const createFollowCurrentUser = userId => dispatch => {
-    return FollowUtil.createFollow(userId)
+
+
+export const createFollowCurrentUser = (currentUserId, userId) => dispatch => {
+    return FollowUtil.createFollowCurrentUser(currentUserId,userId)
     // .then((user) => dispatch(receiveCurrentUser(user)) )
     .then((follows) => dispatch(receiveFollows(follows)))
 }

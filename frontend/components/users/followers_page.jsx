@@ -13,7 +13,8 @@ class FollowersPage extends React.Component {
 
 
     render() {
-        console.log(this.props.follows)
+        // console.log(parseInt(this.props.userId))
+        // console.log(this.props.currentUser.id === parseInt(this.props.userId) )
 
         let follows = null;
 
@@ -25,9 +26,12 @@ class FollowersPage extends React.Component {
                     return <FollowersItem 
                     key={user.id}  
                     follower={user} 
-                    followed = {this.props.currentUser.follows.includes(user.entity_id)}
-                    followUser={this.props.follow}
+                    followed = {this.props.currentUser.follows.includes(user.entity_id) || user.entity_followers.includes(this.props.currentUser.id)}
+                    followUser={this.props.follow }
+                    currentUserFollow={this.props.currentUserFollow}
                     unfollowUser={this.props.unfollow}
+                    currentUserBool={ parseInt(this.props.userId) === this.props.currentUser.id}
+                    currentUserId = {this.props.currentUser.id}
                     />
                 })
                 
@@ -39,9 +43,12 @@ class FollowersPage extends React.Component {
                     return <FollowersItem 
                     key={user.id}  
                     follower={user} 
-                    followed = {this.props.currentUser.follows.includes(user.entity_id)}
+                    followed = {this.props.currentUser.follows.includes(user.entity_id) || user.entity_followers.includes(this.props.currentUser.id)}
                     followUser={this.props.follow}
+                    currentUserFollow={this.props.currentUserFollow}
                     unfollowUser={this.props.unfollow}
+                    currentUserBool={ parseInt(this.props.userId) === this.props.currentUser.id}
+                    currentUserId = {this.props.currentUser.id}
                     />
                 })
 

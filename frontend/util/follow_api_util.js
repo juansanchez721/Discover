@@ -30,3 +30,17 @@ export const createFollow = userId => {
 
     })
 }
+
+export const createFollowCurrentUser = (currentUserId, userId) => {
+    debugger
+    return $.ajax({
+        type: 'POST',
+        url: '/api/follows',
+        data: { follow: {
+            followee_id: userId,
+            currentUserId
+        }
+    }
+
+    })
+}

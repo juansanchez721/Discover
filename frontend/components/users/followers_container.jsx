@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import FollowersPage from './followers_page'
-import {fetchUserFollows, createFollow, deleteFollow} from '../../actions/follows_action'
+import {fetchUserFollows, createFollow, deleteFollow, createFollowCurrentUser} from '../../actions/follows_action'
 
 const mSTP = state => {
     return {
@@ -14,6 +14,7 @@ const mDTP = dispatch => {
     return {
         fetchUserFollows: userId => dispatch(fetchUserFollows(userId)),
         follow: userId => dispatch(createFollow(userId)),
+        currentUserFollow: (currentUserId, userId) => dispatch(createFollowCurrentUser(currentUserId, userId)),
         unfollow: userId => dispatch(deleteFollow(userId))
     }
 }

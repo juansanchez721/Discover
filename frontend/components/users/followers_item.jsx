@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FollowersItem = ({ follower, followed, followUser, unfollowUser }) => {
+const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUserFollow, currentUserBool, currentUserId }) => {
 
     let followButton = ( followed ?
     <button 
@@ -12,7 +12,11 @@ const FollowersItem = ({ follower, followed, followUser, unfollowUser }) => {
     :
         <button 
         className="follow-button" 
-        onClick={()=>followUser(follower.entity_id)}
+        onClick={ currentUserBool ? 
+            // () =>alert(currentUserId + " " + follower.entity_id) 
+            () => currentUserFollow(currentUserId, follower.entity_id)
+            : 
+            () => followUser(follower.entity_id) }
         >
             <i className="fas fa-user-plus"></i> Follow
         </button>
