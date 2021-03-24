@@ -88,6 +88,27 @@ class ProfilePage extends React.Component {
         <h1>Nothing to show yet.</h1>
     </div>
 
+let followButton = ( this.props.currentUser.follows.includes(this.props.user.id) ?
+  <button 
+  className="following-button" 
+  onClick={
+      ()=>this.props.unfollow(this.props.user.id)}
+  >
+      <i className="fas fa-user-check"></i> Following
+      </button>
+  :
+      <button 
+      className="follow-button" 
+      onClick={
+          () => this.props.follow(this.props.user.id) }
+      >
+          <i className="fas fa-user-plus"></i> Follow
+      </button>
+
+
+  )
+
+
     return (
       <div className="profile-page">
         <div className="info-holder">
@@ -107,6 +128,9 @@ class ProfilePage extends React.Component {
           </div>
           {/* <h1>This is the user page</h1> */}
         </div>
+          <div className="profile-options" >
+            {followButton}
+          </div>
         <div className="profile-page-bottom">
           <div className="recent-tracks">
             {/* <div className="actual-tracks"> */}

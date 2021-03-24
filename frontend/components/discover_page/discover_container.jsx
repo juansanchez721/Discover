@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import DiscoverPage from './discover_page'
 import {fetchTracks} from '../../actions/track_actions'
 import { createLike, deleteLike, deleteCurrentUserLike, createCurrentUserLike, fetchTrackLikes } from "../../actions/like_actions"
+import { createFollow, deleteFollow} from '../../actions/follows_action'
 
 import {fetchUsers} from '../../actions/user_actions'
 import {asArray, asArrayUsers} from '../../reducers/selector'
@@ -21,7 +22,9 @@ const mdtp = dispatch => {
         fetchUsers: () => dispatch(fetchUsers()),
         createLike: (trackId) => dispatch(createCurrentUserLike(trackId)),
         deleteLike: (trackId) => dispatch(deleteCurrentUserLike(trackId)),
-        fetchTrackLikes: (userId) => dispatch(fetchTrackLikes(userId))
+        fetchTrackLikes: (userId) => dispatch(fetchTrackLikes(userId)),
+        follow: userId => dispatch(createFollow(userId)),
+        unfollow: userId => dispatch(deleteFollow(userId))
     }
 }
 

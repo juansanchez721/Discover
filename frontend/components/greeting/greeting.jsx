@@ -54,6 +54,17 @@ class Header extends React.Component {
           <span>Likes</span>
         </div>
             </Link>
+
+            <Link
+          className="text-link"
+            onMouseDown={(e) => e.preventDefault()}
+            to={`/users/${this.props.currentUser.id}/following`}
+            >
+        <div className="drop-down-option">
+       <i className="fas fa-user-friends"></i>
+          <span>Following</span>
+        </div>
+            </Link>
       </div>
     ) : null;
 

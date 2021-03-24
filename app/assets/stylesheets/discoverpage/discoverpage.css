@@ -286,12 +286,25 @@ audio:focus {
   /* width:75%; */
   /* display: flex;
   justify-content: space-around; */
-  /* background-color:blue; */
+  /* background-color:pink; */
+  /* margin-bottom: 2px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
   /* padding: 3px;
   border-bottom: 1px solid lightgray; */
 
 }
 
+.user-link-button {
+  position: absolute;
+  right:0;
+  bottom: 12px;
+ 
+
+}
 
 .circle-maker {
   /* background-color: purple; */
@@ -332,7 +345,7 @@ audio:focus {
   flex-direction: column;
   justify-content: space-between;
   height: 30px;
-  /* width: 300px; */
+  width: auto;
   padding-top: 10px;
   margin-left: 10px;
 }

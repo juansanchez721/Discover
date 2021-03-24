@@ -68,7 +68,7 @@
 
 .recent-tracks {
     padding: 0px 30px;
-    /* background-color: blue; */
+    background-color: blue;
     display: flex;
     width: 100%;
     box-sizing: border-box;
@@ -83,8 +83,40 @@
     font-size: 24px;
 }
 
-.actual-tracks {
-    /* background-color: green; */
+.profile-options {
+    height: 50px;
+    /* width: 100%; */
+    margin: 0px 20px;
+    padding: 12px 0px 8px 0px;
+    box-sizing: border-box;
+/* box-sizing:content-box; */
+border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: aqua; */
+}
+
+.follow-userpage-button {
+    color: #f2f2f2;
+    border: 1px solid #e5e5e5;
+    background-color: #FE5000;
+    /* margin-right: 5px; */
+    border-radius: 3px;
+    font-size: 11px;
+      padding: 1px 10px;
+      font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+  
+}
+
+.following-button{
+color:#FE5000;
+border: 1px solid #FE5000;
+background-color: #fff;
+margin-right: 5px;
+border-radius: 3px;
+font-size: 11px;
+  padding: 1px 10px;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 }
 
 .profile-track-item {

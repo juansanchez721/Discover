@@ -1,11 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const UserItem = (props) => {
+const UserItem = ({ user, followingBool, follow, unfollow}) => {
+
+    let followButton = followingBool ? (
+        <button
+          className="following-button"
+          onClick={() => unfollow(user.id)}
+        >
+          <i className="fas fa-user-check"></i> Following
+        </button>
+      ) : (
+        <button
+          className="follow-button"
+          onClick={() => follow(user.id)}
+        >
+          <i className="fas fa-user-plus"></i> Follow
+        </button>
+      );
+
     return (
 
         <div className="user-link">
-            <Link className="link" to={`/users/${props.user.id}`}>
+            <Link className="link" to={`/users/${user.id}`}>
 
             <div className="icon-container">
                         
@@ -15,12 +32,17 @@ const UserItem = (props) => {
                         {/* <img className="profile-default" src={props.user.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
                         </div>
                     <div className="icon-info">
-                        <p>{props.user.username}</p>
-                        <span><i className="fas fa-sliders-h"></i> {props.user.track_count}</span>
+                        <p>{user.username}</p>
+                        <span><i className="fas fa-sliders-h"></i> {user.track_count}
+                        </span>
                     </div>
                     </div>
 
             </Link>
+            <div className="user-link-button" >
+
+                            {followButton}
+            </div>
         </div>
     )
 }

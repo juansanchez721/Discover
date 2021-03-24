@@ -24,7 +24,6 @@ const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUs
             <i className="fas fa-user-plus"></i> Follow
         </button>
 
-
     )
 
     return(
