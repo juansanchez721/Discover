@@ -34,3 +34,9 @@ export const createFollowCurrentUser = (currentUserId, userId) => dispatch => {
     // .then((user) => dispatch(receiveCurrentUser(user)) )
     .then((follows) => dispatch(receiveFollows(follows)))
 }
+
+export const deleteFollowCurrentUser = (currentUserId, userId) => dispatch => {
+    return FollowUtil.deleteFollowCurrentUser(currentUserId,userId)
+    // .then((user) => dispatch(receiveCurrentUser(user)) )
+    .then((follows) => dispatch(receiveFollows(follows)))
+}

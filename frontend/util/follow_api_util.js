@@ -44,3 +44,15 @@ export const createFollowCurrentUser = (currentUserId, userId) => {
 
     })
 }
+
+export const deleteFollowCurrentUser = (currentUserId, userId) => {
+    return $.ajax({
+        type: 'DELETE',
+        url: `/api/follows/-1`,
+        data: { follow: {
+            followee_id: userId,
+            currentUserId
+        }
+    }
+    })
+}

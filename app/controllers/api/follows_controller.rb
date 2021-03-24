@@ -15,7 +15,9 @@ class Api::FollowsController < ApplicationController
 
     def destroy
         # debugger
-        delete_params = follow_params
+        delete_params = {
+            followee_id: follow_params[:followee_id]
+    }
         # debugger
         delete_params[:follower_id] = current_user.id
     #    debugger
@@ -23,27 +25,24 @@ class Api::FollowsController < ApplicationController
 
        if @follow
         # debugger
-           @follow.destroy
-           redirect_to api_user_url(current_user.id), status: 303
-       end
+           
+           if @follow.destroy && follow_params[:currentUserId]
+            # debugger    
+            redirect_to  api_user_follows_url(current_user.id), status: 303
+           else
+       
+            redirect_to api_user_url(current_user.id), status: 303
+           end
+        end
 
 
     end
-
-    # def show
-
-    #     @follow = Follow.find(params[:id])
-    #     debugger
-    #     render :show
-
-    # end
 
     def create 
         # debugger
         create_follow_params = {
                 followee_id: follow_params[:followee_id]
         }
-        # create_follow_params[:followee_id] = follow_params[:followee_id]
         create_follow_params[:follower_id] = current_user.id
         # debugger
         @follow = Follow.new(create_follow_params)

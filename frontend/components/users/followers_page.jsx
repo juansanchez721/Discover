@@ -18,7 +18,9 @@ class FollowersPage extends React.Component {
 
         let follows = null;
 
+        let currentUserBool = parseInt(this.props.userId) === this.props.currentUser.id
         switch (this.props.page) {
+
             case 'followers':
                 if (!this.props.followers) return null;
 
@@ -26,11 +28,12 @@ class FollowersPage extends React.Component {
                     return <FollowersItem 
                     key={user.id}  
                     follower={user} 
-                    followed = {this.props.currentUser.follows.includes(user.entity_id) || user.entity_followers.includes(this.props.currentUser.id)}
+                    followed = { currentUserBool ? user.entity_followers.includes(this.props.currentUser.id) :this.props.currentUser.follows.includes(user.entity_id) }
                     followUser={this.props.follow }
                     currentUserFollow={this.props.currentUserFollow}
+                    currentUserUnfollow={this.props.currentUserUnFollow}
                     unfollowUser={this.props.unfollow}
-                    currentUserBool={ parseInt(this.props.userId) === this.props.currentUser.id}
+                    currentUserBool={currentUserBool }
                     currentUserId = {this.props.currentUser.id}
                     />
                 })
@@ -43,11 +46,12 @@ class FollowersPage extends React.Component {
                     return <FollowersItem 
                     key={user.id}  
                     follower={user} 
-                    followed = {this.props.currentUser.follows.includes(user.entity_id) || user.entity_followers.includes(this.props.currentUser.id)}
+                    followed = { currentUserBool ? user.entity_followers.includes(this.props.currentUser.id) :this.props.currentUser.follows.includes(user.entity_id) }
                     followUser={this.props.follow}
                     currentUserFollow={this.props.currentUserFollow}
+                    currentUserUnfollow={this.props.currentUserUnFollow}
                     unfollowUser={this.props.unfollow}
-                    currentUserBool={ parseInt(this.props.userId) === this.props.currentUser.id}
+                    currentUserBool={ currentUserBool}
                     currentUserId = {this.props.currentUser.id}
                     />
                 })

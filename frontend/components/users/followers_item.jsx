@@ -1,11 +1,14 @@
 import React from 'react'
 
-const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUserFollow, currentUserBool, currentUserId }) => {
+const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUserFollow, currentUserUnfollow, currentUserBool, currentUserId }) => {
 
     let followButton = ( followed ?
     <button 
     className="following-button" 
-    onClick={()=>unfollowUser(follower.entity_id)}
+    onClick={ currentUserBool ?
+        ()=> currentUserUnfollow(currentUserId, follower.entity_id)
+        :
+        ()=>unfollowUser(follower.entity_id)}
     >
         <i className="fas fa-user-check"></i> Following
         </button>
