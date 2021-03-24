@@ -33,7 +33,15 @@ const UserItem = ({ user, followingBool, follow, unfollow}) => {
                         </div>
                     <div className="icon-info">
                         <p>{user.username}</p>
-                        <span><i className="fas fa-sliders-h"></i> {user.track_count}
+                        <span className="user-stats">
+                        
+                        <p>
+                            <i className="fas fa-user-friends"></i> {user.followers_count}
+                            </p> 
+                            <p>
+                                <i className="fas fa-sliders-h"></i> {user.track_count}
+                                </p>
+                        
                         </span>
                     </div>
                     </div>

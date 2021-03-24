@@ -340,7 +340,7 @@ audio:focus {
 }
 
 .icon-info {
-  background-color: burlywood;
+  /* background-color: burlywood; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -350,8 +350,15 @@ audio:focus {
   margin-left: 10px;
 }
 
-.icon-info span {
+.user-stats {
   font-size: 11px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.user-stats > * {
+  margin-right: 10px;
 }
 
 .song-list-container {
