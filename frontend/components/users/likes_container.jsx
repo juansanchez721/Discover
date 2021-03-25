@@ -17,7 +17,7 @@ const mDTP = dispatch => {
         fetchTrackLikes: userId => dispatch(fetchTrackLikes(userId)),
         createLike: (trackId) => dispatch(createCurrentUserLike(trackId)),
         deleteLike: (trackId) => dispatch(deleteCurrentUserLike(trackId)),
-        deleteTestLike: (trackId) => dispatch(deleteTestUserLike(trackId))
+        deleteOtherUserLike: (trackId) => dispatch(deleteOtherUserLike(trackId))
 
     }
 }

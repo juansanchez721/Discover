@@ -48,7 +48,7 @@ export const deleteCurrentUserLike = trackId => dispatch => {
 
 }
 
-export const deleteTestUserLike = trackId => dispatch => {
+export const deleteOtherUserLike = trackId => dispatch => {
     return LikeUtil.deleteLike(trackId)
     // .then((track) => dispatch(receiveTrack(track)))
     .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentuserlikespage
