@@ -1,5 +1,6 @@
 import * as FollowUtil from '../util/follow_api_util'
 import { receiveCurrentUser } from './session_actions'
+import { receiveTwoUsers } from './user_actions'
 export const RECEIVE_ALL_FOLLOWS = 'RECEIVE_ALL_FOLLOWS'
 
 const receiveFollows = follows => {
@@ -16,14 +17,17 @@ export const fetchUserFollows = userId => dispatch => {
 
 export const deleteFollow = userId => dispatch => {
     return FollowUtil.deleteFollow(userId)
-    .then((user) => dispatch(receiveCurrentUser(user)) )
+    .then(users  => dispatch(receiveTwoUsers(users)))
+
+    // .then((user) => dispatch(receiveCurrentUser(user)) )
 
     // .then((follows) => dispatch(receiveFollows(follows)))
 }
 
 export const createFollow = userId => dispatch => {
     return FollowUtil.createFollow(userId)
-    .then((user) => dispatch(receiveCurrentUser(user)) )
+    .then(users  => dispatch(receiveTwoUsers(users)))
+    // .then((user) => dispatch(receiveCurrentUser(user)) )
     // .then((iD) => dispatch(receiveFollows(iD)))
 }
 

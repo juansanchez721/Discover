@@ -27,12 +27,12 @@ class Api::FollowsController < ApplicationController
         # debugger
            
            if @follow.destroy && follow_params[:currentUserId]
-            # debugger    
+            
             redirect_to  api_user_follows_url(current_user.id), status: 303
-           else
-       
-            redirect_to api_user_url(current_user.id), status: 303
-           end
+        else
+            @users = User.find(follow_params[:followee_id], current_user.id)
+            render 'api/users/index' 
+        end
         end
 
 
@@ -48,12 +48,13 @@ class Api::FollowsController < ApplicationController
         @follow = Follow.new(create_follow_params)
         # debugger
         if @follow.save
+            @users = User.find(follow_params[:followee_id], current_user.id)
             # debugger
             if follow_params[:currentUserId]
                 # debugger    
                 redirect_to  api_user_follows_url(current_user.id)
             else
-                redirect_to api_user_url(current_user.id)
+                render 'api/users/index' 
             end
         else
             # debugger

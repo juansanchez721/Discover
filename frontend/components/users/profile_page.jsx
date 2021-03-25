@@ -108,6 +108,9 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
 
   )
 
+  let editButton = (
+    <button className="follow-button" ><i className="fas fa-pencil-alt"></i> Edit</button>
+  )
 
     return (
       <div className="profile-page">
@@ -129,7 +132,7 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
           {/* <h1>This is the user page</h1> */}
         </div>
           <div className="profile-options" >
-            {followButton}
+            { this.props.user.id === this.props.currentUser.id ? editButton : followButton}
           </div>
         <div className="profile-page-bottom">
           <div className="recent-tracks">

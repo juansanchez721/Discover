@@ -2,6 +2,8 @@
 import * as UserUtil from '../util/user_api_util'
 
 export const RECEIVE_USER = "RECEIVE_USER"
+export const RECEIVE_TWO_USERS = "RECEIVE_TWO_USERS"
+
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS"
 const receiveUser = (user) => {
     return {
@@ -10,7 +12,14 @@ const receiveUser = (user) => {
     }
 }
 
-const receiveUsers = (users) => {
+export const receiveTwoUsers = (users) => {
+    return {
+        type: RECEIVE_TWO_USERS,
+        users
+    }
+}
+
+export const receiveUsers = (users) => {
     return {
         type: RECEIVE_ALL_USERS,
         users
