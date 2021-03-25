@@ -143,6 +143,27 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
           <div className="text-right-side">
             <div className="text-right-inner">
 
+            <div className="user-profile-info" >
+
+              <span>
+                  <h2>Followers</h2>
+                  <h1>{this.props.user.followers_count}</h1>
+
+              </span>
+
+              <span>
+                  <h2>Following</h2>
+                  <h1>{this.props.user.follows.length}</h1>
+
+              </span>
+              <span>
+                  <h2>Tracks</h2>
+                  <h1>{tracks.length}</h1>
+
+              </span>
+
+            </div>
+
             <Link
           className="text-link"
             to={`/users/${this.props.user.id}/likes`}
