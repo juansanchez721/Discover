@@ -7,17 +7,41 @@ class PlayBar extends React.Component {
         super(props)
         this.state = {
           playing: false,
-          loop: false
+          loop: false,
+          duration: 0,
+          currentTime:0
         }
         this.stop = this.stop.bind(this)
         this.play = this.play.bind(this)
         this.loop = this.loop.bind(this)
+        this.handleMetadata = this.handleMetadata.bind(this)
+        this.updateTime = this.updateTime.bind(this)
+        this.formatTime = this.formatTime.bind(this)
+        // this.time = this.time.bind(this)
         this.handlePlay = this.handlePlay.bind(this)
     }
 
     // componentDidUpdate(){
     //     this.setState({ title: this.props.currentSong.title})
     // }
+
+    formatTime(time){
+
+      let thisTime =time
+      let minutes = time/60
+      let seconds = Math.floor(time%60)
+      return (thisTime > 60 ? Math.floor(minutes) : "0") + ":"+ (seconds < 10? "0"+seconds : seconds )
+    }
+
+    updateTime(){
+      const audio = document.getElementById("audio");
+      this.setState({ currentTime: audio.currentTime })
+    }
+
+    handleMetadata() {
+      const audio = document.getElementById("audio");
+      this.setState({ duration: audio.duration })
+    }
 
     handlePlay(){
       (this.state.playing ? this.stop() : this.play())
@@ -40,6 +64,13 @@ class PlayBar extends React.Component {
       audio.loop = !audio.loop
       this.setState({ loop: !this.state.loop })
     }
+
+    // time() {
+    //   let audio = document.getElementById("time-place")
+    //   // return audio.currentTime
+    //   audio.innerHTML= this
+
+    // }
     // componentDidUpdate() {
         
     //     let audio = document.getElementById("audio")
@@ -62,28 +93,41 @@ class PlayBar extends React.Component {
               <div className="media-controls" >
 
                 <div>
-                <i class="fas fa-fast-backward"></i>
+                <i className="fas fa-fast-backward"></i>
                 </div>
                 <div className="play-pause" onClick={() => this.handlePlay()} >
                     {this.state.playing ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}
                 </div>
                 <div >
-                <i class="fas fa-fast-forward"></i>
+                <i className="fas fa-fast-forward"></i>
                 </div>
                 <div className={this.state.loop ? "orange-loop" : "loop"} onClick={()=>this.loop()} >
                   {this.state.loop ? <i className="fas fa-redo-alt"></i> : <i className="fas fa-redo-alt"></i>}
                 </div>
+
+              <div className="time" >
+                <span id="time-place">
+                  <p> {this.formatTime(this.state.currentTime)} 
+                  </p>
+                  <p> { (this.state.duration > 60 ? Math.floor(this.state.duration/60) : "0") + ":"+ Math.floor(this.state.duration)% 60 } </p>
+
+                  {/* {document.getElementById("audio").currentTime || null } */}
+                  </span>
+              </div>
               </div>
                 {/* <input type="button" value="PLAY" onClick={() => this.handlePlay()} /> */}
                 {/* <input type="button" value="STOP" onClick={() => this.stop()} /> */}
 
                 <audio
+                onTimeUpdate={this.updateTime}
+                  onLoadedMetadata={this.handleMetadata}
+                // onTimeUpdate={document.getElementById('time-place').innerHTML = Math.floor(this.currentTime) + ' / ' + Math.floor(this.duration)}
                   id="audio"
                   controls
                   src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
                   // src={currentTrack.track_url}
                  >
-                  {/* Your browser does not support the */}
+                  {/* Your browser does not suppot rthe */}
                   {/* <code>audio</code> element. */}
                 </audio>
                 <div className="play-bar-song-info">
