@@ -26,13 +26,13 @@ class PlayBar extends React.Component {
   }
 
   handlePrev() {
-    if( this.state.i >= 1){
+    if( this.state.i >= 1 && this.state.i  ){
       // alert('playing song ' + this.props.playbar.queue[this.state.i] + " " + this.state.i)
       this.props.fetchNextTrack(this.props.playbar.queue[this.state.i-1])
       this.setState({ i: this.state.i-1 })
       // .then(() =>
       // )
-      console.log(this.state.i)
+      // console.log(this.state.i)
 
     } else {
       alert('this is the first song in the queue')
@@ -41,18 +41,22 @@ class PlayBar extends React.Component {
 
   handleNext() {
 
-    if( this.state.i <  this.props.playbar.queue.length-1){
+    if( this.state.i <=  this.props.playbar.queue.length-1){
       // alert('playing song ' + this.props.playbar.queue[this.state.i] + " " + this.state.i)
-      this.props.fetchNextTrack(this.props.playbar.queue[this.state.i+1])
-      this.setState({ i: this.state.i+1 })
-      console.log(this.state.i)
+      if(this.state.i === 0){
+        this.setState({ i: 1 })
+        this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
+
+      } else {
+
+        this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
+        this.setState({ i: this.state.i+1 })
+      }
+      // console.log(this.state.i)
 
     } else {
       alert('no more songs in queue')
     }
-
-
-
   }
 
   onSliderChange(e){
@@ -107,17 +111,6 @@ class PlayBar extends React.Component {
     this.setState({ loop: !this.state.loop });
   }
 
-  // time() {
-  //   let audio = document.getElementById("time-place")
-  //   // return audio.currentTime
-  //   audio.innerHTML= this
-
-  // }
-  // componentDidUpdate() {
-
-  //     let audio = document.getElementById("audio")
-  //     audio.play()
-  // }
 
   render() {
     if(this.props.playbar.currentTrack === null) {
@@ -186,7 +179,10 @@ class PlayBar extends React.Component {
           <p> {this.formatTime(this.state.duration)}</p>
           </div>
 
+        <div className="volume-control" >
 
+          <i class="fas fa-volume-up"></i>
+        </div>
         <div className="play-bar-song-info">
           <img
             src={

@@ -56,7 +56,14 @@
     /* cursor: pointer; */
 }
 
-.media-controls >*{
+.volume-control {
+  background-color: #FE5000;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.media-controls >*, .volume-control >*{
     cursor: pointer;
 }
 
