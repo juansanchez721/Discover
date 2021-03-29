@@ -9,6 +9,8 @@ class PlayBar extends React.Component {
       loop: false,
       duration: 0,
       currentTime: 0,
+      i: 0
+      // queue: this.props.playbar.queue
     };
     this.stop = this.stop.bind(this);
     this.play = this.play.bind(this);
@@ -17,8 +19,40 @@ class PlayBar extends React.Component {
     this.updateTime = this.updateTime.bind(this);
     this.formatTime = this.formatTime.bind(this);
     this.onSliderChange = this.onSliderChange.bind(this)
+    this.handleNext = this.handleNext.bind(this)
+    this.handlePrev = this.handlePrev.bind(this)
     // this.time = this.time.bind(this)
     this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  handlePrev() {
+    if( this.state.i >= 1){
+      // alert('playing song ' + this.props.playbar.queue[this.state.i] + " " + this.state.i)
+      this.props.fetchNextTrack(this.props.playbar.queue[this.state.i-1])
+      this.setState({ i: this.state.i-1 })
+      // .then(() =>
+      // )
+      console.log(this.state.i)
+
+    } else {
+      alert('this is the first song in the queue')
+    }
+  }
+
+  handleNext() {
+
+    if( this.state.i <  this.props.playbar.queue.length-1){
+      // alert('playing song ' + this.props.playbar.queue[this.state.i] + " " + this.state.i)
+      this.props.fetchNextTrack(this.props.playbar.queue[this.state.i+1])
+      this.setState({ i: this.state.i+1 })
+      console.log(this.state.i)
+
+    } else {
+      alert('no more songs in queue')
+    }
+
+
+
   }
 
   onSliderChange(e){
@@ -86,19 +120,20 @@ class PlayBar extends React.Component {
   // }
 
   render() {
-    // if(this.props.currentTrack === null) {
-    //     return null
-    // }
+    if(this.props.playbar.currentTrack === null) {
+        return null
+    }
 
-        // let { currentTrack } = this.props.currentTrack
-        // console.log(currentTrack, artist)
+        let { currentTrack, queue } = this.props.playbar
+        console.log(currentTrack, queue)
+        // console.log(this.state.queue)
 
     return (
       <div className="playbar-div">
         <div className="playbar-inner" >
 
         <div className="media-controls">
-          <div>
+          <div onClick={() => this.handlePrev()} >
             <i className="fas fa-fast-backward"></i>
           </div>
           <div className="play-pause" onClick={() => this.handlePlay()}>
@@ -108,7 +143,7 @@ class PlayBar extends React.Component {
                 <i className="fas fa-play"></i>
                 )}
           </div>
-          <div>
+          <div onClick={() => this.handleNext()} >
             <i className="fas fa-fast-forward"></i>
           </div>
           <div
@@ -131,10 +166,11 @@ class PlayBar extends React.Component {
         autoPlay
         onTimeUpdate={this.updateTime}
         onLoadedMetadata={this.handleMetadata}
+        onEnded={this.handleNext}
         id="audio"
         // controls
-        src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
-        // src={currentTrack.track_url}
+        // src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
+        src={currentTrack.track_url}
         >
           {/* Your browser does not suppot rthe */}
         </audio>
@@ -159,10 +195,10 @@ class PlayBar extends React.Component {
             />
 
           <div className="artist-song-links">
-            <h1>{"artist here"}</h1>
-            <h1>{"song here"}</h1>
-            {/* <h1 >{currentTrack.artist || "artist here"}</h1>
-                    <h1 >{currentTrack.title || "song here"}</h1> */}
+            {/* <h1>{"artist here"}</h1>
+            <h1>{"song here"}</h1> */}
+            <h1 >{currentTrack.artist || "artist here"}</h1>
+                    <h1 >{currentTrack.title || "song here"}</h1>
           </div>
         </div>
         </div>

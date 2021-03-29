@@ -73,6 +73,7 @@ class ProfilePage extends React.Component {
         deleteTrackModal={this.props.deleteTrackModal}
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
+        queueSong={this.props.queueSong}
       />
     ));
 

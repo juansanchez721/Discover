@@ -41,6 +41,7 @@ class ProfileTrackItem extends React.Component {
       deleteTrackModal,
       updateTrackModal,
       liked,
+      queueSong
     } = this.props;
     //     debugger
     let userbuttons = null;
@@ -85,6 +86,11 @@ class ProfileTrackItem extends React.Component {
           >
             <i className="fas fa-heart"></i>{" "}
             {liked ? track.likers.length : "Like"}
+          </button>
+          <button
+            // className={liked ? "liked-button" : "track-buttons"}
+            onClick={() => queueSong(track.id)}
+          >queueSong
           </button>
         </div>
       );

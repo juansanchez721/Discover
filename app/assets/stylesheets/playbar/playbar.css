@@ -15,21 +15,20 @@
     height: inherit;
     display: flex;
     justify-content: center;
-    background-color: #FE5000;
+    /* background-color: #FE5000; */
     width: 80%;
     min-width: 960px;
     max-width: 1240px;
 }
-.playbar-div audio {
+/* .playbar-div audio {
     width: 700px;
-    color: white;
-}
+} */
 
 .play-bar-song-info{
     width: 300px;
     padding: 8px;
     box-sizing: border-box;
-    background-color:pink;
+    /* background-color:pink; */
     display: flex;
     flex-direction: row;
 }
@@ -50,7 +49,7 @@
 .media-controls {
     min-width: 200px;
     box-sizing: border-box;
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -75,7 +74,7 @@
 }
 
 .time-bar {
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     width: 80%;
     max-width: 740px;
     min-width: 100px;
@@ -98,6 +97,8 @@
 input[type=range] {
   height: 17px;
   -webkit-appearance: none;
+  background-color: #f2f2f2;
+
   margin: 10px 0;
   width: 100%;
 }
