@@ -62,6 +62,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  /* display: inline-block; */
+  /* border-bottom: 1px dotted black; */
+
 }
 .media-controls >*, .volume-control >*{
     cursor: pointer;
@@ -102,8 +106,9 @@
 
 
 input[type=range] {
-  height: 17px;
+  /* height: 17px; */
   -webkit-appearance: none;
+  /* background-color: red; */
   background-color: #f2f2f2;
 
   margin: 10px 0;
@@ -192,3 +197,36 @@ input[type=range]::-ms-thumb {
 input[type=range]:focus::-ms-fill-upper {
   background: #FE5000;
 } */
+
+
+.tooltiptext {
+  padding: 0px 15px;
+  box-sizing: border-box;
+  transform: rotate(
+90deg
+);
+    visibility: hidden;
+    width: 150px;
+    height: 34px;
+    border: 1px solid #cecece;
+    background-color: #f2f2f2;
+    color: #fff;
+    /* text-align: center; */
+    /* padding: 5px 0; */
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 9%;
+    top: -85px;
+    margin-left: -60px;
+    /* opacity: 0; */
+    transition: opacity 0.3s;
+}
+
+
+.volume-control:hover .tooltiptext {
+  visibility: visible;
+}

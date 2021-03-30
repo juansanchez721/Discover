@@ -113,12 +113,12 @@ class PlayBar extends React.Component {
 
 
   render() {
-    if(this.props.playbar.currentTrack === null) {
-        return null
-    }
+    // if(this.props.playbar.currentTrack === null) {
+    //     return null
+    // }
 
-        let { currentTrack, queue } = this.props.playbar
-        console.log(currentTrack, queue)
+        // let { currentTrack, queue } = this.props.playbar
+        // console.log(currentTrack, queue)
         // console.log(this.state.queue)
 
     return (
@@ -162,8 +162,8 @@ class PlayBar extends React.Component {
         onEnded={this.handleNext}
         id="audio"
         // controls
-        // src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
-        src={currentTrack.track_url}
+        src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
+        // src={currentTrack.track_url}
         >
           {/* Your browser does not suppot rthe */}
         </audio>
@@ -182,6 +182,17 @@ class PlayBar extends React.Component {
         <div className="volume-control" >
 
           <i class="fas fa-volume-up"></i>
+          <span className="tooltiptext" >
+          <input 
+        // onChange={this.onSliderChange}
+        // id="time-slider"
+        className="time-slider" 
+        type="range"
+        min="0"
+        // defaultValue="1.5"
+        // max={this.state.duration}
+        />
+          </span>
         </div>
         <div className="play-bar-song-info">
           <img
@@ -191,10 +202,10 @@ class PlayBar extends React.Component {
             />
 
           <div className="artist-song-links">
-            {/* <h1>{"artist here"}</h1>
-            <h1>{"song here"}</h1> */}
-            <h1 >{currentTrack.artist || "artist here"}</h1>
-                    <h1 >{currentTrack.title || "song here"}</h1>
+            <h1>{"artist here"}</h1>
+            <h1>{"song here"}</h1>
+            {/* <h1 >{currentTrack.artist || "artist here"}</h1>
+                    <h1 >{currentTrack.title || "song here"}</h1> */}
           </div>
         </div>
         </div>
