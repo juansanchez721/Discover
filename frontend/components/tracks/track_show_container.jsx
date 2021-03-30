@@ -13,7 +13,7 @@ const mSTP = (state, { match }) => {
     return {
         songId,
         song: state.entities.tracks[songId],
-        user: state.entities.users
+        user: Object.values(state.entities.users)[0]
     }
 }
 

@@ -21,7 +21,7 @@
 .comment-input-holder {
     /* padding: 5px; */
     height:100px;
-    /* background-color: blue; */
+    background-color: blue;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -210,8 +210,15 @@ form{
 
 .comment-circle-maker, .sub-comment-circle-maker {
     /* background-color: ivory; */
-    height: 40px;
-    width: 40px;
+    max-height: 40px;
+    max-width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comment-circle-maker img, .sub-comment-circle-maker img {
+    height: 100%;
+    width: 100%;
 }
 
 .username-date-posted {

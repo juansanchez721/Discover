@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from 'react-router-dom'
+
 import { deleteComment } from "../../actions/comment_actions";
 import { createComment } from "../../util/comment_api_util";
 import CommentItem from "./comments_item";
@@ -56,6 +58,22 @@ class Comments extends React.Component{
             trackId={this.state.track_id}
             />;
           });
+
+          let followButton = this.props.currentUser.follows.includes(artist.id) ? (
+            <button
+              className="following-button"
+              onClick={() => this.props.unfollow(artist.id)}
+            >
+              <i className="fas fa-user-check"></i> Following
+            </button>
+          ) : (
+            <button
+              className="follow-button"
+              onClick={() => this.props.follow(artist.id)}
+            >
+              <i className="fas fa-user-plus"></i> Follow
+            </button>
+          );
         
         return (
           <div className="comments-container">
@@ -81,18 +99,28 @@ class Comments extends React.Component{
 
               <div className="comments-other">
                 <div className="avatar-user-info">
-                  <div className="track-show-circle-maker">
-                    <img
-                      className="profile-default"
-                      src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
-                    />
+                <Link to={`/users/${artist.id}`} >
 
-                    {/* <img className="profile-default" src={props.user.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
+                  <div className="track-show-circle-maker">
+
+                    <img src={artist.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
                   </div>
 
                   <div className="artist-info">
                     <p>{artist.username || "artist here"}</p>
                   </div>
+                </Link>
+                        <span className="user-stats">
+                        
+                        <p>
+                            <i className="fas fa-user-friends"></i> {artist.followers_count}
+                            </p> 
+                            <p>
+                                <i className="fas fa-sliders-h"></i> {artist.track_count}
+                                </p>
+                        
+                        </span>
+                  {followButton}
                 </div>
                 <div className="comments-section">
                   <div className="comment-count">

@@ -1,5 +1,6 @@
 import { connect } from "react-redux"
 import { createComment, deleteComment } from '../../actions/comment_actions'
+import { createFollow, deleteFollow } from '../../actions/follows_action'
 import Comments from "./comments"
 
 
@@ -17,7 +18,10 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         createComment: comment => dispatch(createComment(comment)),
-        deleteComment: commentId => dispatch(deleteComment(commentId))
+        deleteComment: commentId => dispatch(deleteComment(commentId)),
+        follow: userId => dispatch(createFollow(userId)),
+        unfollow: userId => dispatch(deleteFollow(userId))
+
     }
 }
 

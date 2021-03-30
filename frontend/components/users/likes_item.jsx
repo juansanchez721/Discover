@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 
 const LikesItem = ({ track }) => {
     return (
+        <Link to={`/tracks/${track.id}`} >
         <div className="likes-item">
                    <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
         <div className="like-item-info" >
@@ -18,6 +20,7 @@ const LikesItem = ({ track }) => {
             </span>
         </div>
         </div>
+        </Link>
     )
 }
 

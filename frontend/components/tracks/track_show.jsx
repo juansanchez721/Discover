@@ -1,6 +1,7 @@
 import React from "react";
 import PlayButton from "../play_button/play_button";
 import CommentsContainer from "../comments/comments_container";
+import {Link} from 'react-router-dom'
 import Time from "../time/time";
 
 class TrackShow extends React.Component {
@@ -32,42 +33,36 @@ class TrackShow extends React.Component {
 
     if (
       this.props.song === undefined ||
-      this.props.user[this.props.song.owner_id] === undefined
+      this.props.user === undefined
     ) {
       return null;
     }
+
+    const { song, user, songId } = this.props
     return (
       <div className="show-full-page">
         <div className="track-show">
           <div className="info-playbar">
             <div className="info-text">
               <div className="track-show-circle-container">
-                <PlayButton track={this.props.song} user={Object.values(this.props.user)[0]} />
+                <PlayButton track={song} user={Object.values(user)[0]} />
               </div>
               <div className="song-info">
                 <div className="song-info-time">
                   <h1 className="track-title">
-                    {/* {" "} */}
-                    {this.props.user[this.props.song.owner_id].username}
+                    <Link to={`/users/${user.id}`} >
+                    {user.username}
+                    </Link>
                   </h1>
-                  <Time time={this.props.song.created_at} />
+                  <Time time={song.created_at} />
                 </div>
-                <h1 className="track-title"> {this.props.song.title} </h1>
+                <h1 className="track-title"> {song.title} </h1>
               </div>
             </div>
-            {/* <div className="audio-player-holder" >
-
-                                <audio
-                                controls
-                                // src={this.props.song.track_url}
-                                >
-                                    Your browser does not support the
-                                </audio>
-                        </div> */}
           </div>
           <div className="show-image">
             <img
-              src={
+              src={ song.image_url ||
                 "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
               }
             />
@@ -76,8 +71,8 @@ class TrackShow extends React.Component {
           </div>
         </div>
         <CommentsContainer
-          trackId={this.props.songId}
-          artist={this.props.user[this.props.song.owner_id]}
+          trackId={songId}
+          artist={user}
         />
       </div>
     );
