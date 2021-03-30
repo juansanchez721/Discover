@@ -38,12 +38,12 @@ class DiscoverPageItem extends React.Component{
           <div className="discover-page-item">
             <Link className="text-link" to={`/tracks/${track.id}`}>
               
-              {/* <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />  */}
-              <img
+              <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} /> 
+              {/* <img
                 src={
                   "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
                 }
-              />
+              /> */}
               <div className="album-shadow"></div>
 
             </Link>

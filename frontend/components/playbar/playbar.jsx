@@ -9,9 +9,12 @@ class PlayBar extends React.Component {
       loop: false,
       duration: 0,
       currentTime: 0,
+      volume: 1,
       i: 0
       // queue: this.props.playbar.queue
     };
+
+    this.handleVolume = this.handleVolume.bind(this)
     this.stop = this.stop.bind(this);
     this.play = this.play.bind(this);
     this.loop = this.loop.bind(this);
@@ -25,15 +28,19 @@ class PlayBar extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
   }
 
+
+  handleVolume(e){
+
+    const audio = document.getElementById("audio")
+    audio.volume = e.target.value
+    this.setState({ volume: e.target.value})
+    // console.log(player.volume)
+  }
+
   handlePrev() {
     if( this.state.i >= 1 && this.state.i  ){
-      // alert('playing song ' + this.props.playbar.queue[this.state.i] + " " + this.state.i)
       this.props.fetchNextTrack(this.props.playbar.queue[this.state.i-1])
       this.setState({ i: this.state.i-1 })
-      // .then(() =>
-      // )
-      // console.log(this.state.i)
-
     } else {
       alert('this is the first song in the queue')
     }
@@ -42,7 +49,6 @@ class PlayBar extends React.Component {
   handleNext() {
 
     if( this.state.i <=  this.props.playbar.queue.length-1){
-      // alert('playing song ' + this.props.playbar.queue[this.state.i] + " " + this.state.i)
       if(this.state.i === 0){
         this.setState({ i: 1 })
         this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
@@ -52,8 +58,6 @@ class PlayBar extends React.Component {
         this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
         this.setState({ i: this.state.i+1 })
       }
-      // console.log(this.state.i)
-
     } else {
       alert('no more songs in queue')
     }
@@ -92,7 +96,6 @@ class PlayBar extends React.Component {
   handlePlay() {
     this.state.playing ? this.stop() : this.play();
     this.setState({ playing: !this.state.playing });
-    // console.log(this.state.playing)
   }
 
   play() {
@@ -113,11 +116,11 @@ class PlayBar extends React.Component {
 
 
   render() {
-    // if(this.props.playbar.currentTrack === null) {
-    //     return null
-    // }
+    if(this.props.playbar.currentTrack === null) {
+        return null
+    }
 
-        // let { currentTrack, queue } = this.props.playbar
+        let { currentTrack, queue } = this.props.playbar
         // console.log(currentTrack, queue)
         // console.log(this.state.queue)
 
@@ -162,10 +165,9 @@ class PlayBar extends React.Component {
         onEnded={this.handleNext}
         id="audio"
         // controls
-        src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
-        // src={currentTrack.track_url}
+        // src="https://docs.google.com/uc?export=download&id=1EZ83lkITMMggPrUoZLZOB7N5kqbN95cB"
+        src={currentTrack.track_url}
         >
-          {/* Your browser does not suppot rthe */}
         </audio>
         <input 
         onChange={this.onSliderChange}
@@ -181,31 +183,31 @@ class PlayBar extends React.Component {
 
         <div className="volume-control" >
 
-          <i class="fas fa-volume-up"></i>
+          <i className="fas fa-volume-up"></i>
           <span className="tooltiptext" >
           <input 
-        // onChange={this.onSliderChange}
-        // id="time-slider"
-        className="time-slider" 
+        onChange={this.handleVolume}
+        id="volume-slider"
+        className="volume-slider" 
         type="range"
         min="0"
-        // defaultValue="1.5"
-        // max={this.state.duration}
+        step=".02"
+        max="1"
         />
           </span>
         </div>
         <div className="play-bar-song-info">
           <img
-            src={
+            src={ currentTrack.image_url ||
               "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
             }
             />
 
           <div className="artist-song-links">
-            <h1>{"artist here"}</h1>
-            <h1>{"song here"}</h1>
-            {/* <h1 >{currentTrack.artist || "artist here"}</h1>
-                    <h1 >{currentTrack.title || "song here"}</h1> */}
+            {/* <h1>{"artist here"}</h1>
+            <h1>{"song here"}</h1> */}
+            <h1 >{currentTrack.artist || "artist here"}</h1>
+                    <h1 >{currentTrack.title || "song here"}</h1>
           </div>
         </div>
         </div>

@@ -98,12 +98,12 @@ class ProfileTrackItem extends React.Component {
 
     return (
       <div className="profile-track-item">
-        {/* <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}
-        <img
+        <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
+        {/* <img
           src={
             "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
           }
-        />
+        /> */}
 
         <div className="track-info">
           <div className="track-info-text">
@@ -120,14 +120,7 @@ class ProfileTrackItem extends React.Component {
               </div>
             </div>
           </div>
-          {/* <audio
-                className="profile-audio"
-                controls */}
-          {/* src={track.track_url} */}
-          {/* > */}
-          {/* Your browser does not support the */}
-          {/* <code>audio</code> element. */}
-          {/* </audio> */}
+       
           {userbuttons}
         </div>
       </div>

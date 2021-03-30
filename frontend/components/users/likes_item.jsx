@@ -4,11 +4,7 @@ import React from 'react'
 const LikesItem = ({ track }) => {
     return (
         <div className="likes-item">
-            <img
-          src={
-            "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
-          }
-        />
+                   <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
         <div className="like-item-info" >
 
             <h1>{track.artist}</h1>

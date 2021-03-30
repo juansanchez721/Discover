@@ -20,8 +20,7 @@ const SongList = ({ currentUser, tracks, deleteLike, createLike }) => {
           {/* <img src={props.track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"} />  */}
           <img
             src={
-                // imgSource ? imgSource.image_url : null
-              "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
+                imgSource ? imgSource.image_url : "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
             }
           />
 
