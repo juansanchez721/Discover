@@ -1,7 +1,7 @@
 
 const defaultArg = Object({
     currentTrack: null,
-    queue: [2,1,8,4]
+    queue: []
 
 }) 
 

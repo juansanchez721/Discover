@@ -9,7 +9,7 @@ class PlayBar extends React.Component {
       loop: false,
       duration: 0,
       currentTime: 0,
-      volume: 1,
+      volume: 0.5,
       i: 0
       // queue: this.props.playbar.queue
     };
@@ -59,7 +59,11 @@ class PlayBar extends React.Component {
         this.setState({ i: this.state.i+1 })
       }
     } else {
-      alert('no more songs in queue')
+      this.setState({ playing: false})
+      const audio = document.getElementById("audio");
+      this.setState({ currentTime: 0})
+      audio.currentTime = 0
+      // return null;
     }
   }
 
@@ -124,7 +128,7 @@ class PlayBar extends React.Component {
         // console.log(currentTrack, queue)
         // console.log(this.state.queue)
 
-    return (
+      return this.state.playing || currentTrack ? (
       <div className="playbar-div">
         <div className="playbar-inner" >
 
@@ -212,7 +216,9 @@ class PlayBar extends React.Component {
         </div>
         </div>
       </div>
-    );
+    )
+    :
+    null
   }
 }
 
