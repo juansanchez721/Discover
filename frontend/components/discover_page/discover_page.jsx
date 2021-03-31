@@ -114,16 +114,16 @@ class DiscoverPage extends React.Component {
               <br />
               <br />
 
-              <div className="discover-titles">
+              {/* <div className="discover-titles">
                 <h2 className="discover-page-headers">Recommended</h2>
                 <p className="small-light-words">
                   {" "}
                   Some holder words that go here{" "}
                 </p>
               </div>
-              <div className="showing-songs">
+              <div className="showing-songs"> */}
                 {/* <div className="inner-showing">{tracksthird}</div> */}
-              </div>
+              {/* </div>
               <br />
               <br />
 
@@ -134,9 +134,9 @@ class DiscoverPage extends React.Component {
                   Some holder words that go here{" "}
                 </p>
               </div>
-              <div className="showing-songs">
+              <div className="showing-songs"> */}
                 {/* <div className="inner-showing">{tracksfourth}</div> */}
-              </div>
+              {/* </div> */}
             </div>
           </div>
 
