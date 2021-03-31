@@ -7,7 +7,7 @@ import { login, clearErrors } from '../../actions/session_actions'
 import { closeModal } from '../../actions/modal_actions'
 const mSTP = (state, ownProps) => {
     return {
-        errors: state.errors.session,
+        errors: Object.values(state.errors.session),
         formType: 'login'
     }
 }

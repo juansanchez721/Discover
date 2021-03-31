@@ -9,7 +9,7 @@ import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
     return {
-        errors: state.errors.session,
+        errors: Object.values(state.errors.session),
         formType: 'signup'
     }
 }
