@@ -50,11 +50,15 @@ class DiscoverPage extends React.Component {
     //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/>
     // ))
 
-    let likeitems = this.props.likes
+    let likeitems = this.props.likes.length > 0 ?this.props.likes
       .sort((a, b) => new Date(b.like_created_at) - new Date(a.like_created_at))
       .map((like) => {
         return <LikesItem key={like.id} track={like} />;
-      });
+      })
+      :
+      <div className="empty-message">
+                you don't have any likes yet.
+              </div>
 
     
 
@@ -156,7 +160,7 @@ class DiscoverPage extends React.Component {
                     <h1>
                       <i className="fas fa-heart"></i>
                       {}
-                      {" " + likeitems.length + " likes" || null}
+                      {likeitems.length ? " " + likeitems.length + " likes" : " 0 likes"}
                     </h1>
                     <p>View all</p>
                   </div>

@@ -4,7 +4,7 @@ import Time from '../time/time'
 const SubCommentItem = ({ comment, currentUserId, deleteComment }) => {
 
     const displayName =  (
-      comment.commenter_id === currentUserId ? "You" : comment.user
+      comment.commenter_id === currentUserId ? "You" : comment.username
     )
 
     const deleteButton =  (
@@ -19,7 +19,7 @@ const SubCommentItem = ({ comment, currentUserId, deleteComment }) => {
       <div className="sub-comment-circle-maker">
         <img
           className="profile-default"
-          src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
+          src= {comment.image_url || "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}
         />
 
         {/* <img className="profile-default" src={props.user.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/> */}

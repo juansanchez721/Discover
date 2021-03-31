@@ -8,11 +8,27 @@ class EditModal extends React.Component {
         this.state ={
             bio: this.props.user.bio || "",
             firstName: this.props.user.firstName || "",
-            lastName: this.props.user.lastName || ""
+            lastName: this.props.user.lastName || "",
+            imageUrl: this.props.user.image_url || null,
+            imageFile: null,
+
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.previewFile = this.previewFile.bind(this)
 
+    }
+
+    previewFile(e){
+        e.preventDefault();
+        const file = e.target.files[0]
+        if(file){
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file)
+            fileReader.onloadend = () => {
+                this.setState({ imageFile: file, imageUrl: fileReader.result })
+            }
+        }
     }
 
     handleSubmit(){
@@ -22,10 +38,10 @@ class EditModal extends React.Component {
         formData.append('user[first_name]', this.state.firstName)
         formData.append('user[last_name]', this.state.lastName)
 
-        // if (this.state.imageFile){
-        //     formData.append('track[photo]', this.state.imageFile)
-        // }
-        // debugger
+        if (this.state.imageFile){
+            formData.append('user[photo]', this.state.imageFile)
+        }
+        debugger
         this.props.updateUser( formData, this.props.user.id)
         .then(this.props.closeModal())
     }
@@ -41,13 +57,26 @@ class EditModal extends React.Component {
 
     render(){
 
+        let preview;
+        let inp;
+        if(this.state.imageUrl){
+            preview = <img src={this.state.imageUrl} alt="Image preview..."/>
+            inp = <input className="replace-img" type="file" onChange={this.previewFile}/>
+
+        } else {
+            preview = <img src={this.state.imageUrl} alt="Image preview..."/>;
+            inp = <input type="file" onChange={this.previewFile}/>
+
+        }
+
         const {user} = this.props
         return(
             <div className="edit-modal" >
-             <h1>Edit here for {user.username} </h1>
-
-            <label>bio</label>
-             <input onChange={this.update('bio')} value={this.state.bio} />
+                <div className="image-preview-side" >
+                    {preview}
+                    {inp}
+                </div>
+                <div className="form-side" >
 
              <label>First name</label>
              <input onChange={this.update('firstName')} value={this.state.firstName}/>
@@ -55,7 +84,14 @@ class EditModal extends React.Component {
              <label>Last name</label>
              <input onChange={this.update('lastName')} value={this.state.lastName}/>
 
+            <label>Bio</label>
+             <input onChange={this.update('bio')} value={this.state.bio} />
+            <div className="edit-modal-buttons" >
+
+             <button onClick={this.props.closeModal } >cancel</button>
             <button onClick={this.handleSubmit } >submit</button>
+            </div>
+                </div>
             </div>
         )
 

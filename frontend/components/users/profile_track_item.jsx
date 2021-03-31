@@ -88,9 +88,9 @@ class ProfileTrackItem extends React.Component {
             {liked ? track.likers.length : "Like"}
           </button>
           <button
-            // className={liked ? "liked-button" : "track-buttons"}
+            className={"track-buttons"}
             onClick={() => queueSong(track.id)}
-          >queueSong
+          >queue song
           </button>
         </div>
       );

@@ -23,6 +23,12 @@ class LikesPage extends React.Component {
   render() {
     const { likedTracks } = this.props;
     if (this.state.loaded) return null;
+    console.log(likedTracks)
+    if (Object.values(likedTracks).length ===0 ){
+      return <div className="empty-message">
+        you don't have any liked tracks.
+      </div>
+    }
 
     let likeTracks = null;
     if(parseInt(this.props.userId) === this.props.currentUser.id){

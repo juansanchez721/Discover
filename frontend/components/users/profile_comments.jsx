@@ -19,6 +19,13 @@ class ProfileComments extends React.Component {
     }
     
     render(){
+        let content = <div className="empty-message">
+        you don't have any comments yet.
+      </div>
+
+    //     if(Object.values(this.props.comments).length === 0) content = <div className="empty-message">
+    //     you don't have any comments yet.
+    //   </div>
 
         let userId = this.props.match.params.userId
 
@@ -28,7 +35,6 @@ class ProfileComments extends React.Component {
         })
 
 
-        let content = null;
         switch (page) {
             case "likes":
                 content = <LikesContainer userId={userId} />

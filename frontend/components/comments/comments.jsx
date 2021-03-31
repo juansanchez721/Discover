@@ -99,8 +99,7 @@ class Comments extends React.Component{
               <div className="comment-input-holder">
                 <img
                   // className="profile-default"
-                  src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
-                />
+                  src={ currentUser.image_url || "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}/>
                 <div className="input-box">
                   <form onSubmit={this.handleSubmit}>
                     <input

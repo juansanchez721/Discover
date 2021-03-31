@@ -22,7 +22,9 @@ class FollowersPage extends React.Component {
         switch (this.props.page) {
 
             case 'followers':
-                if (!this.props.followers) return null;
+                if (!this.props.followers) return <div className="empty-message">
+                you don't have any followers yet.
+              </div>;
 
                     follows = Object.values(this.props.followers).map(user => {
                     return <FollowersItem 
@@ -40,7 +42,9 @@ class FollowersPage extends React.Component {
                 
                 break;
             case 'following':
-                if (!this.props.follows) return null;
+                if (!this.props.follows) return <div className="empty-message">
+                you don't follow anyone yet.
+              </div>;
 
                 follows = Object.values(this.props.follows).map(user => {
                     return <FollowersItem 

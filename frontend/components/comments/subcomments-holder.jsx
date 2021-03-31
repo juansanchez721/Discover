@@ -42,10 +42,8 @@ class SubComments extends React.Component {
 
         const newSubComment =  this.props.replyBool ?
         <div className="sub-comment-input-holder">
-        <img
-          // className="profile-default"
-          src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
-        />
+        {/* <img
+          src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"/> */}
         <div className="sub-comment-input-box">
           <form onSubmit={this.handleSubmit}>
             <input

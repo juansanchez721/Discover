@@ -1,5 +1,37 @@
 .edit-modal {
-    background-color: green;
+    padding:15px;
+    width: 850px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    font-size: 12px;
+}
+
+.image-preview-side {
+    width: 30%;
+    height: 100%;
+}
+
+.form-side {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 70%;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    justify-content: space-evenly;
+
+}
+
+.edit-modal img {
+    width: 100%;
+}
+
+.edit-modal-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
