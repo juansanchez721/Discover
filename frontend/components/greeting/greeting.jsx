@@ -123,7 +123,7 @@ class Header extends React.Component {
                 <img src={this.props.currentUser.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
               </div>
 
-              <span>{this.props.currentUser.username}</span>
+              <span className="cut-off-username" >{this.props.currentUser.username}</span>
               <span>
                 <i className="fas fa-chevron-down"></i>
               </span>

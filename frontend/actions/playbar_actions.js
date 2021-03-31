@@ -4,7 +4,7 @@ export const QUEUE_SONG = "QUEUE_SONG"
 export const PLAY_QUEUE_SONG = "PLAY_QUEUE_SONG"
 
 export const playSong = (song) => {
-    // debugger
+    debugger
     return {
         type: PLAY_SONG,
         song    

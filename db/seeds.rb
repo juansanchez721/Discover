@@ -8,20 +8,25 @@
 
 require 'open-uri'
 
+User.destroy_all
+Track.destroy_all
+Follow.destroy_all
+Like.destroy_all
+Comment.destroy_all
 
-playboi = User.create!(username: "playboi carti", email: "playboicarti@playboi.com", password: "password", age: 27, gender: "Male")
+playboi = User.create!(username: "playboi carti", email: "playboicarti@playboi.com", password: "password", age: 27, gender: "Male", bio: 'slatt')
 playboi_photo = open("https://discover-aa-seeds.s3.amazonaws.com/Playboi-Carti-768x435.jpg")
 playboi.photo.attach(io: playboi_photo, filename: 'Playboi-Carti-768x435.jpg')
 
-travis = User.create!(username: "Travis $cott", email: "itslit@scott.com", password: "password", age: 27, gender: "Male")
+travis = User.create!(username: "Travis $cott", email: "itslit@scott.com", password: "password", age: 27, gender: "Male", bio: 'is lit')
 travis_photo = open("https://discover-aa-seeds.s3.amazonaws.com/scott.jpg")
 travis.photo.attach(io: travis_photo, filename: 'scott.jpg')
 
-wifisfuneral = User.create!(username: "Wifisfuneral", email: "wifisfuneral@weef.com", password: "password", age: 27, gender: "Male")
+wifisfuneral = User.create!(username: "Wifisfuneral", email: "wifisfuneral@weef.com", password: "password", age: 27, gender: "Male", bio: '3thernet')
 wifisfuneral_photo = open("https://discover-aa-seeds.s3.amazonaws.com/weef.jpg")
 wifisfuneral.photo.attach(io: wifisfuneral_photo, filename: 'weef.jpg')
 
-nav = User.create!(username: "Nav", email: "nav@test.com", password: "password", age: 27, gender: "Male")
+nav = User.create!(username: "Nav", email: "nav@test.com", password: "password", age: 27, gender: "Male", bio: 'perfect timing')
 nav_photo = open("https://discover-aa-seeds.s3.amazonaws.com/nav.jpg")
 nav.photo.attach(io: nav_photo, filename: 'nav.jpg')
 
@@ -29,7 +34,7 @@ cudi = User.create!(username: "Kid Cudi", email: "kid@cudi.com", password: "pass
 cudi_photo = open("https://discover-aa-seeds.s3.amazonaws.com/cudi.jpg")
 cudi.photo.attach(io: cudi_photo, filename: 'cudi.jpg')
 
-jaycritch = User.create!(username: "Jay Critch", email: "jay@critch.com", password: "password", age: 27, gender: "Male")
+jaycritch = User.create!(username: "Jay Critch", email: "jay@critch.com", password: "password", age: 27, gender: "Male", bio: 'hoodFAIF')
 jaycritch_photo = open("https://discover-aa-seeds.s3.amazonaws.com/jaycritch.jpg")
 jaycritch.photo.attach(io: jaycritch_photo, filename: 'jaycritch.jpg')
 
@@ -105,3 +110,45 @@ showout_photo = open('https://discover-aa-seeds.s3.amazonaws.com/kid-cudi-motm3.
 showout.photo.attach(io: showout_photo, filename: 'kid-cudi-motm3.jpg')
 showout_song = open("https://discover-aa-seeds.s3.amazonaws.com/Show+Out+ft.++Skepta+%26+Pop+Smoke.mp3")
 showout.track.attach(io: showout_song, filename: "Show+Out+ft.++Skepta+%26+Pop+Smoke.mp3")
+
+Follow.create!(followee_id: playboi.id, follower_id: travis.id)
+Follow.create!(followee_id: playboi.id, follower_id: nav.id)
+Follow.create!(followee_id: playboi.id, follower_id: cudi.id)
+
+Follow.create!(followee_id: travis.id, follower_id: playboi.id)
+Follow.create!(followee_id: travis.id, follower_id: cudi.id)
+Follow.create!(followee_id: travis.id, follower_id: wifisfuneral.id)
+
+
+
+Follow.create!(followee_id: wifisfuneral.id, follower_id: jaycritch.id)
+
+Follow.create!(followee_id: jaycritch.id, follower_id: travis.id)
+
+Like.create!(likeable_type: "Track", likeable_id: myself.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: myself.id, liker_id:cudi.id)
+Like.create!(likeable_type: "Track", likeable_id: callme.id, liker_id:cudi.id)
+
+Like.create!(likeable_type: "Track", likeable_id: talk.id, liker_id:cudi.id)
+Like.create!(likeable_type: "Track", likeable_id: talk.id, liker_id:nav.id)
+
+Like.create!(likeable_type: "Track", likeable_id: skeleton.id, liker_id:cudi.id)
+Like.create!(likeable_type: "Track", likeable_id: skeleton.id, liker_id:nav.id)
+
+Like.create!(likeable_type: "Track", likeable_id: lean4real.id, liker_id:cudi.id)
+Like.create!(likeable_type: "Track", likeable_id: lean4real.id, liker_id:nav.id)
+
+Like.create!(likeable_type: "Track", likeable_id: fashion.id, liker_id:travis.id)
+Like.create!(likeable_type: "Track", likeable_id: fashion.id, liker_id:nav.id)
+
+Like.create!(likeable_type: "Track", likeable_id: genesis.id, liker_id:travis.id)
+Like.create!(likeable_type: "Track", likeable_id: genesis.id, liker_id:cudi.id)
+
+Like.create!(likeable_type: "Track", likeable_id: showout.id, liker_id:travis.id)
+Like.create!(likeable_type: "Track", likeable_id: showout.id, liker_id:wifisfuneral.id)
+
+
+Like.create!(likeable_type: "Track", likeable_id: backyard.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: goosebumps.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: stargazing.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: rara.id, liker_id:playboi.id)

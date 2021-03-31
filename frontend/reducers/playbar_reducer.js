@@ -8,7 +8,7 @@ const defaultArg = Object({
 import { PLAY_SONG, QUEUE_SONG, PLAY_QUEUE_SONG } from "../actions/playbar_actions"
 
 const playbarReducer = (state= defaultArg, action) => {
-    // debugger
+    debugger
     let newState = Object.assign({}, state)
     switch (action.type) {
         case PLAY_SONG:

@@ -271,7 +271,7 @@ table {
 }
 
 .logged-in-right-side {
-  min-width: 355px;
+  /* min-width: 355px; */
   /* margin-left: -10px; */
   /* background-color: red; */
   display: flex;
@@ -369,17 +369,18 @@ table {
 
 .username {
   cursor: pointer;
-  width: 95px;
-  height: 46px;
-  /* background-color: blue; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  /* overflow: hidden; */
-  position: relative;
+    min-width: 50px;
+    height: 46px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    padding: 0px 10px;
+    position: relative;
 }
 
 .username:focus {
@@ -866,6 +867,10 @@ button{
     font-size: 18px;
   }
 
+  .cut-off-username {
+    display: none;
+  }
+
 }
 
 .empty-message {
@@ -875,4 +880,13 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cut-off-username {
+     /* background-color: green; */
+    /* max-width: 38px; */
+    margin: 0px 5px;
+    /* width: 37%; */
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

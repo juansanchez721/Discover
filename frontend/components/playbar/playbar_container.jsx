@@ -4,7 +4,7 @@ import { fetchQueueTrack } from '../../actions/playbar_actions'
 import PlayBar from './playbar'
 
 const mSTP = state => {
-    // debugger
+    debugger
     return {
         playbar: state.ui.playbar
     }

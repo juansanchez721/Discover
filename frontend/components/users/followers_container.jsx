@@ -10,8 +10,8 @@ import {
 
 const mSTP = state => {
     return {
-        followers: Object.values(state.entities.follows)[0],
-        follows: Object.values(state.entities.follows)[1],
+        followers: 'followers' in state.entities.follows ? Object.values(state.entities.follows.followers) : null,
+        follows: 'followings' in state.entities.follows ? Object.values(state.entities.follows.followings) : null,
         currentUser: state.session
     }
 }
