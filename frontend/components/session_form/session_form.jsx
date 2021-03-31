@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
           email: this.state.email,
           password: this.state.password
         })
-        .then(this.props.clearErrors)
+        // .then(this.props.clearErrors)
         .then(this.props.closeModal)
       }
 
@@ -157,7 +157,7 @@ class SessionForm extends React.Component {
           else if (this.state.page === 3 && this.props.formType === 'signup'){
         
           this.handleSubmitSignUp()
-          .then(this.props.clearErrors)
+          // .then(this.props.clearErrors)
   
         }
       }
