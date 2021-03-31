@@ -29,7 +29,7 @@
 }
 
 .bottom-followers-item {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     width: 100%;
     padding-top: 3%;
     /* height: 50px; */
@@ -66,4 +66,17 @@
     font-size: 11px;
       padding: 1px 10px;
       font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.follows-circle-maker {
+    width: inherit;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+}
+
+.follows-circle-maker img {
+    width: 100%;
+    height: inherit;
 }

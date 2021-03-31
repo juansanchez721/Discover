@@ -845,6 +845,10 @@ a:hover {
   color: #FE5000;
 }
 
+.link-hover:hover {
+  color: lightgrey;
+}
+
 button{
   outline: none;
 }

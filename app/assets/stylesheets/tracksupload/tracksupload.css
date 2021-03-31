@@ -110,7 +110,7 @@
     /* background-color: lawngreen; */
 }
 .upload-track-button button{
-    width: 50px;
+    width: fit-content;
     border: none;
     border-radius: 3px;
     background-color: #FE5000;

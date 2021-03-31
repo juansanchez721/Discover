@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUserFollow, currentUserUnfollow, currentUserBool, currentUserId }) => {
 
     let followButton = ( followed ?
@@ -28,12 +28,17 @@ const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUs
 
     return(
         <div className="followers-item">
+            <div className="follows-circle-maker" >
+
             <img
-                className="profile-default"
-                src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
-              />
+                // className="profile-default"
+                src={ follower.image_url || "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}
+                />
+            </div>
               <div className={"bottom-followers-item"}>
-                {follower.entity + " " + follower.entity_id}
+            <Link to={`/users/${follower.entity_id}`} >
+                {follower.entity}
+        </Link>
                 {followButton}    
                     {/* { followed ? "following" : "not following" } */}
               </div>

@@ -150,15 +150,20 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
             <div className="user-profile-info" >
 
               <span>
+                <Link className="link-hover"  to={`/users/${this.props.user.id}/followers`} >
                   <h2>Followers</h2>
                   <h1>{this.props.user.followers_count}</h1>
+                </Link>
 
               </span>
 
               <span>
+              <Link className="link-hover" to={`/users/${this.props.user.id}/following`} >
+
                   <h2>Following</h2>
                   <h1>{this.props.user.follows.length}</h1>
 
+              </Link>
               </span>
               <span>
                   <h2>Tracks</h2>
