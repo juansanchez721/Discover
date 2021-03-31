@@ -4,11 +4,11 @@ import {RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT} from '../actions/comm
 const commentsReducer =(state ={}, action) => {
 
 
-    debugger
+    // debugger
     Object.freeze(state)
 
     let newState = Object.assign({}, state)
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_COMMENTS:
             return action.comments

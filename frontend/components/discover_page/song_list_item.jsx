@@ -11,7 +11,7 @@ class SongListItem extends React.Component {
   }
 
   handlePlay() {
-    debugger;
+    // debugger;
     this.props.playSong(this.props.track);
   }
 

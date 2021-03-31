@@ -16,7 +16,7 @@ export const fetchUserComments = userId => {
 
 
 export const createComment = comment => {
-    debugger
+    // debugger
     return $.ajax({
         type: 'POST',
         url: `/api/comments`,

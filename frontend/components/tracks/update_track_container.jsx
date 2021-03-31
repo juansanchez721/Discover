@@ -6,7 +6,7 @@ import UpdateTrack from './update_track'
 
 const mSTP = (state, ownProps) => {
     // const trackId = parseInt(ownProps.match.params.trackId)
-    debugger
+    // debugger
     return {
         // trackId,
         // track: state.entities.tracks[trackId]

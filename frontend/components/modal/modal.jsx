@@ -8,12 +8,12 @@ import UpdateTrackContainer from '../tracks/update_track_container'
 import EditProfileContainer from '../users/edit_profile_container'
 
 function Modal({modal, closeModal}) {
-  debugger
+  // debugger
   if (!modal) {
     return null;
   }
   let component;
-  debugger
+  // debugger
   switch (modal.modal) {
     case 'login':
       component = <LoginFormContainer />;

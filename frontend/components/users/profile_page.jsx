@@ -6,7 +6,7 @@ import ProfileCommentItem from './profile_comments_item'
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
+    // debugger;
 
     this.state = {
       loaded: true,
@@ -30,7 +30,7 @@ class ProfilePage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
+    // debugger;
     if (this.props.match.params.userId !== prevProps.match.params.userId) {
       this.props
         .fetchSingleUserTracks(this.props.match.params.userId)
@@ -40,11 +40,11 @@ class ProfilePage extends React.Component {
         .then(() => this.props.fetchUserFollows(this.props.match.params.userId) )
 
     }
-    debugger;
+    // debugger;
   }
 
   render() {
-    debugger;
+    // debugger;
 
     if (this.state.loaded) {
       return (
@@ -59,8 +59,8 @@ class ProfilePage extends React.Component {
       return null;
     }
 
-    console.log(this.props.tracks);
-    debugger;
+    // console.log(this.props.tracks);
+    // debugger;
     let tracks = this.props.tracks.map((track) => (
       <ProfileTrackItem
         key={track.id}

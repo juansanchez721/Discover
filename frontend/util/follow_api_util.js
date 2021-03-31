@@ -19,7 +19,7 @@ export const deleteFollow = userId => {
 }
 
 export const createFollow = userId => {
-    debugger
+    // debugger
     return $.ajax({
         type: 'POST',
         url: '/api/follows',
@@ -32,7 +32,7 @@ export const createFollow = userId => {
 }
 
 export const createFollowCurrentUser = (currentUserId, userId) => {
-    debugger
+    // debugger
     return $.ajax({
         type: 'POST',
         url: '/api/follows',

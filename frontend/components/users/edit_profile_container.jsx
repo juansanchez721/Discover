@@ -10,7 +10,7 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => {
-    debugger
+    // debugger
     return {
         updateUser: (user, userId) => dispatch(updateUser(user, userId)),
         closeModal: ()=> dispatch(closeModal())   

@@ -1,7 +1,7 @@
 
 
 export const createLike = trackId => {
-    debugger
+    // debugger
     return $.ajax({
         type: "POST",
         url: "api/likes",
@@ -15,7 +15,7 @@ export const createLike = trackId => {
 }
 
 export const deleteLike = trackId => {
-    debugger
+    // debugger
     return $.ajax({
         type: "DELETE",
         url: "api/likes/-1",
@@ -28,7 +28,7 @@ export const deleteLike = trackId => {
 }
 
 export const fetchTrackLikes = userId => {
-    debugger
+    // debugger
     return $.ajax({
         type: 'GET',
         url: `/api/users/${userId}/likes`

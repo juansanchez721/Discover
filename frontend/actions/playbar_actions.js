@@ -4,7 +4,7 @@ export const QUEUE_SONG = "QUEUE_SONG"
 export const PLAY_QUEUE_SONG = "PLAY_QUEUE_SONG"
 
 export const playSong = (song) => {
-    debugger
+    // debugger
     return {
         type: PLAY_SONG,
         song    
@@ -12,7 +12,7 @@ export const playSong = (song) => {
 }
 
 export const queueSong = (trackId) => {
-    debugger
+    // debugger
     return {
         type: QUEUE_SONG,
         trackId    
@@ -20,7 +20,7 @@ export const queueSong = (trackId) => {
 }
 
 export const playQueueSong = (track) => {
-    debugger
+    // debugger
     return {
         type: PLAY_QUEUE_SONG,
         track

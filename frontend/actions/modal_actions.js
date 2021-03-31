@@ -19,7 +19,7 @@ export const closeModal = () => {
 
 
 export const deleteTrackModal = (modal, track) => {
-  debugger
+  // debugger
   return {
     type: DELETE_MODAL,
     track,
@@ -28,7 +28,7 @@ export const deleteTrackModal = (modal, track) => {
 };
 
 export const updateTrackModal = (modal, track) => {
-  debugger
+  // debugger
   return {
     type: UPDATE_MODAL,
     track,
@@ -37,7 +37,7 @@ export const updateTrackModal = (modal, track) => {
 };
 
 export const editUserModal = (modal, user) => {
-  debugger
+  // debugger
   return {
     type: EDIT_MODAL,
     user,

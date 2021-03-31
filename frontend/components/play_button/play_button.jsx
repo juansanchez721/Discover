@@ -10,7 +10,7 @@ class PlayButton extends React.Component {
         this.handlePlay = this.handlePlay.bind(this)   
     }
     handlePlay() {
-        debugger
+        // debugger
         this.props.playSong(this.props.track)
       }
   

@@ -5,7 +5,7 @@ class UploadForm extends React.Component {
 
     constructor(props){
         super(props)
-        debugger
+        // debugger
         this.state = {
             songFile: null,
             imageUrl: null,
@@ -16,7 +16,7 @@ class UploadForm extends React.Component {
             owner_id: this.props.currentUser.id,
             page: 0
         }
-        debugger
+        // debugger
         this.changePage = this.changePage.bind(this)
         this.updateFile = this.updateFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -28,7 +28,7 @@ class UploadForm extends React.Component {
     }
 
     update(field) {
-        debugger
+        // debugger
         return e => this.setState({
           [field]: e.currentTarget.value
         });
@@ -50,14 +50,14 @@ class UploadForm extends React.Component {
                  })
                 this.changePage()
             } else {
-                console.log("please enter a file")
+                // console.log("please enter a file")
             }
         // }
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
+        // debugger
         const formData = new FormData();
         formData.append('track[title]', this.state.title)
         formData.append('track[genre]', this.state.genre)
@@ -71,7 +71,7 @@ class UploadForm extends React.Component {
         this.props.createTrack(formData).then(
             this.setState({ page: this.state.page+1 })
           )
-        debugger
+        // debugger
     }
 
     previewFile(e){

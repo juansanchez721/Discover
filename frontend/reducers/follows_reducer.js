@@ -2,10 +2,10 @@ import { RECEIVE_ALL_FOLLOWS } from '../actions/follows_action'
 
 const followsReducer = (oldstate={}, action) => {
 
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_ALL_FOLLOWS:
-            debugger
+            // debugger
             return action.follows 
         default:
             return oldstate

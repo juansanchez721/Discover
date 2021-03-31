@@ -6,7 +6,7 @@ import UserItem from "./user_item";
 import SongList from "./song_list";
 class DiscoverPage extends React.Component {
   constructor(props) {
-    debugger;
+    // debugger;
     super(props);
     // this.tracks = null;
   }
@@ -16,11 +16,11 @@ class DiscoverPage extends React.Component {
       .fetchUsers()
       .then(this.props.fetchTracks())
       .then(this.props.fetchTrackLikes(this.props.currentUser.id));
-    debugger;
+    // debugger;
   }
 
   render() {
-    debugger;
+    // debugger;
     let tracksfirst = this.props.tracks.map((track) => (
       <DiscoverPageItem
         owner={this.props.users[track.owner_id]}
@@ -72,7 +72,7 @@ class DiscoverPage extends React.Component {
       />;
     });
 
-    debugger;
+    // debugger;
     return (
       <div className="discoverpage">
         {/* <h1>Discover here</h1>
