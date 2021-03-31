@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, DELETE_MODAL, UPDATE_MODAL } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, DELETE_MODAL, UPDATE_MODAL, EDIT_MODAL } from '../actions/modal_actions';
 
 const modalReducer = (state = null, action) => {
   debugger
@@ -11,6 +11,8 @@ const modalReducer = (state = null, action) => {
       return action;
     case UPDATE_MODAL:
       return action
+      case EDIT_MODAL:
+        return action
     default:
       return state;
   }

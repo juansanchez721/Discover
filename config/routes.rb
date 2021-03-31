@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api, defaults: {format: :json} do 
-      resources :users, only: [:create, :show, :index] do 
+      resources :users, only: [:create, :show, :index, :update] do 
           resources :follows, only: [:index]
           # get :follows, to: "follows#fetch_followers", as: "fetch_followers"
           resources :comments, only: [:index]

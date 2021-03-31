@@ -1,4 +1,4 @@
-json.extract! user, :id, :username
+json.extract! user, :id, :username, :bio, :first_name, :last_name
 json.track_likes user.likes.where(likeable_type: "Track").pluck(:likeable_id)
 
 json.follows user.follows.pluck(:followee_id)

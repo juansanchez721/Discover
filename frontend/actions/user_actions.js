@@ -1,5 +1,6 @@
 
 import * as UserUtil from '../util/user_api_util'
+import { receiveCurrentUser } from './session_actions'
 
 export const RECEIVE_USER = "RECEIVE_USER"
 export const RECEIVE_TWO_USERS = "RECEIVE_TWO_USERS"
@@ -34,4 +35,10 @@ export const fetchUser = (userId) => dispatch => {
 export const fetchUsers = () => dispatch => {
     return UserUtil.fetchUsers()
     .then(users => dispatch(receiveUsers(users)))
+}
+
+
+export const updateUser = (user, userId) => dispatch => {
+    return UserUtil.updateUser(user, userId)
+    .then(user => dispatch(receiveUser(user)))
 }

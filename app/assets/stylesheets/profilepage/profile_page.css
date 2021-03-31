@@ -239,7 +239,7 @@ font-size: 11px;
 .user-profile-info {
     /* background-color: #FE5000; */
     /* padding-top: 3px; */
-    height: 77px;
+    /* height: 77px; */
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -261,6 +261,13 @@ font-size: 11px;
 .user-profile-info  span:first-child {
     padding-left: 0px;
     border: none;
+}
+
+.user-bio {
+    padding: 15px 0px;
+    height: 50px;
+    /* background-color: green; */
+    font-size: 12px;
 }
 
 .user-profile-info h1 {

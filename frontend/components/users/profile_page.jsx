@@ -110,7 +110,12 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
   )
 
   let editButton = (
-    <button className="follow-button" ><i className="fas fa-pencil-alt"></i> Edit</button>
+    <button 
+    className="follow-button" 
+    onClick={()=>this.props.editUserModal("editProfile", this.props.user)} >
+      
+      <i className="fas fa-pencil-alt"></i> Edit
+      </button>
   )
 
     return (
@@ -172,7 +177,9 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
               </span>
 
             </div>
-
+              <div className="user-bio" >
+                {this.props.user.bio}
+              </div>
             <Link
           className="text-link"
             to={`/users/${this.props.user.id}/likes`}

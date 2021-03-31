@@ -2,7 +2,7 @@ import ProfilePage from './profile_page'
 import {connect} from 'react-redux'
 import { playSong } from '../../actions/playbar_actions'
 import { createLike, deleteLike } from "../../actions/like_actions"
-import {deleteTrackModal, updateTrackModal } from '../../actions/modal_actions'
+import {deleteTrackModal, editUserModal, updateTrackModal } from '../../actions/modal_actions'
 import { fetchTrackLikes } from '../../actions/like_actions'
 import { fetchUser } from '../../actions/user_actions'
 import { fetchUserComments } from '../../actions/comment_actions'
@@ -33,6 +33,7 @@ const mDTP = dispatch => {
         playSong: track => dispatch(playSong(track)),
         deleteTrackModal: (modal, track) => dispatch(deleteTrackModal(modal, track)),
         updateTrackModal: (modal, track) => dispatch(updateTrackModal(modal, track)),
+        editUserModal: (modal, user) => dispatch(editUserModal(modal, user)),
         createLike: (trackId) => dispatch(createLike(trackId)),
         deleteLike: (trackId) => dispatch(deleteLike(trackId)),
         fetchUserComments: userId => dispatch(fetchUserComments(userId)),
