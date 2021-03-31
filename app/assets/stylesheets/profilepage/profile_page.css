@@ -97,6 +97,7 @@ border-bottom: 1px solid #f2f2f2;
 }
 
 .follow-userpage-button {
+    width: fit-content;
     color: #f2f2f2;
     border: 1px solid #e5e5e5;
     background-color: #FE5000;
@@ -108,7 +109,7 @@ border-bottom: 1px solid #f2f2f2;
   
 }
 
-.following-button{
+/* .following-button{
 color:#FE5000;
 border: 1px solid #FE5000;
 background-color: #fff;
@@ -117,7 +118,7 @@ border-radius: 3px;
 font-size: 11px;
   padding: 1px 10px;
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
-}
+} */
 
 .profile-track-item {
     /* height: 300px; */

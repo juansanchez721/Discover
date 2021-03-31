@@ -18,6 +18,21 @@ class Comments extends React.Component{
         }
         // console.log(this.state)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleLike = this.handleLike.bind(this)
+    }
+
+    handleLike() {
+      // .then(() => this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> }))
+      if (this.props.liked) {
+        // alert('delete like')
+        this.props.deleteLike(this.props.trackId);
+  
+        //  this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> })
+      } else {
+        // alert('add like')
+        this.props.createLike(this.props.trackId);
+        //  this.setState({ button: <button onClick={() => this.likeTrack()} > {'<3'} {this.props.track.like_count} </button> })
+      }
     }
     
     update(field) {
@@ -41,7 +56,7 @@ class Comments extends React.Component{
     
     render(){
         
-        const { comments, artist } = this.props
+        const { comments, artist, currentUser, trackId, liked, likeCount } = this.props
         // console.log(artist);
         let pComments = Object.values(comments).filter(comment => !comment['parent_comment_id'])
         // let cComments = Object.values(comments).filter(comment => comment['parent_comment_id']) 
@@ -68,12 +83,15 @@ class Comments extends React.Component{
             </button>
           ) : (
             <button
-              className="follow-button"
+              className="orange-follow"
               onClick={() => this.props.follow(artist.id)}
             >
               <i className="fas fa-user-plus"></i> Follow
             </button>
           );
+
+          // let liked = currentUser.track_likes.includes(trackId)
+          
         
         return (
           <div className="comments-container">
@@ -96,7 +114,16 @@ class Comments extends React.Component{
                   </form>
                 </div>
               </div>
-
+              <div className="track-buttons-container" >
+              <button
+          className={liked ? "liked-button" : "track-buttons"}
+          onClick={this.handleLike}
+        >
+          <i className="fas fa-heart"></i>{" "}
+          {liked ? "Liked" : "Like"}
+        </button>
+        <h1> <i className="fas fa-heart"></i> {likeCount} </h1>
+              </div>
               <div className="comments-other">
                 <div className="avatar-user-info">
                 <Link to={`/users/${artist.id}`} >

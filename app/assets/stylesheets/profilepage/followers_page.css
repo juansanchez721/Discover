@@ -42,6 +42,8 @@
 }
 
 .follow-button {
+    width: fit-content;
+
         color: #333333;
         border: 1px solid #e5e5e5;
         background-color: #fff;
@@ -54,6 +56,8 @@
 }
 
 .following-button{
+    width: fit-content;
+
     color:#FE5000;
     border: 1px solid #FE5000;
     background-color: #fff;

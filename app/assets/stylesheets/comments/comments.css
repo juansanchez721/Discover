@@ -19,8 +19,8 @@
 }
 
 .comment-input-holder {
-    /* padding: 5px; */
-    height:100px;
+    padding-top: 25px;
+    /* height: 89px; */
     background-color: blue;
     display: flex;
     flex-direction: row;
@@ -30,7 +30,7 @@
 .sub-comment-input-holder {
     margin-top:5px;
     height:50px;
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,6 +54,22 @@
     display: flex;
     align-items: center;
     /* border: 1px solid #e5e5e5; */
+}
+
+.track-buttons-container {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    /* background-color: salmon; */
+}
+
+.track-buttons-container button{
+    font-size: 14px;
+
 }
 form{
     width: 100%;
@@ -113,7 +129,10 @@ form{
     padding-top:20px;
 }
 .avatar-user-info {
-    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 185px;
 }
 
 .comments-section{
@@ -243,15 +262,49 @@ form{
 }
 
 .delete-comment-btn {
+    padding: 5px;
+    color: #333333;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 11px;
     display: none;
     position: absolute;
     right: 0
 }
 
-.main-comment-content:hover .delete-comment-btn {
+.reply-comment-btn {
+    padding: 5px 7px 5px 5px;
+    color: #333333;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 3px;
+    font-size: 11px;
+    display: none;
+    position: absolute;
+    right: 35px;
+    /* width: 30px; */
+}
+
+.main-comment-content:hover .delete-comment-btn,
+.main-comment-content:hover .reply-comment-btn {
     display: block;
 }
 
 .sub-comment-item:hover .delete-comment-btn {
     display: block;
+}
+
+.orange-follow {
+    width: fit-content;
+
+   background-color:#FE5000;
+   border: 1px solid #FE5000;
+    color: #fff;
+   margin-right: 5px;
+   border-radius: 3px;
+   font-size: 11px;
+     padding: 1px 10px;
+     font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 }

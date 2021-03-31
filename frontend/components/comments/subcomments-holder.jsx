@@ -9,7 +9,8 @@ class SubComments extends React.Component {
             parent_comment_id: this.props.parentId,
             track_id: this.props.trackId,
             commenter_id: this.props.currentUserId,
-            body: ""
+            body: "",
+            createCommentBool: this.props.replyBool
         }
         // console.log(this.state)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -39,7 +40,7 @@ class SubComments extends React.Component {
 
     render() {
 
-        const newSubComment =  
+        const newSubComment =  this.props.replyBool ?
         <div className="sub-comment-input-holder">
         <img
           // className="profile-default"
@@ -58,6 +59,8 @@ class SubComments extends React.Component {
           </form>
         </div>
       </div>
+      :
+      null
 
         const { comments, deleteComment, currentUserId } = this.props
         

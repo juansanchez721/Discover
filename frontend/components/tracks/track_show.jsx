@@ -73,6 +73,8 @@ class TrackShow extends React.Component {
         <CommentsContainer
           trackId={songId}
           artist={user}
+          likeCount={song.likers.length}
+          liked={song.likers.includes(this.props.currentUser.id)}
         />
       </div>
     );
