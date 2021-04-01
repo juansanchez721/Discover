@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 // import song from '../../../app/assets/audio/Skeleton.mp3'
 // const song = require('../../../app/assets/audio/Skeleton.mp3')
 class PlayBar extends React.Component {
@@ -210,8 +211,12 @@ class PlayBar extends React.Component {
           <div className="artist-song-links">
             {/* <h1>{"artist here"}</h1>
             <h1>{"song here"}</h1> */}
+            <Link to={`/users/${currentTrack.owner_id}`} >
             <h1 >{currentTrack.artist || "artist here"}</h1>
+            </Link>
+            <Link to={`/tracks/${currentTrack.id}`} >
                     <h1 >{currentTrack.title || "song here"}</h1>
+            </Link>
           </div>
         </div>
         </div>

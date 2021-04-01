@@ -4,30 +4,18 @@ import PlayButton from '../play_button/play_button'
 
 class DiscoverPageItem extends React.Component{
 
-
-// const DiscoverPageItem = (props) => {
         constructor(props){
             super(props)
 
             this.handleLike = this.handleLike.bind(this)
         }
-    // console.log(props.owner.username)
-
-    // if(props.owner === undefined){
-    //     return null;
-    // }   
-    // console.log(props)
+ 
     handleLike() {
-        // .then(() => this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> }))
         if (this.props.liked) {
-          // alert('delete like')
           this.props.deleteLike(this.props.track.id);
     
-          //  this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> })
         } else {
-          // alert('add like')
           this.props.createLike(this.props.track.id);
-          //  this.setState({ button: <button onClick={() => this.likeTrack()} > {'<3'} {this.props.track.like_count} </button> })
         }
       }
 

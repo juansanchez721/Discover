@@ -21,17 +21,40 @@ class DiscoverPage extends React.Component {
 
   render() {
     // debugger;
-    let tracksfirst = this.props.tracks.map((track) => (
-      <DiscoverPageItem
+    let songListSongs = [];
+    let trackssecond = this.props.tracks.map((track, i) => {
+      if(i >= 8){
+
+       return <DiscoverPageItem
         owner={this.props.users[track.owner_id]}
         key={track.id}
         liked={track.likers.includes(this.props.currentUser.id)}
         track={track}
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
-      />
-    ));
+        />
+      }
+    })
+    
+    let tracksfirst = this.props.tracks.map((track, i) => {
+      if(i < 8){
 
+       return <DiscoverPageItem
+        owner={this.props.users[track.owner_id]}
+        key={track.id}
+        liked={track.likers.includes(this.props.currentUser.id)}
+        track={track}
+        createLike={this.props.createLike}
+        deleteLike={this.props.deleteLike}
+        />
+      } else {
+        songListSongs.push(track)
+      }
+
+    }
+    )
+        
+       
     // this.props.tracks.sort(() => Math.random() - 0.5)
 
     // let trackssecond = this.props.tracks.map(track => (
@@ -98,7 +121,7 @@ class DiscoverPage extends React.Component {
                 <h2 className="discover-page-headers">The Upload</h2>
                 <p className="small-light-words">
                   {" "}
-                  Some holder words that go here{" "}
+                  Listen to what's next in music{" "}
                 </p>
               </div>
               <div className="showing-songs">
@@ -107,27 +130,27 @@ class DiscoverPage extends React.Component {
                   createLike={this.props.createLike}
                   deleteLike={this.props.deleteLike}
                   currentUser={this.props.currentUser}
-                  tracks={this.props.tracks}
+                  tracks={songListSongs}
                 />
                 {/* </div> */}
               </div>
               <br />
               <br />
 
-              {/* <div className="discover-titles">
+              <div className="discover-titles">
                 <h2 className="discover-page-headers">Recommended</h2>
                 <p className="small-light-words">
                   {" "}
-                  Some holder words that go here{" "}
+                  Discover more{" "}
                 </p>
               </div>
-              <div className="showing-songs"> */}
-                {/* <div className="inner-showing">{tracksthird}</div> */}
-              {/* </div>
+              <div className="showing-songs">
+                <div className="inner-showing">{trackssecond.reverse()}</div>
+              </div>
               <br />
               <br />
 
-              <div className="discover-titles">
+              {/* <div className="discover-titles">
                 <h2 className="discover-page-headers">Try something newr</h2>
                 <p className="small-light-words">
                   {" "}

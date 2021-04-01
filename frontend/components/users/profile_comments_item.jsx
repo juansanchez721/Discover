@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import Time from '../time/time'
 
 const ProfileCommentItem = ({comment}) => {
@@ -6,7 +7,13 @@ const ProfileCommentItem = ({comment}) => {
         <div className="profile-comments-item">
             <div>
 
-            <p> on  <span className="small-light-words" >{comment.track}</span> </p>
+            <p> on  
+                <span className="small-light-words" >
+                <Link to={`/tracks/${comment.track_id}`} >
+                    {" " + comment.track}
+                </Link>
+                    </span> 
+                </p>
             <p className="comment-body" >"{comment.body}"</p>
             </div>
             

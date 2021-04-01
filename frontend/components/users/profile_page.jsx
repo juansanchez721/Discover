@@ -145,7 +145,7 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
             {/* <div className="actual-tracks"> */}
 
             <h3>Recent</h3>
-            {tracks.reverse()}
+            { tracks.length ? tracks.reverse() : <h1>Upload your sounds now.</h1>}
             {/* </div> */}
             {/* <ProfileTracksContainer /> */}
           </div>

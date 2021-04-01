@@ -7,11 +7,20 @@ class PlayButton extends React.Component {
 
     constructor(props){
         super(props)
+        this.state = {
+            playing: false
+        }
         this.handlePlay = this.handlePlay.bind(this)   
     }
     handlePlay() {
         debugger
+        console.log(this.state.playing)
+        this.state.playing ?
+        alert('you wanna pause this?')
+        :
         this.props.playSong(this.props.track)
+        
+        this.setState({ playing: !this.state.playing })
       }
   
 
@@ -19,7 +28,7 @@ class PlayButton extends React.Component {
 
         return (
             <div className="orange-circle-container">
-                  <div className="orange-circle" onClick={() => this.handlePlay()} ></div>
+                  <div className={this.state.playing? "pause-orange-circle" : "orange-circle"} onClick={() => this.handlePlay()} ></div>
                 </div>
         )
     }
@@ -30,8 +39,7 @@ class PlayButton extends React.Component {
 
 const mSTP = state => {
     return {
-        // tracks: state.entities.tracks
-
+        currentPlayingTrack: state.ui.playbar.currentTrack
     }
 }
 

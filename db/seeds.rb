@@ -18,6 +18,20 @@ playboi = User.create!(username: "playboi carti", email: "playboicarti@playboi.c
 playboi_photo = open("https://discover-aa-seeds.s3.amazonaws.com/Playboi-Carti-768x435.jpg")
 playboi.photo.attach(io: playboi_photo, filename: 'Playboi-Carti-768x435.jpg')
 
+
+bbunny = User.create!(username: "Bad Bunny", email: "bad@bunny.com", password: "password", age: 27, gender: "Male", bio: 'mi gente')
+bbunny_photo = open("https://discover-aa-seeds.s3.amazonaws.com/badbunny.jpg")
+bbunny.photo.attach(io: bbunny_photo, filename: 'badbunny.jpg')
+
+curry = User.create!(username: "Denzel Curry", email: "denzel@curry.com", password: "password", age: 27, gender: "Male", bio: 'ZUU/UNLOCKED available now')
+curry_photo = open("https://discover-aa-seeds.s3.amazonaws.com/currycurry.jfif")
+curry.photo.attach(io: curry_photo, filename: 'currycurry.jfif')
+
+amine = User.create!(username: "Amine", email: "amine@amine.com", password: "password", age: 27, gender: "Male", bio: '')
+amine_photo = open("https://discover-aa-seeds.s3.amazonaws.com/amine.jpg")
+amine.photo.attach(io: amine_photo, filename: 'amine.jpg')
+
+
 travis = User.create!(username: "Travis $cott", email: "itslit@scott.com", password: "password", age: 27, gender: "Male", bio: 'is lit')
 travis_photo = open("https://discover-aa-seeds.s3.amazonaws.com/scott.jpg")
 travis.photo.attach(io: travis_photo, filename: 'scott.jpg')
@@ -111,6 +125,30 @@ showout.photo.attach(io: showout_photo, filename: 'kid-cudi-motm3.jpg')
 showout_song = open("https://discover-aa-seeds.s3.amazonaws.com/Show+Out+ft.++Skepta+%26+Pop+Smoke.mp3")
 showout.track.attach(io: showout_song, filename: "Show+Out+ft.++Skepta+%26+Pop+Smoke.mp3")
 
+speedboat = Track.create!(title: "SPEEDBOAT", owner_id: curry.id, description: "ZUU")
+speedboat_photo = open('https://discover-aa-seeds.s3.amazonaws.com/ZUU.jpg')
+speedboat.photo.attach(io: speedboat_photo, filename: 'ZUU.jpg')
+speedboat_song = open("https://discover-aa-seeds.s3.amazonaws.com/SPEEDBOAT+%5BClean%5D+-+Denzel+Curry.mp3")
+speedboat.track.attach(io: speedboat_song, filename: "SPEEDBOAT+%5BClean%5D+-+Denzel+Curry.mp3")
+
+reelitin = Track.create!(title: "REEL IT IN", owner_id: amine.id, description: "i got the bag")
+reelitin_photo = open('https://discover-aa-seeds.s3.amazonaws.com/amine.jpg')
+reelitin.photo.attach(io: reelitin_photo, filename: 'amine.jpg')
+reelitin_song = open("https://discover-aa-seeds.s3.amazonaws.com/Amin%C3%A9+-+REEL+IT+IN+(Audio).mp3")
+reelitin.track.attach(io: reelitin_song, filename: "Amin%C3%A9+-+REEL+IT+IN+(Audio).mp3")
+
+dakiti = Track.create!(title: "dakiti", owner_id: bbunny.id, description: "")
+dakiti_photo = open('https://discover-aa-seeds.s3.amazonaws.com/dakiti.jpg')
+dakiti.photo.attach(io: dakiti_photo, filename: 'dakiti.jpg')
+dakiti_song = open("https://discover-aa-seeds.s3.amazonaws.com/Bad+Bunny+x+Jhay+Cortez+-+Dakiti.mp3")
+dakiti.track.attach(io: dakiti_song, filename: "Bad+Bunny+x+Jhay+Cortez+-+Dakiti.mp3")
+
+vete = Track.create!(title: "Vete", owner_id: bbunny.id, description: "")
+vete_photo = open('https://discover-aa-seeds.s3.amazonaws.com/YHLQMDLG_BadBunny.jpg')
+vete.photo.attach(io: vete_photo, filename: 'YHLQMDLG_BadBunny.jpg')
+vete_song = open("https://discover-aa-seeds.s3.amazonaws.com/Vete.mp3")
+vete.track.attach(io: vete_song, filename: "Vete.mp3")
+
 Follow.create!(followee_id: playboi.id, follower_id: travis.id)
 Follow.create!(followee_id: playboi.id, follower_id: nav.id)
 Follow.create!(followee_id: playboi.id, follower_id: cudi.id)
@@ -118,28 +156,56 @@ Follow.create!(followee_id: playboi.id, follower_id: cudi.id)
 Follow.create!(followee_id: travis.id, follower_id: playboi.id)
 Follow.create!(followee_id: travis.id, follower_id: cudi.id)
 Follow.create!(followee_id: travis.id, follower_id: wifisfuneral.id)
+Follow.create!(followee_id: travis.id, follower_id: curry.id)
 
-
+Follow.create!(followee_id: amine.id, follower_id: playboi.id)
+Follow.create!(followee_id: amine.id, follower_id: cudi.id)
+Follow.create!(followee_id: amine.id, follower_id: nav.id)
 
 Follow.create!(followee_id: wifisfuneral.id, follower_id: jaycritch.id)
+Follow.create!(followee_id: wifisfuneral.id, follower_id: amine.id)
+
+Follow.create!(followee_id: bbunny.id, follower_id: playboi.id)
+Follow.create!(followee_id: bbunny.id, follower_id: cudi.id)
+Follow.create!(followee_id: bbunny.id, follower_id: jaycritch.id)
+Follow.create!(followee_id: bbunny.id, follower_id: nav.id)
+
+Follow.create!(followee_id: cudi.id, follower_id: jaycritch.id)
+Follow.create!(followee_id: cudi.id, follower_id: playboi.id)
+Follow.create!(followee_id: cudi.id, follower_id: travis.id)
+
+Follow.create!(followee_id: nav.id, follower_id: playboi.id)
+Follow.create!(followee_id: nav.id, follower_id: jaycritch.id)
+
+Follow.create!(followee_id: curry.id, follower_id: jaycritch.id)
+Follow.create!(followee_id: curry.id, follower_id: nav.id)
 
 Follow.create!(followee_id: jaycritch.id, follower_id: travis.id)
+Follow.create!(followee_id: jaycritch.id, follower_id: curry.id)
+
 
 Like.create!(likeable_type: "Track", likeable_id: myself.id, liker_id:playboi.id)
 Like.create!(likeable_type: "Track", likeable_id: myself.id, liker_id:cudi.id)
+Like.create!(likeable_type: "Track", likeable_id: myself.id, liker_id:jaycritch.id)
+
 Like.create!(likeable_type: "Track", likeable_id: callme.id, liker_id:cudi.id)
 
 Like.create!(likeable_type: "Track", likeable_id: talk.id, liker_id:cudi.id)
 Like.create!(likeable_type: "Track", likeable_id: talk.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: talk.id, liker_id:curry.id)
+
 
 Like.create!(likeable_type: "Track", likeable_id: skeleton.id, liker_id:cudi.id)
 Like.create!(likeable_type: "Track", likeable_id: skeleton.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: skeleton.id, liker_id:curry.id)
+Like.create!(likeable_type: "Track", likeable_id: skeleton.id, liker_id:bbunny.id)
 
-Like.create!(likeable_type: "Track", likeable_id: lean4real.id, liker_id:cudi.id)
-Like.create!(likeable_type: "Track", likeable_id: lean4real.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: lean4real.id, liker_id:jaycritch.id)
+Like.create!(likeable_type: "Track", likeable_id: lean4real.id, liker_id:amine.id)
 
 Like.create!(likeable_type: "Track", likeable_id: fashion.id, liker_id:travis.id)
-Like.create!(likeable_type: "Track", likeable_id: fashion.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: fashion.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: fashion.id, liker_id:amine.id)
 
 Like.create!(likeable_type: "Track", likeable_id: genesis.id, liker_id:travis.id)
 Like.create!(likeable_type: "Track", likeable_id: genesis.id, liker_id:cudi.id)
@@ -149,6 +215,67 @@ Like.create!(likeable_type: "Track", likeable_id: showout.id, liker_id:wifisfune
 
 
 Like.create!(likeable_type: "Track", likeable_id: backyard.id, liker_id:playboi.id)
-Like.create!(likeable_type: "Track", likeable_id: goosebumps.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: backyard.id, liker_id:amine.id)
+Like.create!(likeable_type: "Track", likeable_id: backyard.id, liker_id:jaycritch.id)
+
+Like.create!(likeable_type: "Track", likeable_id: goosebumps.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: goosebumps.id, liker_id:amine.id)
+
 Like.create!(likeable_type: "Track", likeable_id: stargazing.id, liker_id:playboi.id)
-Like.create!(likeable_type: "Track", likeable_id: rara.id, liker_id:playboi.id)
+
+Like.create!(likeable_type: "Track", likeable_id: rara.id, liker_id:nav.id)
+
+Like.create!(likeable_type: "Track", likeable_id: dakiti.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: dakiti.id, liker_id:travis.id)
+Like.create!(likeable_type: "Track", likeable_id: dakiti.id, liker_id:jaycritch.id)
+Like.create!(likeable_type: "Track", likeable_id: dakiti.id, liker_id:amine.id)
+
+Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id:amine.id)
+Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id: jaycritch.id)
+
+
+Like.create!(likeable_type: "Track", likeable_id: reelitin.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: reelitin.id, liker_id:travis.id)
+Like.create!(likeable_type: "Track", likeable_id: reelitin.id, liker_id:curry.id)
+
+Like.create!(likeable_type: "Track", likeable_id: speedboat.id, liker_id:nav.id)
+Like.create!(likeable_type: "Track", likeable_id: speedboat.id, liker_id:bbunny.id)
+Like.create!(likeable_type: "Track", likeable_id: speedboat.id, liker_id:playboi.id)
+Like.create!(likeable_type: "Track", likeable_id: speedboat.id, liker_id:cudi.id)
+
+
+Comment.create!(body: "let me know", track_id: talk.id, commenter_id:cudi.id)
+Comment.create!(body: "Remix is way better", track_id: talk.id, commenter_id: nav.id)
+
+Comment.create!(body: "uzi and trav??", track_id: skeleton.id, commenter_id: nav.id)
+Comment.create!(body: "me gusta", track_id: skeleton.id, commenter_id: bbunny.id)
+Comment.create!(body: "this aint even out!", track_id: skeleton.id, commenter_id: curry.id)
+
+Comment.create!(body: "A classic", track_id: backyard.id, commenter_id: amine.id)
+pcomment = Comment.create!(body: "I miss this travis", track_id: backyard.id, commenter_id: jaycritch.id)
+Comment.create!(parent_comment_id: pcomment.id, body: "... bruh", track_id: backyard.id, commenter_id: travis.id)
+
+# Comment.create!(body: , track_id: rara.id, commenter_id:)
+# Comment.create!(body: , track_id: stargazing.id, commenter_id:)
+
+
+Comment.create!(body: "yooooo", track_id: goosebumps.id, commenter_id: nav.id)
+Comment.create!(body: "!!kung fu kenny", track_id: goosebumps.id, commenter_id: amine.id)
+
+Comment.create!(body: "that bass", track_id: lean4real.id, commenter_id: jaycritch.id)
+
+Comment.create!(body:"wish that you would call me up" , track_id: callme.id, commenter_id:cudi.id)
+Comment.create!(body:"just gimme a minute" , track_id: myself.id, commenter_id: jaycritch.id)
+
+Comment.create!(body:"checkout my fashion" , track_id: fashion.id, commenter_id:amine.id)
+
+Comment.create!(body:"ISLIT" , track_id: genesis.id, commenter_id:travis.id)
+
+Comment.create!(body:"rip the woo" , track_id: showout.id, commenter_id:travis.id)
+
+# Comment.create!(body: , track_id: dakiti.id, commenter_id:)
+# Comment.create!(body: , track_id: vete.id, commenter_id:)
+
+# Comment.create!(body: , track_id: reelitin.id, commenter_id:)
+# Comment.create!(body: , track_id: speedboat.id, commenter_id:)
