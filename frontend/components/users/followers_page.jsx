@@ -23,7 +23,12 @@ class FollowersPage extends React.Component {
 
             case 'followers':
                 if (!this.props.followers) return <div className="empty-message">
-                you don't have any followers yet.
+                <span>  
+                <i className="fas fa-users"></i> 
+                </span>
+                <p>
+                { this.props.currentUserBool ? "No one is following you yet" : "No followers yet" }.
+                </p>
               </div>;
 
                     follows = Object.values(this.props.followers).map(user => {
@@ -43,7 +48,12 @@ class FollowersPage extends React.Component {
                 break;
             case 'following':
                 if (!this.props.follows) return <div className="empty-message">
-                you don't follow anyone yet.
+                <span>  
+                <i className="fas fa-users"></i> 
+                </span>
+                <p>
+                You aren't following anyone yet
+                </p>
               </div>;
 
                 follows = Object.values(this.props.follows).map(user => {

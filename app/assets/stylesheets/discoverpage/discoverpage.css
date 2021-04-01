@@ -247,6 +247,7 @@ audio:focus {
 /* padding-top: 60px; */
 /* border-left: .5px solid #f2f2f2; */
 .user-links{
+  font-size: 14px;
   width: 100%;
   padding: 30px;
   box-sizing: border-box;

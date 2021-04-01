@@ -85,7 +85,7 @@ class ProfilePage extends React.Component {
         return <ProfileCommentItem key={comment.id}  comment={comment} />
     })
 
-    let emptyMessage = <div>
+    let emptyMessage = <div className="empty-message" >
         <h1>Nothing to show yet.</h1>
     </div>
 

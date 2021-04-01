@@ -233,6 +233,7 @@ font-size: 11px;
 
 .text-right-inner {
     /* background-color: royalblue; */
+    font-size: 14px;
     padding: 0px 30px;
 }
 
@@ -322,7 +323,7 @@ font-size: 11px;
 
 .profile-comments-page {
     /* background-color: pink; */
-    padding:46px 15px 0px 15px ;
+    padding:46px 15px 20px 15px ;
     box-sizing: border-box;
     /* height: 500px; */
     width: 100%;

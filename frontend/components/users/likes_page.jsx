@@ -26,7 +26,13 @@ class LikesPage extends React.Component {
     console.log(likedTracks)
     if (Object.values(likedTracks).length ===0 ){
       return <div className="empty-message">
-        you don't have any liked tracks.
+        <span>
+
+        <i className="fas fa-heart"></i>
+        </span>
+        <p>
+          You have no likes yet
+        </p>
       </div>
     }
 

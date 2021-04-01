@@ -11,6 +11,9 @@ class ProfileComments extends React.Component {
     
     constructor(props){
         super(props)
+        this.state = {
+            currentUserBool: this.props.match.params.userId === this.props.currentUser.id
+        }
     }
 
     componentDidMount(){
@@ -19,9 +22,7 @@ class ProfileComments extends React.Component {
     }
     
     render(){
-        let content = <div className="empty-message">
-        you don't have any comments yet.
-      </div>
+        let content = null
 
     //     if(Object.values(this.props.comments).length === 0) content = <div className="empty-message">
     //     you don't have any comments yet.
@@ -41,13 +42,20 @@ class ProfileComments extends React.Component {
                 break;
         
             case "comments":
-                content = comments
+                content = comments.length ? comments : <div className="empty-message">
+                    <span>
+                        <i className="far fa-comment-alt"></i>
+                    </span>
+                    <p>
+                        { this.state.currentUserBool ? "You don't have any " : "No " } comments yet.
+                    </p>
+              </div>
                 break;
             case "followers":
-                content = <FollowersContainer page={page} userId={userId} />
+                content = <FollowersContainer page={page} userId={userId} currentUserBool={this.state.currentUserBool} />
                 break;
             case "following":
-                    content = <FollowersContainer page={page} userId={userId} />
+                    content = <FollowersContainer page={page} userId={userId} currentUserBool={this.state.currentUserBool} />
                     break;
             default:
                 break;

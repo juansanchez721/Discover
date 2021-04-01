@@ -4,7 +4,9 @@ import ProfileComments from './profile_comments'
 
 const mSTP = state => {
     return {
-        comments: state.entities.comments
+        user: Object.values(state.entities.users)[0],
+        comments: state.entities.comments,
+        currentUser: state.session
     }
 }
 
