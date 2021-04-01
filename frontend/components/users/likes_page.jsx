@@ -23,7 +23,7 @@ class LikesPage extends React.Component {
   render() {
     const { likedTracks } = this.props;
     if (this.state.loaded) return null;
-    console.log(likedTracks)
+    // console.log(likedTracks)
     if (Object.values(likedTracks).length ===0 ){
       return <div className="empty-message">
         <span>

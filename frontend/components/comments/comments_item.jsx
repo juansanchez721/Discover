@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 import Time from '../time/time'
 import SubComments from './subcomments-holder'
 class CommentItem extends React.Component {
@@ -43,12 +45,16 @@ class CommentItem extends React.Component {
             // className="profile-default"
             src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
           /> */}
+                        <Link to={`/users/${comment.commenter_id}`} >
 
           <img className="profile-default" src={comment.image_url || "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}/>
+                        </Link>
         </div>
         <div className="comment-item-info">
             <div className="username-date-posted">
+              <Link to={`/users/${comment.commenter_id}`} >
             <p>{displayName}</p>
+              </Link>
             <Time time={comment.created_at}/>
             </div>
             <div className="body-delete">

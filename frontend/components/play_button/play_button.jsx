@@ -14,10 +14,10 @@ class PlayButton extends React.Component {
     }
     handlePlay() {
         debugger
-        console.log(this.state.playing)
-        this.state.playing ?
-        alert('you wanna pause this?')
-        :
+        // console.log(this.state.playing)
+        // this.state.playing ?
+        // alert('you wanna pause this?')
+        // :
         this.props.playSong(this.props.track)
         
         this.setState({ playing: !this.state.playing })
@@ -28,7 +28,7 @@ class PlayButton extends React.Component {
 
         return (
             <div className="orange-circle-container">
-                  <div className={this.state.playing? "pause-orange-circle" : "orange-circle"} onClick={() => this.handlePlay()} ></div>
+                  <div className={"orange-circle"} onClick={() => this.handlePlay()} ></div>
                 </div>
         )
     }
