@@ -5,7 +5,8 @@
 * Welcome to [Discover](https://discover-aa.herokuapp.com/#/), my [SoundCloud](https://soundcloud.com/)
  app Clone!
 This application takes great inspiration from the music streaming service/music sharing platform SoundCloud, where users can sign in or sign up to upload their own songs, but are not required to do so.
-In Discover, 
+
+In Discover, users can listen to exisitng songs, like their favorite songs, follow other users, upload their own media, and comment on other's media
 
 *The technologies I used for this project are as follows:
 
@@ -14,7 +15,6 @@ In Discover,
  + Redux.js
  + CSS
  + Javascript
-
 
 # For the Backend:
  + Ruby on Rails
@@ -43,16 +43,19 @@ User Authentication
 
 + A user's profile page will show all of their uploaded music, should they upload any at all.
 + It will also have their profile picture displayed along with their username.
++ section to show user's likes, follows, followers, and comments
 + The same structure is followed for every user.
 
+# Playbar
++ Audio can be played based on what song a user chooses.
++ User can queue more songs to allow continuous play.
++ User can skip, rewind, and pause to manipulate playbar actions.
 
 # Track Show Page
-+ Shows an individual track's information. Currently a work in progress as it will also display Comments user's will leave for the track.
++ Shows an individual track's information. 
++ User comments are shown for the track, each which can be replied to with subcomments 
 
 # Coming soon
 
-+ Playbar, to allow continuous play throughout the application as a User navigates through the website.
-+ Comments under Track show pages
-+ Follows to illustrate a user's favorited entities
-+ Likes to illustrate a User's interaction with tracks 
-# Discover
++ Continuous play depending on user's current location on the app.
++ Search feature to explore more tracks, users
