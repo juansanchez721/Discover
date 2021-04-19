@@ -46,6 +46,7 @@ class LikesPage extends React.Component {
         liked={track.likers.includes(this.props.currentUser.id)}
         createLike={this.props.createLike}
         deleteLike={this.props.currentUser.id === parseInt(this.props.userId)? this.props.deleteLike : this.props.deleteOtherUserLike }
+        currentTrack = {this.props.currentPlayingTrack || null}
         />
         ));
       } else {
@@ -56,6 +57,8 @@ class LikesPage extends React.Component {
           liked={track.likers.includes(this.props.currentUser.id)}
           createLike={this.props.createLike}
           deleteLike={this.props.currentUser.id === parseInt(this.props.userId)? this.props.deleteLike : this.props.deleteOtherUserLike }
+          currentTrack = {this.props.currentPlayingTrack || null}
+
           />
         ))
       }

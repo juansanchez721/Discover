@@ -9,6 +9,7 @@ const mSTP = (state, ownProps) => {
     return {
         likedTracks: state.entities.likes,
         currentUser: state.session,
+        currentPlayingTrack: state.ui.playbar.currentTrack,
     }
 }
 
