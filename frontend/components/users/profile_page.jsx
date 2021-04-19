@@ -48,8 +48,8 @@ class ProfilePage extends React.Component {
 
     if (this.state.loaded) {
       return (
-        <div className="profile-page">
-          <h1>Loading . . .</h1>
+        <div className="loading-page">
+          <i className="fas fa-spinner loader"></i>
         </div>
       );
     }
