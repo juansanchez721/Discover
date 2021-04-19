@@ -32,13 +32,16 @@ const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUs
 
     return(
         <div className="followers-item">
+            <Link to={`/users/${follower.entity_id}`} >
             <div className="follows-circle-maker" >
+
 
             <img
                 // className="profile-default"
                 src={ follower.image_url || "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}
                 />
             </div>
+            </Link>
               <div className={"bottom-followers-item"}>
             <Link to={`/users/${follower.entity_id}`} >
                 {follower.entity}

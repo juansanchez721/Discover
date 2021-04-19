@@ -29,16 +29,14 @@
 }
 
 .bottom-followers-item {
-    /* background-color: blanchedalmond; */
     width: 100%;
     padding-top: 3%;
-    /* height: 50px; */
+    height: 50px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* text-align: center; */
 }
 
 .follow-button {
@@ -69,16 +67,13 @@
 }
 
 .follows-circle-maker {
-    /* width: inherit;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex; */
     border-radius: 50%;
     width: 10vw;
     height: 10vw;
-    min-width: 1vw;
-    min-height: 1vh;
+    min-width: 125px;
+    min-height: 125px;
+    max-width: 170px;
+    max-height: 170px;
     overflow: hidden;
     display: flex;
     justify-content: center;

@@ -9,17 +9,31 @@ class DiscoverPage extends React.Component {
     // debugger;
     super(props);
     // this.tracks = null;
+    this.state = {
+      loaded: true
+    }
   }
 
   componentDidMount() {
     this.props
       .fetchUsers()
       .then(this.props.fetchTracks())
-      .then(this.props.fetchTrackLikes(this.props.currentUser.id));
+      .then(this.props.fetchTrackLikes(this.props.currentUser.id))
+      .then(() => this.setState({loaded: false}) )
     // debugger;
   }
 
   render() {
+
+    
+    if (this.state.loaded) {
+      return (
+        <div className="loading-page">
+          <i className="fas fa-spinner loader"></i>
+        </div>
+      );
+    }
+
     // debugger;
     let songListSongs = [];
     let trackssecond = this.props.tracks.map((track, i) => {
