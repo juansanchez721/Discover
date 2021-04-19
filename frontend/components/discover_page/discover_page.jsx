@@ -125,7 +125,8 @@ class DiscoverPage extends React.Component {
                 </p>
               </div>
               <div className="showing-songs">
-                <div className="inner-showing">{tracksfirst}</div>
+                <div className="inner-showing">{trackssecond.reverse()}</div>
+
               </div>
               {/* <hr> */}
               <br />
@@ -159,7 +160,7 @@ class DiscoverPage extends React.Component {
                 </p>
               </div>
               <div className="showing-songs">
-                <div className="inner-showing">{trackssecond.reverse()}</div>
+              <div className="inner-showing">{tracksfirst}</div>
               </div>
               <br />
               <br />

@@ -1,7 +1,7 @@
 import LikesPage from './likes_page'
 import { connect } from "react-redux"
 import { fetchTrackLikes } from '../../actions/like_actions'
-import { createLike, deleteLike, deleteCurrentUserLike, createCurrentUserLike, deleteTestUserLike } from "../../actions/like_actions"
+import { createLike, deleteLike, deleteCurrentUserLike, createCurrentUserLike, deleteOtherUserLike } from "../../actions/like_actions"
 
 import {asArray, asArrayUsers} from '../../reducers/selector'
 
