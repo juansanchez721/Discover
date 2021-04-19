@@ -16,10 +16,10 @@ const ImageCarousel = () => {
             <div className="shadow" >
                 
             <h1>
-                Discover more with Discover
+                Discover more.
                 </h1>
                 <p>
-                    Discover lets you listen to tracks shared by up and coming artists.
+                    With Discover, listen to tracks shared by up and coming artists.
                 </p>
 
             </div>
