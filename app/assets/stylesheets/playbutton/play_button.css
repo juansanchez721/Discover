@@ -23,6 +23,7 @@
 }
 
 .pause-orange-circle {
+    cursor: pointer;
     visibility: visible;
     height: inherit;
     width: inherit;
