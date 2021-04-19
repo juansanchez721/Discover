@@ -1,5 +1,7 @@
 import * as TrackUtil from '../util/track_api_util'
 export const PLAY_SONG = "PLAY_SONG"
+export const PAUSE_SONG = "PAUSE_SONG"
+
 export const QUEUE_SONG = "QUEUE_SONG"
 export const PLAY_QUEUE_SONG = "PLAY_QUEUE_SONG"
 
@@ -8,6 +10,13 @@ export const playSong = (song) => {
     return {
         type: PLAY_SONG,
         song    
+    }
+}
+
+export const pauseSong = () => {
+    debugger
+    return {
+        type: PAUSE_SONG,
     }
 }
 

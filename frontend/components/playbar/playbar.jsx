@@ -6,7 +6,6 @@ class PlayBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: true,
       loop: false,
       duration: 0,
       currentTime: 0,
@@ -99,18 +98,20 @@ class PlayBar extends React.Component {
   }
 
   handlePlay() {
-    this.state.playing || this.props.playbar.currentTrack ? this.stop() : this.play();
-    this.setState({ playing: !this.state.playing });
+    this.props.playbar.isPlaying? this.stop() : this.play();
+    // this.setState({ playing: !this.state.playing });
   }
 
   play() {
     let audio = document.getElementById("audio");
     audio.play();
+    this.props.playSong(this.props.playbar.currentTrack)
   }
 
   stop() {
     let audio = document.getElementById("audio");
     audio.pause();
+    this.props.pauseSong()
   }
 
   loop() {
@@ -129,7 +130,7 @@ class PlayBar extends React.Component {
         // console.log(currentTrack, queue)
         // console.log(this.state.queue)
 
-      return this.state.playing || currentTrack ? (
+      return this.props.playbar.isPlaying || currentTrack ? (
       <div className="playbar-div">
         <div className="playbar-inner" >
 
@@ -138,7 +139,7 @@ class PlayBar extends React.Component {
             <i className="fas fa-fast-backward"></i>
           </div>
           <div className="play-pause" onClick={() => this.handlePlay()}>
-            {this.state.playing ? (
+            {this.props.playbar.isPlaying ? (
               <i className="fas fa-pause"></i>
               ) : (
                 <i className="fas fa-play"></i>

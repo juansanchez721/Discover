@@ -1,26 +1,44 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { playSong } from '../../actions/playbar_actions'
+import { playSong, pauseSong } from '../../actions/playbar_actions'
 
 
 class PlayButton extends React.Component {
 
     constructor(props){
         super(props)
-        this.state = {
-            playing: false
-        }
         this.handlePlay = this.handlePlay.bind(this)   
+        this.stop = this.stop.bind(this);
+        this.play = this.play.bind(this);
     }
     handlePlay() {
         debugger
         // console.log(this.state.playing)
-        // this.state.playing ?
+        this.props.isPlaying ?
+        this.stop()
         // alert('you wanna pause this?')
-        // :
-        this.props.playSong(this.props.track)
+        :
+        this.play()
         
         // this.setState({ playing: !this.state.playing })
+      }
+
+      play() {
+        if(this.props.currentTrack){
+
+            let audio = document.getElementById("audio");
+            audio.play();
+            this.props.playSong(this.props.track)
+        } else {
+            this.props.playSong(this.props.track)
+
+        }
+      }
+    
+      stop() {
+        let audio = document.getElementById("audio");
+        audio.pause();
+        this.props.pauseSong()
       }
   
 
@@ -28,7 +46,7 @@ class PlayButton extends React.Component {
 
         return (
             <div className="orange-circle-container">
-                  <div className={"orange-circle"} onClick={() => this.handlePlay()} ></div>
+                  <div className={this.props.isPlaying ? "pause-orange-circle" :"orange-circle"} onClick={() => this.handlePlay()} ></div>
                 </div>
         )
     }
@@ -39,14 +57,15 @@ class PlayButton extends React.Component {
 
 const mSTP = state => {
     return {
-        currentPlayingTrack: state.ui.playbar.currentTrack
+        isPlaying: state.ui.playbar.isPlaying,
+        currentTrack: state.ui.playbar.currentTrack
     }
 }
 
 const mDTP = dispatch => {
     return {
-        playSong: (track) => dispatch(playSong(track))
-
+        playSong: (track) => dispatch(playSong(track)),
+        pauseSong: () => dispatch(pauseSong())
     }
 }
 

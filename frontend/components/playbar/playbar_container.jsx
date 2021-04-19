@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { fetchQueueTrack } from '../../actions/playbar_actions'
-// import {queueSong} from '../../actions/playbar_actions'
+import {pauseSong, playSong} from '../../actions/playbar_actions'
+
 import PlayBar from './playbar'
 
 const mSTP = state => {
@@ -13,7 +14,9 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         // queueSong: songId => dispatch(queueSong(songId))
-        fetchNextTrack: trackId => dispatch(fetchQueueTrack(trackId))
+        fetchNextTrack: trackId => dispatch(fetchQueueTrack(trackId)),
+        pauseSong: () => dispatch(pauseSong()),
+        playSong: track => dispatch(playSong(track))
     }
 }
 
