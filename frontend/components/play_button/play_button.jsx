@@ -36,9 +36,14 @@ class PlayButton extends React.Component {
       }
     
       stop() {
-        let audio = document.getElementById("audio");
-        audio.pause();
-        this.props.pauseSong()
+          if(this.props.currentTrackBool){
+
+              let audio = document.getElementById("audio");
+              audio.pause();
+              this.props.pauseSong()
+            } else {
+                this.play()
+            }
       }
   
 
@@ -46,7 +51,7 @@ class PlayButton extends React.Component {
 
         return (
             <div className="orange-circle-container">
-                  <div className={this.props.isPlaying ? "pause-orange-circle" :"orange-circle"} onClick={() => this.handlePlay()} ></div>
+                  <div className={this.props.isPlaying && this.props.currentTrackBool? "pause-orange-circle" :"orange-circle"} onClick={() => this.handlePlay()} ></div>
                 </div>
         )
     }

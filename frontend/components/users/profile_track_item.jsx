@@ -41,7 +41,8 @@ class ProfileTrackItem extends React.Component {
       deleteTrackModal,
       updateTrackModal,
       liked,
-      queueSong
+      queueSong,
+      currentTrack
     } = this.props;
     //     debugger
     let userbuttons = null;
@@ -108,7 +109,7 @@ class ProfileTrackItem extends React.Component {
         <div className="track-info">
           <div className="track-info-text">
             <div className="track-info-circle">
-              <PlayButton track={track} />
+              <PlayButton track={track} currentTrackBool={currentTrack ? currentTrack.id === track.id : false } />
             </div>
             <div className="texttext">
               <div className="name-title">

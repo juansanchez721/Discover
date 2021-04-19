@@ -20,6 +20,7 @@ const mSTP = (state, ownProps) => {
         tracks: Object.values(state.entities.tracks).filter(track => track['owner_id'] === userId ),
         likes: Object.values(state.entities.likes).slice(-3),
         comments: Object.values(state.entities.comments).slice(-3),
+        currentPlayingTrack: state.ui.playbar.currentTrack,
         currentUser: state.session
     }
 }

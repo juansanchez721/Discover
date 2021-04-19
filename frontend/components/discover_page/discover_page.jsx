@@ -46,6 +46,8 @@ class DiscoverPage extends React.Component {
         track={track}
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
+        currentTrack = {this.props.currentPlayingTrack || null}
+
         />
       }
     })
@@ -60,6 +62,8 @@ class DiscoverPage extends React.Component {
         track={track}
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
+        currentTrack = {this.props.currentPlayingTrack || null}
+
         />
       } else {
         songListSongs.push(track)
@@ -145,6 +149,7 @@ class DiscoverPage extends React.Component {
                   createLike={this.props.createLike}
                   deleteLike={this.props.deleteLike}
                   currentUser={this.props.currentUser}
+                  currentTrack = {this.props.currentPlayingTrack || null}
                   tracks={songListSongs}
                 />
                 {/* </div> */}

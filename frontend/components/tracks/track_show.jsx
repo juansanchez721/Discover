@@ -51,14 +51,14 @@ class TrackShow extends React.Component {
     //   return null;
     // }
 
-    const { song, user, songId } = this.props
+    const { song, user, songId, currentPlayingTrack } = this.props
     return (
       <div className="show-full-page">
         <div className="track-show">
           <div className="info-playbar">
             <div className="info-text">
               <div className="track-show-circle-container">
-                <PlayButton track={song} user={Object.values(user)[0]} />
+                <PlayButton track={song} currentTrackBool={currentPlayingTrack ? currentPlayingTrack.id === song.id : false } />
               </div>
               <div className="song-info">
                 <div className="song-info-time">

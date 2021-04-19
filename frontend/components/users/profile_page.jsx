@@ -72,6 +72,7 @@ class ProfilePage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         queueSong={this.props.queueSong}
+        currentTrack = {this.props.currentPlayingTrack || null}
       />
     ));
 

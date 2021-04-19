@@ -21,7 +21,7 @@ class DiscoverPageItem extends React.Component{
 
     render(){
 
-        const { track, liked } = this.props
+        const { track, liked, currentTrack } = this.props
         return (
           <div className="discover-page-item">
             <Link className="text-link" to={`/tracks/${track.id}`}>
@@ -36,7 +36,7 @@ class DiscoverPageItem extends React.Component{
 
             </Link>
             <div className="album-shadow-circle">
-              <PlayButton track={track} />
+              <PlayButton track={track} currentTrackBool={currentTrack ? currentTrack.id === track.id : false} />
             </div>
             <div className="index-options" >
               <span

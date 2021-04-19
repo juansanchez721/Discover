@@ -14,7 +14,9 @@ const mSTP = (state, { match }) => {
         songId,
         song: state.entities.tracks[songId],
         user: Object.values(state.entities.users)[0],
-        currentUser: state.session
+        currentUser: state.session,
+        currentPlayingTrack: state.ui.playbar.currentTrack,
+
     }
 }
 

@@ -12,7 +12,8 @@ const mstp = (state) => {
         currentUser: state.session,
         likes: Object.values(state.entities.likes),
         tracks: asArray(state.entities),
-        users: state.entities.users
+        users: state.entities.users,
+        currentPlayingTrack: state.ui.playbar.currentTrack,
     }
 }
 

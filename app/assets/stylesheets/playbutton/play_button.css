@@ -23,6 +23,7 @@
 }
 
 .pause-orange-circle {
+    visibility: visible;
     height: inherit;
     width: inherit;
     background-color: #FE5000;
