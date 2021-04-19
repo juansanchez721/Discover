@@ -99,7 +99,7 @@ class PlayBar extends React.Component {
   }
 
   handlePlay() {
-    this.state.playing ? this.stop() : this.play();
+    this.state.playing || this.props.playbar.currentTrack ? this.stop() : this.play();
     this.setState({ playing: !this.state.playing });
   }
 

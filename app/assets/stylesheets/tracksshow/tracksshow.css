@@ -1,23 +1,17 @@
 .show-full-page{
     padding: 45px 0px;
     background-color: white;
-    /* height: 600px; */
+    min-height: 90vh;
 }
 .track-show {
-    /* background-color: #f2f2f2; */
-    /* background-color: #000000; */
-background-image: linear-gradient(-147deg, #000000 0%, #04619f 74%);
+    background-image: linear-gradient(-147deg, #000000 0%, #04619f 74%);
     height:380px;
     display: flex;
-    /* justify-content: space-between; */
-    /* border: 1px solid lightgray; */
     padding: 20px;
     box-sizing: border-box;
 }
 
 .track-show-circle-maker  {
-    /* background-color: purple; */
-    /* margin-left: 1%; */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -28,17 +22,12 @@ background-image: linear-gradient(-147deg, #000000 0%, #04619f 74%);
 
 .info-playbar{
     width: 100%;
-    /* background-color: purple; */
     display: flex;
     padding-right: 20px;
-    /* justify-content: space-around; */
     flex-direction: column;
-    /* align-items: center; */
 }
 
 .info-text {
-    /* background-color: royalblue; */
-    /* height: 50%; */
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -49,10 +38,8 @@ background-image: linear-gradient(-147deg, #000000 0%, #04619f 74%);
 }
 
 .info-text .song-info {
-    /* background-color: red; */
     width: 100%;
     padding-left: 10px;
-    /* height: 50px; */
     display: flex;
     flex-direction: column;
 }

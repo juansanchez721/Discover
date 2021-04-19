@@ -2,7 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 const FollowersItem = ({ follower, followed, followUser, unfollowUser, currentUserFollow, currentUserUnfollow, currentUserBool, currentUserId }) => {
 
-    let followButton = ( followed ?
+    console.log(currentUserId)
+    let followButton =  follower.entity_id === currentUserId ? 
+    null 
+    :
+     ( followed ?
     <button 
     className="following-button" 
     onClick={ currentUserBool ?

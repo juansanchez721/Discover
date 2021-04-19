@@ -7,6 +7,9 @@ import Time from "../time/time";
 class TrackShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loaded: true
+    }
   }
   componentDidMount() {
     this.props
@@ -14,7 +17,9 @@ class TrackShow extends React.Component {
       .then(() =>
         this.props.fetchTrackComments(this.props.match.params.trackId)
       )
-      .then(() => this.props.fetchUser(this.props.song.owner_id));
+      .then(() => this.props.fetchUser(this.props.song.owner_id))
+      .then(() => this.setState({ loaded: false }));
+
   }
 
   componentDidUpdate(prevProps) {
@@ -31,12 +36,20 @@ class TrackShow extends React.Component {
     // console.log(this.props.song)
     // console.log(this.props.user)
 
-    if (
-      this.props.song === undefined ||
-      this.props.user === undefined
-    ) {
-      return null;
+    if (this.state.loaded) {
+      return (
+        <div className="loading-page">
+          <i className="fas fa-spinner loader"></i>
+        </div>
+      );
     }
+
+    // if (
+    //   this.props.song === undefined ||
+    //   this.props.user === undefined
+    // ) {
+    //   return null;
+    // }
 
     const { song, user, songId } = this.props
     return (

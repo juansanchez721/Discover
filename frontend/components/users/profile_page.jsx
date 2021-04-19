@@ -11,12 +11,10 @@ class ProfilePage extends React.Component {
     this.state = {
       loaded: true,
     };
-    // this.yoo = null;
-    // this.userId = this.props.match.params.userId
+   
   }
 
   componentDidMount() {
-    // this.setState({ userId: this.props.match.params.userId})
 
     this.props
       .fetchUser(this.props.match.params.userId)

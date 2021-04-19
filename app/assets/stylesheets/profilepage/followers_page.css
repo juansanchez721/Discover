@@ -69,14 +69,22 @@
 }
 
 .follows-circle-maker {
-    width: inherit;
+    /* width: inherit;
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
+    display: flex; */
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    min-width: 1vw;
+    min-height: 1vh;
+    overflow: hidden;
     display: flex;
+    justify-content: center;
 }
 
 .follows-circle-maker img {
-    width: 100%;
-    height: inherit;
+    /* width: 100%;
+    height: inherit; */
 }

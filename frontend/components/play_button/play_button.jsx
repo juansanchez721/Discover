@@ -20,7 +20,7 @@ class PlayButton extends React.Component {
         // :
         this.props.playSong(this.props.track)
         
-        this.setState({ playing: !this.state.playing })
+        // this.setState({ playing: !this.state.playing })
       }
   
 
