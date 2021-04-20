@@ -11,7 +11,6 @@ class SongListItem extends React.Component {
   }
 
   handlePlay() {
-    // debugger;
     this.props.playSong(this.props.track);
   }
 
@@ -39,7 +38,6 @@ class SongListItem extends React.Component {
           <span>{this.props.track.artist}</span>{" "}
           {" - " + this.props.track.title}
         </h1>
-        {/* <span> - </span> */}
         </div>
         <div className="song-list-item-btn">
 

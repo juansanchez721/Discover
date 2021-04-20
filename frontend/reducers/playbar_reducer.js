@@ -12,7 +12,6 @@ import { PLAY_SONG,
     PAUSE_SONG } from "../actions/playbar_actions"
 
 const playbarReducer = (state= defaultArg, action) => {
-    debugger
     let newState = Object.assign({}, state)
     switch (action.type) {
         case PLAY_SONG:

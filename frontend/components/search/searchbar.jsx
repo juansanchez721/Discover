@@ -1,7 +1,6 @@
 import React from "react";
 
 const SearchBar = (props) => {
-  // debugger;
   if (props.currentUser) {
     return (
       <div className="nav-search">

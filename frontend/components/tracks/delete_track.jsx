@@ -6,7 +6,6 @@ class DeleteTrack extends React.Component {
 
 
     constructor(props) {
-        // debugger
         super(props)
         
         this.handleClick = this.handleClick.bind(this)
@@ -19,7 +18,6 @@ class DeleteTrack extends React.Component {
 
 
     render(){
-        // debugger
 
         const { track } = this.props
         

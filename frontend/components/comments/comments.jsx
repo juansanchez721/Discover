@@ -14,7 +14,6 @@ class Comments extends React.Component {
       commenter_id: this.props.currentUser.id,
       body: "",
     };
-    // console.log(this.state)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLike = this.handleLike.bind(this);
   }
@@ -59,14 +58,11 @@ class Comments extends React.Component {
       liked,
       likeCount,
     } = this.props;
-    // console.log(artist);
     let pComments = Object.values(comments).filter(
       (comment) => !comment["parent_comment_id"]
     );
-    // let cComments = Object.values(comments).filter(comment => comment['parent_comment_id'])
+
     let commentCount = Object.keys(comments).length;
-    // console.log(pComments)
-    // console.log(cComments)
     let parentComments = pComments.map((comment) => {
       return (
         <CommentItem

@@ -5,7 +5,6 @@ import {pauseSong, playSong} from '../../actions/playbar_actions'
 import PlayBar from './playbar'
 
 const mSTP = state => {
-    debugger
     return {
         playbar: state.ui.playbar
     }

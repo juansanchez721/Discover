@@ -3,9 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
-      // debugger
       super(props);
-      // debugger
       this.state = {
         username: "",
         email: "",
@@ -34,37 +32,29 @@ class SessionForm extends React.Component {
     
 
     changePage(){
-      // debugger
       this.setState({ page: this.state.page + 1})
     }
 
 
     handleEmail(){
-      // debugger
-      // console.log(this.state.warnings)
       this.props.validateEmail(this.state.email)
      
       setTimeout(() =>  this.setState({ warnings: this.props.errors[0]}), 50);
-      // setTimeout(()=> console.log(this.state.warnings), 60);
       setTimeout(()=> this.checkField(), 60);
       this.props.clearErrors()
     }
     
     handleSubmitSignIn(e) {
         e.preventDefault();
-        // const user = Object.assign({}, this.state);
         this.props.processForm({
           email: this.state.email,
           password: this.state.password
         })
-        // .then(this.props.clearErrors)
         .then(this.props.closeModal)
       }
 
       handleSubmitSignUp(e) {
-        // debugger
         if (e) {
-          // debugger
           e.preventDefault();
         }
           // const user = Object.assign({}, this.state);
@@ -103,7 +93,6 @@ class SessionForm extends React.Component {
         if (this.state.page === 0 && this.state.email.length < 3 && this.state.warnings === "Email Available") {
               
               this.props.clearErrors()
-              // console.log("change")
               this.setState({ warnings: "Please enter a valid email."})
 
         } else if (this.state.page === 0 && this.state.email.length > 3 && this.state.warnings === "Email Available"){
@@ -116,7 +105,6 @@ class SessionForm extends React.Component {
         //Password validations  
         else if (this.state.page === 1 && this.state.password.length < 6) {
            
-              // console.log("password warning")
               this.setState({ warnings: "Please enter a password (minimum 6 characters)"})
         
         } else if (this.state.page === 1 && this.state.password.length > 6) {
@@ -129,13 +117,11 @@ class SessionForm extends React.Component {
 
           let errorsArray = new Array(null, null)
             if(this.state.age < 18){
-              // console.log("You must be 18 years or older.")
               errorsArray[0] = (" You must be 18 years or older.")
               // this.setState({ warnings: " You must be 18 years or older."})
             }
 
             if(this.state.gender === ""){
-              // console.log("Please choose a gender.")
               errorsArray[1] = ("Please Choose a gender")
             
             }
@@ -150,7 +136,6 @@ class SessionForm extends React.Component {
         } //username validations
           else if (this.state.page === 3 && this.state.username === ""){
           
-              // console.log("username warning")
               this.setState({ warnings: "Please enter a valid Username."})
         
         } 
@@ -163,7 +148,7 @@ class SessionForm extends React.Component {
       }
       
   renderErrors() {
-    // debugger
+
     return(
       <ul>
         {this.props.errors.map((error, i) => (

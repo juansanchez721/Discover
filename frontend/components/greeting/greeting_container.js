@@ -4,7 +4,6 @@ import { openModal, closeModal} from '../../actions/modal_actions';
 import SplashPageInfo from './greeting'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
         currentUser: state.session
     }

@@ -1,19 +1,19 @@
 class Api::CommentsController < ApplicationController
 
     def index 
-        # debugger
+         
         if params.has_key?(:track_id)
-            # debugger
+             
             @comments = Comment.where(track_id: params[:track_id])
-            # debugger
+             
         elsif params.has_key?(:user_id)
 
             @comments = Comment.where(commenter_id: params[:user_id])
 
         else
-            # debugger
+             
             @comments = Comment.all
-            # debugger
+             
         end
         
     
@@ -30,7 +30,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy 
-        # debugger
+         
         @comment = Comment.find(params[:id])
         @comment.destroy
     end
@@ -43,7 +43,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def comment_params
-        # debugger
+         
         params.require(:comment).permit(:parent_comment_id, :commenter_id, :track_id, :body)
 
     end

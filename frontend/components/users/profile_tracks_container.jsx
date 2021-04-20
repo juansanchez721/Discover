@@ -5,7 +5,6 @@ import {queueSong} from '../../actions/playbar_actions'
 import ProfileTrackItem from './profile_track_item'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
         // tracks: state.entities.tracks
     }

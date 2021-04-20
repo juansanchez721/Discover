@@ -34,7 +34,6 @@ class PlayBar extends React.Component {
     const audio = document.getElementById("audio")
     audio.volume = e.target.value
     this.setState({ volume: e.target.value})
-    // console.log(player.volume)
   }
 
   handlePrev() {
@@ -68,7 +67,6 @@ class PlayBar extends React.Component {
   }
 
   onSliderChange(e){
-      // console.log(e.target.value)
       const audio = document.getElementById("audio");
       this.setState({ currentTime: e.target.value})
       audio.currentTime = e.target.value
@@ -127,8 +125,7 @@ class PlayBar extends React.Component {
     }
 
         let { currentTrack, queue } = this.props.playbar
-        // console.log(currentTrack, queue)
-        // console.log(this.state.queue)
+
 
       return this.props.playbar.isPlaying || currentTrack ? (
       <div className="playbar-div">

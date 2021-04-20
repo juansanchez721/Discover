@@ -6,7 +6,6 @@ const defaultArg = Object.freeze({
 })
 
 const sessionReducer = (oldstate = defaultArg, action) => {
-    // debugger
     Object.freeze(oldstate);
     // let nextState = Object.assign({}, state)
     switch (action.type) {

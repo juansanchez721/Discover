@@ -5,7 +5,6 @@ import {RECEIVE_CURRENT_USER, RECEIVE_ERRORS, RECEIVE_EMAIL_RESPONSE, CLEAR_ERRO
 
 
 const sessionErrorsReducer = (state=[], action) => {
-    // debugger
     Object.freeze(state)
 
     switch (action.type) {

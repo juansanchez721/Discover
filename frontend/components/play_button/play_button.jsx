@@ -12,8 +12,6 @@ class PlayButton extends React.Component {
         this.play = this.play.bind(this);
     }
     handlePlay() {
-        debugger
-        // console.log(this.state.playing)
         this.props.isPlaying ?
         this.stop()
         // alert('you wanna pause this?')

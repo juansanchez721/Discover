@@ -6,7 +6,6 @@ import { RECEIVE_USER,
 
 
 const usersReducer = (state ={}, action) => {
-// debugger
     Object.freeze(state)
     switch(action.type) {
             case LOGOUT_CURRENT_USER:

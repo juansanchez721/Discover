@@ -12,7 +12,6 @@ class SubComments extends React.Component {
             body: "",
             createCommentBool: this.props.replyBool
         }
-        // console.log(this.state)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     
@@ -63,8 +62,6 @@ class SubComments extends React.Component {
         const { comments, deleteComment, currentUserId } = this.props
         
         if(comments === null) return newSubComment
-
-        // console.log(comments)
  
      let subcomments = Object.values(comments).map(subcomment => {
           return <SubCommentItem key={subcomment.id} 

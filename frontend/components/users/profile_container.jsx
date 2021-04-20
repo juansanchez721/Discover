@@ -12,7 +12,6 @@ import {queueSong} from '../../actions/playbar_actions'
 import {fetchSingleUserTracks} from '../../actions/track_actions'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     let userId = parseInt(ownProps.match.params.userId)
     return {
         user: state.entities.users[userId],
@@ -26,7 +25,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => {
-    // debugger
     return {
         fetchUser: userId => dispatch(fetchUser(userId)),
         fetchSingleUserTracks: userId => dispatch(fetchSingleUserTracks(userId)),

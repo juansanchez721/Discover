@@ -1,7 +1,6 @@
 import React from "react";
 
 const SplashPageBottom = (props) => {
-  // debugger;
   return (
     <div className="splashpage-bottom">
       {/* <h1>Rest of splash page</h1> */}

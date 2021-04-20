@@ -13,7 +13,6 @@ const SongList = ({ currentUser, tracks, deleteLike, createLike }) => {
     liked={track.likers.includes(currentUser.id)}
     track={track} />;
   });
-//   console.log(imgSource)
   return (
     <div className="song-list-container">
       {/* <div className="discover-page-item"> */}

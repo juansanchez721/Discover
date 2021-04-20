@@ -6,9 +6,7 @@ import UserItem from "./user_item";
 import SongList from "./song_list";
 class DiscoverPage extends React.Component {
   constructor(props) {
-    // debugger;
     super(props);
-    // this.tracks = null;
     this.state = {
       loaded: true
     }
@@ -20,7 +18,6 @@ class DiscoverPage extends React.Component {
       .then(this.props.fetchTracks())
       .then(this.props.fetchTrackLikes(this.props.currentUser.id))
       .then(() => this.setState({loaded: false}) )
-    // debugger;
   }
 
   render() {
@@ -34,7 +31,6 @@ class DiscoverPage extends React.Component {
       );
     }
 
-    // debugger;
     let songListSongs = [];
     let trackssecond = this.props.tracks.map((track, i) => {
       if(i >= 8){
@@ -103,7 +99,6 @@ class DiscoverPage extends React.Component {
 
     
 
-    // console.log(Object.values(this.props.users))
     let userLinks = Object.values(this.props.users).map((user, i) => {
       if (i < 3) return <UserItem key={user.id} 
       user={user} 
@@ -113,7 +108,6 @@ class DiscoverPage extends React.Component {
       />;
     });
 
-    // debugger;
     return (
       <div className="discoverpage">
         {/* <h1>Discover here</h1>

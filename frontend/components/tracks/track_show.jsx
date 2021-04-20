@@ -23,7 +23,6 @@ class TrackShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // console.log(prevProps)
     if (prevProps.songId !== this.props.songId) {
       this.props
         .fetchTrack(this.props.songId)
@@ -33,8 +32,7 @@ class TrackShow extends React.Component {
   }
 
   render() {
-    // console.log(this.props.song)
-    // console.log(this.props.user)
+
 
     if (this.state.loaded) {
       return (

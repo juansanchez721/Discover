@@ -13,9 +13,8 @@ class FollowersPage extends React.Component {
 
 
     render() {
-        // console.log(parseInt(this.props.userId))
-        // console.log(this.props.currentUser.id === parseInt(this.props.userId) )
-
+ 
+        
         let follows = null;
 
         let currentUserBool = parseInt(this.props.userId) === this.props.currentUser.id

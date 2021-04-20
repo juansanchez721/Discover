@@ -29,13 +29,11 @@ export const fetchUserComments = userId => dispatch => {
 }
 
 export const createComment = comment => dispatch => {
-    // debugger
     return CommentUtil.createComment(comment)
     .then(comment => dispatch(receiveComment(comment)))
 }
 
 export const deleteComment = commentId => dispatch => {
-    // debugger
     return CommentUtil.deleteComment(commentId)
     .then(() => dispatch(removeComment(commentId)))
 }

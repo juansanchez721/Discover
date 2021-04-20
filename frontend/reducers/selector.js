@@ -7,7 +7,6 @@ export const asArray = ({ tracks }) => (
   );
   
   export const selectTrack = ({tracks}, id) => {
-    // debugger
     if (tracks[id]) {
       const track = tracks[id];
       return track;

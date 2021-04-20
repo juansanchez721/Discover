@@ -7,7 +7,6 @@ class UpdateTrack extends React.Component {
 
     constructor(props){
         super(props)
-        // debugger
         this.state = {
             track: this.props.track.track_url,
             imageUrl: this.props.track.image_url,
@@ -16,9 +15,7 @@ class UpdateTrack extends React.Component {
             description: this.props.track.description,
             genre: this.props.track.genre,
         }
-        // debugger
-        // this.changePage = this.changePage.bind(this)
-        // this.updateFile = this.updateFile.bind(this)
+
         this.handleSubmit = this.handleSubmit.bind(this)
         this.previewFile = this.previewFile.bind(this)
     }
@@ -38,7 +35,6 @@ class UpdateTrack extends React.Component {
     //         genre: this.props.track.genre,
     //     })
     //   }
-    //   debugger
     // }
 
     previewFile(e){
@@ -55,7 +51,6 @@ class UpdateTrack extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        // debugger
         const formData = new FormData();
         formData.append('track[title]', this.state.title)
         formData.append('track[genre]', this.state.genre)
@@ -65,15 +60,12 @@ class UpdateTrack extends React.Component {
         if (this.state.imageFile){
             formData.append('track[photo]', this.state.imageFile)
         }
-        // debugger
         this.props.updateTrack( formData, this.props.track.id)
         .then(this.props.closeModal())
 
-        // debugger
     }
 
     update(field) {
-        // debugger
         return e => this.setState({
           [field]: e.currentTarget.value
         });

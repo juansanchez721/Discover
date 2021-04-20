@@ -44,10 +44,8 @@ class ProfileTrackItem extends React.Component {
       queueSong,
       currentTrack
     } = this.props;
-    //     debugger
     let userbuttons = null;
     if (user.id === currentUser.id) {
-      // debugger;
       const trackOp = this.state.trackOptions ? (
         <div className="track-options">
           <div>

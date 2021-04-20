@@ -7,7 +7,6 @@ import Comments from "./comments"
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
     // let trackId = parseInt(ownProps.match.params.trackId)
     return {
         // trackId,

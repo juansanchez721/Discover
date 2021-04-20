@@ -17,17 +17,15 @@ class Api::LikesController < ApplicationController
 
         create_like_params = like_params
         create_like_params[:liker_id] = current_user.id
-        # debugger
+         
         @like = Like.new(create_like_params)
         
-        # debugger
-        
-        # console.log(create_like_params['likeable_type'])
+         
 
         if @like.save
-            # debugger
+             
             @track = Track.find_by(id: @like.likeable_id)
-            # debugger
+             
             redirect_to api_track_url(@track.id), status: 303
         else
             render json: @like.errors.full_messages, status: 422
@@ -44,9 +42,9 @@ class Api::LikesController < ApplicationController
 
         if @like
             @like.destroy!
-            # debugger
+             
             @track = Track.find_by(id: @like.likeable_id)
-            # debugger
+             
             redirect_to api_track_url(@track.id), status: 303
         else
             render json: ["Couldn't find like"]
@@ -56,7 +54,7 @@ class Api::LikesController < ApplicationController
     
     
         def like_params  
-            # debugger  
+               
             params.require(:like).permit(:likeable_id, :likeable_type)
         end
 end

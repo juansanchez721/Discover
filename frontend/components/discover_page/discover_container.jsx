@@ -7,7 +7,6 @@ import { createFollow, deleteFollow} from '../../actions/follows_action'
 import {fetchUsers} from '../../actions/user_actions'
 import {asArray, asArrayUsers} from '../../reducers/selector'
 const mstp = (state) => {
-    // debugger
     return {
         currentUser: state.session,
         likes: Object.values(state.entities.likes),

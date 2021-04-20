@@ -8,8 +8,6 @@ import { fetchTrackComments } from '../../actions/comment_actions'
 const mSTP = (state, { match }) => {
 
     const songId = parseInt(match.params.trackId);
-    // const song = selectTrack(state.entities, match.params.trackId);
-    // debugger
     return {
         songId,
         song: state.entities.tracks[songId],

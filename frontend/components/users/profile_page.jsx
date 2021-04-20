@@ -6,7 +6,6 @@ import ProfileCommentItem from './profile_comments_item'
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
-    // debugger;
 
     this.state = {
       loaded: true,
@@ -28,7 +27,6 @@ class ProfilePage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // debugger;
     if (this.props.match.params.userId !== prevProps.match.params.userId) {
       this.props
         .fetchSingleUserTracks(this.props.match.params.userId)
@@ -38,11 +36,9 @@ class ProfilePage extends React.Component {
         .then(() => this.props.fetchUserFollows(this.props.match.params.userId) )
 
     }
-    // debugger;
   }
 
   render() {
-    // debugger;
 
     if (this.state.loaded) {
       return (
@@ -57,8 +53,6 @@ class ProfilePage extends React.Component {
       return null;
     }
 
-    // console.log(this.props.tracks);
-    // debugger;
     let tracks = this.props.tracks.map((track) => (
       <ProfileTrackItem
         key={track.id}
@@ -230,9 +224,8 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
               </a>
           </span>
 
-            <a href="" target="_blank" className="last-footer-link" >
-              Portfolio
-            </a>
+          <a href="https://juansanchez721.github.io/" target="_blank" className="last-footer-link" > Portfolio </a>
+
         </div>
 
             </div>

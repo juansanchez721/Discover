@@ -32,7 +32,6 @@ class EditModal extends React.Component {
     }
 
     handleSubmit(){
-        // debugger
         const formData = new FormData();
         formData.append('user[bio]', this.state.bio)
         formData.append('user[first_name]', this.state.firstName)
@@ -41,14 +40,12 @@ class EditModal extends React.Component {
         if (this.state.imageFile){
             formData.append('user[photo]', this.state.imageFile)
         }
-        // debugger
         this.props.updateUser( formData, this.props.user.id)
         .then(this.props.closeModal())
     }
 
 
     update(field) {
-        // debugger
         return e => this.setState({
           [field]: e.currentTarget.value
         });

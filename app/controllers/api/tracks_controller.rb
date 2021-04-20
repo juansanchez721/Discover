@@ -1,22 +1,22 @@
 class Api::TracksController < ApplicationController 
 
     def index 
-        # debugger
+         
         if params.has_key?(:user_id)
-            # debugger
+             
             @tracks = Track.where(owner_id: params[:user_id])
-            # debugger
+             
         else
-            # debugger
+             
             @tracks = Track.all
-            # debugger
+             
         end
     end
 
     def create
-        # debugger
+         
         @track = Track.new(track_params)
-        # debugger
+         
         if (@track.save)
             # render :show
         else
@@ -26,9 +26,9 @@ class Api::TracksController < ApplicationController
     end
 
     def update
-        # debugger
+         
         @track = Track.find(params[:id])
-        # debugger
+         
 
         if @track.update(track_params)
             # render json: ["Update was successful"], status: 200
@@ -42,7 +42,7 @@ class Api::TracksController < ApplicationController
     def destroy 
 
         @track = Track.find(params[:id])
-        # debugger
+         
         if @track
             @track.destroy
         end
@@ -56,7 +56,7 @@ class Api::TracksController < ApplicationController
 
 
     def track_params
-        # debugger
+         
         params.require(:track).permit(:title, :description, :genre, :owner_id, :track, :photo)
     end
 

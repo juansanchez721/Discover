@@ -8,22 +8,12 @@ const likesReducer = (oldState = {}, action) => {
     let newState = Object.assign({}, oldState)
     switch (action.type) {
         case RECEIVE_LIKED_TRACKS:
-            // debugger
             return action.tracks
         case ADD_LIKE:
-            // debugger
             return Object.assign({}, oldState, action.track);
         case REMOVE_LIKE:
-            // debugger
             delete newState[Object.keys(action.track)[0]]
             return newState;
-            // case RECEIVE_TRACK:
-            // debugger
-            // // const newTrack = Object.values(action.track)[0];
-            // //     return newTrack
-            // // return action.track
-            // debugger
-            // return Object.assign({}, oldState, action.track);
         default:
             return oldState;
     }

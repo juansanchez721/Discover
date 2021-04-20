@@ -20,7 +20,6 @@ class CommentItem extends React.Component {
     
     const { comment, currentUserId, deleteComment, createComment, trackId, subcomments } = this.props
     
-    // console.log(subcomments)
     const displayName =  (
       comment.commenter_id === currentUserId ? "You" : comment.username
       )
