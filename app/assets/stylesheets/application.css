@@ -281,8 +281,11 @@ table {
 }
 
 .logged-in-right-side > h2 {
-  /* background-color: pink; */
-  width: 60px;
+      /* background-color: pink; */
+      width: 60px;
+      text-align: center;
+      margin-left: 5px;
+
 }
 
 .nav-search {

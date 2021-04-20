@@ -93,14 +93,15 @@ class Header extends React.Component {
               </div>
             </Link>
             {/* </h1> */}
-            <h1>Home</h1>
-            <h1>Stream</h1>
-            <h1>Library</h1>
+                    <h1><a href="https://www.linkedin.com/in/juan-sanchez-24a68b113/" target="_blank" > LinkedIn </a></h1>
+            <h1><a href="https://github.com/juansanchez721" target="_blank" > Github </a></h1>
+                    <h1><a href="https://angel.co/u/juan-sanchez-41" target="_blank" > AngelList </a> </h1>
           </div>
           <SearchBarContainer />
 
           <div className="logged-in-right-side">
-            <h2>Try Pro</h2>
+            {/* <h2>Try Pro</h2> */}
+                    <h2><a href="https://juansanchez721.github.io/" target="_blank" > Portfolio </a> </h2>
 
             <h2>
               <Link to="/tracks/upload" className="text-link">
