@@ -40,7 +40,7 @@ const playbarReducer = (state = defaultArg, action) => {
       return newState;
 
     case QUEUE_SONG:
-      newState.queue.push(action.trackId);
+      newState.queue.unshift(action.trackId);
     default:
       return state;
   }
