@@ -537,7 +537,7 @@ table {
   /* background-color: hotpink; */
   min-width: 960px;
   max-width: 1240px;
-  /* height: 100vh; */
+  height: 100vh;
   /* display: flex; */
   /* flex-direction: row; */
   /* padding: 45px; */

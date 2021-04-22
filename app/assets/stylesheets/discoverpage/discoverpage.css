@@ -1,18 +1,12 @@
 .discoverpage {
-        /* height: 1000px; */
         width: 100%;
-        /* height: 100vh; */
         box-sizing: border-box;
-        /* padding-top: 100px; */
         background-color: white;
-        /* padding: 80px 0 50px 0;*/
   }
 
 .discover-page-holder {
-  /* background-color: #555; */
   box-sizing: border-box;
-  /* width: 100%; */
-  /* height: 100vh; */
+
   padding-top: 80px;
   display: flex;
   flex-direction: row;
@@ -33,23 +27,26 @@
   
   .discover-page-item img {
     width: 100%;
-    /* margin-bottom: 5px; */
-    box-sizing: border-box;
-    border: 1px solid #f2f2f2; 
-    /* box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%); */
   }
 
+  .discover-image-container{
+    position: relative;
+    /* border: 1px solid blue; */
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
   
   .discover-page-item .song-info {
-    /* background-color: lavender; */
     font-size: 12px;
     width: 100%;
-    /* max-width: 175px; */
-    /* height: 1vw; */
   }
 
   .yoyo {
-    height: 1.5vh;
+    height: 16px;
     margin: 2px 0px;
     width: 100%;
     overflow: hidden;
@@ -60,22 +57,14 @@
     /* white-space: nowrap; */    
     color: #333
   }
- 
-  .discover-image-holder{
-    /* width: fit-content;
-    height: fit-content; */
-    position: relative;
-  }
 
 .album-shadow {
-  /* display: none; */
-  height: 80.5%;
-
-  min-height: 142.5px;
   width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 0;
   top: 0px;
+  left: 0;
   transition: .3s;
 }
 
@@ -85,19 +74,16 @@
 }
 
 .album-shadow-circle {
-     /* background-color: #888; */
-    /* display: none; */
+
     z-index: 0;
-    height: 3vw;
-    width: 3vw;
+    height: 2.5vw;
+    width: 2.5vw;
     display: flex;
     flex-direction: column;
     visibility: hidden;
     min-height: 35px;
     min-width: 35px;
     position: absolute;
-    left: 37.5%;
-    top: 30%;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -105,13 +91,13 @@
 
 
 .index-options {
-  visibility: hidden;
-  z-index: 0;
-  color: white;
-  border-radius: 50%;
-  position: absolute;
-  right: 10px;
-  bottom: 25%;
+      visibility: hidden;
+      z-index: 0;
+      color: white;
+      border-radius: 50%;
+      position: absolute;
+      right: 9%;
+      bottom: 7%;
 }
 
 .discover-page-item:hover .album-shadow-circle,
@@ -120,7 +106,9 @@
   /* background-color: red; */
 }
 
-
+.test-link {
+  position: absolute;
+}
 .discover-titles {
     width: 95%;
     margin-bottom: 21.5px;;

@@ -193,9 +193,9 @@ font-size: 11px;
 }
 
 .texttext {
-    /* background-color: blue; */
+    background-color: blue;
     height: 45px;
-    width: 100%;
+    width: 92%;
     padding-left: 5px;
     display: flex;
     justify-content: space-between;
