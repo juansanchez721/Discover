@@ -148,7 +148,7 @@ font-size: 11px;
 
 .track-info-text {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     /* background-color: greenyellow; */
 }
@@ -193,14 +193,14 @@ font-size: 11px;
 }
 
 .texttext {
-    background-color: blue;
-    height: 45px;
-    width: 92%;
-    padding-left: 5px;
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    flex-direction: column;
+        /* background-color: blue; */
+        height: 45px;
+        width: 92%;
+        padding-left: 5px;
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        flex-direction: column;
 }
 
 .name-title{ 
