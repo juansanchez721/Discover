@@ -37,33 +37,37 @@ class PlayBar extends React.Component {
   }
 
   handlePrev() {
-    if( this.state.i >= 1 && this.state.i  ){
-      this.props.fetchNextTrack(this.props.playbar.queue[this.state.i-1])
-      this.setState({ i: this.state.i-1 })
-    } else {
-      alert('this is the first song in the queue')
-    }
+
+    let playedArray = this.props.playbar.played
+    this.props.fetchPrevTrack(playedArray[playedArray.length-1])
+
+    // if( this.state.i >= 1 && this.state.i  ){
+    //   this.props.fetchNextTrack(this.props.playbar.queue[this.state.i-1])
+    //   this.setState({ i: this.state.i-1 })
+    // } else {
+    //   alert('this is the first song in the queue')
+    // }
   }
 
   handleNext() {
 
-    if( this.state.i <=  this.props.playbar.queue.length-1){
-      if(this.state.i === 0){
-        this.setState({ i: 1 })
-        this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
+    // if( this.state.i <=  this.props.playbar.queue.length-1){
+    //   if(this.state.i === 0){
+    //     this.setState({ i: 1 })
+        this.props.fetchNextTrack(this.props.playbar.queue[0])
 
-      } else {
+    //   } else {
 
-        this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
-        this.setState({ i: this.state.i+1 })
-      }
-    } else {
-      this.setState({ playing: false})
-      const audio = document.getElementById("audio");
-      this.setState({ currentTime: 0})
-      audio.currentTime = 0
-      // return null;
-    }
+    //     this.props.fetchNextTrack(this.props.playbar.queue[this.state.i])
+    //     this.setState({ i: this.state.i+1 })
+    //   }
+    // } else {
+    //   this.setState({ playing: false})
+    //   const audio = document.getElementById("audio");
+    //   this.setState({ currentTime: 0})
+    //   audio.currentTime = 0
+    //   // return null;
+    // }
   }
 
   onSliderChange(e){
@@ -124,8 +128,11 @@ class PlayBar extends React.Component {
         return null
     }
 
-        let { currentTrack, queue } = this.props.playbar
+        let { currentTrack, queue, played } = this.props.playbar
 
+        console.log(played)
+        console.log(currentTrack)
+        console.log(queue)
 
       return this.props.playbar.isPlaying || currentTrack ? (
       <div className="playbar-div">

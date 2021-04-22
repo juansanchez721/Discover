@@ -10,7 +10,21 @@ class DiscoverPage extends React.Component {
     this.state = {
       loaded: true
     }
+
+    // this.handleCarousel = this.handleCarousel.bind(this)
+
   }
+
+  // handleCarousel() {
+  //   // alert("moving")
+  //   let arrow= document.getElementById("showing-songs-1")
+  //   console.log(arrow.children[1])
+  //   console.log(arrow.children[1].children.length)
+
+  //   let oldT
+  //   console.log(arrow.children[1].style.transform)
+  //   arrow.children[1].style.transform = `translateX(-${60}%)`
+  // }
 
   componentDidMount() {
     this.props
@@ -122,9 +136,21 @@ class DiscoverPage extends React.Component {
                   Suggestions based on what you've liked or played
                 </p>
               </div>
-              <div className="showing-songs">
-                <div className="inner-showing">{trackssecond.reverse()}</div>
+              <div className="showing-songs" id="showing-songs-1" >
+               {/* <div className="carousel-arrows" >
 
+                <span onClick={this.handleCarousel} >
+                <i className="fas fa-chevron-left"></i>
+                </span>
+                <span onClick={this.handleCarousel} >
+                <i className="fas fa-chevron-right"></i>
+                </span>
+               </div> */}
+               
+                <div className="inner-showing">
+                  {trackssecond.reverse()}
+                  
+                  </div>
               </div>
               {/* <hr> */}
               <br />
@@ -139,13 +165,13 @@ class DiscoverPage extends React.Component {
               </div>
               <div className="showing-songs">
                 {/* <div className="inner-showing"> */}
-                <SongList
+                {/* <SongList
                   createLike={this.props.createLike}
                   deleteLike={this.props.deleteLike}
                   currentUser={this.props.currentUser}
                   currentTrack = {this.props.currentPlayingTrack || null}
                   tracks={songListSongs}
-                />
+                /> */}
                 {/* </div> */}
               </div>
               <br />
@@ -159,7 +185,7 @@ class DiscoverPage extends React.Component {
                 </p>
               </div>
               <div className="showing-songs">
-              <div className="inner-showing">{tracksfirst}</div>
+              {/* <div className="inner-showing">{tracksfirst}</div> */}
               </div>
               <br />
               <br />

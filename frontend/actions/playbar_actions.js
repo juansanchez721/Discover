@@ -3,7 +3,8 @@ export const PLAY_SONG = "PLAY_SONG"
 export const PAUSE_SONG = "PAUSE_SONG"
 
 export const QUEUE_SONG = "QUEUE_SONG"
-export const PLAY_QUEUE_SONG = "PLAY_QUEUE_SONG"
+export const PLAY_NEXT_SONG = "PLAY_NEXT_SONG"
+export const PLAY_PREV_SONG = "PLAY_PREV_SONG"
 
 export const playSong = (song) => {
     return {
@@ -25,13 +26,24 @@ export const queueSong = (trackId) => {
     }
 }
 
-export const playQueueSong = (track) => {
+export const playNextSong = (track) => {
     return {
-        type: PLAY_QUEUE_SONG,
+        type: PLAY_NEXT_SONG,
         track
     }
 }
 
-export const fetchQueueTrack = (trackid) => (dispatch) =>
+export const playPrevSong = (track) => {
+    return {
+        type: PLAY_PREV_SONG,
+        track
+    }
+}
+
+export const fetchNextTrack = (trackid) => (dispatch) =>
   TrackUtil.fetchTrack(trackid)
-  .then((track) => dispatch(playQueueSong(track)));
+  .then((track) => dispatch(playNextSong(track)));
+
+  export const fetchPrevTrack = (trackid) => (dispatch) =>
+  TrackUtil.fetchTrack(trackid)
+  .then((track) => dispatch(playPrevSong(track)));
