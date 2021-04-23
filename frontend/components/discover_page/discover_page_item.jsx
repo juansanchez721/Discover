@@ -7,6 +7,7 @@ class DiscoverPageItem extends React.Component {
     super(props);
 
     this.handleLike = this.handleLike.bind(this);
+    this.props.queueSong(this.props.track.id)
   }
 
   handleLike() {

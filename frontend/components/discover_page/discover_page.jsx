@@ -10,7 +10,7 @@ class DiscoverPage extends React.Component {
     this.state = {
       loaded: true
     }
-
+    this.props.clearPageQueue()
     // this.handleCarousel = this.handleCarousel.bind(this)
 
   }
@@ -50,6 +50,7 @@ class DiscoverPage extends React.Component {
       if(i >= 8){
 
        return <DiscoverPageItem
+
         owner={this.props.users[track.owner_id]}
         key={track.id}
         liked={track.likers.includes(this.props.currentUser.id)}
@@ -57,7 +58,7 @@ class DiscoverPage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         currentTrack = {this.props.currentPlayingTrack || null}
-
+        queueSong={this.props.queueSong}
         />
       }
     })
@@ -73,6 +74,7 @@ class DiscoverPage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         currentTrack = {this.props.currentPlayingTrack || null}
+        queueSong={this.props.queuePageSong}
 
         />
       } else {
@@ -148,7 +150,7 @@ class DiscoverPage extends React.Component {
                </div> */}
                
                 <div className="inner-showing">
-                  {trackssecond.reverse()}
+                  {tracksfirst}
                   
                   </div>
               </div>

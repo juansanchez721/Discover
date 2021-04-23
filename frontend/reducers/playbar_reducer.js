@@ -2,13 +2,15 @@ const defaultArg = Object({
   currentTrack: null,
   isPlaying: false,
   played: [],
-  queue: [40, 28, 37, 26, 27],
+  queue: [],
 });
 
 import {
   PLAY_SONG,
   PLAY_NEW_SONG,
   QUEUE_SONG,
+  QUEUE_PAGE_SONG,
+  CLEAR_PAGE_QUEUE,
   PLAY_NEXT_SONG,
   PLAY_PREV_SONG,
   PAUSE_SONG,
@@ -18,7 +20,11 @@ const playbarReducer = (state = defaultArg, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case PLAY_SONG:
+      let splitHere = newState.queue.indexOf(action.song.id)
+      debugger
       newState.currentTrack = action.song;
+      newState.queue = state.queue.slice(splitHere+1)
+      newState.played = state.queue.slice(0, splitHere)
       newState.isPlaying = true;
       return newState;
 
@@ -53,6 +59,16 @@ const playbarReducer = (state = defaultArg, action) => {
 
     case QUEUE_SONG:
       newState.queue.unshift(action.trackId);
+        return newState
+
+    case QUEUE_PAGE_SONG:
+      debugger
+      newState.queue.push(action.trackId);
+      return newState
+    case CLEAR_PAGE_QUEUE:
+      newState.queue = []
+      return newState
+
     default:
       return state;
   }
