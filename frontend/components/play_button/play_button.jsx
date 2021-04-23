@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { playSong, pauseSong } from '../../actions/playbar_actions'
+import { playSong, pauseSong, playNewSong } from '../../actions/playbar_actions'
 
 
 class PlayButton extends React.Component {
@@ -23,11 +23,12 @@ class PlayButton extends React.Component {
 
       play() {
         if(this.props.currentTrack){
-
+                debugger
             let audio = document.getElementById("audio");
             audio.play();
-            this.props.playSong(this.props.track)
+            this.props.playNewSong(this.props.track)
         } else {
+            debugger
             this.props.playSong(this.props.track)
 
         }
@@ -68,6 +69,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         playSong: (track) => dispatch(playSong(track)),
+        playNewSong: (track) => dispatch(playNewSong(track)),
         pauseSong: () => dispatch(pauseSong())
     }
 }

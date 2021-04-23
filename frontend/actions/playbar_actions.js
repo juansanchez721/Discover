@@ -3,6 +3,7 @@ export const PLAY_SONG = "PLAY_SONG"
 export const PAUSE_SONG = "PAUSE_SONG"
 
 export const QUEUE_SONG = "QUEUE_SONG"
+export const PLAY_NEW_SONG = "PLAY_NEW_SONG"
 export const PLAY_NEXT_SONG = "PLAY_NEXT_SONG"
 export const PLAY_PREV_SONG = "PLAY_PREV_SONG"
 
@@ -23,6 +24,13 @@ export const queueSong = (trackId) => {
     return {
         type: QUEUE_SONG,
         trackId    
+    }
+}
+
+export const playNewSong = (track) => {
+    return {
+        type: PLAY_NEW_SONG,
+        track
     }
 }
 

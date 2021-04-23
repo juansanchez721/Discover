@@ -35,12 +35,14 @@ class PlayBar extends React.Component {
   }
 
   handlePrev() {
-
     let playedArray = this.props.playbar.played
+    if(playedArray < 1) alert("first song in queue")
     this.props.fetchPrevTrack(playedArray[playedArray.length-1])
   }
 
   handleNext() {
+
+    if(this.props.playbar.queue.length < 1) alert("last song in queue")
 
         this.props.fetchNextTrack(this.props.playbar.queue[0])
 
