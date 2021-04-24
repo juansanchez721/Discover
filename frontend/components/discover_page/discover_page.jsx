@@ -58,7 +58,7 @@ class DiscoverPage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         currentTrack = {this.props.currentPlayingTrack || null}
-        queueSong={this.props.queueSong}
+        queueSong={this.props.queuePageSong}
         />
       }
     })

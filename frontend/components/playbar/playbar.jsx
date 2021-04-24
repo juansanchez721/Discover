@@ -42,9 +42,15 @@ class PlayBar extends React.Component {
 
   handleNext() {
 
-    if(this.props.playbar.queue.length < 1) alert("last song in queue")
+    if(this.props.playbar.userQueue.length){
+      this.props.fetchQueueTrack(this.props.playbar.userQueue.shift())
 
-        this.props.fetchNextTrack(this.props.playbar.queue[0])
+    } else if(this.props.playbar.pageQueue.length < 1){
+
+      alert("last song in queue")
+    } else {
+      this.props.fetchNextTrack(this.props.playbar.pageQueue[0])
+    }
 
   }
 
@@ -106,11 +112,13 @@ class PlayBar extends React.Component {
         return null
     }
 
-        let { currentTrack, queue, played } = this.props.playbar
+        let { currentTrack, pageQueue, played, userQueue } = this.props.playbar
 
-        console.log(played)
-        console.log(currentTrack)
-        console.log(queue)
+        console.log("     ")
+        console.log("songs played " + played)
+        // console.log("current track " + currentTrack.id)
+        console.log("page queue " + pageQueue)
+        console.log("user queue " + userQueue)
 
       return this.props.playbar.isPlaying || currentTrack ? (
       <div className="playbar-div">
