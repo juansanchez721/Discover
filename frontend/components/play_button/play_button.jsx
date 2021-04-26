@@ -14,11 +14,8 @@ class PlayButton extends React.Component {
     handlePlay() {
         this.props.isPlaying ?
         this.stop()
-        // alert('you wanna pause this?')
         :
         this.play()
-        
-        // this.setState({ playing: !this.state.playing })
       }
 
       play() {
@@ -35,13 +32,11 @@ class PlayButton extends React.Component {
         } else {
             debugger
             this.props.playSong(this.props.track)
-
         }
       }
     
       stop() {
           if(this.props.currentTrackBool){
-
               let audio = document.getElementById("audio");
               audio.pause();
               this.props.pauseSong()
@@ -49,18 +44,19 @@ class PlayButton extends React.Component {
                 this.play()
             }
       }
-  
 
     render(){
-
         return (
             <div className="orange-circle-container">
-                  <div className={this.props.isPlaying && this.props.currentTrackBool? "pause-orange-circle" :"orange-circle"} onClick={() => this.handlePlay()} ></div>
+                  <div className=
+                  {this.props.isPlaying && this.props.currentTrackBool ? 
+                  "pause-orange-circle" 
+                  :
+                  "orange-circle"} 
+                  onClick={() => this.handlePlay()} ></div>
                 </div>
         )
     }
-
-
 }
 
 

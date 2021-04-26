@@ -11,6 +11,7 @@ class Track < ApplicationRecord
     class_name: :Comment
 
     has_many :likes, as: :likeable
+    dependent: :destroy
 
     has_one_attached :photo
     has_one_attached :track
