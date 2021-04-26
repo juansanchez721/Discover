@@ -10,6 +10,7 @@ class LikesPage extends React.Component {
     this.state = {
       loaded: true,
     };
+    this.props.clearPageQueue()
   }
 
 

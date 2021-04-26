@@ -106,11 +106,11 @@ class PlayBar extends React.Component {
 
     let { currentTrack, pageQueue, played, userQueue } = this.props.playbar;
 
-    console.log("     ");
-    console.log("songs played " + played);
-    // console.log("current track " + currentTrack.id)
-    console.log("page queue " + pageQueue);
-    console.log("user queue " + userQueue);
+    // console.log("     ");
+    // console.log("songs played " + played);
+    // // console.log("current track " + currentTrack.id)
+    // console.log("page queue " + pageQueue);
+    // console.log("user queue " + userQueue);
 
     return this.props.playbar.isPlaying || currentTrack ? (
       <div className="playbar-div">

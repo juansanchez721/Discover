@@ -7,7 +7,7 @@ import { fetchTrackLikes } from '../../actions/like_actions'
 import { fetchUser } from '../../actions/user_actions'
 import { fetchUserComments } from '../../actions/comment_actions'
 import {fetchUserFollows, createFollow, deleteFollow} from '../../actions/follows_action'
-import {queueSong} from '../../actions/playbar_actions'
+import {queueSong, queuePageSong, clearPageQueue} from '../../actions/playbar_actions'
 
 import {fetchSingleUserTracks} from '../../actions/track_actions'
 
@@ -39,7 +39,10 @@ const mDTP = dispatch => {
         fetchUserFollows: userId => dispatch(fetchUserFollows(userId)),
         follow: userId => dispatch(createFollow(userId)),
         unfollow: userId => dispatch(deleteFollow(userId)),
-        queueSong: songId => dispatch(queueSong(songId))
+        queueSong: songId => dispatch(queueSong(songId)),
+        queuePageSong: songId => dispatch(queuePageSong(songId)),
+        clearPageQueue: () => dispatch(clearPageQueue())
+
 
 
     }

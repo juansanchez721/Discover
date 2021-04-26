@@ -10,7 +10,7 @@ class ProfilePage extends React.Component {
     this.state = {
       loaded: true,
     };
-   
+    this.props.clearPageQueue()
   }
 
   componentDidMount() {
@@ -66,6 +66,7 @@ class ProfilePage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         queueSong={this.props.queueSong}
+        queuePageSong={this.props.queuePageSong}
         currentTrack = {this.props.currentPlayingTrack || null}
       />
     ));

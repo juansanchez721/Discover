@@ -1,9 +1,10 @@
 import React from "react";
 import SongListItem from "./song_list_item";
 import PlayButton from '../play_button/play_button'
-const SongList = ({ currentUser, tracks, deleteLike, createLike }) => {
+const SongList = ({ currentUser, tracks, deleteLike, createLike, queueSong, currentTrack }) => {
   let imgSource = null;
   let listTracks = Object.values(tracks).map((track, i) => {
+    
     if (i === 0) imgSource = track;
 
     return <SongListItem 
@@ -11,7 +12,9 @@ const SongList = ({ currentUser, tracks, deleteLike, createLike }) => {
     createLike={createLike}
     deleteLike={deleteLike}
     liked={track.likers.includes(currentUser.id)}
-    track={track} />;
+    track={track} 
+    queueSong={queueSong}
+    />;
   });
   return (
     <div className="song-list-container">
@@ -24,7 +27,7 @@ const SongList = ({ currentUser, tracks, deleteLike, createLike }) => {
           />
 
         <div className="play-button-holder">
-          <PlayButton track={imgSource} />
+          <PlayButton track={imgSource} currentTrackBool={ currentTrack && imgSource ? currentTrack.id === imgSource.id : false }/>
         </div>
 
         {/* </div> */}

@@ -11,6 +11,8 @@ class ProfileTrackItem extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleLike = this.handleLike.bind(this);
+
+    this.props.queuePageSong(this.props.track.id)
     // this.isLiked = this.isLiked.bind(this)
     // this.handlePlay = this.handlePlay.bind(this)
   }

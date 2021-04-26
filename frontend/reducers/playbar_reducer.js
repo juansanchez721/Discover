@@ -85,6 +85,7 @@ const playbarReducer = (state = defaultArg, action) => {
     case CLEAR_PAGE_QUEUE:
       newState.played = []
       newState.pageQueue = []
+      newState.staticQueue = []
       return newState
 
     default:

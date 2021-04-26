@@ -47,7 +47,7 @@ class DiscoverPage extends React.Component {
 
     let songListSongs = [];
     let trackssecond = this.props.tracks.map((track, i) => {
-      if(i >= 8){
+      if(i >= 12){
 
        return <DiscoverPageItem
 
@@ -64,7 +64,7 @@ class DiscoverPage extends React.Component {
     })
     
     let tracksfirst = this.props.tracks.map((track, i) => {
-      if(i < 8){
+      if(i < 6){
 
        return <DiscoverPageItem
         owner={this.props.users[track.owner_id]}
@@ -77,31 +77,13 @@ class DiscoverPage extends React.Component {
         queueSong={this.props.queuePageSong}
 
         />
-      } else {
+      } else if( i < 12) {
         songListSongs.push(track)
       }
 
     }
     )
         
-       
-    // this.props.tracks.sort(() => Math.random() - 0.5)
-
-    // let trackssecond = this.props.tracks.map(track => (
-    //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/>
-    // ))
-
-    // this.props.tracks.sort(() => Math.random() - 0.5)
-
-    // let tracksthird = this.props.tracks.map(track => (
-    //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/>
-    // ))
-
-    // this.props.tracks.sort(() => Math.random() - 0.5)
-
-    // let tracksfourth = this.props.tracks.map(track => (
-    //     <DiscoverPageItem owner={this.props.users[track.owner_id]} key={track.id} track={track}/>
-    // ))
 
     let likeitems = this.props.likes.length > 0 ?this.props.likes
       .sort((a, b) => new Date(b.like_created_at) - new Date(a.like_created_at))
@@ -167,13 +149,16 @@ class DiscoverPage extends React.Component {
               </div>
               <div className="showing-songs">
                 {/* <div className="inner-showing"> */}
-                {/* <SongList
+                <SongList
                   createLike={this.props.createLike}
                   deleteLike={this.props.deleteLike}
                   currentUser={this.props.currentUser}
                   currentTrack = {this.props.currentPlayingTrack || null}
                   tracks={songListSongs}
-                /> */}
+                  queueSong={this.props.queuePageSong}
+                  currentTrack = {this.props.currentPlayingTrack || null}
+
+                />
                 {/* </div> */}
               </div>
               <br />
@@ -187,7 +172,7 @@ class DiscoverPage extends React.Component {
                 </p>
               </div>
               <div className="showing-songs">
-              {/* <div className="inner-showing">{tracksfirst}</div> */}
+              <div className="inner-showing">{trackssecond}</div>
               </div>
               <br />
               <br />

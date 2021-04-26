@@ -2,7 +2,7 @@ import LikesPage from './likes_page'
 import { connect } from "react-redux"
 import { fetchTrackLikes } from '../../actions/like_actions'
 import { createLike, deleteLike, deleteCurrentUserLike, createCurrentUserLike, deleteOtherUserLike } from "../../actions/like_actions"
-import { queuePageSong } from '../../actions/playbar_actions'
+import { queuePageSong, clearPageQueue } from '../../actions/playbar_actions'
 
 import {asArray, asArrayUsers} from '../../reducers/selector'
 
@@ -21,7 +21,7 @@ const mDTP = dispatch => {
         deleteLike: (trackId) => dispatch(deleteCurrentUserLike(trackId)),
         deleteOtherUserLike: (trackId) => dispatch(deleteOtherUserLike(trackId)),
         queuePageSong: trackId => dispatch(queuePageSong(trackId)),
-
+        clearPageQueue: () => dispatch(clearPageQueue())
 
     }
 }
