@@ -2,13 +2,11 @@
 
 
 
-* Welcome to [Discover](https://discover-aa.herokuapp.com/#/), my [SoundCloud](https://soundcloud.com/)
- app Clone!
-This application takes great inspiration from the music streaming service/music sharing platform SoundCloud, where users can sign in or sign up to upload their own songs, but are not required to do so.
+* Welcome to [Discover](https://discover-aa.herokuapp.com/#/), a pixel-perfect [SoundCloud](https://soundcloud.com/)
+  clone!
+This application takes great inspiration from the music streaming service/music sharing platform, where users can sign in or sign up to upload their own songs, listen to, comment on, and like other's media, upload their own media, and follow other users.
 
-In Discover, users can listen to exisitng songs, like their favorite songs, follow other users, upload their own media, and comment on other's media
-
-*The technologies I used for this project are as follows:
+*The technologies I used for this project are as follows:*
 
 # For the frontend:
  + React.js
