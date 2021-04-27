@@ -53,6 +53,14 @@ This application takes great inspiration from the music streaming service/music 
 + Shows an individual track's information. 
 + User comments are shown for the track, each which can be replied to with subcomments 
 
+### Play Button Snippet
+One of my favorite parts of React is being able to build reusable components that can be placed throughout the site. for instance, the following code snippet is the play button, 
+which takes in two props: a track's information, and a boolean that lets the redux state know whether if it's the current playing track on the playbar.
+
+![Play Button Snippet](https://github.com/juansanchez721/Discover/blob/main/app/assets/images/playbutton_snippet.png "Play Button Snippet")
+
+The play button was placed virtually on every page of Discover, as it is the main mechanism in choosing which song to play. From the code snippet, the two main actions used are to play a song, and to pause a song. Dependent on the currentTrackBool, the play button turns into the pause button - other song entities remain as a play button. 
+
 ### Coming soon
 
 + Continuous play depending on user's current location on the app.
