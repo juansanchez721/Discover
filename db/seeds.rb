@@ -19,7 +19,7 @@ playboi_photo = open("https://discover-aa-seeds.s3.amazonaws.com/Playboi-Carti-7
 playboi.photo.attach(io: playboi_photo, filename: 'Playboi-Carti-768x435.jpg')
 
 
-bbunny = User.create!(username: "Bad Bunny", email: "bad@bunny.com", password: "password", age: 27, gender: "Male", bio: 'mi gente')
+bbunny = User.create!(username: "Bad Bunny", email: "bad@bunny.com", password: "password", age: 27, gender: "Male", bio: 'YHLQMDLG')
 bbunny_photo = open("https://discover-aa-seeds.s3.amazonaws.com/badbunny.jpg")
 bbunny.photo.attach(io: bbunny_photo, filename: 'badbunny.jpg')
 
@@ -100,7 +100,7 @@ callme.photo.attach(io: callme_photo, filename: 'callme.png')
 callme_song = open("https://discover-aa-seeds.s3.amazonaws.com/Call+Me.mp3")
 callme.track.attach(io: callme_song, filename: "Call+Me.mp3")
 
-myself = Track.create!(title: "Call Me", owner_id: nav.id, description: "")
+myself = Track.create!(title: "Myself", owner_id: nav.id, description: "")
 myself_photo = open('https://discover-aa-seeds.s3.amazonaws.com/myself.jpg')
 myself.photo.attach(io: myself_photo, filename: 'myself.jpg')
 myself_song = open("https://discover-aa-seeds.s3.amazonaws.com/Myself.mp3")
