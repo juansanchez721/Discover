@@ -4,6 +4,10 @@
 
 * Welcome to [Discover](https://discover-aa.herokuapp.com/#/), a pixel-perfect [SoundCloud](https://soundcloud.com/)
   clone!
+  
+  ![Discover Landing](https://github.com/juansanchez721/Discover/blob/main/app/assets/images/discover.png "Discover Landing")
+
+  
 This application takes great inspiration from the music streaming service/music sharing platform, where users can sign in or sign up to upload their own songs, listen to, comment on, and like other's media, upload their own media, and follow other users.
 
 *The technologies I used for this project are as follows:*
