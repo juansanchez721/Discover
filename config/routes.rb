@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :follows, only: [:show, :create, :destroy]
       resources :comments, only: [:show, :create, :destroy]
       resources :likes, only: [:index, :create, :destroy]
+      resources :search, only: [:index]
       resource :session, only: [:create, :destroy]
       get '/email/search', to: 'sessions#search'
 

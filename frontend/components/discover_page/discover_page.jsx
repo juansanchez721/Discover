@@ -240,7 +240,7 @@ class DiscoverPage extends React.Component {
                   </a>
                 </span>
 
-                <a href="" target="_blank" className="last-footer-link">
+                <a href="https://juansanchez721.github.io/" target="_blank" className="last-footer-link">
                   Portfolio
                 </a>
               </div>
