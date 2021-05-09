@@ -4,8 +4,8 @@ class Api::SearchController < ApplicationController
     def index
         # debugger
 
-        @tracks = Track.where("title LIKE ?", "%#{params[:entity]}%")
-        @artists = User.where("username LIKE ?", "%#{params[:entity]}%")
+        @tracks = Track.where("LOWER(title) LIKE ?", "%#{params[:entity].downcase}%")
+        @artists = User.where("LOWER(username) LIKE ?", "%#{params[:entity].downcase}%")
 
         # debugger
         render :index
