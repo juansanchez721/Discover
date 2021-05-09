@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import SearchBar from "./searchbar"
 import { openModal, closeModal} from '../../actions/modal_actions';
-import { fetchSearchResults } from '../../actions/search_actions'
+import { fetchSearchResults, removeSearchResults } from '../../actions/search_actions'
 
 
 const mSTP = (state) => {
@@ -14,6 +14,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         fetchSearchResults: (entity) => dispatch(fetchSearchResults(entity)),
+        removeSearchResults: () => dispatch(removeSearchResults()),
         // openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal())
     }
