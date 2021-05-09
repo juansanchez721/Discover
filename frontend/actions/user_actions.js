@@ -40,6 +40,6 @@ export const fetchUsers = () => dispatch => {
 
 export const updateUser = (user, userId) => dispatch => {
     return UserUtil.updateUser(user, userId)
-    .then(user => dispatch(receiveUser(user)))
-    // .then(user => dispatch(receiveCurrentUser(user)))
+    // .then(user => dispatch(receiveUser(user)))
+    .then(user => dispatch(receiveCurrentUser(user)))
 }

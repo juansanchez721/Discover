@@ -121,7 +121,7 @@ class Header extends React.Component {
                   src="https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"
                 /> */}
 
-                <img src={this.props.currentUser.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
+                <img src={this.props.currentUser.image_url || "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"}/>
               </div>
 
               <span className="cut-off-username" >{this.props.currentUser.username}</span>
