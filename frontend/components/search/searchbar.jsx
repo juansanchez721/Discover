@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom'
 class SearchBar extends React.Component {
 
   constructor(props){
@@ -34,9 +34,36 @@ class SearchBar extends React.Component {
 
   render() {
 
+    const { searchResults } = this.props
+
+    let trackResults = null
+    let artistResults = null
+
+    
+    if("tracks" in searchResults){
+      trackResults = Object.values(searchResults.tracks).map(track =>{
+        return <Link to={`/tracks/${track.id}`} >
+        <div className="search-result">
+         <p>{track.title}</p> <i className="fas fa-sliders-h"></i>
+        </div>
+        </Link> 
+      })
+    }
+    if("artists" in searchResults){
+      artistResults = Object.values(searchResults.artists).map(artist =>{
+        return <Link to={`/users/${artist.id}`} >
+        <div className="search-result">
+          <p>{artist.username}</p> <i className="fas fa-user"></i>
+        </div>
+        </Link>
+      })
+    }
+
+
     let searchDD = this.state.search ?
     <div className="search-drop-down">
-
+      {trackResults}
+      {artistResults}
     </div> 
     :
      null
