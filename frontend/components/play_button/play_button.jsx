@@ -23,12 +23,12 @@ class PlayButton extends React.Component {
       audio.play();
       this.props.playSong(this.props.track);
     } else if (this.props.currentTrack) {
-      debugger;
+      // debugger;
       let audio = document.getElementById("audio");
       audio.play();
       this.props.playNewSong(this.props.track);
     } else {
-      debugger;
+      // debugger;
       this.props.playSong(this.props.track);
     }
   }

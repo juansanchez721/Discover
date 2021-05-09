@@ -20,12 +20,12 @@ import {
 } from "../actions/playbar_actions";
 
 const playbarReducer = (state = defaultArg, action) => {
-  debugger
+  // debugger
   let newState = Object.assign({}, state);
   switch (action.type) {
     case PLAY_SONG:
       let splitHere = newState.staticQueue.indexOf(action.song.id)
-      debugger
+      // debugger
       newState.currentTrack = action.song;
       newState.pageQueue = state.staticQueue.slice(splitHere+1)
       newState.played = state.staticQueue.slice(0, splitHere)
@@ -34,7 +34,7 @@ const playbarReducer = (state = defaultArg, action) => {
 
     case PLAY_NEW_SONG:
 
-      debugger
+      // debugger
       let splitHere2 = newState.staticQueue.indexOf(action.track.id)
       newState.currentTrack = action.track;
       newState.pageQueue = state.staticQueue.slice(splitHere2+1)
@@ -46,7 +46,7 @@ const playbarReducer = (state = defaultArg, action) => {
       return newState;
 
     case PLAY_QUEUE_SONG:
-      debugger
+      // debugger
         // newState.played
         newState.currentTrack = Object.values(action.track)[0];
       return newState
@@ -78,7 +78,7 @@ const playbarReducer = (state = defaultArg, action) => {
         return newState
 
     case QUEUE_PAGE_SONG:
-      debugger
+      // debugger
       newState.staticQueue.push(action.trackId)
       newState.pageQueue.push(action.trackId);
       return newState

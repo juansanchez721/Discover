@@ -38,7 +38,7 @@ export const playQueueSong = (track) => {
 }
 
 export const queuePageSong = (trackId) => {
-    debugger
+    // debugger
     return {
         type: QUEUE_PAGE_SONG,
         trackId    
@@ -46,7 +46,7 @@ export const queuePageSong = (trackId) => {
 }
 
 export const clearPageQueue = () => {
-    debugger
+    // debugger
     return {
         type: CLEAR_PAGE_QUEUE,   
     }

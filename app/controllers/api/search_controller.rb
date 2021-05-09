@@ -2,12 +2,13 @@ class Api::SearchController < ApplicationController
 
 
     def index
-        @tracks = Track.where("title LIKE ?", "%#{search_params[:entity]}%")
+        # debugger
+
+        @tracks = Track.where("title LIKE ?", "%#{params[:entity]}%")
+        @artists = User.where("username LIKE ?", "%#{params[:entity]}%")
+
+        # debugger
         render :index
     end
 
-
-    def search_params
-        params.require(:search).permit(:entity)
-    end
 end
