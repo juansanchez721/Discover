@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import { debounce } from 'lodash'
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -8,7 +9,7 @@ class SearchBar extends React.Component {
       searchDD: false,
     };
 
-    this.search = this.search.bind(this);
+    this.search = debounce(this.search.bind(this), 300);
     this.update = this.update.bind(this);
     this.handleDropDown = this.handleDropDown.bind(this);
     this.handleSelectionClick = this.handleSelectionClick.bind(this)
@@ -38,9 +39,9 @@ class SearchBar extends React.Component {
       search: e.target.value,
     });
 
-    setTimeout(() => {
+    // debounce(() => {
       this.search();
-    }, 100);
+    // }, 1000);
   }
 
   search() {
