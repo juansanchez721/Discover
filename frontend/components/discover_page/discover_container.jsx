@@ -11,7 +11,7 @@ const mstp = (state) => {
     return {
         currentUser: state.session,
         likes: Object.values(state.entities.likes),
-        tracks: asArray(state.entities).reverse(),
+        tracks: asArray(state.entities),
         users: state.entities.users,
         currentPlayingTrack: state.ui.playbar.currentTrack,
         // pageQueue: Object.keys(state.entities.tracks)

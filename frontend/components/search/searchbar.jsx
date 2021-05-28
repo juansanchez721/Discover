@@ -113,6 +113,8 @@ class SearchBar extends React.Component {
       return (
         <div className="nav-search">
           <input
+          type="search"
+          autoComplete="off"
           id="minisearch"
             className="minisearch"
             value={this.state.search}

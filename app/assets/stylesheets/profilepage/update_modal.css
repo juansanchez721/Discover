@@ -35,3 +35,17 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.edit-modal-buttons button  {
+    padding: 5px 10px;
+    border: none;
+    margin-left: 5px;
+    border-radius: 3px;
+    background-color: #FE5000;
+    color: white;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.edit-modal textarea {
+    resize:none ;
+}

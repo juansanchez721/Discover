@@ -82,7 +82,9 @@ class EditModal extends React.Component {
              <input onChange={this.update('lastName')} value={this.state.lastName}/>
 
             <label>Bio</label>
-             <input onChange={this.update('bio')} value={this.state.bio} />
+            <textarea onChange={this.update('bio')} value={this.state.bio} rows="4" cols="20"/>
+
+             {/* <input onChange={this.update('bio')} value={this.state.bio} /> */}
             <div className="edit-modal-buttons" >
 
              <button onClick={this.props.closeModal } >cancel</button>
