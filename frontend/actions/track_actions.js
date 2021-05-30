@@ -5,9 +5,10 @@ export const RECEIVE_TRACK = "RECEIVE_TRACK"
 export const REMOVE_TRACK = "REMOVE_TRACK"
 
 
-export const receiveTracks = (tracks) => ({
+export const receiveTracks = ({tracks, pageTracks}) => ({
     type: RECEIVE_ALL_TRACKS,
-    tracks
+    tracks,
+    pageTracks
 })
 export const receiveTrack = (track) => ({
     type: RECEIVE_TRACK,

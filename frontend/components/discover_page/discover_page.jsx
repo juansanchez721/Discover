@@ -10,7 +10,7 @@ class DiscoverPage extends React.Component {
     this.state = {
       loaded: true
     }
-    this.props.clearPageQueue()
+    // this.props.clearPageQueue()
     // this.handleCarousel = this.handleCarousel.bind(this)
 
   }
@@ -36,6 +36,7 @@ class DiscoverPage extends React.Component {
 
   render() {
 
+    // console.log(Object.keys(this.props.tracks).length)
     
     if (this.state.loaded) {
       return (
@@ -47,7 +48,7 @@ class DiscoverPage extends React.Component {
 
     let songListSongs = [];
     let trackssecond = this.props.tracks.map((track, i) => {
-      if(i >= 12){
+      if(i >= 16){
 
        return <DiscoverPageItem
 
@@ -58,13 +59,13 @@ class DiscoverPage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         currentTrack = {this.props.currentPlayingTrack || null}
-        queueSong={this.props.queuePageSong}
+        // queueSong={this.props.queuePageSong}
         />
       }
     })
     
     let tracksfirst = this.props.tracks.map((track, i) => {
-      if(i < 6){
+      if(i < 9){
 
        return <DiscoverPageItem
         owner={this.props.users[track.owner_id]}
@@ -74,10 +75,10 @@ class DiscoverPage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         currentTrack = {this.props.currentPlayingTrack || null}
-        queueSong={this.props.queuePageSong}
+        // queueSong={this.props.queuePageSong}
 
         />
-      } else if( i < 12) {
+      } else if( i < 16) {
         songListSongs.push(track)
       }
 
@@ -155,7 +156,7 @@ class DiscoverPage extends React.Component {
                   currentUser={this.props.currentUser}
                   currentTrack = {this.props.currentPlayingTrack || null}
                   tracks={songListSongs}
-                  queueSong={this.props.queuePageSong}
+                  // queueSong={this.props.queuePageSong}
                   currentTrack = {this.props.currentPlayingTrack || null}
 
                 />

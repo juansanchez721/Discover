@@ -13,7 +13,7 @@ const SongList = ({ currentUser, tracks, deleteLike, createLike, queueSong, curr
     deleteLike={deleteLike}
     liked={track.likers.includes(currentUser.id)}
     track={track} 
-    queueSong={queueSong}
+    // queueSong={queueSong}
     />;
   });
   return (

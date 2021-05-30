@@ -3,10 +3,11 @@ import {RECEIVE_ALL_TRACKS, RECEIVE_TRACK, REMOVE_TRACK } from '../actions/track
 
 const tracksReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
+    // debugger
     let newState = Object.assign({}, oldState)
     switch (action.type) {
         case RECEIVE_ALL_TRACKS:
-            
+            debugger
             return action.tracks
         case ADD_LIKE:
         case REMOVE_LIKE:

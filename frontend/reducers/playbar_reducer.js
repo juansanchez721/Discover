@@ -18,6 +18,7 @@ import {
   PAUSE_SONG,
   PLAY_QUEUE_SONG
 } from "../actions/playbar_actions";
+import { RECEIVE_ALL_TRACKS } from "../actions/track_actions";
 
 const playbarReducer = (state = defaultArg, action) => {
   // debugger
@@ -77,10 +78,10 @@ const playbarReducer = (state = defaultArg, action) => {
       newState.userQueue.push(action.trackId);
         return newState
 
-    case QUEUE_PAGE_SONG:
-      // debugger
-      newState.staticQueue.push(action.trackId)
-      newState.pageQueue.push(action.trackId);
+    case RECEIVE_ALL_TRACKS:
+      debugger
+      newState.staticQueue = Object.values(action.pageTracks)
+      newState.pageQueue = Object.values(action.pageTracks);
       return newState
     case CLEAR_PAGE_QUEUE:
       newState.played = []

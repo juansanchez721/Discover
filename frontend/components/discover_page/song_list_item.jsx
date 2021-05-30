@@ -8,7 +8,7 @@ class SongListItem extends React.Component {
     super(props);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleLike = this.handleLike.bind(this);
-    this.props.queueSong(this.props.track.id)
+    // this.props.queueSong(this.props.track.id)
 
   }
 

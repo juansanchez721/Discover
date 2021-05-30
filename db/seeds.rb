@@ -64,7 +64,7 @@ jaycritch = User.create!(username: "Jay Critch", email: "jay@critch.com", passwo
 jaycritch_photo = open("https://discover-aa-seeds.s3.amazonaws.com/jaycritch.jpg")
 jaycritch.photo.attach(io: jaycritch_photo, filename: 'jaycritch.jpg')
 
-demo_user = User.create!(username:"demouser", email: "demouser@test.com", password: "demopassword", age: 18, gender: "NA", bio: "Click the edit button above to change this bio or profile picture")
+demouser = User.create!(username:"demouser", email: "demouser@test.com", password: "demopassword", age: 18, gender: "NA", bio: "Click the edit button above to change this bio or profile picture")
 
 stargazing = Track.create!(title: "STARGAZING", owner_id: travis.id, description: "ASTROWORLD")
 stargazing_photo = open('https://discover-aa-seeds.s3.amazonaws.com/astro.jpg')
@@ -87,7 +87,7 @@ vete_song = open("https://discover-aa-seeds.s3.amazonaws.com/Vete.mp3")
 vete.track.attach(io: vete_song, filename: "Vete.mp3")
 
 
-dontstopmusic = Track.create!(title: "Umbrella", owner_id: rihanna.id, description: "")
+dontstopmusic = Track.create!(title: "Don't Stop the Music", owner_id: rihanna.id, description: "")
 dontstopmusic_photo = open('https://discover-aa-seeds.s3.amazonaws.com/rihannagoodgirlgonebad.jpg')
 dontstopmusic.photo.attach(io: dontstopmusic_photo, filename: 'rihannagoodgirlgonebad.jpg')
 dontstopmusic_song = open("https://discover-aa-seeds.s3.amazonaws.com/Don't+Stop+The+Music.mp3")
@@ -174,7 +174,7 @@ weAre.track.attach(io: weAre_song, filename: "We+R+Who+We+R.mp3")
 
 lovegalore = Track.create!(title: "Love Galore", owner_id: sza.id, description: "")
 lovegalore_photo = open('https://discover-aa-seeds.s3.amazonaws.com/CTRL.jpg')
-theweekend.photo.attach(io: lovegalore_photo, filename: 'CTRL.jpg')
+lovegalore.photo.attach(io: lovegalore_photo, filename: 'CTRL.jpg')
 lovegalore_song = open("https://discover-aa-seeds.s3.amazonaws.com/Love+Galore+-+SZA.mp3")
 lovegalore.track.attach(io: lovegalore_song, filename: "Love+Galore+-+SZA.mp3")
 
@@ -256,7 +256,6 @@ Follow.create!(followee_id: bbunny.id, follower_id: cudi.id)
 Follow.create!(followee_id: bbunny.id, follower_id: jaycritch.id)
 Follow.create!(followee_id: bbunny.id, follower_id: nav.id)
 Follow.create!(followee_id: bbunny.id, follower_id: sza.id)
-Follow.create!(followee_id: rihanna.id, follower_id: sza.id)
 
 Follow.create!(followee_id: cudi.id, follower_id: jaycritch.id)
 Follow.create!(followee_id: cudi.id, follower_id: playboi.id)
@@ -278,7 +277,7 @@ Follow.create!(followee_id: jaycritch.id, follower_id: nav.id)
 
 Follow.create!(followee_id: rihanna.id, follower_id: travis.id)
 Follow.create!(followee_id: rihanna.id, follower_id: curry.id)
-Follow.create!(followee_id: rihanna.id, follower_id: weef.id)
+Follow.create!(followee_id: rihanna.id, follower_id: wifisfuneral.id)
 Follow.create!(followee_id: rihanna.id, follower_id: sza.id)
 Follow.create!(followee_id: rihanna.id, follower_id: kesha.id)
 Follow.create!(followee_id: rihanna.id, follower_id: bbunny.id)
@@ -332,10 +331,10 @@ Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:nav.id)
 Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:travis.id)
 Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:playboi.id)
 
-Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:sza.id)
 Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:rihanna.id)
 Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:kesha.id)
 Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:jaycritch.id)
+Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:sza.id)
 Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:nav.id)
 Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:travis.id)
 Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:playboi.id)
@@ -368,7 +367,7 @@ Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id:playboi.id)
 Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id:amine.id)
 Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id: jaycritch.id)
 Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id:sza.id)
-Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id: amine.id)
+Like.create!(likeable_type: "Track", likeable_id: vete.id, liker_id: rihanna.id)
 
 
 Like.create!(likeable_type: "Track", likeable_id: reelitin.id, liker_id:nav.id)
@@ -415,16 +414,16 @@ Like.create!(likeable_type: "Track", likeable_id: rudeboy.id, liker_id:nav.id)
 Like.create!(likeable_type: "Track", likeable_id: rudeboy.id, liker_id:wifisfuneral.id)
 Like.create!(likeable_type: "Track", likeable_id: rudeboy.id, liker_id: amine.id)
 
-Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:wifisfuneral.id)
-Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:travis.id)
-Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:playboi.id)
-Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:sza.id)
-Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id: amine.id)
+# Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:wifisfuneral.id)
+# Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:travis.id)
+# Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:playboi.id)
+# Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id:sza.id)
+# Like.create!(likeable_type: "Track", likeable_id: daynite.id, liker_id: amine.id)
 
-Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:rihanna.id)
-Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:nav.id)
-Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:bbunny.id)
-Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id: amine.id)
+# Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:rihanna.id)
+# Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:nav.id)
+# Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id:bbunny.id)
+# Like.create!(likeable_type: "Track", likeable_id: pursuit.id, liker_id: amine.id)
 
 Like.create!(likeable_type: "Track", likeable_id: tiktok.id, liker_id:wifisfuneral.id)
 Like.create!(likeable_type: "Track", likeable_id: tiktok.id, liker_id: amine.id)
@@ -466,3 +465,18 @@ Comment.create!(body:"rip the woo" , track_id: showout.id, commenter_id:travis.i
 
 # Comment.create!(body: , track_id: reelitin.id, commenter_id:)
 # Comment.create!(body: , track_id: speedboat.id, commenter_id:)
+
+Track.all.each_with_index do |track, ind|
+
+    if ind % 2 !== 0
+        Like.create!(likeable_type: "Track", likeable_id: track.id, liker_id: demouser.id)
+    end
+end
+
+User.all.each do |user|
+
+    if user.id !== demouser.id
+          Follow.create!(followee_id: user.id, follower_id: demouser.id)
+    end
+
+end

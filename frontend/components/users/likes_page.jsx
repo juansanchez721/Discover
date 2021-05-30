@@ -10,7 +10,7 @@ class LikesPage extends React.Component {
     this.state = {
       loaded: true,
     };
-    this.props.clearPageQueue()
+    // this.props.clearPageQueue()
   }
 
 
@@ -46,7 +46,7 @@ class LikesPage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.currentUser.id === parseInt(this.props.userId)? this.props.deleteLike : this.props.deleteOtherUserLike }
         currentTrack = {this.props.currentPlayingTrack || null}
-        queueSong={this.props.queuePageSong}
+        // queueSong={this.props.queuePageSong}
 
         />
         ));
@@ -59,7 +59,7 @@ class LikesPage extends React.Component {
           createLike={this.props.createLike}
           deleteLike={this.props.currentUser.id === parseInt(this.props.userId)? this.props.deleteLike : this.props.deleteOtherUserLike }
           currentTrack = {this.props.currentPlayingTrack || null}
-          queueSong={this.props.queuePageSong}
+          // queueSong={this.props.queuePageSong}
 
           />
         ))

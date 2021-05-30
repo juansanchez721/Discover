@@ -10,7 +10,7 @@ class ProfilePage extends React.Component {
     this.state = {
       loaded: true,
     };
-    this.props.clearPageQueue()
+    // this.props.clearPageQueue()
   }
 
   componentDidMount() {
@@ -66,7 +66,7 @@ class ProfilePage extends React.Component {
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
         queueSong={this.props.queueSong}
-        queuePageSong={this.props.queuePageSong}
+        // queuePageSong={this.props.queuePageSong}
         currentTrack = {this.props.currentPlayingTrack || null}
       />
     ));
@@ -139,7 +139,7 @@ let followButton = ( this.props.currentUser.follows.includes(this.props.user.id)
             {/* <div className="actual-tracks"> */}
 
             <h3>Recent</h3>
-            { tracks.length ? tracks.reverse() : <h1>Upload your sounds now.</h1>}
+            { tracks.length ? tracks : <h1>Upload your sounds now.</h1>}
             {/* </div> */}
             {/* <ProfileTracksContainer /> */}
           </div>
