@@ -7,9 +7,10 @@ export const RECEIVE_LIKED_TRACKS ="RECEIVE_LIKED_TRACKS"
 export const REMOVE_LIKE ="REMOVE_LIKE"
 export const ADD_LIKE ="ADD_LIKE"
 
-const receiveLikedTracks = tracks => ({
+const receiveLikedTracks = ({tracks, pageTracks}) => ({
     type: RECEIVE_LIKED_TRACKS,
-    tracks
+    tracks,
+    pageTracks
 })
 
 const receiveLikedTrack = track => ({

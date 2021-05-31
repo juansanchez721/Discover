@@ -30,7 +30,7 @@ class DiscoverPage extends React.Component {
     this.props
       .fetchUsers()
       .then(this.props.fetchTracks())
-      .then(this.props.fetchTrackLikes(this.props.currentUser.id))
+      // .then(this.props.fetchTrackLikes(this.props.currentUser.id))
       .then(() => this.setState({loaded: false}) )
   }
 

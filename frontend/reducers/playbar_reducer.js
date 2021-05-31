@@ -7,6 +7,7 @@ const defaultArg = Object({
   userQueue: []
 });
 
+import { RECEIVE_LIKED_TRACKS } from "../actions/like_actions";
 import {
   PLAY_SONG,
   PLAY_NEW_SONG,
@@ -77,6 +78,12 @@ const playbarReducer = (state = defaultArg, action) => {
     case QUEUE_SONG:
       newState.userQueue.push(action.trackId);
         return newState
+
+    case RECEIVE_LIKED_TRACKS:
+      debugger
+      newState.staticQueue = Object.values(action.pageTracks).reverse()
+      newState.pageQueue = Object.values(action.pageTracks).reverse();
+      return newState
 
     case RECEIVE_ALL_TRACKS:
       debugger

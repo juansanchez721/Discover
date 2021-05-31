@@ -20,7 +20,7 @@ class ProfilePage extends React.Component {
       .then(() =>
         this.props.fetchSingleUserTracks(this.props.match.params.userId)
       )
-      .then(()=> this.props.fetchTrackLikes(this.props.match.params.userId) )
+      // .then(()=> this.props.fetchTrackLikes(this.props.match.params.userId) )
       .then(()=> this.props.fetchUserComments(this.props.match.params.userId) )
       .then(() => this.props.fetchUserFollows(this.props.match.params.userId) )
       .then(() => this.setState({ loaded: false }));
@@ -31,7 +31,7 @@ class ProfilePage extends React.Component {
       this.props
         .fetchSingleUserTracks(this.props.match.params.userId)
         .then(this.props.fetchUser(this.props.match.params.userId))
-        .then(()=> this.props.fetchTrackLikes(this.props.match.params.userId) )
+        // .then(()=> this.props.fetchTrackLikes(this.props.match.params.userId) )
         .then(()=> this.props.fetchUserComments(this.props.match.params.userId) )
         .then(() => this.props.fetchUserFollows(this.props.match.params.userId) )
 

@@ -8,7 +8,7 @@ import {asArray, asArrayUsers} from '../../reducers/selector'
 
 const mSTP = (state, ownProps) => {
     return {
-        likedTracks: state.entities.likes,
+        likedTracks: Object.values(state.entities.likes),
         currentUser: state.session,
         currentPlayingTrack: state.ui.playbar.currentTrack,
     }

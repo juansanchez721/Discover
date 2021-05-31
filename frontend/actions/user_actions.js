@@ -6,10 +6,11 @@ export const RECEIVE_USER = "RECEIVE_USER"
 export const RECEIVE_TWO_USERS = "RECEIVE_TWO_USERS"
 
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS"
-const receiveUser = (user) => {
+const receiveUser = ({user, userLikes}) => {
     return {
         type: RECEIVE_USER,
-        user
+        user,
+        userLikes
     }
 }
 

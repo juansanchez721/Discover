@@ -23,7 +23,7 @@ class LikesPage extends React.Component {
   render() {
     const { likedTracks } = this.props;
     if (this.state.loaded) return null;
-    if (Object.values(likedTracks).length ===0 ){
+    if (likedTracks.length ===0 ){
       return <div className="empty-message">
         <span>
 
@@ -38,7 +38,7 @@ class LikesPage extends React.Component {
     let likeTracks = null;
     if(parseInt(this.props.userId) === this.props.currentUser.id){
 
-      likeTracks = Object.values(likedTracks).sort((a,b) => new Date(b.like_created_at) - new Date(a.like_created_at)).map((track) => (
+      likeTracks = likedTracks.sort((a,b) => new Date(b.like_created_at) - new Date(a.like_created_at)).map((track) => (
         <DiscoverPageItem
         key={track.id}
         track={track}
@@ -51,7 +51,7 @@ class LikesPage extends React.Component {
         />
         ));
       } else {
-        likeTracks = Object.values(likedTracks).map((track) => (
+        likeTracks = likedTracks.map((track) => (
           <DiscoverPageItem
           key={track.id}
           track={track}
@@ -67,7 +67,7 @@ class LikesPage extends React.Component {
 
     return (
       <div className="likes-container">
-        <div className="likes-inner">{likeTracks}</div>
+        <div className="likes-inner">{ parseInt(this.props.userId) === this.props.currentUser.id ? likeTracks : likeTracks.reverse()}</div>
       </div>
     );
   }

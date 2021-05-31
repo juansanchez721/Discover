@@ -1,11 +1,12 @@
 class Api::LikesController < ApplicationController
 
     def index 
-
+        @userBool = false
         if params.has_key?(:track_id)
             @likes = Like.where(likeable_id: params[:track_id])
         
         elsif params.has_key?(:user_id)
+            @userBool = true
             @likes = Like.where(liker_id: params[:user_id])
         else
             @likes = Like.all
