@@ -1,3 +1,4 @@
+import { ADD_LIKE } from '../actions/like_actions';
 import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_EMAIL_RESPONSE}  from '../actions/session_actions'
 import { RECEIVE_TWO_USERS } from '../actions/user_actions'
 
@@ -13,12 +14,15 @@ const sessionReducer = (oldstate = defaultArg, action) => {
                 const newState = Object.assign({}, oldstate);
                 newState['follows'] = action.users[oldstate.id].follows
             return newState
+            // case ADD_LIKE:
         case RECEIVE_CURRENT_USER:
-            return { id: action.currentUser.id,
-                    username: action.currentUser.username,
-                    trackLikes: action.currentUser.trackLikes,
-                    follows: action.currentUser.follows,
-                    image_url: action.currentUser.image_url
+            // debugger
+            return { id: action.user.id,
+                    username: action.user.username,
+                    track_likes: action.user.track_likes,
+                    follows: action.user.follows,
+                    image_url: action.user.image_url,
+                    topThreeLikes: action.userLikes
                 }
         case LOGOUT_CURRENT_USER:
             return defaultArg

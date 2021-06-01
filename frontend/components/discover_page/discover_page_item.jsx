@@ -11,8 +11,10 @@ class DiscoverPageItem extends React.Component {
   }
 
   handleLike() {
+    
     if (this.props.liked) {
       this.props.deleteLike(this.props.track.id);
+    
     } else {
       this.props.createLike(this.props.track.id);
     }

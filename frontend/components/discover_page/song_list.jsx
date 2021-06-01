@@ -11,7 +11,7 @@ const SongList = ({ currentUser, tracks, deleteLike, createLike, queueSong, curr
     key={track.id} 
     createLike={createLike}
     deleteLike={deleteLike}
-    liked={track.likers.includes(currentUser.id)}
+    liked={currentUser.track_likes.includes(track.id)}
     track={track} 
     // queueSong={queueSong}
     />;

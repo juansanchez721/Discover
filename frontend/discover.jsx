@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     username: window.currentUser.username,
                     track_likes: window.currentUser.track_likes,
                     follows: window.currentUser.follows,
-                    image_url: window.currentUser.image_url
+                    image_url: window.currentUser.image_url,
+                    topThreeLikes: window.currentUser.userLikes
                 },
         };
         store = configureStore(preloadedState);

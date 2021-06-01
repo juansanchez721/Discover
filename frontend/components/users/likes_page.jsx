@@ -21,7 +21,7 @@ class LikesPage extends React.Component {
   }
 
   render() {
-    const { likedTracks } = this.props;
+    const { likedTracks, currentUser } = this.props;
     if (this.state.loaded) return null;
     if (likedTracks.length ===0 ){
       return <div className="empty-message">
@@ -42,10 +42,11 @@ class LikesPage extends React.Component {
         <DiscoverPageItem
         key={track.id}
         track={track}
-        liked={track.likers.includes(this.props.currentUser.id)}
+        liked={track.likers.includes(currentUser.id)}
         createLike={this.props.createLike}
-        deleteLike={this.props.currentUser.id === parseInt(this.props.userId)? this.props.deleteLike : this.props.deleteOtherUserLike }
+        deleteLike={ this.props.deleteAndRemoveLike }
         currentTrack = {this.props.currentPlayingTrack || null}
+        profileBool={"Profile"}
         // queueSong={this.props.queuePageSong}
 
         />
@@ -55,12 +56,12 @@ class LikesPage extends React.Component {
           <DiscoverPageItem
           key={track.id}
           track={track}
-          liked={track.likers.includes(this.props.currentUser.id)}
+          liked={track.likers.includes(currentUser.id)}
           createLike={this.props.createLike}
-          deleteLike={this.props.currentUser.id === parseInt(this.props.userId)? this.props.deleteLike : this.props.deleteOtherUserLike }
+          deleteLike={this.props.deleteLike}
           currentTrack = {this.props.currentPlayingTrack || null}
           // queueSong={this.props.queuePageSong}
-
+          profileBool={"Profile"}
           />
         ))
       }

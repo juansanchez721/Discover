@@ -23,36 +23,49 @@ const removeLikedTrack = track => ({
     track
 })
 
-export const createLike = trackId => dispatch => {
-    return LikeUtil.createLike(trackId)
-    .then((track) => dispatch(receiveTrack(track)))
+export const createLike = (trackId, location) => dispatch => {
+    if (location === "Profile"){
+        return LikeUtil.createLike(trackId, location)
+        .then((track) => dispatch(receiveTrack(track)))
+    } else {
+
+        return LikeUtil.createLike(trackId, location)
+        // .then((track) => dispatch(receiveTrack(track)))
+        .then(({user, userLikes}) => dispatch(receiveCurrentUser({user, userLikes})))
+    }
+
     // .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentUser
 }
 
-export const deleteLike = trackId => dispatch => {
-    return LikeUtil.deleteLike(trackId)
-    .then((track) => dispatch(receiveTrack(track)))
-    // .then((track) => dispatch(removeLikedTrack(track))) // needed for currentuserlikespage
+export const deleteLike = (trackId, location) => dispatch => {
+    if (location === "Profile"){
+        return LikeUtil.deleteLike(trackId, location)
+        .then((track) => dispatch(receiveTrack(track)))
+    } else {
 
+        return LikeUtil.deleteLike(trackId, location)
+        // .then((track) => dispatch(receiveTrack(track)))
+        .then(({user, userLikes}) => dispatch(receiveCurrentUser({user, userLikes})))
+    }
 }
 
-export const createCurrentUserLike = trackId => dispatch => {
-    return LikeUtil.createLike(trackId)
+export const createCurrentUserLike = (trackId, location) => dispatch => {
+    return LikeUtil.createLike(trackId, location)
+    // .then(({user, userLikes}) => dispatch(receiveCurrentUser({user,userLikes})))
+    .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentUser
+}
+
+export const deleteCurrentUserLike = (trackId, location)  => dispatch => {
+    return LikeUtil.deleteLike(trackId, location)
     .then((track) => dispatch(receiveLikedTrack(track)))
-    // .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentUser
+    // .then(({user, userLikes}) => dispatch(receiveCurrentUser({user,userLikes})))
+
 }
 
-export const deleteCurrentUserLike = trackId => dispatch => {
-    return LikeUtil.deleteLike(trackId)
+export const deleteAndRemoveLike = (trackId, location) => dispatch => {
+    return LikeUtil.deleteLike(trackId, location)
     // .then((track) => dispatch(receiveTrack(track)))
     .then((track) => dispatch(removeLikedTrack(track))) // needed for currentuserlikespage
-
-}
-
-export const deleteOtherUserLike = trackId => dispatch => {
-    return LikeUtil.deleteLike(trackId)
-    // .then((track) => dispatch(receiveTrack(track)))
-    .then((track) => dispatch(receiveLikedTrack(track))) // needed for currentuserlikespage
 
 }
 

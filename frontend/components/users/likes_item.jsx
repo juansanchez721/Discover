@@ -15,7 +15,7 @@ const LikesItem = ({ track }) => {
             </h2>
             <span className="like-item-info-span" >
 
-            {/* <p><i className="fas fa-heart"></i>{ " " + track.likers.length + " "}</p> */}
+            <p><i className="fas fa-heart"></i>{ " " + track.likers.length + " "}</p>
             <p><i className="fas fa-comment-alt"></i> { " " + track.comment_count + " "}</p>
             </span>
         </div>

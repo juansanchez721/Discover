@@ -27,16 +27,14 @@ class DiscoverPage extends React.Component {
   // }
 
   componentDidMount() {
-    this.props
-      .fetchUsers()
-      .then(this.props.fetchTracks())
-      // .then(this.props.fetchTrackLikes(this.props.currentUser.id))
+    this.props.fetchCurrentUser(this.props.currentUser.id)
+    .then(() => this.props.fetchUsers())
+      .then(() => this.props.fetchTracks())
       .then(() => this.setState({loaded: false}) )
   }
 
   render() {
 
-    // console.log(Object.keys(this.props.tracks).length)
     
     if (this.state.loaded) {
       return (
@@ -54,7 +52,7 @@ class DiscoverPage extends React.Component {
 
         owner={this.props.users[track.owner_id]}
         key={track.id}
-        liked={track.likers.includes(this.props.currentUser.id)}
+        liked={this.props.currentUser.track_likes.includes(track.id)}
         track={track}
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
@@ -70,7 +68,7 @@ class DiscoverPage extends React.Component {
        return <DiscoverPageItem
         owner={this.props.users[track.owner_id]}
         key={track.id}
-        liked={track.likers.includes(this.props.currentUser.id)}
+        liked={this.props.currentUser.track_likes.includes(track.id)}
         track={track}
         createLike={this.props.createLike}
         deleteLike={this.props.deleteLike}
@@ -85,9 +83,7 @@ class DiscoverPage extends React.Component {
     }
     )
         
-
-    let likeitems = this.props.likes.length > 0 ?this.props.likes
-      .sort((a, b) => new Date(b.like_created_at) - new Date(a.like_created_at))
+    let likeitems = this.props.likes.length > 0 ? this.props.likes
       .map((like) => {
         return <LikesItem key={like.id} track={like} />;
       })
@@ -173,7 +169,7 @@ class DiscoverPage extends React.Component {
                 </p>
               </div>
               <div className="showing-songs">
-              <div className="inner-showing">{trackssecond}</div>
+              {/* <div className="inner-showing">{trackssecond}</div> */}
               </div>
               <br />
               <br />
@@ -211,15 +207,15 @@ class DiscoverPage extends React.Component {
                     <h1>
                       <i className="fas fa-heart"></i>
                       {}
-                      {likeitems.length ? " " + likeitems.length + " likes" : " 0 likes"}
+                      {this.props.currentUser.track_likes.length ? " " + this.props.currentUser.track_likes.length + " likes" : " 0 likes"}
                     </h1>
                     <p>View all</p>
                   </div>
                 </Link>
 
                 <div className="profile-likes">
-                  {likeitems}
-                  {/* {this.props.user.track_likes.length ? likeitems.reverse() : emptyMessage} */}
+                  {/* {likeitems} */}
+                  {this.props.likes.length ? likeitems.reverse() : likeitems}
                 </div>
               </div>
 

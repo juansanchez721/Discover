@@ -21,12 +21,12 @@ class ProfileTrackItem extends React.Component {
     // .then(() => this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> }))
     if (this.props.liked) {
       // alert('delete like')
-      this.props.deleteLike(this.props.track.id);
+      this.props.deleteLike(this.props.track.id, "Profile");
 
       //  this.setState({ button: <button onClick={() => alert('liked already')} > LIKED</button> })
     } else {
       // alert('add like')
-      this.props.createLike(this.props.track.id);
+      this.props.createLike(this.props.track.id, "Profile");
       //  this.setState({ button: <button onClick={() => this.likeTrack()} > {'<3'} {this.props.track.like_count} </button> })
     }
   }
@@ -99,12 +99,10 @@ class ProfileTrackItem extends React.Component {
 
     return (
       <div className="profile-track-item">
-        <img src={track.image_url || "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"}/>
-        {/* <img
-          src={
-            "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
-          }
-        /> */}
+        <img src={
+          track.image_url || 
+          "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
+          }/>
 
         <div className="track-info">
           <div className="track-info-text">

@@ -44,3 +44,8 @@ export const updateUser = (user, userId) => dispatch => {
     // .then(user => dispatch(receiveUser(user)))
     .then(user => dispatch(receiveCurrentUser(user)))
 }
+
+export const fetchCurrentUser = (userId) => dispatch => {
+    return UserUtil.fetchUser(userId)
+    .then(user => dispatch(receiveCurrentUser(user)))
+}

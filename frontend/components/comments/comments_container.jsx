@@ -21,8 +21,8 @@ const mDTP = dispatch => {
         deleteComment: commentId => dispatch(deleteComment(commentId)),
         follow: userId => dispatch(createFollow(userId)),
         unfollow: userId => dispatch(deleteFollow(userId)),
-        createLike: (trackId) => dispatch(createLike(trackId)),
-        deleteLike: (trackId) => dispatch(deleteLike(trackId)),
+        createLike: (trackId) => dispatch(createLike(trackId, "Profile")),
+        deleteLike: (trackId) => dispatch(deleteLike(trackId, "Profile")),
 
     }
 }

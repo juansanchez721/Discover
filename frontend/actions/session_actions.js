@@ -14,9 +14,10 @@ export const clearErrors = () => {
     }
   }
 
-export const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = ({user, userLikes}) => ({
         type: RECEIVE_CURRENT_USER,
-        currentUser
+        user,
+        userLikes
 })
 
 const logoutCurrentUser = () => ({
