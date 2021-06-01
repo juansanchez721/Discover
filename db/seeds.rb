@@ -468,14 +468,14 @@ Comment.create!(body:"rip the woo" , track_id: showout.id, commenter_id:travis.i
 
 Track.all.each_with_index do |track, ind|
 
-    if ind % 2 !== 0
+    if ind % 2 != 0
         Like.create!(likeable_type: "Track", likeable_id: track.id, liker_id: demouser.id)
     end
 end
 
 User.all.each do |user|
 
-    if user.id !== demouser.id
+    if user.id != demouser.id
           Follow.create!(followee_id: user.id, follower_id: demouser.id)
     end
 
