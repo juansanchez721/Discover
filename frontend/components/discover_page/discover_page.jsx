@@ -169,7 +169,7 @@ class DiscoverPage extends React.Component {
                 </p>
               </div>
               <div className="showing-songs">
-              {/* <div className="inner-showing">{trackssecond}</div> */}
+              <div className="inner-showing">{trackssecond}</div>
               </div>
               <br />
               <br />
