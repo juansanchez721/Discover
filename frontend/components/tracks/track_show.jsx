@@ -23,12 +23,12 @@ class TrackShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger
+    // debugger
     if (prevProps.songId !== this.props.songId) {
       this.props
         .fetchTrack(this.props.songId)
         .then((res) => {
-         debugger
+        //  debugger
           this.props.fetchUser(res.track[this.props.songId].owner_id)
         })
         

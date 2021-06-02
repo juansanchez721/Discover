@@ -20,6 +20,14 @@ class ProfileComments extends React.Component {
     this.props.fetchUserComments(this.props.match.params.userId)
 
     }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (parseInt(prevProps.match.params.userId) !== this.props.user.id) {
+    //         this.props.fetchUserComments(this.props.match.params.userId)
+    //     }
+    //   }
+    
     
     render(){
         let content = null
