@@ -23,11 +23,16 @@ class TrackShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    debugger
     if (prevProps.songId !== this.props.songId) {
       this.props
         .fetchTrack(this.props.songId)
-        .then(() => this.props.fetchUser(this.props.song.owner_id))
-        .then(() => this.props.fetchTrackComments(this.props.song.id));
+        .then((res) => {
+         debugger
+          this.props.fetchUser(res.track[this.props.songId].owner_id)
+        })
+        
+          .then(() => this.props.fetchTrackComments(this.props.song.id));
     }
   }
 
@@ -42,12 +47,12 @@ class TrackShow extends React.Component {
       );
     }
 
-    // if (
-    //   this.props.song === undefined ||
-    //   this.props.user === undefined
-    // ) {
-    //   return null;
-    // }
+    if (
+      this.props.song === undefined ||
+      this.props.user === undefined
+    ) {
+      return null;
+    }
 
     const { song, user, songId, currentPlayingTrack } = this.props
     return (
