@@ -4,11 +4,11 @@ class Api::SessionsController < ApplicationController
          
         @user = User.search(params[:word])
         if @user
-             
-            render json: ["Email taken already"], status: 401
+            #  debugger
+            render json: ["Taken already"], status: 401
              
         else
-             
+            #  debugger
             render json: ["Email Available"], status: 200
         end
          
