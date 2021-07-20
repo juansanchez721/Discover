@@ -36,24 +36,22 @@ const playbarReducer = (state = defaultArg, action) => {
 
     case PLAY_NEW_SONG:
 
-      // debugger
       let splitHere2 = newState.staticQueue.indexOf(action.track.id)
       newState.currentTrack = action.track;
       newState.pageQueue = state.staticQueue.slice(splitHere2+1)
       newState.played = state.staticQueue.slice(0, splitHere2)
-      // debugger
       // newState.played.push(state.currentTrack.id);
       newState.isPlaying = true;
       // newState.currentTrack = action.track;
       return newState;
 
     case PLAY_QUEUE_SONG:
-      // debugger
-        // newState.played
-        newState.currentTrack = Object.values(action.track)[0];
+
+      newState.currentTrack = Object.values(action.track)[0];
       return newState
 
     case PAUSE_SONG:
+  
       newState.isPlaying = false;
       return newState;
 
@@ -66,9 +64,8 @@ const playbarReducer = (state = defaultArg, action) => {
       return newState;
 
     case PLAY_PREV_SONG:
-      // debugger;
-      newState.isPlaying = true;
 
+      newState.isPlaying = true;
       //   newState.queue.unshift(parseInt(Object.keys(action.track)[0])); //remove song from queue
       newState.pageQueue.unshift(state.currentTrack.id);
       newState.played.pop(); //remove song from played
@@ -76,21 +73,24 @@ const playbarReducer = (state = defaultArg, action) => {
       return newState;
 
     case QUEUE_SONG:
+      
       newState.userQueue.push(action.trackId);
-        return newState
+      return newState
 
     case RECEIVE_LIKED_TRACKS:
-      debugger
+
       newState.staticQueue = Object.values(action.pageTracks).reverse()
       newState.pageQueue = Object.values(action.pageTracks).reverse();
       return newState
 
     case RECEIVE_ALL_TRACKS:
-      debugger
+
       newState.staticQueue = Object.values(action.pageTracks)
       newState.pageQueue = Object.values(action.pageTracks);
       return newState
+    
     case CLEAR_PAGE_QUEUE:
+    
       newState.played = []
       newState.pageQueue = []
       newState.staticQueue = []
