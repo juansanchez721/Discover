@@ -61,7 +61,7 @@ class EditModal extends React.Component {
             inp = <input className="replace-img" type="file" onChange={this.previewFile}/>
 
         } else {
-            preview = <img src={this.state.imageUrl} alt="Image preview..."/>;
+            preview = <img src={ "https://gp1.wac.edgecastcdn.net/802892/production_static/20201210093131/images/widgets/html5_audio/55/default_image.png"} alt="Image preview..."/>;
             inp = <input type="file" onChange={this.previewFile}/>
 
         }

@@ -34,13 +34,13 @@ class SongListItem extends React.Component {
   render() {
     return (
       <div className="song-list-item" onClick={() => this.handlePlay()}>
-          <div>
+          {/* <div> */}
               
         <h1>
           <span>{this.props.track.artist}</span>{" "}
           {" - " + this.props.track.title}
         </h1>
-        </div>
+        {/* </div> */}
         <div className="song-list-item-btn">
 
         <button

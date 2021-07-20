@@ -3,8 +3,6 @@ import ReactDOM from "react-dom"
 import configureStore from "./store/store"
 import Root from './components/root'
 import {signUp, login, logout, searchEmail} from './actions/session_actions'
-// import { searchEmail } from './util/session_api_util'
-import {fetchTracks} from './actions/track_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     
