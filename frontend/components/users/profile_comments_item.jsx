@@ -5,7 +5,7 @@ import Time from '../time/time'
 const ProfileCommentItem = ({comment}) => {
     return (
         <div className="profile-comments-item">
-            <div>
+            <div className = "title-and-date" >
 
             <p> on  
                 <span className="small-light-words" >
@@ -14,10 +14,10 @@ const ProfileCommentItem = ({comment}) => {
                 </Link>
                     </span> 
                 </p>
-            <p className="comment-body" >"{comment.body}"</p>
-            </div>
-            
             <Time time={comment.created_at} />
+            </div>
+            <p className="comment-body" >"{comment.body}"</p>
+            
         </div>
     )
 }

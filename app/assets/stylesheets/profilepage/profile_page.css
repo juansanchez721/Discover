@@ -381,12 +381,23 @@ font-size: 11px;
     box-sizing: border-box;
     /* margin-bottom: 5px; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     font-size: 12px;
 }
 
+.title-and-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .comment-body {
     font-size: 14px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
+    background-color: burlywood;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 95%;
 }
