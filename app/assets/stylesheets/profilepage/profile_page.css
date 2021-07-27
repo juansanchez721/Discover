@@ -392,10 +392,28 @@ font-size: 11px;
     justify-content: space-between;
 }
 
+.comment-track-link span {
+    margin-left: 5px;
+    /* width: 75%; */
+    height: fit-content;
+    /* background: burlywood; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.comment-track-link {
+    display: flex;
+    /* justify-content: space-between; */
+    /* background-color: lightgreen; */
+    width: 57%;
+    /* height: fit-content; */
+}
+
 .comment-body {
     font-size: 14px;
     /* margin-top: 5px; */
-    background-color: burlywood;
+    /* background-color: burlywood; */
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;

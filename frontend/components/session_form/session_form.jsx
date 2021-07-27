@@ -75,8 +75,15 @@ class SessionForm extends React.Component {
         gender: this.state.gender,
         age: this.state.age,
       })
-      .then(this.props.closeModal);
+      .then(this.props.closeModal)
+      // .then(() => {
+        // debugger
+      // })
+      // debugger
+      // this.setState({ warnings: "username taken"})
+      console.log(this.props.errors)
     // this.props.history.push
+    // return
   }
 
   handleEmail() {
@@ -118,7 +125,7 @@ class SessionForm extends React.Component {
         warnings: "Please enter a password (minimum 6 characters)",
       });
     
-    } else if (this.state.page === 1 && this.state.password.length > 6) {
+    } else if (this.state.page === 1 && this.state.password.length >= 6) {
       
       this.setState({ warnings: "" });
       this.changePage();
@@ -144,8 +151,13 @@ class SessionForm extends React.Component {
     else if (this.state.page === 3 && this.state.username === "") {
       this.setState({ warnings: "Please enter a valid Username." });
     } else if (this.state.page === 3 && this.props.formType === "signup") {
-      this.handleSubmitSignUp();
-      // .then(this.props.clearErrors)
+      // this.props.clearErrors()
+      this.handleSubmitSignUp()
+      .then(() => {
+        debugger
+      })
+      this.setState({ warnings : "Username Taken Already"})
+      
     }
   }
 
@@ -435,13 +447,20 @@ class SessionForm extends React.Component {
               <input
                 type="text"
                 className={
-                  this.props.errors.length > 0 ? "red-form-inputs" : "form-inputs"
+                  this.state.warning === "username taken" ? "red-form-inputs" : "form-inputs"
                 }
                 placeholder="Username"
                 value={this.state.username}
                 onChange={this.update("username")}
               />
-              <span>{this.props.errors[0]}</span>
+              <span>
+              {
+              // this.props.errors.length > 0
+                  // ? this.renderErrors()
+                  // : 
+                  this.state.warnings
+                  }
+                  </span>
               <p className="small-light-words">
                 Your display name can be anything you like. Your name or artist
                 name are good choices.
