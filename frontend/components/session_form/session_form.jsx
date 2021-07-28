@@ -76,15 +76,8 @@ class SessionForm extends React.Component {
         age: this.state.age,
       })
       .then(this.props.closeModal)
-      // .then(() => {
-        // debugger
-      // })
-      // debugger
-      // this.setState({ warnings: "username taken"})
-      console.log(this.props.errors)
-    // this.props.history.push
-    // return
-  }
+
+    }
 
   handleEmail() {
     this.setState({ warnings: null });
@@ -118,6 +111,8 @@ class SessionForm extends React.Component {
   }
 
   checkField() {
+
+    this.props.clearErrors();
     //Password validations
     if (this.state.page === 1 && this.state.password.length < 6) {
     
@@ -151,12 +146,12 @@ class SessionForm extends React.Component {
     else if (this.state.page === 3 && this.state.username === "") {
       this.setState({ warnings: "Please enter a valid Username." });
     } else if (this.state.page === 3 && this.props.formType === "signup") {
-      // this.props.clearErrors()
+      this.setState({ warnings: null });
+
       this.handleSubmitSignUp()
-      .then(() => {
-        debugger
-      })
-      this.setState({ warnings : "Username Taken Already"})
+      // .then(
+
+      // )
       
     }
   }
@@ -455,9 +450,9 @@ class SessionForm extends React.Component {
               />
               <span>
               {
-              // this.props.errors.length > 0
-                  // ? this.renderErrors()
-                  // : 
+              this.props.errors.length > 0
+                  ? this.renderErrors()
+                  : 
                   this.state.warnings
                   }
                   </span>
