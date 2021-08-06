@@ -75,9 +75,8 @@ class SessionForm extends React.Component {
         gender: this.state.gender,
         age: this.state.age,
       })
-      .then(this.props.closeModal)
-
-    }
+      .then(this.props.closeModal);
+  }
 
   handleEmail() {
     this.setState({ warnings: null });
@@ -111,22 +110,16 @@ class SessionForm extends React.Component {
   }
 
   checkField() {
-
     this.props.clearErrors();
     //Password validations
     if (this.state.page === 1 && this.state.password.length < 6) {
-    
       this.setState({
         warnings: "Please enter a password (minimum 6 characters)",
       });
-    
     } else if (this.state.page === 1 && this.state.password.length >= 6) {
-      
       this.setState({ warnings: "" });
       this.changePage();
-    
     } else if (this.state.page === 2) {
-
       let errorsArray = new Array(null, null);
       if (this.state.age < 18) {
         errorsArray[0] = "You must be 18 years or older.";
@@ -148,11 +141,10 @@ class SessionForm extends React.Component {
     } else if (this.state.page === 3 && this.props.formType === "signup") {
       this.setState({ warnings: null });
 
-      this.handleSubmitSignUp()
+      this.handleSubmitSignUp();
       // .then(
 
       // )
-      
     }
   }
 
@@ -167,7 +159,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     let formHeader;
 
     if (this.props.formType === "signup") {
@@ -184,9 +175,7 @@ class SessionForm extends React.Component {
       );
     }
 
-
     if (this.state.page === 0 && this.props.formType === "signup") {
-      
       return (
         <div className="form-container">
           <div className="form">
@@ -210,7 +199,9 @@ class SessionForm extends React.Component {
                   type="text"
                   placeholder="Your email address"
                   className={
-                    this.state.warnings || this.props.errors.length ? "red-form-inputs" : "form-inputs"
+                    this.state.warnings || this.props.errors.length
+                      ? "red-form-inputs"
+                      : "form-inputs"
                   }
                   value={this.state.email}
                   onChange={this.update("email")}
@@ -228,9 +219,7 @@ class SessionForm extends React.Component {
           </div>
         </div>
       );
-
     } else if (this.state.page === 0 && this.props.formType === "login") {
-     
       return (
         <div className="form-container">
           {/* <h1>Log in to Discover</h1> */}
@@ -282,7 +271,6 @@ class SessionForm extends React.Component {
           </div>
         </div>
       );
-
     } else if (this.state.page === 1 && this.props.formType === "login") {
       /// end of page 0
 
@@ -303,7 +291,9 @@ class SessionForm extends React.Component {
                 <input
                   type="text"
                   className={
-                    this.props.errors.length > 0 ? "red-form-inputs" : "form-inputs"
+                    this.props.errors.length > 0
+                      ? "red-form-inputs"
+                      : "form-inputs"
                   }
                   value={this.state.email}
                   onChange={this.update("email")}
@@ -317,7 +307,9 @@ class SessionForm extends React.Component {
                   type="password"
                   placeholder="Your Password"
                   className={
-                    this.props.errors.length > 0 ? "red-form-inputs" : "form-inputs"
+                    this.props.errors.length > 0
+                      ? "red-form-inputs"
+                      : "form-inputs"
                   }
                   value={this.state.password}
                   onChange={this.update("password")}
@@ -333,7 +325,6 @@ class SessionForm extends React.Component {
           </form>
         </div>
       );
-
     } else if (this.state.page === 1 && this.props.formType === "signup") {
       // end of page 1 for sign in
       return (
@@ -351,7 +342,8 @@ class SessionForm extends React.Component {
                   className="form-inputs"
                   value={this.state.email}
                   onChange={this.update("email")}
-                 disabled/>
+                  disabled
+                />
               </label>
 
               <br />
@@ -379,9 +371,7 @@ class SessionForm extends React.Component {
           </div>
         </div>
       );
-
     } else if (this.state.page === 2) {
-     
       return (
         <div className="form-container">
           <div className="login-form-box">
@@ -428,9 +418,7 @@ class SessionForm extends React.Component {
           </div>
         </div>
       );
-
     } else if (this.state.page === 3) {
-
       return (
         <div className="form-container">
           <div className="login-form-box">
@@ -442,20 +430,19 @@ class SessionForm extends React.Component {
               <input
                 type="text"
                 className={
-                  this.state.warning === "username taken" ? "red-form-inputs" : "form-inputs"
+                  this.state.warning === "username taken"
+                    ? "red-form-inputs"
+                    : "form-inputs"
                 }
                 placeholder="Username"
                 value={this.state.username}
                 onChange={this.update("username")}
               />
               <span>
-              {
-              this.props.errors.length > 0
+                {this.props.errors.length > 0
                   ? this.renderErrors()
-                  : 
-                  this.state.warnings
-                  }
-                  </span>
+                  : this.state.warnings}
+              </span>
               <p className="small-light-words">
                 Your display name can be anything you like. Your name or artist
                 name are good choices.
@@ -466,7 +453,6 @@ class SessionForm extends React.Component {
         </div>
       );
     }
-
   }
 }
 

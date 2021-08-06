@@ -63,4 +63,11 @@ class User < ApplicationRecord
             User.exists?(email: word)
     end
 
+    def self.search_method(entity)
+        # debugger
+        User
+        .where("LOWER(username) LIKE ?", "%#{entity.downcase}%")
+        .limit(4)
+    end
+
 end

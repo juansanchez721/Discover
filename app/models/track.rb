@@ -15,4 +15,13 @@ class Track < ApplicationRecord
 
     has_one_attached :photo
     has_one_attached :track
+
+
+    def self.search_method(entity)
+        Track
+        .where("LOWER(title) LIKE ?", "%#{entity.downcase}%")
+        .limit(4)
+
+    end
+
 end
