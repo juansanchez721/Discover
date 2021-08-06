@@ -4,10 +4,15 @@ class FollowersPage extends React.Component {
 
     constructor(props){
         super(props)
+
+        this.state = {
+            loaded: true
+        }
     }
 
     componentDidMount(){
         this.props.fetchUserFollows(this.props.userId)
+        .then(() => this.setState({ loaded: false}))
     }
 
 
@@ -16,6 +21,13 @@ class FollowersPage extends React.Component {
  
         
         let follows = null;
+
+        if(this.state.loaded) {
+            return <div className="loading-page">
+          <i className="fas fa-spinner loader"></i>
+        </div>
+    
+        }
 
         let currentUserBool = parseInt(this.props.userId) === this.props.currentUser.id
         switch (this.props.page) {

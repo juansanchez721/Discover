@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch
     // window.fetchTracks = fetchTracks;
     
-    window.signUp = signUp
-    window.login = login
-    window.logout = logout
+    // window.signUp = signUp
+    // window.login = login
+    // window.logout = logout
     const root = document.getElementById("root")
     ReactDOM.render(<Root store={store} />, root)
 

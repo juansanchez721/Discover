@@ -22,7 +22,11 @@ class LikesPage extends React.Component {
 
   render() {
     const { likedTracks, currentUser } = this.props;
-    if (this.state.loaded) return null;
+    if (this.state.loaded) {
+      return <div className="loading-page">
+          <i className="fas fa-spinner loader"></i>
+        </div>
+    }
     if (likedTracks.length ===0 ){
       return <div className="empty-message">
         <span>

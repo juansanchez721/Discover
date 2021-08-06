@@ -5,7 +5,7 @@ import { fetchSearchResults, removeSearchResults } from '../../actions/search_ac
 
 
 const mSTP = (state) => {
-    debugger
+    // debugger
     return {
         currentUser: state.session.username,
         searchResults: state.ui.search
@@ -13,7 +13,7 @@ const mSTP = (state) => {
 }
 
 const mDTP = (dispatch) => {
-    debugger
+    // debugger
     return {
         fetchSearchResults: (entity) => dispatch(fetchSearchResults(entity)),
         removeSearchResults: () => dispatch(removeSearchResults()),

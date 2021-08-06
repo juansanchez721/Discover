@@ -99,10 +99,12 @@ class ProfileTrackItem extends React.Component {
 
     return (
       <div className="profile-track-item">
+        <Link to={`/tracks/${track.id}`} >
         <img src={
           track.image_url || 
           "https://cdn.spindizzyrecords.com/uploads/2017/07/default-release-cd.png"
-          }/>
+        }/>
+        </Link>
 
         <div className="track-info">
           <div className="track-info-text">
@@ -115,7 +117,9 @@ class ProfileTrackItem extends React.Component {
                   <h2 className="small-light-words"> {track.artist} </h2>
                   <Time time={track.created_at} />
                 </div>
-                <h1> {track.title} </h1>
+               <Link to={`/tracks/${track.id}`}  >
+               <h1> {track.title} </h1>
+               </Link> 
               </div>
             </div>
           </div>

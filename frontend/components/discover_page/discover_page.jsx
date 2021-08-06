@@ -27,9 +27,9 @@ class DiscoverPage extends React.Component {
   // }
 
   componentDidMount() {
-    this.props.fetchCurrentUser(this.props.currentUser.id)
-    .then(() => this.props.fetchUsers())
-      .then(() => this.props.fetchTracks())
+    // this.props.fetchCurrentUser(this.props.currentUser.id)
+    this.props.fetchTracks()
+    this.props.fetchUsers()
       .then(() => this.setState({loaded: false}) )
   }
 

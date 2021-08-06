@@ -22,6 +22,7 @@ class DiscoverPageItem extends React.Component {
 
   render() {
     const { track, liked, currentTrack } = this.props;
+    // console.log(track)
     return (
       <div className="discover-page-item">
         <div className="discover-image-container">
@@ -58,9 +59,13 @@ class DiscoverPageItem extends React.Component {
 
         <div className="song-info">
           <div className="yoyo">
+            <Link to={`/tracks/${track.id}`}>
             <h1 className="song-truncate">{track.title}</h1>
+            </Link>
           </div>
+          <Link to={`/users/${track.owner_id}`}>
           <h1 className="small-light-words">{track.artist || "artist here"}</h1>
+          </Link>
         </div>
       </div>
     );

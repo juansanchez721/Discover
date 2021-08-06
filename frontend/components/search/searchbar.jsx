@@ -33,21 +33,21 @@ class SearchBar extends React.Component {
   }
 
   update(e) {
-    debugger
+    // debugger
     if (!this.state.searchDD) this.setState({ searchDD: true });
 
     this.setState({
       search: e.target.value,
     });
 
-    debugger
+    // debugger
     // debounce(() => {
       this.search();
     // }, 1000);
   }
 
   search() {
-    debugger
+    // debugger
     this.props.fetchSearchResults(this.state.search);
     // .then(() => console.log(this.props.searchResults))
   }

@@ -4,15 +4,15 @@ import {
 } from "../actions/search_actions";
 
 const searchReducer = (oldState = {}, action) => {
-  debugger;
+//   debugger;
   Object.freeze(oldState);
   // let newState = Object.assign({}, oldState)
   switch (action.type) {
     case RECEIVE_SEARCH_RESULTS:
-      debugger;
+    //   debugger;
       return action.results;
     case CLEAR_SEARCH:
-      debugger;
+    //   debugger;
       return {};
     default:
       return oldState;
