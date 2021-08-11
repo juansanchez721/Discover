@@ -12,6 +12,9 @@ class User < ApplicationRecord
     class_name: :Track,
     dependent: :destroy
 
+    # has_many :track_likes, through: :tracks,
+    # source: :likes
+
     has_many :comments,
     foreign_key: :commenter_id,
     class_name: :Comment
